@@ -1,0 +1,22 @@
+{
+  "name": "@dependable/icons",
+  "description": "@dependable/view icon components",
+  "version": "0.0.1",
+  "author": "Sune Simonsen <sune@we-knowhow.dk>",
+  "license": "MIT",
+  "exports": {
+    "./*": "./src/*.js"
+  },
+  "scripts": {
+    "format": "prettier --write '**/*.{js,mjs,md,json}'",
+    "import-icons": "node ./scripts/import-icons.js && npm run format"
+  },
+  "devDependencies": {
+    "@transformation/core": "^7.0.2",
+    "@transformation/ejs": "^7.0.2",
+    "@transformation/file": "^7.0.2",
+    "@transformation/glob": "^7.0.2",
+    "@zendeskgarden/svg-icons": "^7.0.0",
+    "change-case": "^4.1.2"
+  }
+}
