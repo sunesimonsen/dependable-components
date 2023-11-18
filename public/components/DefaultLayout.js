@@ -1,5 +1,6 @@
 import { html } from "@dependable/view";
 import { css } from "stylewars";
+import { ErrorBoundary } from "./ErrorBoundary.js";
 
 const rootStyles = css`
   & {
@@ -77,7 +78,9 @@ export class DefaultLayout {
   render({ children }) {
     return html`
       <div className=${rootStyles}>
-        <main className=${mainStyles}>${children}</main>
+        <main className=${mainStyles}>
+          <${ErrorBoundary} name="default-layout">${children}<//>
+        </main>
       </div>
     `;
   }

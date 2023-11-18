@@ -25,16 +25,6 @@ export class PageContainer {
     }
   }
 
-  didMount() {
-    this.loadComponent();
-  }
-
-  didUpdate(prevProps) {
-    if (this.props.id !== prevProps.id) {
-      this.loadComponent();
-    }
-  }
-
   render({ id }) {
     if (this.pageId() !== id) {
       this.loadComponent();
