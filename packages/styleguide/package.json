@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "name": "@dependable/styleguide",
+  "description": "Styleguide for @dependable/view",
+  "version": "0.0.1",
+  "author": "Sune Simonsen <sune@we-knowhow.dk>",
+  "license": "MIT",
+  "module": "src/index.js",
+  "keywords": ["styleguide", "dependable", "view", "UI", "components"],
+  "sideEffects": false,
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

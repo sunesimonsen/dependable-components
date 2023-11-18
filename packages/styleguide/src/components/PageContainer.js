@@ -16,7 +16,7 @@ export class PageContainer {
     this.status("loading");
 
     try {
-      const component = await import(`../pages/${id}/index.js`);
+      const component = await pageMap[id]();
       this.Page = component.default;
       this.status("ready");
     } catch (e) {

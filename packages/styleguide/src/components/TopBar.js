@@ -55,10 +55,10 @@ const topBarStyles = css`
   }
 `;
 
-const logo = new URL("../images/logo.png", import.meta.url).toString();
-
 export class TopBar {
   render() {
+    const { title, logo } = this.context;
+
     return html`
       <header className=${topBarStyles}>
         <${Link}
@@ -67,7 +67,7 @@ export class TopBar {
           className=${homeStyles}
         >
           <img src=${logo} className=${logoStyles} />
-          <span className=${brandStyles}>Dependable</span>
+          <span className=${brandStyles}>${title}</span>
         <//>
         <div className=${buttonsStyles}></div>
       </header>

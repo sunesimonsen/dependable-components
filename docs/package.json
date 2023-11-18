@@ -15,7 +15,8 @@
     "@dependable/rollup-config": "^0.4.0",
     "@nano-router/history": "^2.12.0",
     "@nano-router/router": "^2.12.0",
-    "@dependable/components": "*"
+    "@dependable/components": "*",
+    "@dependable/styleguide": "*"
   },
   "devDependencies": {
     "relivestyle": "^1.0.0-11"

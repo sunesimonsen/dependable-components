@@ -30,14 +30,7 @@ const sidebarStyles = css`
 export class Sidebar {
   render() {
     return html`
-      <nav className=${sidebarStyles}>
-        <h1>Buttons</h1>
-        <ul>
-          <li><${PageReference} id="anchor">Anchor<//></li>
-          <li><${PageReference} id="button">Button<//></li>
-          <li><${PageReference} id="iconbutton">Icon button<//></li>
-        </ul>
-      </nav>
+      <nav className=${sidebarStyles}>${this.context.navigation}</nav>
     `;
   }
 }

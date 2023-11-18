@@ -1,24 +1,21 @@
 import { html, render } from "@dependable/view";
-import { routes } from "./routes.js";
-import { Router, Routing } from "@dependable/nano-router";
-import { createBrowserHistory } from "@nano-router/history";
-import { RootView } from "./components/RootView.js";
-import { ScriptLoader } from "./components/ScriptLoader.js";
+import { styleguide, PageReference } from "@dependable/styleguide";
 
-const history = createBrowserHistory();
+const pages = ["index", "anchor", "button"];
 
-const router = new Router({ routes, history });
+const pageMap = Object.fromEntries(
+  pages.map((id) => [id, () => import(`./pages/${id}/index.js`)]),
+);
 
-render(html`
-  <${Routing} router=${router}><${RootView} /><//>
-  <${ScriptLoader}
-    sources=${[
-      "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-js-templates.js",
-    ]}
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css"
-  />
-`);
+styleguide({
+  logo: new URL("./images/logo.png", import.meta.url).toString(),
+  title: "DEPENDABLE",
+  navigation: html`
+    <h1>Buttons</h1>
+    <ul>
+      <li><${PageReference} id="anchor">Anchor<//></li>
+      <li><${PageReference} id="button">Button<//></li>
+    </ul>
+  `,
+  pageMap,
+});
