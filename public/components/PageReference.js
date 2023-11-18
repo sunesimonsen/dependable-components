@@ -1,7 +1,7 @@
 import { html } from "@dependable/view";
 import { computed } from "@dependable/state";
+import { route, params, Link } from "@dependable/nano-router";
 import { css, classes } from "stylewars";
-import { route, params, Link } from "@depedable/nano-router";
 
 const styles = css`
   & {
@@ -27,17 +27,18 @@ const activeStyles = css`
   }
 `;
 
-const isActive = (id) =>
-  computed(() => route() === "page" && id === params().id);
-
 export class PageReference {
+  isActive() {
+    return route() === "page" && this.props.id === params().id;
+  }
+
   render({ id, children, ...other }) {
     return html`
       <${Link}
         route="page"
         params=${{ id }}
         hash=""
-        className=${classes(styles, isActive() && activeStyles)}
+        className=${classes(styles, this.isActive() && activeStyles)}
         ...${other}
       >
         ${children}
