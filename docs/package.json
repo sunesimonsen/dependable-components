@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "private": true,
+  "scripts": {
+    "start": "relivestyle --single --port 5000 public",
+    "build": "rm -rf dist && rollup -c node:@dependable/rollup-config",
+    "deploy": "npm run build && surge dist dependable-components.surge.sh",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "stylewars": "^2.1.1",
+    "@dependable/state": "^0.20.0",
+    "@dependable/view": "^0.18.0",
+    "@dependable/nano-router": "^0.8.0",
+    "@dependable/rollup-config": "^0.4.0",
+    "@nano-router/history": "^2.12.0",
+    "@nano-router/router": "^2.12.0",
+    "@dependable/components": "*"
+  },
+  "devDependencies": {
+    "relivestyle": "^1.0.0-11"
+  }
+}

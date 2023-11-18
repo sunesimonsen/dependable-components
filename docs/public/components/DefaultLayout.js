@@ -3,6 +3,7 @@ import { css } from "stylewars";
 import { TopBar } from "./TopBar.js";
 import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
+import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 
 const rootStyles = css`
   & {
@@ -79,13 +80,13 @@ const mainStyles = css`
 export class DefaultLayout {
   render({ children }) {
     return html`
-      <div stretched className=${rootStyles}>
+      <${BorderLayout} stretched className=${rootStyles}>
         <${TopBar} />
         <${Sidebar} />
         <main className=${mainStyles}>
           <${ErrorBoundary} name="default-layout">${children}<//>
         </main>
-      </div>
+      <//>
     `;
   }
 }
