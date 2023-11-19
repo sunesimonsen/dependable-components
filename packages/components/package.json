@@ -10,7 +10,13 @@
     "url": "https://github.com/sunesimonsen/dependable-components"
   },
   "exports": {
-    "./BorderLayout/v0": "./src/BorderLayout.v0.js"
+    "./BorderLayout/v0": "./src/BorderLayout.v0.js",
+    "./Button/v0": "./src/Button.v0.js",
+    "./IconButton/v0": "./src/IconButton.v0.js",
+    "./Skeleton/v0": "./src/Skeleton.v0.js",
+    "./Pulse/v0": "./src/Pulse.v0.js",
+    "./Center/v0": "./src/Center.v0.js",
+    "./Spinner/v0": "./src/Spinner.v0.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",

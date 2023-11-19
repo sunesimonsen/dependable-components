@@ -1,5 +1,6 @@
 import { observable } from "@dependable/state";
 import { html } from "@dependable/view";
+import { Page, PageSkeleton } from "./Page.js";
 
 export class PageContainer {
   constructor() {
@@ -30,8 +31,8 @@ export class PageContainer {
       this.loadComponent();
     }
 
-    if (this.status() !== "ready") return html`Loading...`;
+    if (this.status() !== "ready") return html`<${PageSkeleton} />`;
 
-    return html`<${this.Page} />`;
+    return html`<${Page}><${this.Page} /><//>`;
   }
 }

@@ -6,6 +6,8 @@ import { RootView } from "./components/RootView.js";
 import { ScriptLoader } from "./components/ScriptLoader.js";
 
 export { PageReference } from "./components/PageReference.js";
+export { Title, SubTitle, Line, Heading } from "./components/Page.js";
+export { Example } from "./components/Example.js";
 
 const history = createBrowserHistory();
 
