@@ -1,7 +1,7 @@
 import { html, render } from "@dependable/view";
 import { styleguide, PageReference } from "@dependable/styleguide";
 
-const pages = ["index", "anchor", "button"];
+const pages = ["index", "anchor", "button", "icons"];
 
 const pageMap = Object.fromEntries(
   pages.map((id) => [id, () => import(`./pages/${id}/index.js`)]),

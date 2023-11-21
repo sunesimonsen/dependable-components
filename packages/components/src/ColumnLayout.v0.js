@@ -1,4 +1,4 @@
-import { html } from "@depository/view";
+import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
@@ -41,7 +41,7 @@ export class ColumnLayout {
         className=${classes(
           styles({ gap, stretched, columns, alignItems, justifyItems }),
           stretched && stretchedStyles,
-          className
+          className,
         )}
         ...${other}
       >
