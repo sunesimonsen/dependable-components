@@ -1,0 +1,18 @@
+import { html, render } from "@dependable/view";
+import { PageReference } from "@dependable/styleguide";
+
+export const iconPageMap = {
+<% for(let { page } of items) { -%>
+  "<%-page%>": () => import(`./pages/<%-page%>/index.js`),
+<% } -%>
+}
+
+export class IconNavigation {
+  render() {
+    return html`
+<% for(let { key, page } of items) { -%>
+      <li><${PageReference} id="<%-page%>"><%-key%><//></li>
+<% } -%>
+    `
+  }
+}

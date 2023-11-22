@@ -1,5 +1,6 @@
 import { html, render } from "@dependable/view";
 import { styleguide, PageReference } from "@dependable/styleguide";
+import { IconNavigation, iconPageMap } from "./icons-navigation.js";
 
 const pages = ["index", "anchor", "button", "icons"];
 
@@ -16,6 +17,11 @@ styleguide({
       <li><${PageReference} id="anchor">Anchor<//></li>
       <li><${PageReference} id="button">Button<//></li>
     </ul>
+    <h1>Icons</h1>
+    <ul>
+      <li><${PageReference} id="icons">Icons<//></li>
+      <${IconNavigation} />
+    </ul>
   `,
-  pageMap,
+  pageMap: { ...pageMap, ...iconPageMap },
 });

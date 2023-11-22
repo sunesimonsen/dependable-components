@@ -2,11 +2,13 @@ const { join } = require("path");
 const fs = require("fs").promises;
 const { capitalCase } = require("change-case");
 const {
+  extend,
+  forEach,
   groupBy,
   map,
-  forEach,
   program,
   sortBy,
+  splitIterable,
   tap,
   toArray,
 } = require("@transformation/core");
@@ -23,6 +25,9 @@ const source = join(
   "src",
 );
 const dest = "./src";
+
+const keyToPageName = (key) =>
+  "icons-" + key.replace(/[()]/g, "").replace(" ", "-");
 
 program(
   glob({
@@ -42,7 +47,7 @@ program(
     let style = "default";
 
     if (fileName.endsWith("-stroke.svg")) {
-      style = "stroke";
+      style = "default";
     } else if (fileName.endsWith("-fill.svg")) {
       style = "fill";
     } else if (fileName.startsWith("wordmark-")) {
@@ -62,11 +67,22 @@ program(
   writeTemplate(join(__dirname, "SvgComponent.ejs"), ({ path }) => path),
   tap("path"),
   groupBy(({ size, style }) =>
-    style === "default" ? `${size}px icons` : `${size}px icons (${style})`,
+    style === "default" ? `${size}px` : `${size}px (${style})`,
   ),
   sortBy("key"),
+  extend({
+    page: map(({ key }) => keyToPageName(key)),
+  }),
+  forEach(({ page }) =>
+    fs.mkdir(join(rootDir, "docs", "public", "pages", page), {
+      recursive: true,
+    }),
+  ),
+  writeTemplate(join(__dirname, "IconSheet.ejs"), ({ page }) =>
+    join(rootDir, "docs", "public", "pages", page, "index.js"),
+  ),
   toArray(),
-  writeTemplate(join(__dirname, "IconPreview.ejs"), ({ key }) =>
-    join(rootDir, "docs", "public", "pages", "icons", "index.js"),
+  writeTemplate(join(__dirname, "IconNavigation.ejs"), ({ key }) =>
+    join(rootDir, "docs", "public", "icons-navigation.js"),
   ),
 );
