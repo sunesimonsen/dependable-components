@@ -18,7 +18,8 @@
     "./Pulse/v0": "./src/Pulse.v0.js",
     "./Center/v0": "./src/Center.v0.js",
     "./Spinner/v0": "./src/Spinner.v0.js",
-    "./ColumnLayout/v0": "./src/ColumnLayout.v0.js"
+    "./ColumnLayout/v0": "./src/ColumnLayout.v0.js",
+    "./spacing/v0": "./src/spacing.v0.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",

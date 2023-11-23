@@ -1,0 +1,24 @@
+import { html } from "@dependable/view";
+import { observable } from "@dependable/state";
+import { Button } from "@dependable/components/Button/v0";
+import { Center } from "@dependable/components/Center/v0";
+
+const startLoading = () => {
+  isLoading(true);
+
+  setTimeout(() => {
+    isLoading(false);
+  }, 2000);
+};
+
+const isLoading = observable(false);
+
+export default class Example {
+  render() {
+    return html`
+      <${Center}>
+        <${Button} loading=${isLoading()} onClick=${startLoading}> Button <//>
+      <//>
+    `;
+  }
+}

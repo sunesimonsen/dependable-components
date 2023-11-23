@@ -10,6 +10,8 @@ export default class Example {
   }
 
   render() {
-    return html`<${Center}><${Button} onClick=${this.sayHello}>Button<//><//>`;
+    return html`
+      <${Center}><${Button} onClick=${this.sayHello} disabled>Button<//><//>
+    `;
   }
 }
