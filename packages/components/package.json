@@ -19,11 +19,16 @@
     "./Center/v0": "./src/Center.v0.js",
     "./Spinner/v0": "./src/Spinner.v0.js",
     "./ColumnLayout/v0": "./src/ColumnLayout.v0.js",
-    "./spacing/v0": "./src/spacing.v0.js"
+    "./spacing/v0": "./src/spacing.v0.js",
+    "./Checkbox/v0": "./src/Checkbox.v0.js",
+    "./Switch/v0": "./src/Switch.v0.js",
+    "./TextInput/v0": "./src/TextInput.v0.js",
+    "./MediaInput/v0": "./src/MediaInput.v0.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",
     "@dependable/rollup-config": "^0.4.0",
+    "@dependable/icons": "*",
     "@nano-router/history": "^2.12.0",
     "@nano-router/router": "^2.12.0",
     "mocha": "^10.0.0",

@@ -7,6 +7,7 @@ const pages = [
   "borderlayout",
   "button",
   "center",
+  "checkbox",
   "columnlayout",
   "iconbutton",
   "icons",
@@ -14,6 +15,8 @@ const pages = [
   "pulse",
   "skeleton",
   "spinner",
+  "switch",
+  "textinput",
 ];
 
 const pageMap = Object.fromEntries(
@@ -29,6 +32,12 @@ styleguide({
       <li><${PageReference} id="anchor">Anchor<//></li>
       <li><${PageReference} id="button">Button<//></li>
       <li><${PageReference} id="iconbutton">IconButton<//></li>
+    </ul>
+    <h1>Inputs</h1>
+    <ul>
+      <li><${PageReference} id="checkbox">Checkbox<//></li>
+      <li><${PageReference} id="switch">Switch<//></li>
+      <li><${PageReference} id="textinput">TextInput<//></li>
     </ul>
     <h1>Loaders</h1>
     <ul>
