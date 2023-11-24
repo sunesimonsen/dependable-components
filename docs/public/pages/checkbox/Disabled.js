@@ -8,12 +8,12 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto auto" justifyItems="start">
-          <${Checkbox} id="checkbox-default" />
-          <label for="checkbox-default">Default</label>
-          <${Checkbox} id="checkbox-checked" checked />
-          <label for="checkbox-checked">Checked</label>
-          <${Checkbox} id="checkbox-indeterminate" indeterminate />
-          <label for="checkbox-indeterminate">Indeterminate</label>
+          <${Checkbox} id="checkbox-disabled-default" />
+          <label for="checkbox-disabled-default">Default</label>
+          <${Checkbox} id="checkbox-disabled-checked" checked />
+          <label for="checkbox-disabled-checked">Checked</label>
+          <${Checkbox} id="checkbox-disabled-indeterminate" indeterminate />
+          <label for="checkbox-disabled-indeterminate">Indeterminate</label>
         <//>
       <//>
     `;

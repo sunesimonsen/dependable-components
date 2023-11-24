@@ -10,7 +10,6 @@ import {
 
 import DefaultCheckbox from "./DefaultCheckbox.js";
 import Disabled from "./Disabled.js";
-import Labels from "./Labels.js";
 
 class CheckboxPage {
   render() {
@@ -34,11 +33,6 @@ class CheckboxPage {
       </p>
       <${Example} src=${new URL("./Disabled.js", import.meta.url)}>
         <${Disabled} />
-      <//>
-      <${Heading} level="3">Labels<//>
-      <p>You can associate a label with a checkbox.</p>
-      <${Example} src=${new URL("./Labels.js", import.meta.url)}>
-        <${Labels} />
       <//>
     `;
   }
