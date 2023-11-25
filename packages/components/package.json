@@ -23,7 +23,9 @@
     "./Checkbox/v0": "./src/Checkbox.v0.js",
     "./Switch/v0": "./src/Switch.v0.js",
     "./TextInput/v0": "./src/TextInput.v0.js",
-    "./MediaInput/v0": "./src/MediaInput.v0.js"
+    "./MediaInput/v0": "./src/MediaInput.v0.js",
+    "./ScrollArea/v0": "./src/ScrollArea.v0.js",
+    "./Popup/v0": "./src/Popup.v0.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",

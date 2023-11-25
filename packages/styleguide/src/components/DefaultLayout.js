@@ -4,6 +4,7 @@ import { TopBar } from "./TopBar.js";
 import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
+import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 
 const rootStyles = css`
   & {
@@ -41,9 +42,7 @@ const mainStyles = css`
     display: flex;
     flex-direction: column;
     background: white;
-    position: relative;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    overflow: hidden;
   }
 
   & h2 {
@@ -77,6 +76,12 @@ const mainStyles = css`
   }
 `;
 
+const scrollAreaStyles = css`
+  & {
+    flex: 1;
+  }
+`;
+
 export class DefaultLayout {
   render({ children }) {
     return html`
@@ -84,7 +89,9 @@ export class DefaultLayout {
         <${TopBar} />
         <${Sidebar} />
         <main className=${mainStyles}>
-          <${ErrorBoundary} name="default-layout">${children}<//>
+          <${ScrollArea} className=${scrollAreaStyles}>
+            <${ErrorBoundary} name="default-layout">${children}<//>
+          <//>
         </main>
       <//>
     `;

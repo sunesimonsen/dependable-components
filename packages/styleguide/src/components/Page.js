@@ -6,7 +6,6 @@ import LinkStroke16Icon from "@dependable/icons/LinkStroke16Icon";
 
 const contentStyles = css`
   & {
-    width: 50vw;
     max-width: 800px;
     margin: 30px auto;
   }
@@ -22,9 +21,9 @@ export class Page {
   }
 
   render({ className, children }) {
-    return html`<div className=${classes(contentStyles, className)}>
-      ${children}
-    </div>`;
+    return html`
+      <div className=${classes(contentStyles, className)}>${children}</div>
+    `;
   }
 }
 
@@ -135,7 +134,7 @@ const skeletonStyles = css`
 export class PageSkeleton {
   render() {
     return html`
-      <${Page} className=${skeletonStyles}>
+      <${Page}>
         <${Title}><${Skeleton} /><//>
         <${SubTitle}><${Skeleton} /><//>
         <${Line}/>
