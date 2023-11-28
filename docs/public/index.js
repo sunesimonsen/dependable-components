@@ -32,13 +32,13 @@ styleguide({
     <ul>
       <li><${PageReference} id="anchor">Anchor<//></li>
       <li><${PageReference} id="button">Button<//></li>
-      <li><${PageReference} id="iconbutton">IconButton<//></li>
+      <li><${PageReference} id="iconbutton">Icon button<//></li>
     </ul>
     <h1>Inputs</h1>
     <ul>
       <li><${PageReference} id="checkbox">Checkbox<//></li>
       <li><${PageReference} id="switch">Switch<//></li>
-      <li><${PageReference} id="textinput">TextInput<//></li>
+      <li><${PageReference} id="textinput">Text input<//></li>
     </ul>
     <h1>Popups</h1>
     <ul>
@@ -53,8 +53,8 @@ styleguide({
     <h1>Layouts</h1>
     <ul>
       <li><${PageReference} id="center">Center<//></li>
-      <li><${PageReference} id="columnlayout">ColumnLayout<//></li>
-      <li><${PageReference} id="borderlayout">BorderLayout<//></li>
+      <li><${PageReference} id="columnlayout">Column layout<//></li>
+      <li><${PageReference} id="borderlayout">Border layout<//></li>
     </ul>
     <h1>Icons</h1>
     <ul>

@@ -3,7 +3,7 @@ import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
 
-import LightbulbStroke12Icon from "@dependable/icons/LightbulbStroke12Icon";
+import TipIcon from "@dependable/icons/LightbulbStroke12Icon";
 
 import WordmarkBoldSuite26Icon from "@dependable/icons/WordmarkBoldSuite26Icon";
 import WordmarkBoldSupport26Icon from "@dependable/icons/WordmarkBoldSupport26Icon";
@@ -95,7 +95,7 @@ class IconsPage {
       <//>
       <${Line} />
       <p>
-        Tip <${LightbulbStroke12Icon} /> click on the icon label to copy the
+        Tip <${TipIcon} /> click on the icon label to copy the
         import to that clipboard.
       </p>
       <div className=${columnStyles}>
