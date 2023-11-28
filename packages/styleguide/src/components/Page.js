@@ -6,7 +6,7 @@ import LinkStroke16Icon from "@dependable/icons/LinkStroke16Icon";
 
 const contentStyles = css`
   & {
-    max-width: 800px;
+    width: 800px;
     margin: 30px auto;
   }
 `;
