@@ -8,7 +8,9 @@
   "module": "src/index.js",
   "keywords": ["styleguide", "dependable", "view", "UI", "components"],
   "sideEffects": false,
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@dependable/state": "^0.20.0",
+    "@dependable/view": "^0.18.2",
+    "stylewars": "^2.1.1"
+  }
 }

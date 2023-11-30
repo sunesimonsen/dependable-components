@@ -12,7 +12,7 @@ import Placement from "./Placement.js";
 import PopupFlip from "./PopupFlip.js";
 import Stretch from "./Stretch.js";
 
-class AnchorPage {
+class PopupPage {
   render() {
     return html`
       <${Title}>Popup<//>
@@ -57,4 +57,4 @@ class AnchorPage {
   }
 }
 
-export default AnchorPage;
+export default PopupPage;

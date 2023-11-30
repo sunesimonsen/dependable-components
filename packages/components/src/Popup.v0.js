@@ -222,6 +222,8 @@ export class Popup {
   }
 
   show() {
+    if (this.visible) return;
+
     if (this._placement.includes("stretch")) {
       const anchorRect = this._anchor.getBoundingClientRect();
       this._popup.style.width = `${anchorRect.width}px`;
@@ -234,12 +236,16 @@ export class Popup {
       this._popup.classList.add(visibleStyles);
       window.addEventListener("resize", this._update);
       window.addEventListener("scroll", this._update, true);
+      this.visible = true;
     }, 0);
   }
 
   hide() {
+    if (!this.visible) return;
+
     window.removeEventListener("resize", this._update);
     window.removeEventListener("scroll", this._update, true);
     this._popup.classList.remove(visibleStyles);
+    this.visible = false;
   }
 }

@@ -25,7 +25,8 @@
     "./TextInput/v0": "./src/TextInput.v0.js",
     "./MediaInput/v0": "./src/MediaInput.v0.js",
     "./ScrollArea/v0": "./src/ScrollArea.v0.js",
-    "./Popup/v0": "./src/Popup.v0.js"
+    "./Popup/v0": "./src/Popup.v0.js",
+    "./Menu/v0": "./src/Menu.v0/index.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",
@@ -40,7 +41,7 @@
   },
   "dependencies": {
     "@dependable/state": "^0.20.0",
-    "@dependable/view": "^0.18.0",
+    "@dependable/view": "^0.18.2",
     "stylewars": "^2.1.1"
   }
 }
