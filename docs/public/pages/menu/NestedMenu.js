@@ -1,6 +1,7 @@
 import { html } from "@dependable/view";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
+import { Center } from "@dependable/components/Center/v0";
 import {
   CustomMenu,
   MenuButton,
@@ -11,13 +12,6 @@ import {
   MenuPopup,
   MenuSeparator,
 } from "@dependable/components/Menu/v0";
-
-const containerStyles = css`
-  & {
-    text-align: center;
-    padding: 60px 0;
-  }
-`;
 
 const menus = {
   root: [
@@ -62,17 +56,16 @@ export default class Example {
     const items = menus[this.menu()];
 
     return html`
-      <div className=${containerStyles}>
+      <${Center}>
         <${CustomMenu}
           model=${this.model}
           onSelect=${this.onSelect}
           onClose=${this.onClose}
-          placement="end"
         >
           <${MenuButton}>Options<//>
           <${MenuPopup}>${items}<//>
         <//>
-      </div>
+      <//>
     `;
   }
 }

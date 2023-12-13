@@ -1,18 +1,12 @@
 import { html } from "@dependable/view";
 import { css } from "stylewars";
+import { Center } from "@dependable/components/Center/v0";
 import {
   MenuButton,
   MenuPopup,
   MenuItem,
   Menu,
 } from "@dependable/components/Menu/v0";
-
-const containerStyles = css`
-  & {
-    text-align: center;
-    padding-bottom: 160px;
-  }
-`;
 
 export default class Example {
   constructor() {
@@ -24,7 +18,7 @@ export default class Example {
 
   render() {
     return html`
-      <div className=${containerStyles}>
+      <${Center}>
         <${Menu} onSelect=${this.onSelect}>
           <${MenuButton}>Options<//>
           <${MenuPopup}>
@@ -34,7 +28,7 @@ export default class Example {
             <${MenuItem} key="four" value=${4}>Four<//>
           <//>
         <//>
-      </div>
+      </>
     `;
   }
 }
