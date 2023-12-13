@@ -1,8 +1,8 @@
 import { observable } from "@dependable/state";
 
 export class MenuModel {
-  constructor() {
-    this.id = crypto.randomUUID();
+  constructor({ id }) {
+    this.id = id;
     this.visible = observable(false);
     this.focused = observable(null);
 

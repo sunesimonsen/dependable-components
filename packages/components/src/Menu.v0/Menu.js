@@ -3,7 +3,7 @@ import { Popup } from "../Popup.v0.js";
 import { MenuModel } from "./MenuModel.js";
 import { MenuItem } from "./MenuItem.js";
 import { SelectItemEvent } from "./events.js";
-import { findChildrenWithType } from "./children.js";
+import { findSelectables } from "./children.js";
 
 export class CustomMenu {
   static defaultProps() {
@@ -22,19 +22,20 @@ export class CustomMenu {
       this.model.toggleMenu();
     };
 
-    this.onBlur = (e) => {
-      this.model.hideMenu();
-    };
-
     this.onSelect = (e) => {
       const onSelect = this.props.onSelectItem;
-      if (onSelect) {
-        onSelect(e);
-      }
+      if (onSelect) onSelect(e);
+      if (!e.defaultPrevented) this.model.hideMenu();
+    };
 
-      if (!e.defaultPrevented) {
-        this.model.hideMenu();
-      }
+    this.onClose = () => {
+      this.model.hideMenu();
+      const onClose = this.props.onClose;
+      if (onClose) onClose();
+    };
+
+    this.onBlur = () => {
+      this.onClose();
     };
 
     this.onFocusItem = (e) => {
@@ -86,7 +87,7 @@ export class CustomMenu {
       },
       Escape: (e) => {
         e.preventDefault();
-        this.model.hideMenu();
+        this.onClose();
       },
     };
 
@@ -100,7 +101,7 @@ export class CustomMenu {
   }
 
   getSelectables() {
-    return findChildrenWithType(MenuItem, this.props.children);
+    return findSelectables(this.props.children);
   }
 
   get model() {
@@ -116,10 +117,8 @@ export class CustomMenu {
     });
   }
 
-  didUpdate() {}
-
   willUnmount() {
-    this.popup.hide();
+    this.onClose();
   }
 
   didRender() {
@@ -139,13 +138,13 @@ export class CustomMenu {
       <Context model=${model}>
         ${clone(trigger, {
           props: {
-            id: model.id,
+            id: `menu-trigger-${model.id}`,
             ref: this.createRef("triggerRef"),
             "aria-haspopup": "listbox",
             "aria-expanded": model.visible() ? "true" : "false",
-            "aria-controls": `${model.id}-menu`,
+            "aria-controls": `menu-${model.id}`,
             "aria-activedescendant":
-              focusedKey && `${model.id}-item-${focusedKey}`,
+              focusedKey && `menu-${model.id}-item-${focusedKey}`,
             onClick: this.onTriggerClick,
             onKeyDown: this.onKeydown,
             onBlur: this.onBlur,
@@ -157,19 +156,21 @@ export class CustomMenu {
           onFocusItem=${this.onFocusItem}
         >
           ${model.visible() &&
-          clone(content, { props: { id: `${model.id}-menu` } })}
+          clone(content, { props: { id: `menu-${model.id}` } })}
         </div>
       </Context>
     `;
   }
 }
 
+let nextId = 0;
+
 export class Menu {
   constructor() {
-    this.model = new MenuModel();
+    this.model = new MenuModel({ id: String(nextId++) });
   }
 
-  render({ children, placement, margins, ...other }) {
+  render({ children, ...other }) {
     return html`<${CustomMenu} model=${this.model} ...${other}>${children}<//>`;
   }
 }

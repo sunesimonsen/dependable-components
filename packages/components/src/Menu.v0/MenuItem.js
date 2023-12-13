@@ -43,6 +43,8 @@ const focusedStyles = css`
 `;
 
 export class MenuItem {
+  static isSelectable = true;
+
   constructor() {
     this.onMouseDown = (e) => {
       if (!e.shiftKey && !e.metaKey && !e.ctrlKey) {
@@ -76,7 +78,7 @@ export class MenuItem {
 
     return html`
       <div
-        id=${`${model.id}-item-${key}`}
+        id=${`menu-${model.id}-item-${key}`}
         tabindex="-1"
         role="menuitem"
         onMouseDown=${this.onMouseDown}

@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import DefaultMenu from "./DefaultMenu.js";
+import NestedMenu from "./NestedMenu.js";
 
 class MenuPage {
   render() {
@@ -25,6 +26,14 @@ class MenuPage {
       </p>
       <${Example} src=${new URL("./DefaultMenu.js", import.meta.url)}>
         <${DefaultMenu} />
+      <//>
+      <${Heading} level="2">Nested<//>
+      <p>
+        Menus can contain nested levels for additional categorization of menu
+        items.
+      </p>
+      <${Example} src=${new URL("./NestedMenu.js", import.meta.url)}>
+        <${NestedMenu} />
       <//>
     `;
   }

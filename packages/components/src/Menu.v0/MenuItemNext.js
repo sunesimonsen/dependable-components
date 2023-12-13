@@ -41,9 +41,11 @@ const rightIconStyles = css`
 `;
 
 export class MenuItemNext {
+  static isSelectable = true;
+
   render({ children, ...other }) {
     return html`
-      <${MenuItem} ref=${this.createRef("ref")} ...${other}>
+      <${MenuItem} ...${other}>
         <${ChevronLeftStroke16Icon}
           className=${classes(iconStyles, leftIconStyles)}
         />
