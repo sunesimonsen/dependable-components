@@ -2,7 +2,14 @@ import { html } from "@dependable/view";
 import { css } from "stylewars";
 
 import { Center } from "@dependable/components/Center/v0";
+import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import AnswerBot26Icon from "@dependable/icons/AnswerBot26Icon";
+
+const containerStyles = css`
+  & {
+    fill: #bbb;
+  }
+`;
 
 const answerBotStyles = css`
   & {
@@ -15,7 +22,10 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${AnswerBot26Icon} className=${answerBotStyles} />
+        <${ColumnLayout} columns="2" className=${containerStyles}>
+          <${AnswerBot26Icon} />
+          <${AnswerBot26Icon} className=${answerBotStyles} />
+        <//>
       <//>
     `;
   }
