@@ -2,13 +2,14 @@ import { html } from "@dependable/view";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import {
+  CustomMenu,
   MenuButton,
-  MenuPopup,
   MenuItem,
   MenuItemNext,
   MenuItemPrevious,
-  CustomMenu,
   MenuModel,
+  MenuPopup,
+  MenuSeparator,
 } from "@dependable/components/Menu/v0";
 
 const containerStyles = css`
@@ -26,6 +27,7 @@ const menus = {
   ],
   berry: [
     html`<${MenuItemPrevious} key="root" value="berry">Fruits<//>`,
+    html`<${MenuSeparator} key="separator" />`,
     html`<${MenuItem} key="strawberry" value=${2}>Strawberry<//>`,
     html`<${MenuItem} key="loganberry" value=${3}>Loganberry<//>`,
     html`<${MenuItem} key="boysenberry" value=${4}> Boysenberry <//>`,
