@@ -32,7 +32,8 @@ const styles = css`
     background-color: rgb(31, 115, 183);
   }
 
-  &:not(:checked):not(:indeterminate):not(:disabled) + label {
+  &:not(:checked):not(:indeterminate):not(:disabled):not(:focus-visible)
+    + label {
     border-color: rgb(216, 220, 222);
     background-color: rgb(255, 255, 255);
   }
@@ -65,9 +66,10 @@ const styles = css`
     background-color: rgb(20, 74, 117);
   }
 
-  &:focus-visible + label {
+  &:checked:not(:disabled):focus-visible + label,
+  &:not(:disabled):focus-visible + label {
     border-color: rgb(31, 115, 183);
-    box-shadow: rgb(31 115 183 / 35%) 0px 0px 0px 3px;
+    outline: 3px solid rgb(31 115 183 / 35%);
   }
 
   &:disabled,

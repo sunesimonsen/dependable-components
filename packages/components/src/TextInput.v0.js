@@ -4,11 +4,6 @@ import { css, classes } from "stylewars";
 export const textInputStyles = css`
   & {
     appearance: none;
-    transition:
-      border-color 0.25s ease-in-out 0s,
-      box-shadow 0.1s ease-in-out 0s,
-      background-color 0.25s ease-in-out 0s,
-      color 0.25s ease-in-out 0s;
     border: 1px solid rgb(216, 220, 222);
     border-radius: 4px;
     width: 100%;
@@ -37,7 +32,7 @@ export const textInputStyles = css`
   &:focus-within {
     outline: none;
     border-color: rgb(31, 115, 183);
-    box-shadow: rgb(31 115 183 / 35%) 0px 0px 0px 3px;
+    outline: 3px solid rgb(31 115 183 / 35%);
   }
 
   &[disabled],

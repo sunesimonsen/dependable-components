@@ -41,7 +41,7 @@ const styles = css`
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 3px rgb(31 115 183 / 35%);
+    outline: 3px solid rgb(31 115 183 / 35%);
   }
 
   &:disabled,

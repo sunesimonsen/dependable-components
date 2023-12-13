@@ -67,7 +67,7 @@ const styles = css`
   }
 
   &:focus-visible + label {
-    box-shadow: rgb(31 115 183 / 35%) 0px 0px 0px 3px;
+    outline: 3px solid rgb(31 115 183 / 35%);
   }
 
   &:disabled,
