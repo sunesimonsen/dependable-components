@@ -63,7 +63,7 @@ export default class Example {
       <div className=${containerStyles}>
         <${CustomMenu}
           model=${this.model}
-          onSelectItem=${this.onSelect}
+          onSelect=${this.onSelect}
           onClose=${this.onClose}
           placement="end"
         >

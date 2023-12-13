@@ -22,8 +22,8 @@ export class CustomMenu {
       this.model.toggleMenu();
     };
 
-    this.onSelect = (e) => {
-      const onSelect = this.props.onSelectItem;
+    this.onSelectItem = (e) => {
+      const onSelect = this.props.onSelect;
       if (onSelect) onSelect(e);
       if (!e.defaultPrevented) this.model.hideMenu();
     };
@@ -78,7 +78,7 @@ export class CustomMenu {
           );
 
           if (focusedItem) {
-            this.onSelect(new SelectItemEvent(focused));
+            this.onSelectItem(new SelectItemEvent(focused));
           }
         } else {
           e.preventDefault();
@@ -152,7 +152,7 @@ export class CustomMenu {
         })}
         <div
           ref=${this.createRef("popupRef")}
-          onSelectItem=${this.onSelect}
+          onSelectItem=${this.onSelectItem}
           onFocusItem=${this.onFocusItem}
         >
           ${model.visible() &&
