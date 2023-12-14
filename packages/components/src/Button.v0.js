@@ -21,6 +21,9 @@ const styles = css`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition:
+      border-color 0.25s ease-in-out 0s,
+      outline 0.1s ease-in-out 0s;
   }
 
   &:hover {

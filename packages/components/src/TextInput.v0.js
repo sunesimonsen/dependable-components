@@ -16,6 +16,9 @@ export const textInputStyles = css`
     font-size: 14px;
     background-color: rgb(255, 255, 255);
     color: rgb(47, 57, 65);
+    transition:
+      border-color 0.25s ease-in-out 0s,
+      outline 0.1s ease-in-out 0s;
   }
 
   &[readonly],
