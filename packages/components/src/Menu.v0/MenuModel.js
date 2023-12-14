@@ -5,76 +5,75 @@ export class MenuModel {
     this.id = id;
     this.visible = observable(false);
     this.focused = observable(null);
+  }
 
-    this.showMenu = () => {
-      if (!this.visible()) {
-        this.visible(true);
-        this.focused(null);
-      }
-    };
+  showMenu() {
+    if (!this.visible()) {
+      this.visible(true);
+    }
+  }
 
-    this.hideMenu = () => {
-      if (this.visible()) {
-        this.visible(false);
-        this.focused(null);
-      }
-    };
+  hideMenu() {
+    if (this.visible()) {
+      this.visible(false);
+      this.focused(null);
+    }
+  }
 
-    this.toggleMenu = () => {
-      if (this.visible()) {
-        this.hideMenu();
-      } else {
-        this.showMenu();
-      }
-    };
-
-    this.isItemFocused = (key) => {
-      return this.focused()?.key === key;
-    };
-
-    this.focusOffset = (selectables, offset) => {
+  toggleMenu() {
+    if (this.visible()) {
+      this.hideMenu();
+    } else {
       this.showMenu();
+    }
+  }
 
-      let newFocus;
-      const focused = this.focused();
-      if (focused) {
-        const currentIndex = selectables.findIndex(
-          ({ key }) => focused.key === key,
-        );
+  isItemFocused(key) {
+    return this.focused()?.key === key;
+  }
 
-        let newIndex = currentIndex + offset;
+  focusOffset(selectables, offset) {
+    this.showMenu();
 
-        newIndex = Math.min(newIndex, selectables.length - 1);
-        newIndex = Math.max(newIndex, 0);
+    let newFocus;
+    const focused = this.focused();
+    if (focused) {
+      const currentIndex = selectables.findIndex(
+        ({ key }) => focused.key === key,
+      );
 
-        newFocus = selectables[newIndex];
-      } else if (offset < 0) {
-        newFocus = selectables.at(offset);
-      } else {
-        newFocus = selectables.at(offset - 1);
-      }
+      let newIndex = currentIndex + offset;
 
-      this.focused(newFocus || null);
-    };
+      newIndex = Math.min(newIndex, selectables.length - 1);
+      newIndex = Math.max(newIndex, 0);
 
-    this.focusNext = (selectables) => {
-      this.focusOffset(selectables, 1);
-    };
+      newFocus = selectables[newIndex];
+    } else if (offset < 0) {
+      newFocus = selectables.at(offset);
+    } else {
+      newFocus = selectables.at(offset - 1);
+    }
 
-    this.focusPrevious = (selectables) => {
-      this.focusOffset(selectables, -1);
-    };
+    this.focused(newFocus || null);
+  }
 
-    this.focusFirst = (selectables) => {
-      this.showMenu();
+  focusNext(selectables) {
+    this.focusOffset(selectables, 1);
+  }
 
-      this.focused(selectables[0] || null);
-    };
+  focusPrevious(selectables) {
+    this.focusOffset(selectables, -1);
+  }
 
-    this.focusLast = (selectables) => {
-      this.showMenu();
+  focusFirst(selectables) {
+    this.showMenu();
 
-      this.focused(selectables.at(-1) || null);
-    };
+    this.focused(selectables[0] || null);
+  }
+
+  focusLast(selectables) {
+    this.showMenu();
+
+    this.focused(selectables.at(-1) || null);
   }
 }

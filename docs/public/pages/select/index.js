@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultSelect from "./DefaultSelect.js";
 import Disabled from "./Disabled.js";
+import NestedSelect from "./NestedSelect.js";
 
 class AnchorPage {
   render() {
@@ -34,6 +35,14 @@ class AnchorPage {
       </p>
       <${Example} src=${new URL("./Disabled.js", import.meta.url)}>
         <${Disabled} />
+      <//>
+      <${Heading} level="3">Nested<//>
+      <p>
+        Selects can contain nested levels for additional categorization of
+        options.
+      </p>
+      <${Example} src=${new URL("./NestedSelect.js", import.meta.url)}>
+        <${NestedSelect} />
       <//>
     `;
   }

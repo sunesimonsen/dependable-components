@@ -165,12 +165,12 @@ export class Popup {
       this._margins.end = start;
     }
 
-    this._update = this._update.bind(this);
+    this.update = this.update.bind(this);
 
     this._overflow = options.overflow || "none";
   }
 
-  _update() {
+  update() {
     const anchorRect = {
       _top: this._anchor.offsetTop,
       _left: this._anchor.offsetLeft,
@@ -222,7 +222,13 @@ export class Popup {
   }
 
   show() {
-    if (this.visible) return;
+    if (this.visible) {
+      setTimeout(() => {
+        this.update();
+      }, 0);
+
+      return;
+    }
 
     if (this._placement.includes("stretch")) {
       const anchorRect = this._anchor.getBoundingClientRect();
@@ -230,12 +236,13 @@ export class Popup {
     }
 
     this._container = this._anchor.offsetParent?.parentElement;
+    // this.update();
 
     setTimeout(() => {
-      this._update();
+      this.update();
       this._popup.classList.add(visibleStyles);
-      window.addEventListener("resize", this._update);
-      window.addEventListener("scroll", this._update, true);
+      window.addEventListener("resize", this.update);
+      window.addEventListener("scroll", this.update, true);
       this.visible = true;
     }, 0);
   }
@@ -243,8 +250,8 @@ export class Popup {
   hide() {
     if (!this.visible) return;
 
-    window.removeEventListener("resize", this._update);
-    window.removeEventListener("scroll", this._update, true);
+    window.removeEventListener("resize", this.update);
+    window.removeEventListener("scroll", this.update, true);
     this._popup.classList.remove(visibleStyles);
     this.visible = false;
   }

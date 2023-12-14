@@ -112,6 +112,7 @@ export class CustomMenu {
     this.popup = new Popup(this.triggerRef, this.popupRef, {
       placement: this.props.placement,
       margins: this.props.margins,
+      overflow: "flip",
     });
   }
 
