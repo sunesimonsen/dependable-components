@@ -50,7 +50,7 @@ class PopupPage {
         You can prevent the popup from overflowing a container by using the
         PopupFlip plugin.
       </p>
-      <${Example} src=${new URL("./PopupFlip.js", import.meta.url)}>
+      <${Example} noPadding src=${new URL("./PopupFlip.js", import.meta.url)}>
         <${PopupFlip} />
       <//>
     `;

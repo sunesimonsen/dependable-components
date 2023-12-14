@@ -3,12 +3,12 @@ import { css } from "stylewars";
 
 const styles = css`
   & {
-    padding: 20px;
+    padding: 40px;
   }
 `;
 
 export class ExamplePreview {
-  render({ children }) {
-    return html`<div className=${styles}>${children}</div>`;
+  render({ children, noPadding }) {
+    return html`<div className=${!noPadding && styles}>${children}</div>`;
   }
 }

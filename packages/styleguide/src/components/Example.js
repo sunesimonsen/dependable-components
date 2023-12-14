@@ -38,10 +38,10 @@ export class Example {
     };
   }
 
-  render({ children, src, columns = 1, stretched }) {
+  render({ children, src, noPadding }) {
     return html`
       <div className=${styles}>
-        <${ExamplePreview}>${children}<//>
+        <${ExamplePreview} noPadding=${noPadding}>${children}<//>
         <div className=${buttonsStyles}>
           <${IconButton}
             basic
