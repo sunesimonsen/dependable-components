@@ -9,6 +9,7 @@ import {
 import { Anchor } from "@dependable/components/Anchor/v0";
 import DefaultMenu from "./DefaultMenu.js";
 import NestedMenu from "./NestedMenu.js";
+import Placement from "./Placement.js";
 
 class MenuPage {
   render() {
@@ -34,6 +35,20 @@ class MenuPage {
       </p>
       <${Example} src=${new URL("./NestedMenu.js", import.meta.url)}>
         <${NestedMenu} />
+      <//>
+      <${Heading} level="2">Placement<//>
+      <p>
+        Menu placement can be oriented around a trigger element in different
+        positions. The default placement is
+        <code className="inline">bottom-start</code>. This example demonstrates
+        the <code className="inline">top-start</code> placement.
+      </p>
+      <p>
+        See the other placements on the${" "}
+        <${Anchor} href="/popup#placement">popup<//> page.
+      </p>
+      <${Example} src=${new URL("./Placement.js", import.meta.url)}>
+        <${Placement} />
       <//>
     `;
   }
