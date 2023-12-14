@@ -78,7 +78,7 @@ export class MenuItem {
 
     return html`
       <div
-        id=${`menu-${model.id}-item-${key}`}
+        id=${`${model.id}-item-${key}`}
         tabindex="-1"
         role="menuitem"
         onMouseDown=${this.onMouseDown}

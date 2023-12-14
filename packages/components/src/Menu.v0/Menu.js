@@ -108,8 +108,6 @@ export class CustomMenu {
     return this.props.model;
   }
 
-  updatePopupState() {}
-
   didMount() {
     this.popup = new Popup(this.triggerRef, this.popupRef, {
       placement: this.props.placement,
@@ -129,7 +127,7 @@ export class CustomMenu {
     }
   }
 
-  render({ model, placement, margins, children, ...other }) {
+  render({ id, model, placement, margins, children, ...other }) {
     const [trigger, content] = children;
 
     const focusedKey = model.focused()?.key;
@@ -138,13 +136,13 @@ export class CustomMenu {
       <Context model=${model}>
         ${clone(trigger, {
           props: {
-            id: `menu-trigger-${model.id}`,
+            id: model.id,
             ref: this.createRef("triggerRef"),
             "aria-haspopup": "listbox",
             "aria-expanded": model.visible() ? "true" : "false",
-            "aria-controls": `menu-${model.id}`,
+            "aria-controls": `${model.id}-popup`,
             "aria-activedescendant":
-              focusedKey && `menu-${model.id}-item-${focusedKey}`,
+              focusedKey && `${model.id}-item-${focusedKey}`,
             onClick: this.onTriggerClick,
             onKeyDown: this.onKeydown,
             onBlur: this.onBlur,
@@ -156,7 +154,7 @@ export class CustomMenu {
           onFocusItem=${this.onFocusItem}
         >
           ${model.visible() &&
-          clone(content, { props: { id: `menu-${model.id}` } })}
+          clone(content, { props: { id: `${model.id}-popup` } })}
         </div>
       </Context>
     `;
@@ -166,8 +164,8 @@ export class CustomMenu {
 let nextId = 0;
 
 export class Menu {
-  constructor() {
-    this.model = new MenuModel({ id: String(nextId++) });
+  constructor({ id }) {
+    this.model = new MenuModel({ id: id || `menu-${nextId++}` });
   }
 
   render({ children, ...other }) {

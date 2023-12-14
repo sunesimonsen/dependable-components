@@ -15,6 +15,7 @@ const pages = [
   "menu",
   "popup",
   "pulse",
+  "select",
   "skeleton",
   "spinner",
   "switch",
@@ -39,24 +40,25 @@ styleguide({
     <ul>
       <li><${PageReference} id="checkbox">Checkbox<//></li>
       <li><${PageReference} id="switch">Switch<//></li>
+      <li><${PageReference} id="select">Select<//></li>
       <li><${PageReference} id="textinput">Text input<//></li>
     </ul>
     <h1>Popups</h1>
     <ul>
-      <li><${PageReference} id="popup">Popup<//></li>
       <li><${PageReference} id="menu">Menu<//></li>
+      <li><${PageReference} id="popup">Popup<//></li>
     </ul>
     <h1>Loaders</h1>
     <ul>
+      <li><${PageReference} id="pulse">Pulse<//></li>
       <li><${PageReference} id="skeleton">Skeleton<//></li>
       <li><${PageReference} id="spinner">Spinner<//></li>
-      <li><${PageReference} id="pulse">Pulse<//></li>
     </ul>
     <h1>Layouts</h1>
     <ul>
+      <li><${PageReference} id="borderlayout">Border layout<//></li>
       <li><${PageReference} id="center">Center<//></li>
       <li><${PageReference} id="columnlayout">Column layout<//></li>
-      <li><${PageReference} id="borderlayout">Border layout<//></li>
     </ul>
     <h1>Icons</h1>
     <ul>
