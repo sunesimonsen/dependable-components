@@ -14,9 +14,11 @@ const overflowStyles = (overflow) => css`
   }
 `;
 
+// The padding makes sure that children margins doesn't push the container in.
 const popupContainerStyles = css`
   & {
     position: relative;
+    padding: 0.01px 0;
   }
 `;
 
