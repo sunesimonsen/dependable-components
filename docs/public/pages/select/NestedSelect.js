@@ -24,20 +24,20 @@ const containerStyles = css`
 
 const options = {
   root: [
-    { key: "orange", label: "Orange" },
-    { key: "berry", label: "Berry", type: SelectOptionNext },
-    { key: "apple", label: "Apple" },
+    { value: "orange", label: "Orange" },
+    { value: "berry", label: "Berry", type: SelectOptionNext },
+    { value: "apple", label: "Apple" },
   ],
   berry: [
     {
-      key: "root",
+      value: "root",
       focus: "berry",
       label: "Fruits",
       type: SelectOptionPrevious,
     },
-    { key: "strawberry", label: "Strawberry" },
-    { key: "loganberry", label: "Loganberry" },
-    { key: "boysenberry", label: "Boysenberry" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "loganberry", label: "Loganberry" },
+    { value: "boysenberry", label: "Boysenberry" },
   ],
 };
 
@@ -56,7 +56,7 @@ export default class Example {
 
       if (menuItems) {
         menu(key);
-        const focused = value.focus ? { key: value.focus, value } : null;
+        const focused = value.focus ? { value: value.focus, value } : null;
         this.model.focused(focused);
         e.preventDefault();
       } else {
@@ -72,7 +72,7 @@ export default class Example {
       (option) => html`
         <${option.type || SelectOption}
           selected=${option === selected}
-          key=${option.key}
+          key=${option.value}
           value=${option}
         >
           ${option.label}
@@ -94,7 +94,7 @@ export default class Example {
             onSelect=${this.onSelect}
             placement="top-stretch"
           >
-            <${SelectInput} .value=${selected.label}>${selected.label}<//>
+            <${SelectInput} .value=${selected.value}>${selected.label}<//>
             <${SelectPopup}>${this.renderItems()}<//>
           <//>
         <//>

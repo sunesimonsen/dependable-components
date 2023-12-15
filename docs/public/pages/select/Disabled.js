@@ -48,7 +48,7 @@ export default class Example {
         <${ColumnLayout} columns="auto 300px">
           <label for="disabled-select">Brand</label>
           <${Select} id="disabled-select" onSelect=${this.onSelect}>
-            <${SelectInput} disabled .value=${selected().label}>
+            <${SelectInput} disabled .value=${selected().value}>
               ${selected().label}
             <//>
             <${SelectPopup}>${this.renderItems()}<//>

@@ -49,7 +49,7 @@ export default class Example {
         <${ColumnLayout} columns="auto 300px">
           <label for="default-select">Brand</label>
           <${Select} id="default-select" onSelect=${this.onSelect}>
-            <${SelectInput} .value=${selected().label}>${selected().label}<//>
+            <${SelectInput} .value=${selected().value}>${selected().label}<//>
             <${SelectPopup}>${this.renderItems()}<//>
           <//>
         <//>
