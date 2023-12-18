@@ -1,6 +1,6 @@
 {
   "name": "@dependable/components",
-  "private": true,
+  "type": "module",
   "description": "UI components based on @dependable/view",
   "author": "Sune Simonsen",
   "license": "MIT",
@@ -12,20 +12,25 @@
   "exports": {
     "./*": "./src/*/index.js"
   },
+  "scripts": {
+    "test": "mocha src/**/*.spec.js"
+  },
   "devDependencies": {
+    "@dependable/icons": "*",
     "@dependable/nano-router": "^0.8.0",
     "@dependable/rollup-config": "^0.4.0",
-    "@dependable/icons": "*",
     "@nano-router/history": "^2.12.0",
     "@nano-router/router": "^2.12.0",
     "mocha": "^10.0.0",
+    "mocha-dominate": "^2.0.0",
     "surge": "^0.23.1",
     "unexpected": "^13.0.0",
-    "unexpected-dependable": "^1.1.0"
+    "unexpected-dependable": "^1.1.0",
+    "unexpected-dom": "^6.0.1"
   },
   "dependencies": {
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.18.2",
-    "stylewars": "^2.1.1"
+    "stylewars": "^2.3.0"
   }
 }

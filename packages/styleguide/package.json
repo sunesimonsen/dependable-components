@@ -11,6 +11,6 @@
   "dependencies": {
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.18.2",
-    "stylewars": "^2.1.1"
+    "stylewars": "^2.3.0"
   }
 }

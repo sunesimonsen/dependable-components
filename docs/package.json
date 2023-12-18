@@ -8,7 +8,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "stylewars": "^2.1.1",
+    "stylewars": "^2.3.0",
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.18.0",
     "@dependable/nano-router": "^0.8.0",
