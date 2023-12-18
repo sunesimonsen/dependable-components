@@ -19,7 +19,8 @@ export class CustomMenu {
     };
 
     this.onTriggerClick = () => {
-      this.model.toggleMenu();
+      const selectables = this.getSelectables();
+      this.model.toggleMenu(selectables);
     };
 
     this.onSelectItem = (e) => {
@@ -45,8 +46,9 @@ export class CustomMenu {
     const handlers = {
       ArrowUp: (e) => {
         e.preventDefault();
-        this.model.showMenu();
-        this.model.focusPrevious(this.getSelectables());
+        const selectables = this.getSelectables();
+        this.model.showMenu(selectables);
+        this.model.focusPrevious(selectables);
       },
       ArrowDown: (e) => {
         e.preventDefault();
@@ -70,19 +72,21 @@ export class CustomMenu {
       },
       Enter: (e) => {
         const focused = this.model.focused();
+        const selectables = this.getSelectables();
+
         if (focused) {
           e.preventDefault();
 
-          const focusedItem = this.getSelectables().find(
+          const focusedItem = selectables.find(
             ({ key }) => focused.key === key,
           );
 
           if (focusedItem) {
-            this.onSelectItem(new SelectItemEvent(focused));
+            this.onSelectItem(new SelectItemEvent(focusedItem));
           }
         } else {
           e.preventDefault();
-          this.model.toggleMenu();
+          this.model.toggleMenu(selectables);
         }
       },
       Escape: (e) => {

@@ -25,7 +25,12 @@ const containerStyles = css`
 const options = {
   root: [
     { value: "orange", label: "Orange" },
-    { value: "berry", label: "Berry", type: SelectOptionNext },
+    {
+      value: "berry",
+      label: "Berry",
+      focus: "strawberry",
+      type: SelectOptionNext,
+    },
     { value: "apple", label: "Apple" },
   ],
   berry: [
@@ -35,6 +40,7 @@ const options = {
       label: "Fruits",
       type: SelectOptionPrevious,
     },
+    { value: "separator", type: SelectSeparator },
     { value: "strawberry", label: "Strawberry" },
     { value: "loganberry", label: "Loganberry" },
     { value: "boysenberry", label: "Boysenberry" },
@@ -42,12 +48,13 @@ const options = {
 };
 
 const menu = observable("root");
+const selected = observable(options.root[0]);
 
 export default class Example {
   constructor() {
     this.model = new SelectModel({
       id: "nested-select",
-      selected: options.root[0],
+      selected: selected(),
     });
 
     this.onSelect = (e) => {
@@ -56,22 +63,19 @@ export default class Example {
 
       if (menuItems) {
         menu(key);
-        const focused = value.focus ? { value: value.focus, value } : null;
-        this.model.focused(focused);
+        this.model.focused(value.focus ? { key: value.focus } : null);
         e.preventDefault();
       } else {
-        this.model.selected(value);
+        selected(value);
       }
     };
   }
 
   renderItems() {
-    const selected = this.model.selected();
-
     return options[menu()].map(
       (option) => html`
         <${option.type || SelectOption}
-          selected=${option === selected}
+          selected=${option === selected()}
           key=${option.value}
           value=${option}
         >
@@ -83,7 +87,6 @@ export default class Example {
 
   render() {
     const items = options[menu()];
-    const selected = this.model.selected();
 
     return html`
       <${Center}>
@@ -94,7 +97,7 @@ export default class Example {
             onSelect=${this.onSelect}
             placement="top-stretch"
           >
-            <${SelectInput} .value=${selected.value}>${selected.label}<//>
+            <${SelectInput} .value=${selected().value}>${selected().label}<//>
             <${SelectPopup}>${this.renderItems()}<//>
           <//>
         <//>

@@ -74,7 +74,7 @@ export class MenuItem {
   }
 
   render({ key, children, ...other }, { model }) {
-    const isFocused = this.model.isItemFocused(key);
+    const isFocused = this.model.focused()?.key === key;
 
     return html`
       <div

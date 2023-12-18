@@ -7,7 +7,7 @@ export class MenuModel {
     this.focused = observable(null);
   }
 
-  showMenu() {
+  showMenu(selectables) {
     if (!this.visible()) {
       this.visible(true);
     }
@@ -20,16 +20,12 @@ export class MenuModel {
     }
   }
 
-  toggleMenu() {
+  toggleMenu(selectables) {
     if (this.visible()) {
       this.hideMenu();
     } else {
-      this.showMenu();
+      this.showMenu(selectables);
     }
-  }
-
-  isItemFocused(key) {
-    return this.focused()?.key === key;
   }
 
   focusOffset(selectables, offset) {

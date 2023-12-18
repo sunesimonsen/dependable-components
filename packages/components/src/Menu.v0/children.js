@@ -6,7 +6,7 @@ export const findSelectables = (element) => {
   }
 
   if (element.type?.isSelectable && "key" in element.props) {
-    return { key: element.props.key, value: element.props.value };
+    return element.props;
   }
 
   return findSelectables(element.children);

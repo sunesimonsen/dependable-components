@@ -1,17 +1,13 @@
 import { MenuModel } from "../Menu.v0/MenuModel.js";
-import { observable } from "@dependable/state";
 
 export class SelectModel extends MenuModel {
-  constructor({ id, selected }) {
-    super({ id });
-
-    this.selected = observable(selected);
-  }
-
-  showMenu() {
+  showMenu(selectables) {
     if (!this.visible()) {
       this.visible(true);
-      this.focused(this.selected());
+
+      const selectedOption = selectables.find(({ selected }) => selected);
+
+      this.focused(selectedOption);
     }
   }
 }
