@@ -1,5 +1,5 @@
 import { html } from "@dependable/view";
-import { CustomMenu } from "../Menu.v0/Menu.js";
+import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { SelectModel } from "./SelectModel.js";
 
 export class CustomSelect {

@@ -1,7 +1,7 @@
 import { html } from "@dependable/view";
 import ChevronDownStroke12Icon from "@dependable/icons/ChevronDownStroke12Icon";
-import { ms1 } from "../spacing.v0.js";
-import { MediaInput } from "../MediaInput.v0.js";
+import { ms1 } from "../../spacing/v0/index.js";
+import { MediaInput } from "../../MediaInput/v0/index.js";
 
 const inputProps = [
   "id",

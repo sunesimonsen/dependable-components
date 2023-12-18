@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
-import { Button } from "./Button.v0.js";
+import { Button } from "../../Button/v0/index.js";
 
 const styles = css`
   & {

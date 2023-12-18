@@ -1,5 +1,5 @@
 import { html } from "@dependable/view";
-import { MenuItem } from "../Menu.v0/MenuItem.js";
+import { MenuItem } from "../../Menu/v0/MenuItem.js";
 import { css } from "stylewars";
 
 import CheckLgStroke16Icon from "@dependable/icons/CheckLgStroke16Icon";

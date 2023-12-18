@@ -1,4 +1,4 @@
-import { MenuModel } from "../Menu.v0/MenuModel.js";
+import { MenuModel } from "../../Menu/v0/MenuModel.js";
 
 export class SelectModel extends MenuModel {
   showMenu(selectables) {

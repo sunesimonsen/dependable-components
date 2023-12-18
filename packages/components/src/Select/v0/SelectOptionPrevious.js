@@ -1,5 +1,5 @@
 import { html } from "@dependable/view";
-import { MenuItemPrevious } from "../Menu.v0/MenuItemPrevious.js";
+import { MenuItemPrevious } from "../../Menu/v0/MenuItemPrevious.js";
 
 export class SelectOptionPrevious {
   static isSelectable = true;

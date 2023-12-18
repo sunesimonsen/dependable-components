@@ -1,5 +1,5 @@
 import { html } from "@dependable/view";
-import { MenuItemNext } from "../Menu.v0/MenuItemNext.js";
+import { MenuItemNext } from "../../Menu/v0/MenuItemNext.js";
 
 export class SelectOptionNext {
   static isSelectable = true;

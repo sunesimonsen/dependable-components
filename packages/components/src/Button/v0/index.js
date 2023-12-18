@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
-import { Pulse } from "./Pulse.v0.js";
+import { Pulse } from "../../Pulse/v0/index.js";
 
 const styles = css`
   & {

@@ -10,24 +10,7 @@
     "url": "https://github.com/sunesimonsen/dependable-components"
   },
   "exports": {
-    "./Anchor/v0": "./src/Anchor.v0.js",
-    "./BorderLayout/v0": "./src/BorderLayout.v0.js",
-    "./Button/v0": "./src/Button.v0.js",
-    "./Center/v0": "./src/Center.v0.js",
-    "./Checkbox/v0": "./src/Checkbox.v0.js",
-    "./ColumnLayout/v0": "./src/ColumnLayout.v0.js",
-    "./IconButton/v0": "./src/IconButton.v0.js",
-    "./MediaInput/v0": "./src/MediaInput.v0.js",
-    "./Menu/v0": "./src/Menu.v0/index.js",
-    "./Popup/v0": "./src/Popup.v0.js",
-    "./Pulse/v0": "./src/Pulse.v0.js",
-    "./ScrollArea/v0": "./src/ScrollArea.v0.js",
-    "./Select/v0": "./src/Select.v0/index.js",
-    "./Skeleton/v0": "./src/Skeleton.v0.js",
-    "./Spinner/v0": "./src/Spinner.v0.js",
-    "./Switch/v0": "./src/Switch.v0.js",
-    "./TextInput/v0": "./src/TextInput.v0.js",
-    "./spacing/v0": "./src/spacing.v0.js"
+    "./*": "./src/*/index.js"
   },
   "devDependencies": {
     "@dependable/nano-router": "^0.8.0",

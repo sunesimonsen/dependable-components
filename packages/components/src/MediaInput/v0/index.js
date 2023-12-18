@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
-import { textInputStyles } from "./TextInput.v0.js";
+import { textInputStyles } from "../../TextInput/v0/index.js";
 
 const mediaInputStyles = css`
   & {
