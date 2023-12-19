@@ -33,7 +33,7 @@ const mediaInputStyles = css`
   }
 
   & > input:disabled {
-    color: rgb(194, 200, 204);
+    color: var(--dc-color-neutral-4);
   }
 `;
 

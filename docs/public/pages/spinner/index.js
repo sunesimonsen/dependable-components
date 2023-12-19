@@ -10,7 +10,7 @@ import {
 import DefaultSpinner from "./DefaultSpinner.js";
 import Flexibility from "./Flexibility.js";
 
-class SpinnerPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Spinner<//>
@@ -38,5 +38,3 @@ class SpinnerPage {
     `;
   }
 }
-
-export default SpinnerPage;

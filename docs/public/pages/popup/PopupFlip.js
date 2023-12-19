@@ -9,7 +9,7 @@ const popupStyles = css`
     border: thin solid grey;
     border-radius: 4px;
     padding: 1em;
-    background: white;
+    background: var(--dc-color-neutral-0);
   }
 `;
 

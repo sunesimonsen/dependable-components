@@ -8,7 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultAnchor from "./DefaultAnchor.js";
 
-class AnchorPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Anchor<//>
@@ -30,5 +30,3 @@ class AnchorPage {
     `;
   }
 }
-
-export default AnchorPage;

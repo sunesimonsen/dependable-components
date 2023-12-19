@@ -11,7 +11,7 @@ import {
 import DefaultCenter from "./DefaultCenter.js";
 import Stretched from "./Stretched.js";
 
-class ColumnLayoutPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Center<//>
@@ -30,5 +30,3 @@ class ColumnLayoutPage {
     `;
   }
 }
-
-export default ColumnLayoutPage;

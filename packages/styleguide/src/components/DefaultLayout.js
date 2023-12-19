@@ -1,10 +1,11 @@
 import { html } from "@dependable/view";
-import { css } from "stylewars";
+import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";
 import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
+import { theme } from "@dependable/components/default-theme/v0";
 
 const rootStyles = css`
   & {
@@ -41,7 +42,7 @@ const mainStyles = css`
     grid-area: main;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--dc-color-neutral-0);
     overflow: hidden;
   }
 
@@ -70,7 +71,7 @@ const mainStyles = css`
     direction: ltr;
     border-radius: 2px;
     padding: 1.5px;
-    background-color: rgb(233, 235, 237);
+    background-color: var(--dc-color-neutra-2);
     color: rgb(73, 84, 92);
     margin: 0 0.7ex;
   }
@@ -85,7 +86,7 @@ const scrollAreaStyles = css`
 export class DefaultLayout {
   render({ children }) {
     return html`
-      <${BorderLayout} stretched className=${rootStyles}>
+      <${BorderLayout} stretched className=${classes(theme, rootStyles)}>
         <${TopBar} />
         <${Sidebar} />
         <main className=${mainStyles}>

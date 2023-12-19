@@ -14,7 +14,7 @@ import StretchedButton from "./StretchedButton.js";
 import DisabledButton from "./DisabledButton.js";
 import PressedButton from "./PressedButton.js";
 
-class ButtonPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Button<//>
@@ -75,5 +75,3 @@ class ButtonPage {
     `;
   }
 }
-
-export default ButtonPage;

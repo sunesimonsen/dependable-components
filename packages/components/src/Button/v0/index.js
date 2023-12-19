@@ -8,14 +8,17 @@ const styles = css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: rgb(31, 115, 183);
-    border-radius: var(--dc-button-border-radius, 4px);
+    color: var(--dc-color-primary-0);
+    border-radius: var(
+      --dc-button-border-radius,
+      var(--dc-component-border-radius)
+    );
     cursor: pointer;
-    border: 1px solid rgb(31, 115, 183);
+    border: 1px solid var(--dc-color-primary-0);
     height: 2.8em;
     padding: var(--dc-button-padding, 0 1.07143em);
     width: var(--dc-button-width, inherit);
-    background-color: transparent;
+    background-color: var(--dc-color-secondary-0);
     font-size: 0.88em;
     box-sizing: border-box;
     overflow: hidden;
@@ -29,16 +32,16 @@ const styles = css`
   }
 
   &:hover {
-    border-color: rgb(20, 74, 117);
-    background-color: rgba(31, 115, 183, 0.08);
-    color: rgb(20, 74, 117);
+    border-color: var(--dc-color-primary-1);
+    background-color: var(--dc-color-secondary-1);
+    color: var(--dc-color-primary-1);
   }
 
   &[aria-pressed="true"],
   &:active {
-    border-color: rgb(15, 53, 84);
-    background-color: rgba(31, 115, 183, 0.2);
-    color: rgb(15, 53, 84);
+    border-color: var(--dc-color-primary-2);
+    background-color: var(--dc-color-secondary-2);
+    color: var(--dc-color-primary-2);
   }
 
   &:focus {
@@ -46,14 +49,14 @@ const styles = css`
   }
 
   &:focus-visible {
-    outline: 3px solid rgb(31 115 183 / 35%);
+    outline: var(--dc-focus-ring);
   }
 
   &:disabled,
   &:hover:disabled {
     border-color: transparent;
-    background-color: rgb(233, 235, 237);
-    color: rgb(194, 200, 204);
+    background-color: var(--dc-color-neutral-2);
+    color: var(--dc-color-neutral-4);
     cursor: default;
   }
 `;
@@ -69,21 +72,23 @@ const basicStyles = css`
 
 const primaryStyles = css`
   & {
-    color: white;
-    background-color: rgb(31, 115, 183);
+    color: var(--dc-color-neutral-0);
+    background-color: var(--dc-color-primary-0);
   }
 
   &:hover {
-    color: white;
-    background-color: rgb(20, 74, 117);
+    color: var(--dc-color-neutral-0);
+    background-color: var(--dc-color-primary-1);
   }
 
   &[aria-pressed="true"],
   &:active {
-    color: white;
-    background-color: rgb(15, 53, 84);
+    color: var(--dc-color-neutral-0);
+    background-color: var(--dc-color-primary-2);
   }
 `;
+
+const dangerStyles = css``;
 
 const stretchedStyles = css`
   & {

@@ -82,7 +82,7 @@ class IconCopyButton {
   }
 }
 
-class IconsPage {
+export default class Page {
   render() {
     return html`
       <${Title}>26px (wordmark)<//>
@@ -146,4 +146,3 @@ class IconsPage {
   }
 }
 
-export default IconsPage;

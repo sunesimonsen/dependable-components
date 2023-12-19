@@ -11,7 +11,7 @@ import DefaultMenu from "./DefaultMenu.js";
 import NestedMenu from "./NestedMenu.js";
 import Placement from "./Placement.js";
 
-class MenuPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Menu<//>
@@ -53,5 +53,3 @@ class MenuPage {
     `;
   }
 }
-
-export default MenuPage;

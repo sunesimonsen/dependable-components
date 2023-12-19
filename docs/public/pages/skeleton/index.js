@@ -8,7 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultSkeleton from "./DefaultSkeleton.js";
 
-class ExamplePage {
+export default class Page {
   render() {
     return html`
       <${Title}>Skeleton<//>
@@ -29,5 +29,3 @@ class ExamplePage {
     `;
   }
 }
-
-export default ExamplePage;

@@ -10,7 +10,7 @@ import DefaultSelect from "./DefaultSelect.js";
 import Disabled from "./Disabled.js";
 import NestedSelect from "./NestedSelect.js";
 
-class AnchorPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Select<//>
@@ -47,5 +47,3 @@ class AnchorPage {
     `;
   }
 }
-
-export default AnchorPage;

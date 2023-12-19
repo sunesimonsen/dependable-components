@@ -11,7 +11,7 @@ import IconButtonTypes from "./IconButtonTypes.js";
 import IconButtonShapes from "./IconButtonShapes.js";
 import PressedIconButton from "./PressedIconButton.js";
 
-class IconButtonPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Icon button<//>
@@ -52,5 +52,3 @@ class IconButtonPage {
     `;
   }
 }
-
-export default IconButtonPage;

@@ -11,7 +11,7 @@ const styles = css`
     height: 100%;
     overflow: hidden;
     line-height: 0.6;
-    background-color: rgba(47, 57, 65, 0.1);
+    background-color: var(--dc-text-color-0-a-10);
   }
 
   @keyframes &(fade-in) {
@@ -35,7 +35,7 @@ const styles = css`
     background-image: linear-gradient(
       45deg,
       transparent,
-      rgba(255, 255, 255, 0.6),
+      var(--dc-text-color-0-a-10),
       transparent
     );
   }

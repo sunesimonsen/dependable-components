@@ -7,7 +7,7 @@ const sidebarStyles = css`
     grid-area: start;
     padding: 16px 32px;
     min-width: 300px;
-    background: rgb(246, 244, 244);
+    background: var(--dc-color-neutral-1);
     overflow-y: auto;
   }
 

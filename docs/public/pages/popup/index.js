@@ -12,7 +12,7 @@ import Placement from "./Placement.js";
 import PopupFlip from "./PopupFlip.js";
 import Stretch from "./Stretch.js";
 
-class PopupPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Popup<//>
@@ -56,5 +56,3 @@ class PopupPage {
     `;
   }
 }
-
-export default PopupPage;

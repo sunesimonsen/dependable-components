@@ -12,7 +12,7 @@ import DefaultSwitch from "./DefaultSwitch.js";
 import Disabled from "./Disabled.js";
 import Labels from "./Labels.js";
 
-class SwitchPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Switch<//>
@@ -45,5 +45,3 @@ class SwitchPage {
     `;
   }
 }
-
-export default SwitchPage;

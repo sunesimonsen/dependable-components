@@ -274,7 +274,7 @@ class IconCopyButton {
   }
 }
 
-class IconsPage {
+export default class Page {
   render() {
     return html`
       <${Title}>16px (fill)<//>
@@ -722,4 +722,3 @@ class IconsPage {
   }
 }
 
-export default IconsPage;

@@ -10,7 +10,7 @@ import DefaultPulse from "./DefaultPulse.js";
 import Colors from "./Colors.js";
 import Sizes from "./Sizes.js";
 
-class SpinnerPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Pulse<//>
@@ -41,5 +41,3 @@ class SpinnerPage {
     `;
   }
 }
-
-export default SpinnerPage;

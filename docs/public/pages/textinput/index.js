@@ -11,7 +11,7 @@ import MediaInput from "./MediaInput.js";
 import DisabledInput from "./DisabledInput.js";
 import ReadonlyInput from "./ReadonlyInput.js";
 
-class InputPage {
+export default class Page {
   render() {
     return html`
       <${Title}>TextInput<//>
@@ -44,5 +44,3 @@ class InputPage {
     `;
   }
 }
-
-export default InputPage;

@@ -10,7 +10,7 @@ import DefaultBorderLayout from "./DefaultBorderLayout.js";
 import Stretched from "./Stretched.js";
 import OmitAreas from "./OmitAreas.js";
 
-class ExamplePage {
+export default class Page {
   render() {
     return html`
       <${Title}>BorderLayout<//>
@@ -38,5 +38,3 @@ class ExamplePage {
     `;
   }
 }
-
-export default ExamplePage;

@@ -9,7 +9,7 @@ export default class Example {
       <${Center}>
         <${ColumnLayout} columns="3">
           <${Button}>Default<//>
-          <${Button} primary>Basic<//>
+          <${Button} primary>Primary<//>
           <${Button} basic>Basic<//>
         <//>
       <//>

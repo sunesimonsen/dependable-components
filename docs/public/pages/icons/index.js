@@ -11,7 +11,7 @@ import { Anchor } from "@dependable/components/Anchor/v0";
 import IconUsage from "./IconUsage.js";
 import IconColors from "./IconColors.js";
 
-class IconsPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Icons<//>
@@ -44,5 +44,3 @@ class IconsPage {
     `;
   }
 }
-
-export default IconsPage;

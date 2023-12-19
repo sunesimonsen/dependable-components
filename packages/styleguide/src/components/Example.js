@@ -10,7 +10,7 @@ import MarkupStroke16Icon from "@dependable/icons/MarkupStroke16Icon";
 
 const styles = css`
   & {
-    border: 1px solid rgb(216, 220, 222);
+    border: 1px solid var(--dc-color-neutral-3);
     border-radius: 4px;
     overflow: hidden;
     margin: 2em 0;
@@ -23,9 +23,9 @@ const buttonsStyles = css`
     gap: 2px;
     justify-content: flex-end;
     align-items: center;
-    background: rgb(248, 249, 249);
-    border-top: 1px solid rgb(216, 220, 222);
-    border-bottom: 1px solid rgb(216, 220, 222);
+    background: var(--dc-color-neutral-1);
+    border-top: 1px solid var(--dc-color-neutral-3);
+    border-bottom: 1px solid var(--dc-color-neutral-3);
     padding: 4px 8px;
   }
 `;

@@ -12,7 +12,7 @@ import DefaultCheckbox from "./DefaultCheckbox.js";
 import Disabled from "./Disabled.js";
 import Indeterminate from "./Indeterminate.js";
 
-class CheckboxPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Checkbox<//>
@@ -46,5 +46,3 @@ class CheckboxPage {
     `;
   }
 }
-
-export default CheckboxPage;

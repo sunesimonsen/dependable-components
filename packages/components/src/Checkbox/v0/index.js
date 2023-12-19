@@ -16,11 +16,11 @@ const styles = css`
     user-select: none;
 
     display: inline-flex;
-    color: white;
+    color: var(--dc-color-neutral-0);
     width: 16px;
     height: 16px;
     box-sizing: border-box;
-    border: thin solid white;
+    border: thin solid var(--dc-color-neutral-0);
     align-items: center;
     justify-content: center;
     border-radius: 4px;
@@ -28,14 +28,14 @@ const styles = css`
 
   &:checked:not(:disabled) + label,
   &:indeterminate:not(:disabled) + label {
-    border-color: rgb(31, 115, 183);
-    background-color: rgb(31, 115, 183);
+    border-color: var(--dc-color-primary-0);
+    background-color: var(--dc-color-primary-0);
   }
 
   &:not(:checked):not(:indeterminate):not(:disabled):not(:focus-visible)
     + label {
-    border-color: rgb(216, 220, 222);
-    background-color: rgb(255, 255, 255);
+    border-color: var(--dc-color-neutral-3);
+    background-color: var(--dc-color-neutral-0);
   }
 
   & + label &-checked-icon,
@@ -56,20 +56,20 @@ const styles = css`
   }
 
   &:not(:checked):not(:indeterminate):not(:disabled) + label:hover {
-    border-color: rgb(31, 115, 183);
-    background-color: rgba(31, 115, 183, 0.08);
+    border-color: var(--dc-color-primary-0);
+    background-color: var(--dc-color-secondary-1);
   }
 
   &:checked:not(:disabled) + label:hover,
   &:indeterminate:not(:disabled) + label:hover {
-    border-color: rgb(20, 74, 117);
-    background-color: rgb(20, 74, 117);
+    border-color: var(--dc-color-primary-1);
+    background-color: var(--dc-color-primary-1);
   }
 
   &:checked:not(:disabled):focus-visible + label,
   &:not(:disabled):focus-visible + label {
-    border-color: rgb(31, 115, 183);
-    outline: 3px solid rgb(31 115 183 / 35%);
+    border-color: var(--dc-color-primary-0);
+    outline: var(--dc-focus-ring);
   }
 
   &:disabled,
@@ -79,7 +79,7 @@ const styles = css`
 
   &:disabled + label {
     border-color: transparent;
-    background-color: rgb(233, 235, 237);
+    background-color: var(--dc-color-neutra-2);
   }
 `;
 

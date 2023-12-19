@@ -15,7 +15,7 @@ import JustifyItems from "./JustifyItems.js";
 import Gap from "./Gap.js";
 import Stretched from "./Stretched.js";
 
-class ColumnLayoutPage {
+export default class Page {
   render() {
     return html`
       <${Title}>Column layout<//>
@@ -86,5 +86,3 @@ class ColumnLayoutPage {
     `;
   }
 }
-
-export default ColumnLayoutPage;

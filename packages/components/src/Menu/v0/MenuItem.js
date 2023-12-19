@@ -15,7 +15,7 @@ const styles = css`
     line-height: 20px;
     overflow-wrap: break-word;
     user-select: none;
-    color: rgb(47, 57, 65);
+    color: var(--dc-text-color-0);
     min-width: 120px;
     border: none;
     background: none;
@@ -38,7 +38,7 @@ const styles = css`
 
 const focusedStyles = css`
   & {
-    background: rgba(31, 115, 183, 0.08);
+    background: var(--dc-color-secondary-1);
   }
 `;
 
