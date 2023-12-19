@@ -1,6 +1,8 @@
 import { html } from "@dependable/view";
 import { css } from "stylewars";
 import { Link } from "@dependable/nano-router";
+import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { ThemeSelector } from "./ThemeSelector.js";
 
 const logoStyles = css`
   & {
@@ -36,8 +38,6 @@ const homeStyles = css`
 
 const buttonsStyles = css`
   & {
-    justify-self: end;
-    align-items: center;
     padding: 0 20px;
   }
 `;
@@ -69,7 +69,14 @@ export class TopBar {
           <img src=${logo} className=${logoStyles} />
           <span className=${brandStyles}>${title}</span>
         <//>
-        <div className=${buttonsStyles}></div>
+        <${ColumnLayout}
+          className=${buttonsStyles}
+          columns="auto 200px"
+          justifyItems="end"
+        >
+          <label for="styleguide-theme">Theme</label>
+          <${ThemeSelector} id="styleguide-theme" />
+        <//>
       </header>
     `;
   }

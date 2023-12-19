@@ -2,6 +2,7 @@ import { html } from "@dependable/view";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { theme } from "@dependable/components/default-theme/v0";
 
 const colorPreviewStyles = (variable) => css`
   & {
@@ -24,21 +25,21 @@ class ColorPreview {
 export default class Example {
   render() {
     return html`
-      <${ColumnLayout} columns="1" justifyItems="left" gap="1.5em">
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+      <${ColumnLayout} columns="1" justifyItems="start" gap="1.5em" className=${theme}>
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-primary-0" />
           <${ColorPreview} variable="--dc-color-primary-1" />
           <${ColorPreview} variable="--dc-color-primary-2" />
         <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-focus" />
         <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-secondary-0" />
           <${ColorPreview} variable="--dc-color-secondary-1" />
           <${ColorPreview} variable="--dc-color-secondary-2" />
         <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-neutral-1" />
           <${ColorPreview} variable="--dc-color-neutral-2" />
           <${ColorPreview} variable="--dc-color-neutral-3" />
@@ -46,11 +47,11 @@ export default class Example {
           <${ColorPreview} variable="--dc-color-neutral-5" />
           <${ColorPreview} variable="--dc-color-neutral-6" />
         <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-text-color-0" />
           <${ColorPreview} variable="--dc-text-color-1" />
         <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-text-color-0-a-10" />
         <//>
       </${ColumnLayout}>

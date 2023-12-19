@@ -1,11 +1,12 @@
 import { html } from "@dependable/view";
+import { computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";
 import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
-import { theme } from "@dependable/components/default-theme/v0";
+import { activeTheme } from "./ThemeSelector.js";
 
 const rootStyles = css`
   & {
@@ -86,7 +87,10 @@ const scrollAreaStyles = css`
 export class DefaultLayout {
   render({ children }) {
     return html`
-      <${BorderLayout} stretched className=${classes(theme, rootStyles)}>
+      <${BorderLayout}
+        stretched
+        className=${classes(activeTheme(), rootStyles)}
+      >
         <${TopBar} />
         <${Sidebar} />
         <main className=${mainStyles}>

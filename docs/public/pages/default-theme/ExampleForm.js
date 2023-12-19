@@ -8,12 +8,13 @@ import {
   SelectOption,
   SelectPopup,
 } from "@dependable/components/Select/v0";
+import { theme } from "@dependable/components/default-theme/v0";
 
 export default class Example {
   render() {
     return html`
-      <${ColumnLayout} columns="1" justifyItems="left">
-        <${ColumnLayout} columns="1" justifyItems="left" gap="0.5em">
+      <${ColumnLayout} columns="1" justifyItems="start" className=${theme}>
+        <${ColumnLayout} columns="1" justifyItems="start" gap="0.5em">
           <label for="first-name">First name:</label>
           <${TextInput} id="first-name" placeholder="First name" />
           <label for="last-name">Last name:</label>
@@ -28,7 +29,7 @@ export default class Example {
             <//>
           <//>
         <//>
-        <${ColumnLayout} columns="2" justifyItems="left" gap="0.5em">
+        <${ColumnLayout} columns="2" justifyItems="start" gap="0.5em">
           <${Button} type="submit" primary>Submit<//>
           <${Button}>Cancel<//>
         <//>
