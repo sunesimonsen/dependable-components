@@ -6,7 +6,7 @@ import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
-import { activeTheme } from "./ThemeSelector.js";
+import { theme } from "@dependable/components/default-theme/v0";
 
 const rootStyles = css`
   & {
@@ -87,10 +87,7 @@ const scrollAreaStyles = css`
 export class DefaultLayout {
   render({ children }) {
     return html`
-      <${BorderLayout}
-        stretched
-        className=${classes(activeTheme(), rootStyles)}
-      >
+      <${BorderLayout} stretched className=${classes(theme, rootStyles)}>
         <${TopBar} />
         <${Sidebar} />
         <main className=${mainStyles}>

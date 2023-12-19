@@ -151,6 +151,7 @@ export class CustomMenu {
             onClick: this.onTriggerClick,
             onKeyDown: this.onKeydown,
             onBlur: this.onBlur,
+            ...other,
           },
         })}
         <div

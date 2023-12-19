@@ -1,5 +1,7 @@
 import { html } from "@dependable/view";
-import { css } from "stylewars";
+import { css, classes } from "stylewars";
+import { activeTheme } from "./ThemeSelector.js";
+import { dir } from "./RTLSwitch.js";
 
 const paddingStyles = css`
   & {
@@ -10,7 +12,12 @@ const paddingStyles = css`
 export class ExamplePreview {
   render({ children, noPadding }) {
     return html`
-      <div className=${!noPadding && paddingStyles}>${children}</div>
+      <div
+        dir=${dir()}
+        className=${classes(activeTheme(), !noPadding && paddingStyles)}
+      >
+        ${children}
+      </div>
     `;
   }
 }

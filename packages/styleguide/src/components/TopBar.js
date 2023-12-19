@@ -3,6 +3,7 @@ import { css } from "stylewars";
 import { Link } from "@dependable/nano-router";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { ThemeSelector } from "./ThemeSelector.js";
+import { RTLSwitch } from "./RTLSwitch.js";
 
 const logoStyles = css`
   & {
@@ -38,7 +39,11 @@ const homeStyles = css`
 
 const buttonsStyles = css`
   & {
+    display: flex;
     padding: 0 20px;
+    justify-content: end;
+    align-items: center;
+    gap: 30px;
   }
 `;
 
@@ -69,14 +74,10 @@ export class TopBar {
           <img src=${logo} className=${logoStyles} />
           <span className=${brandStyles}>${title}</span>
         <//>
-        <${ColumnLayout}
-          className=${buttonsStyles}
-          columns="auto 200px"
-          justifyItems="end"
-        >
-          <label for="styleguide-theme">Theme</label>
-          <${ThemeSelector} id="styleguide-theme" />
-        <//>
+        <div className=${buttonsStyles}>
+          <${RTLSwitch} />
+          <${ThemeSelector} />
+        </div>
       </header>
     `;
   }

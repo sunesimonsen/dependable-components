@@ -2,13 +2,13 @@ import { css } from "stylewars";
 
 export const theme = css`
   & {
-    --dc-color-primary-0: rgb(31 183 153);
+    --dc-color-primary-0: rgb(28 175 146);
     --dc-color-primary-1: rgb(16 156 129);
     --dc-color-primary-2: rgb(5 136 111);
 
     --dc-color-secondary-0: transparent;
-    --dc-color-secondary-1: rgb(31 183 153 / 8%);
-    --dc-color-secondary-2: rgb(31 183 153 / 20%);
+    --dc-color-secondary-1: rgb(28 175 146 / 8%);
+    --dc-color-secondary-2: rgb(28 175 146 / 20%);
 
     --dc-color-neutral-0: rgb(255, 255, 255);
     --dc-color-neutral-1: rgb(248, 249, 249);

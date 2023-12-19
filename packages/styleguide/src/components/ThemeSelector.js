@@ -1,6 +1,8 @@
 import { html } from "@dependable/view";
+import { css } from "stylewars";
 import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
+import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { theme as defaultTheme } from "@dependable/components/default-theme/v0";
 import { theme as greenTheme } from "@dependable/components/green-theme/v0";
 import { theme as purpleTheme } from "@dependable/components/purple-theme/v0";
@@ -40,11 +42,14 @@ export class ThemeSelector {
     );
   }
 
-  render({ id }) {
+  render() {
     return html`
-      <${Select} onSelect=${onSelect}>
-        <${SelectInput}>${selected().label}<//>
-        <${SelectPopup}>${this.renderItems()}<//>
+      <${ColumnLayout} columns="auto 200px">
+        <label for="styleguide-theme">Theme</label>
+        <${Select} id="styleguide-theme" onSelect=${onSelect}>
+          <${SelectInput}>${selected().label}<//>
+          <${SelectPopup}>${this.renderItems()}<//>
+        <//>
       <//>
     `;
   }
