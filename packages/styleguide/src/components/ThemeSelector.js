@@ -2,6 +2,7 @@ import { html } from "@dependable/view";
 import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
 import { theme as defaultTheme } from "@dependable/components/default-theme/v0";
+import { theme as greenTheme } from "@dependable/components/green-theme/v0";
 import { theme as purpleTheme } from "@dependable/components/purple-theme/v0";
 import {
   Select,
@@ -12,6 +13,7 @@ import {
 
 const themes = [
   { key: "default", label: "Default", value: defaultTheme },
+  { key: "green", label: "Green", value: greenTheme },
   { key: "purple", label: "Purple", value: purpleTheme },
 ];
 

@@ -22,6 +22,7 @@ const pages = [
   "textinput",
   "default-theme",
   "purple-theme",
+  "green-theme",
 ];
 
 const pageMap = Object.fromEntries(
@@ -71,6 +72,7 @@ styleguide({
     <ul>
       <li><${PageReference} id="default-theme">Default theme<//></li>
       <li><${PageReference} id="purple-theme">Purple theme<//></li>
+      <li><${PageReference} id="green-theme">Green theme<//></li>
     </ul>
   `,
   pageMap: { ...pageMap, ...iconPageMap },
