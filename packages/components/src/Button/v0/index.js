@@ -23,7 +23,9 @@ const styles = css`
     white-space: nowrap;
     transition:
       border-color 0.25s ease-in-out 0s,
-      outline 0.1s ease-in-out 0s;
+      outline 0.1s ease-in-out 0s,
+      background-color 0.25s ease-in-out 0s,
+      color 0.25s ease-in-out 0s;
   }
 
   &:hover {
@@ -104,7 +106,7 @@ const loaderStyles = css`
 
 const loadingStyles = css`
   & {
-    color: transparent;
+    opacity: 0;
   }
 `;
 
