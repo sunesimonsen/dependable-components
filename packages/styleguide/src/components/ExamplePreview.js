@@ -1,7 +1,8 @@
 import { html } from "@dependable/view";
-import { css } from "stylewars";
+import { css, classes } from "stylewars";
+import { defaultTheme } from "@dependable/components/default-theme/v0";
 
-const styles = css`
+const paddingStyles = css`
   & {
     padding: 40px;
   }
@@ -9,6 +10,10 @@ const styles = css`
 
 export class ExamplePreview {
   render({ children, noPadding }) {
-    return html`<div className=${!noPadding && styles}>${children}</div>`;
+    return html`
+      <div className=${classes(defaultTheme, !noPadding && paddingStyles)}>
+        ${children}
+      </div>
+    `;
   }
 }

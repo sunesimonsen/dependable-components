@@ -20,6 +20,7 @@ const pages = [
   "spinner",
   "switch",
   "textinput",
+  "theming",
 ];
 
 const pageMap = Object.fromEntries(
@@ -64,6 +65,10 @@ styleguide({
     <ul>
       <li><${PageReference} id="icons">Icons<//></li>
       <${IconNavigation} />
+    </ul>
+    <h1>Theming</h1>
+    <ul>
+      <li><${PageReference} id="theming">Theming<//></li>
     </ul>
   `,
   pageMap: { ...pageMap, ...iconPageMap },

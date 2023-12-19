@@ -15,7 +15,7 @@ const styles = css`
     user-select: none;
 
     display: inline-flex;
-    color: white;
+    color: var(--dc-color-neutral-0);
     width: 40px;
     height: 20px;
     box-sizing: border-box;
@@ -25,7 +25,7 @@ const styles = css`
   }
 
   &:checked:not(:disabled) + label {
-    background-color: rgb(31, 115, 183);
+    background-color: var(--dc-color-primary-0);
   }
 
   & + label:before {
@@ -33,7 +33,7 @@ const styles = css`
     position: absolute;
     height: 12px;
     width: 12px;
-    background: white;
+    background: var(--dc-color-neutral-0);
     border-radius: 100%;
     transition: left 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s;
   }
@@ -63,11 +63,11 @@ const styles = css`
   }
 
   &:checked:not(:disabled) + label:hover {
-    background-color: rgb(20, 74, 117);
+    background-color: var(--dc-color-primary-1);
   }
 
   &:focus-visible + label {
-    outline: 3px solid rgb(31 115 183 / 35%);
+    outline: var(--dc-focus-ring);
   }
 
   &:disabled,
@@ -76,7 +76,7 @@ const styles = css`
   }
 
   &:disabled + label {
-    background-color: rgb(233, 235, 237);
+    background-color: var(--dc-color-neutra-2);
   }
 `;
 

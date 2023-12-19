@@ -8,7 +8,7 @@ const popupStyles = css`
   & {
     border-radius: 4px;
     background: #17494d;
-    color: white;
+    color: var(--dc-color-neutral-0);
     padding: 0.5em;
     width: 120px;
     text-align: center;
