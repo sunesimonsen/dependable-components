@@ -10,6 +10,7 @@ import {
 
 import DefaultCheckbox from "./DefaultCheckbox.js";
 import Disabled from "./Disabled.js";
+import Indeterminate from "./Indeterminate.js";
 
 class CheckboxPage {
   render() {
@@ -24,6 +25,14 @@ class CheckboxPage {
       <p>A Checkbox’s label is part of its touch target.</p>
       <${Example} src=${new URL("./DefaultCheckbox.js", import.meta.url)}>
         <${DefaultCheckbox} />
+      <//>
+      <${Heading} level="3">Indeterminate<//>
+      <p>
+        If the children of a Checkbox have different states (some on, some off)
+        the parent Checkbox will show an indeterminate state.
+      </p>
+      <${Example} src=${new URL("./Indeterminate.js", import.meta.url)}>
+        <${Indeterminate} />
       <//>
       <${Heading} level="3">Disabled<//>
       <p>

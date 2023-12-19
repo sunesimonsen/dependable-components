@@ -7,7 +7,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto auto" justifyItems="start">
+        <${ColumnLayout} columns="auto auto" justifyItems="start" gap="0.5em">
           <${Checkbox} disabled id="checkbox-disabled-default" />
           <label for="checkbox-disabled-default">Default</label>
           <${Checkbox} disabled id="checkbox-disabled-checked" checked />

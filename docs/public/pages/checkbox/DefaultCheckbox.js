@@ -62,7 +62,7 @@ export default class Example {
       <${Center}>
         <${ColumnLayout} stretched columns="1" justifyItems="start">
           <h4>Burger ingredients</h4>
-          <${ColumnLayout} columns="auto auto" justifyItems="start">
+          <${ColumnLayout} columns="auto auto" justifyItems="start" gap="0.5em">
             <${IngredienceList} />
           <//>
           <${SelectedIngredients} />
