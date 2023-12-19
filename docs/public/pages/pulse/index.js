@@ -7,6 +7,8 @@ import {
   Example,
 } from "@dependable/styleguide";
 import DefaultPulse from "./DefaultPulse.js";
+import Colors from "./Colors.js";
+import Sizes from "./Sizes.js";
 
 class SpinnerPage {
   render() {
@@ -25,6 +27,16 @@ class SpinnerPage {
       </p>
       <${Example} src=${new URL("./DefaultPulse.js", import.meta.url)}>
         <${DefaultPulse} />
+      <//>
+      <${Heading} level="3">Color<//>
+      <p>The loader inherits the color of the parent element.</p>
+      <${Example} src=${new URL("./Colors.js", import.meta.url)}>
+        <${Colors} />
+      <//>
+      <${Heading} level="3">Size<//>
+      <p>The loader inherits the text size of the parent element.</p>
+      <${Example} src=${new URL("./Sizes.js", import.meta.url)}>
+        <${Sizes} />
       <//>
     `;
   }

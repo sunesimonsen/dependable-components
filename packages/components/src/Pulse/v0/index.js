@@ -3,68 +3,38 @@ import { css, classes } from "stylewars";
 
 const styles = css`
   & {
-    display: inline-block;
-    position: relative;
-    --pulse-gap: 2;
-    --pulse-dot-size: 0.45em;
-    width: calc(4.7 * var(--pulse-dot-size));
-    height: var(--pulse-dot-size);
+    display: inline-flex;
+    gap: calc(var(--dc-pulse-dot-size, 0.45em) / 2);
   }
 
-  & div {
-    position: absolute;
-    top: 0;
-    width: var(--pulse-dot-size);
-    height: var(--pulse-dot-size);
+  & > div {
+    display: inline-block;
+    width: var(--dc-pulse-dot-size, 0.45em);
+    height: var(--dc-pulse-dot-size, 0.45em);
     border-radius: 50%;
     background: currentColor;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    animation-name: fadeOutIn;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
-  & div:nth-child(1) {
-    left: 0;
-    animation: &(dot1) 0.6s infinite;
+  & > div:nth-child(1) {
+    animation-delay: 0ms;
+  }
+  & > div:nth-child(2) {
+    animation-delay: 100ms;
+  }
+  & > div:nth-child(3) {
+    animation-delay: 200ms;
   }
 
-  & div:nth-child(2) {
-    left: 0;
-    animation: &(dot2) 0.6s infinite;
-  }
-
-  & div:nth-child(3) {
-    left: calc(1.8 * var(--pulse-dot-size));
-    animation: &(dot2) 0.6s infinite;
-  }
-
-  & div:nth-child(4) {
-    left: calc(3.6 * var(--pulse-dot-size));
-    animation: &(dot3) 0.6s infinite;
-  }
-
-  @keyframes &(dot1) {
+  @keyframes fadeOutIn {
     0% {
-      transform: scale(0);
+      opacity: 0.1;
     }
     100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes &(dot3) {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-
-  @keyframes &(dot2) {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(calc(1.8 * var(--pulse-dot-size)), 0);
+      opacity: 1;
     }
   }
 `;
@@ -73,7 +43,6 @@ export class Pulse {
   render({ className }) {
     return html`
       <div className=${classes(styles, className)} role="progressbar">
-        <div></div>
         <div></div>
         <div></div>
         <div></div>

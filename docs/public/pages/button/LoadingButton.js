@@ -8,7 +8,7 @@ const startLoading = () => {
 
   setTimeout(() => {
     isLoading(false);
-  }, 2000);
+  }, 3000);
 };
 
 const isLoading = observable(false);
@@ -17,7 +17,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${Button} loading=${isLoading()} onClick=${startLoading}> Button <//>
+        <${Button} loading=${isLoading()} onClick=${startLoading}>Button<//>
       <//>
     `;
   }
