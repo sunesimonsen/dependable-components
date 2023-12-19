@@ -98,9 +98,7 @@ const loaderStyles = css`
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
   }
 `;
 
@@ -143,7 +141,7 @@ export class Button {
         onClick=${loading ? null : onClick}
         ...${other}
       >
-        ${loading && html`<div className=${loaderStyles}><${Pulse} /></div>`}
+        ${loading && html`<${Pulse} className=${loaderStyles} />`}
         <span className=${classes(childrenStyles, loading && loadingStyles)}>
           ${children}
         </span>

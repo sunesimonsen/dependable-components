@@ -4,6 +4,8 @@ import { css, classes } from "stylewars";
 const styles = css`
   & {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     gap: calc(var(--dc-pulse-dot-size, 0.45em) / 2);
   }
 
