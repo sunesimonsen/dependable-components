@@ -25,7 +25,6 @@ const buttonsStyles = css`
     align-items: center;
     background: var(--dc-color-neutral-1);
     border-top: 1px solid var(--dc-color-neutral-3);
-    border-bottom: 1px solid var(--dc-color-neutral-3);
     padding: 4px 8px;
   }
 `;
