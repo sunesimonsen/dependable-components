@@ -72,7 +72,7 @@ const mainStyles = css`
     direction: ltr;
     border-radius: 2px;
     padding: 1.5px;
-    background-color: var(--dc-color-neutra-2);
+    background-color: var(--dc-color-neutral-2);
     color: rgb(73, 84, 92);
     margin: 0 0.7ex;
   }

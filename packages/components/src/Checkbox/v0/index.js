@@ -79,7 +79,7 @@ const styles = css`
 
   &:disabled + label {
     border-color: transparent;
-    background-color: var(--dc-color-neutra-2);
+    background-color: var(--dc-color-neutral-2);
   }
 `;
 

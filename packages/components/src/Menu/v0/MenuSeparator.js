@@ -5,7 +5,7 @@ const styles = css`
   & {
     display: block;
     margin: 4px 0px;
-    border-bottom: 1px solid var(--dc-color-neutra-2);
+    border-bottom: 1px solid var(--dc-color-neutral-2);
   }
 `;
 

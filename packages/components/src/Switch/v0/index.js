@@ -78,7 +78,7 @@ const styles = css`
   }
 
   &:disabled + label {
-    background-color: var(--dc-color-neutra-2);
+    background-color: var(--dc-color-neutral-2);
   }
 `;
 
