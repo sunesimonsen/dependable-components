@@ -5,6 +5,7 @@ import { SourceCode } from "./SourceCode.js";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { ExamplePreview } from "./ExamplePreview.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
+import { JSFiddleButton } from "./JSFiddleButton.js";
 
 import MarkupStroke16Icon from "@dependable/icons/MarkupStroke16Icon";
 
@@ -42,6 +43,7 @@ export class Example {
       <div className=${styles}>
         <${ExamplePreview} noPadding=${noPadding}>${children}<//>
         <div className=${buttonsStyles}>
+          <${JSFiddleButton} src=${src} />
           <${IconButton}
             basic
             aria-pressed=${String(this.sourceVisible())}

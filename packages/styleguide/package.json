@@ -6,13 +6,10 @@
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "module": "src/index.js",
-  "keywords": [
-    "styleguide",
-    "dependable",
-    "view",
-    "UI",
-    "components"
-  ],
+  "keywords": ["styleguide", "dependable", "view", "UI", "components"],
+  "bin": {
+    "create-styleguide-importmap": "./scripts/create-importmap.cjs"
+  },
   "sideEffects": false,
   "dependencies": {
     "@dependable/state": "^0.20.0",
