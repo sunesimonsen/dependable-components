@@ -28,6 +28,25 @@ export const theme = css`
     --dc-focus-ring: 3px solid var(--dc-color-focus);
 
     --dc-component-border-radius: 4px;
+
+    font-family: Verdana, Geneva, sans-serif;
+
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Oxygen-Sans,
+      Ubuntu,
+      Cantarell,
+      Helvetica Neue,
+      Arial,
+      sans-serif;
+
+    color: var(--dc-text-color-0);
+
+    box-sizing: border-box;
   }
 `;
 
