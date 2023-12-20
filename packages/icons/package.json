@@ -18,5 +18,8 @@
     "@transformation/glob": "^7.0.2",
     "@zendeskgarden/svg-icons": "^7.0.0",
     "change-case": "^4.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -7,6 +7,11 @@
   "license": "MIT",
   "module": "src/index.js",
   "keywords": ["styleguide", "dependable", "view", "UI", "components"],
+  "bugs": "https://github.com/sunesimonsen/dependable-components/issues",
+  "repository": {
+    "url": "git@github.com:sunesimonsen/dependable-components.git",
+    "type": "git"
+  },
   "bin": {
     "create-styleguide-importmap": "./scripts/create-importmap.cjs"
   },
@@ -15,5 +20,8 @@
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.18.2",
     "stylewars": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

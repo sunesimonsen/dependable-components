@@ -35,5 +35,8 @@
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.18.2",
     "stylewars": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
