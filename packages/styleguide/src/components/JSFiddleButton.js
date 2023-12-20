@@ -16,12 +16,8 @@ ${importmap}
 `;
 
 const jsFiddleCSS = `\
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
+  position: relative;
   margin: 0;
   padding: 20px;
 }
