@@ -14,7 +14,7 @@ const toggleRTL = (e) => {
 export class RTLSwitch {
   render() {
     return html`
-      <${ColumnLayout} columns="auto auto">
+      <${ColumnLayout} columns="auto auto" gap="0.7em">
         <label for="styleguide-rtl">RTL</label>
         <${Switch}
           id="styleguide-rtl"

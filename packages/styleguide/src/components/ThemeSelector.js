@@ -44,7 +44,7 @@ export class ThemeSelector {
 
   render() {
     return html`
-      <${ColumnLayout} columns="auto 200px">
+      <${ColumnLayout} columns="auto 200px" gap="0.7em">
         <label for="styleguide-theme">Theme</label>
         <${Select} id="styleguide-theme" onSelect=${onSelect}>
           <${SelectInput}>${selected().label}<//>
