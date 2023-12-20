@@ -33,7 +33,7 @@ import { ThemeProvider as StyleguideThemeProvider } from "@dependable/components
 
 ${content}
 
-render(html\`<${StyleguideThemeProvider}><\${Example} /><//>\`);
+render(html\`<\${StyleguideThemeProvider}><\${Example} /><//>\`);
 `;
 
 const fetchContent = (src) =>
