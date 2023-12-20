@@ -13,7 +13,14 @@ const history = createBrowserHistory();
 
 const router = new Router({ routes, history });
 
-export const styleguide = ({ logo, title, navigation, pageMap, importmap }) => {
+export const styleguide = ({
+  logo,
+  title,
+  repository,
+  navigation,
+  pageMap,
+  importmap,
+}) => {
   const history = createBrowserHistory();
 
   const router = new Router({ routes, history });
@@ -22,6 +29,7 @@ export const styleguide = ({ logo, title, navigation, pageMap, importmap }) => {
     <Context
       logo=${logo}
       title=${title}
+      repository=${repository}
       navigation=${navigation}
       pageMap=${pageMap}
       importmap=${importmap}

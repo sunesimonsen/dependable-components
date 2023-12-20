@@ -34,6 +34,7 @@ styleguide({
   logo: new URL("./images/logo.png", import.meta.url).toString(),
   title: "DEPENDABLE",
   importmap,
+  repository: "https://github.com/sunesimonsen/dependable-components",
   navigation: html`
     <h1>Buttons</h1>
     <ul>

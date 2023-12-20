@@ -4,6 +4,7 @@ import { Link } from "@dependable/nano-router";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { ThemeSelector } from "./ThemeSelector.js";
 import { RTLSwitch } from "./RTLSwitch.js";
+import { RepositoryButton } from "./RepositoryButton.js";
 
 const logoStyles = css`
   & {
@@ -43,7 +44,7 @@ const buttonsStyles = css`
     padding: 0 20px;
     justify-content: end;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
   }
 `;
 
@@ -75,6 +76,7 @@ export class TopBar {
           <span className=${brandStyles}>${title}</span>
         <//>
         <div className=${buttonsStyles}>
+          <${RepositoryButton} />
           <${RTLSwitch} />
           <${ThemeSelector} />
         </div>
