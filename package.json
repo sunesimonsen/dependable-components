@@ -10,15 +10,15 @@
     "url": "https://github.com/sunesimonsen/dependable-components"
   },
   "scripts": {
-    "format": "prettier --write '**/*.{js,mjs,md,json}'"
+    "format": "prettier --write '**/*.{js,mjs,md,json}'",
+    "test": "lerna run test"
   },
   "devDependencies": {
+    "lerna": "^8.0.1",
     "prettier": "^3.1.1"
   },
   "workspaces": {
-    "packages": [
-      "packages/*",
-      "docs"
-    ]
-  }
+    "packages": ["packages/*", "docs"]
+  },
+  "dependencies": {}
 }

@@ -5,8 +5,7 @@
     "start": "relivestyle --single --port 5000 public",
     "update-importmap": "create-styleguide-importmap > public/importmap.js",
     "build": "rm -rf dist && npm run update-import-map && rollup -c node:@dependable/rollup-config",
-    "deploy": "npm run build && surge dist dependable-components.surge.sh",
-    "test": "mocha"
+    "deploy": "npm run build && surge dist dependable-components.surge.sh"
   },
   "dependencies": {
     "stylewars": "^2.3.0",
