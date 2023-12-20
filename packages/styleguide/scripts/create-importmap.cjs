@@ -26,7 +26,7 @@ const main = async () => {
       "@dependable/state": `https://unpkg.com/@dependable/state@${versions["@dependable/state"]}/dist/dependable-state.esm.js`,
       "@dependable/view": `https://unpkg.com/@dependable/view@${versions["@dependable/view"]}/dist/dependable-view-index.esm.js`,
       "@dependable/components/": `https://unpkg.com/@dependable/components@latest/src/`,
-      "@dependable/icons/": `https://unpkg.com/@dependable/icons@$latest/src/`,
+      "@dependable/icons/": `https://unpkg.com/@dependable/icons@latest/src/`,
     },
   };
 
