@@ -1,6 +1,7 @@
 {
   "name": "@dependable/components",
   "type": "module",
+  "version": "0.0.0",
   "description": "UI components based on @dependable/view",
   "author": "Sune Simonsen",
   "license": "MIT",

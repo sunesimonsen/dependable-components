@@ -1,8 +1,8 @@
 {
   "type": "module",
   "name": "@dependable/styleguide",
+  "version": "0.0.0",
   "description": "Styleguide for @dependable/view",
-  "version": "0.0.1",
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "module": "src/index.js",
