@@ -3,6 +3,7 @@
 *.log
 tmp/
 dist/
+docs/public/importmap.js
 
 *.tern-port
 node_modules/
