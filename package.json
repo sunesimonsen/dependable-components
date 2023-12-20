@@ -13,17 +13,14 @@
     "format": "prettier --write '**/*.{js,mjs,md,json}'",
     "test": "lerna run test",
     "publish": "lerna publish --no-private",
-    "publish-docs": "lerna run public-docs"
+    "publish-docs": "lerna run publish-docs"
   },
   "devDependencies": {
     "lerna": "^8.0.1",
     "prettier": "^3.1.1"
   },
   "workspaces": {
-    "packages": [
-      "packages/*",
-      "docs"
-    ]
+    "packages": ["packages/*", "docs"]
   },
   "dependencies": {}
 }

@@ -5,7 +5,7 @@
     "start": "relivestyle --single --port 5000 public",
     "update-importmap": "create-styleguide-importmap > public/importmap.js",
     "build": "rm -rf dist && npm run update-importmap && rollup -c node:@dependable/rollup-config",
-    "public-docs": "npm run build && surge dist dependable-components.surge.sh"
+    "publish-docs": "npm run build && surge dist dependable-components.surge.sh"
   },
   "dependencies": {
     "@dependable/components": "*",

@@ -5,12 +5,12 @@ import {
   MenuButton,
   MenuPopup,
   MenuItem,
-  Menu,
+  Menu
 } from "@dependable/components/Menu/v0";
 
 export default class Example {
   constructor() {
-    this.onSelect = (e) => {
+    this.onSelect = e => {
       const { key, value } = e.detail;
       alert(`${key}:${value}`);
     };
@@ -18,7 +18,7 @@ export default class Example {
 
   render() {
     return html`
-      <${Center}>
+      <${Center} style="margin-top: 140px">
         <${Menu} onSelect=${this.onSelect} placement="top-start">
           <${MenuButton}>Options<//>
           <${MenuPopup}>
