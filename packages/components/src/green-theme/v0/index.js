@@ -29,3 +29,9 @@ export const theme = css`
     --dc-component-border-radius: 4px;
   }
 `;
+
+export class ThemeProvider {
+  render({ children }) {
+    return html`<div className=${theme}>${children}</div>`;
+  }
+}

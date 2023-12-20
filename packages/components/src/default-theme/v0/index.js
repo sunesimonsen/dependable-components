@@ -1,3 +1,4 @@
+import { html } from "@dependable/view";
 import { css } from "stylewars";
 
 export const theme = css`
@@ -29,3 +30,9 @@ export const theme = css`
     --dc-component-border-radius: 4px;
   }
 `;
+
+export class ThemeProvider {
+  render({ children }) {
+    return html`<div className=${theme}>${children}</div>`;
+  }
+}

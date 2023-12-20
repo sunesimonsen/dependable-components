@@ -1,6 +1,7 @@
 import { html, render } from "@dependable/view";
 import { styleguide, PageReference } from "@dependable/styleguide";
 import { IconNavigation, iconPageMap } from "./icons-navigation.js";
+import { importmap } from "./importmap.js";
 
 const pages = [
   "anchor",
@@ -32,6 +33,7 @@ const pageMap = Object.fromEntries(
 styleguide({
   logo: new URL("./images/logo.png", import.meta.url).toString(),
   title: "DEPENDABLE",
+  importmap,
   navigation: html`
     <h1>Buttons</h1>
     <ul>

@@ -28,11 +28,12 @@ body {
 `;
 
 const template = (content) => `\
-import { render } from '@dependable/view';
+import { render } from "@dependable/view";
+import { ThemeProvider as StyleguideThemeProvider } from "@dependable/components/default-theme/v0"
 
 ${content}
 
-render(html\`<\${Example} />\`);
+render(html\`<${StyleguideThemeProvider}><\${Example} /><//>\`);
 `;
 
 const fetchContent = (src) =>
@@ -52,7 +53,7 @@ export class JSFiddleButton {
 
         form.querySelector("input[name=js]").value = template(content);
         form.querySelector("input[name=html]").value = importmapScriptTag(
-          this.props.importmap,
+          this.context.importmap,
         );
         form.submit();
       });
