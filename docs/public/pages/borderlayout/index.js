@@ -10,6 +10,7 @@ import DefaultBorderLayout from "./DefaultBorderLayout.js";
 import CSSAreas from "./CSSAreas.js";
 import Stretched from "./Stretched.js";
 import OmitAreas from "./OmitAreas.js";
+import Nesting from "./Nesting.js";
 
 export default class Page {
   render() {
@@ -32,14 +33,19 @@ export default class Page {
         <${CSSAreas} />
       <//>
       <${Heading} level="3">Stretched<//>
-      <p>The border layout can stretch to fill the surrouding container.</p>
+      <p>The layout can stretch to fill the surrouding container.</p>
       <${Example} src=${new URL("./Stretched.js", import.meta.url)}>
         <${Stretched} />
       <//>
       <${Heading} level="3">Omiting areas<//>
-      <p>You can omit areas to produce different layouts.</p>
+      <p>Omit areas to produce different layouts.</p>
       <${Example} src=${new URL("./OmitAreas.js", import.meta.url)}>
         <${OmitAreas} />
+      <//>
+      <${Heading} level="3">Nesting<//>
+      <p>The layout can be nested arbitrarily.</p>
+      <${Example} src=${new URL("./Nesting.js", import.meta.url)}>
+        <${Nesting} />
       <//>
     `;
   }
