@@ -1,3 +1,4 @@
+import "@dependable/vite";
 import { html, render } from "@dependable/view";
 import { styleguide, PageReference } from "@dependable/styleguide";
 import { IconNavigation, iconPageMap } from "./icons-navigation.js";
