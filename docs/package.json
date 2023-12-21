@@ -13,11 +13,11 @@
     "@dependable/state": "^0.20.0",
     "@dependable/styleguide": "*",
     "@dependable/view": "^0.19.0",
-    "stylewars": "^2.3.0"
+    "stylewars": "^2.3.0",
+    "@dependable/vite": "^0.1.0"
   },
   "devDependencies": {
     "@dependable/rollup-config": "^0.5.0",
-    "@dependable/vite": "^0.1.0",
     "rollup": "^2.79.1",
     "vite": "^5.0.10"
   }
