@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@dependable/rollup-config": "^0.5.0",
-    "@dependable/session": "^0.14.0",
     "@dependable/vite": "^0.1.0",
     "rollup": "^2.79.1",
     "vite": "^5.0.10"
