@@ -7,6 +7,7 @@ import {
   Example,
 } from "@dependable/styleguide";
 import DefaultBorderLayout from "./DefaultBorderLayout.js";
+import CSSAreas from "./CSSAreas.js";
 import Stretched from "./Stretched.js";
 import OmitAreas from "./OmitAreas.js";
 
@@ -21,9 +22,14 @@ export default class Page {
       <${Line} />
       <${Heading} level="2">How to use it<//>
       <${Heading} level="3">Default<//>
-      <p>Having components in all the areas.</p>
+      <p>Assigning areas using layout attributes.</p>
       <${Example} src=${new URL("./DefaultBorderLayout.js", import.meta.url)}>
         <${DefaultBorderLayout} />
+      <//>
+      <${Heading} level="3">CSS<//>
+      <p>Assigning areas using CSS.</p>
+      <${Example} src=${new URL("./CSSAreas.js", import.meta.url)}>
+        <${CSSAreas} />
       <//>
       <${Heading} level="3">Stretched<//>
       <p>The border layout can stretch to fill the surrouding container.</p>

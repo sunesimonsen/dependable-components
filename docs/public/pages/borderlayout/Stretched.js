@@ -8,12 +8,13 @@ const containerStyles = css`
   }
 `;
 
-const areaStyles = (area, color) => css`
-  & {
-    grid-area: ${area};
+const layoutStyles = css`
+  & > * {
     padding: 10px 20px;
-    background-color: ${color};
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -21,12 +22,12 @@ export default class Example {
   render() {
     return html`
       <div className=${containerStyles}>
-        <${BorderLayout} stretched>
-          <div className=${areaStyles("top", "#5eae91")}>Top</div>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
-          <div className=${areaStyles("bottom", "#5eae91")}>Bottom</div>
+        <${BorderLayout} className=${layoutStyles} stretched>
+          <div data-layout="top" style="background: #5eae91">Top</div>
+          <div data-layout="start" style="background: #ffb057">Start</div>
+          <div style="background: #daeded">Main</div>
+          <div data-layout="end" style="background: #ffb057">End</div>
+          <div data-layout="bottom" style="background: #5eae91">Bottom</div>
         <//>
       </div>
     `;

@@ -12,6 +12,30 @@ const containerStyles = ({ gap, stretched }) => css`
       "start main end"
       "bottom bottom bottom";
   }
+
+  & > * {
+    grid-area: main;
+  }
+
+  & > [data-layout="top"] {
+    grid-area: top;
+  }
+
+  & > [data-layout="start"] {
+    grid-area: start;
+  }
+
+  & > [data-layout="main"] {
+    grid-area: main;
+  }
+
+  & > [data-layout="end"] {
+    grid-area: end;
+  }
+
+  & > [data-layout="bottom"] {
+    grid-area: bottom;
+  }
 `;
 
 export class BorderLayout {

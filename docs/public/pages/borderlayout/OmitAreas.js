@@ -3,60 +3,117 @@ import { css } from "stylewars";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 
-const areaStyles = (area, color) => css`
-  & {
-    grid-area: ${area};
-    padding: 10px 20px;
-    background-color: ${color};
+const layoutStyles = css`
+  & [data-layout] {
+    padding: 10px 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & [data-layout="top"],
+  & [data-layout="bottom"] {
+    background: #5eae91;
+  }
+
+  & [data-layout="start"],
+  & [data-layout="end"] {
+    background: #ffb057;
+  }
+
+  & [data-layout="main"] {
+    background: #daeded;
+    height: 60px;
   }
 `;
 
 export default class Example {
   render() {
     return html`
-      <${ColumnLayout} columns="2" stretched>
+      <${ColumnLayout} columns="4" stretched className=${layoutStyles}>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("top", "#5eae91")}>Top</div>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("bottom", "#5eae91")}>Bottom</div>
+          <div data-layout="main" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("top", "#5eae91")}>Top</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
-          <div className=${areaStyles("bottom", "#5eae91")}>Bottom</div>
+          <div data-layout="start" />
+          <div data-layout="main" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("top", "#5eae91")}>Top</div>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
+          <div data-layout="main" />
+          <div data-layout="end" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
-          <div className=${areaStyles("bottom", "#5eae91")}>Bottom</div>
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="end" />
+        <//>
+
+        <${BorderLayout} stretched>
+          <div data-layout="top" />
+          <div data-layout="main" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("top", "#5eae91")}>Top</div>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
+          <div data-layout="top" />
+          <div data-layout="start" />
+          <div data-layout="main" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
-          <div className=${areaStyles("bottom", "#5eae91")}>Bottom</div>
+          <div data-layout="top" />
+          <div data-layout="main" />
+          <div data-layout="end" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("start", "#ffb057")}>Start</div>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
+          <div data-layout="top" />
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="end" />
+        <//>
+
+        <${BorderLayout} stretched>
+          <div data-layout="main" />
+          <div data-layout="bottom" />
         <//>
         <${BorderLayout} stretched>
-          <div className=${areaStyles("main", "#daeded")}>Main</div>
-          <div className=${areaStyles("end", "#ffb057")}>End</div>
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="bottom" />
+        <//>
+        <${BorderLayout} stretched>
+          <div data-layout="main" />
+          <div data-layout="end" />
+          <div data-layout="bottom" />
+        <//>
+        <${BorderLayout} stretched>
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="end" />
+          <div data-layout="bottom" />
+        <//>
+
+        <${BorderLayout} stretched>
+          <div data-layout="top" />
+          <div data-layout="main" />
+          <div data-layout="bottom" />
+        <//>
+        <${BorderLayout} stretched>
+          <div data-layout="top" />
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="bottom" />
+        <//>
+        <${BorderLayout} stretched>
+          <div data-layout="top" />
+          <div data-layout="main" />
+          <div data-layout="end" />
+          <div data-layout="bottom" />
+        <//>
+        <${BorderLayout} stretched>
+          <div data-layout="top" />
+          <div data-layout="start" />
+          <div data-layout="main" />
+          <div data-layout="end" />
+          <div data-layout="bottom" />
         <//>
       <//>
     `;
