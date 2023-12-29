@@ -4,7 +4,7 @@ import { css, classes } from "stylewars";
 const styles = css`
   & {
     overscroll-behavior: contain;
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: stable;
   }
 `;
 
