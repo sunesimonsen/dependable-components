@@ -1,6 +1,5 @@
 import { html } from "@dependable/view";
 import { css } from "stylewars";
-import { PageReference } from "./PageReference.js";
 
 const sidebarStyles = css`
   & {
