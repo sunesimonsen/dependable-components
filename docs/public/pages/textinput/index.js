@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultInput from "./DefaultInput.js";
 import MediaInput from "./MediaInput.js";
+import SearchInput from "./SearchInput.js";
 import DisabledInput from "./DisabledInput.js";
 import ReadonlyInput from "./ReadonlyInput.js";
 
@@ -27,6 +28,11 @@ export default class Page {
       <p>Media elements add even more context to an input.</p>
       <${Example} src=${new URL("./MediaInput.js", import.meta.url)}>
         <${MediaInput} />
+      <//>
+      <${Heading} level="3">Search input<//>
+      <p>A special input for search fields.</p>
+      <${Example} src=${new URL("./SearchInput.js", import.meta.url)}>
+        <${SearchInput} />
       <//>
       <${Heading} level="3"> Disabled<//>
       <p>
