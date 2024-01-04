@@ -17,48 +17,27 @@ const clearStyles = css`
 `;
 
 export class SearchInput {
-  constructor() {
-    const onChange = (value) => {
-      if (this.props.onChange) {
-        this.props.onChange(value);
-      }
-    };
-
-    this.onInput = (e) => {
-      onChange(e.target.value);
-    };
-
-    this.onClear = () => {
-      onChange("");
-    };
-  }
-
-  renderClear() {
+  renderClear({ onClear }) {
     return (
-      this.props.value &&
+      this.props[".value"] &&
+      onClear &&
       html`
         <${XStroke12Icon}
           height="16"
           width="16"
           className=${classes(ms2, clearStyles)}
-          onClick=${this.onClear}
+          onClick=${onClear}
         />
       `
     );
   }
 
-  render({ id, value }) {
+  render({ onClear, ...other }) {
     return html`
       <${MediaInput}>
         <${SearchStroke16Icon} className=${me2} />
-        <input
-          id=${id}
-          autocomplete="off"
-          type="text"
-          .value=${value}
-          onInput=${this.onInput}
-        />
-        ${this.renderClear()}
+        <input autocomplete="off" type="text" ...${other} />
+        ${this.renderClear({ onClear })}
       <//>
     `;
   }

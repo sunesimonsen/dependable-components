@@ -7,8 +7,12 @@ import { SearchInput } from "@dependable/components/SearchInput/v0";
 
 const value = observable("Ford Focus");
 
-const onChange = (newValue) => {
-  value(newValue);
+const onChange = (e) => {
+  value(e.target.value);
+};
+
+const onClear = (e) => {
+  value("");
 };
 
 const onSubmit = () => {
@@ -20,11 +24,12 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px auto">
-          <label for="car-brand">Find brand</label>
+          <label for="search-car-brand">Find brand</label>
           <${SearchInput}
-            id="car-brand"
-            value=${value()}
-            onChange=${onChange}
+            id="search-car-brand"
+            .value=${value()}
+            onInput=${onChange}
+            onClear=${onClear}
           />
           <${Button} onClick=${onSubmit}>Search<//>
         <//>
