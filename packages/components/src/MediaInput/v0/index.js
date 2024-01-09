@@ -76,7 +76,7 @@ export class MediaInput {
   }
 
   render({ ref, className, children, ...other }) {
-    const input = children.find(({ type }) => type === "input");
+    const input = children.filter(Boolean).find(({ type }) => type === "input");
     const disabled = input.props[".disabled"] || input.props.disabled;
 
     return html`
