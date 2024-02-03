@@ -6,6 +6,7 @@ import { importmap } from "./importmap.js";
 
 const pages = [
   "anchor",
+  "autocomplete",
   "borderlayout",
   "button",
   "center",
@@ -45,6 +46,7 @@ styleguide({
     </ul>
     <h1>Inputs</h1>
     <ul>
+      <li><${PageReference} id="autocomplete">Autocomplete<//></li>
       <li><${PageReference} id="checkbox">Checkbox<//></li>
       <li><${PageReference} id="switch">Switch<//></li>
       <li><${PageReference} id="select">Select<//></li>

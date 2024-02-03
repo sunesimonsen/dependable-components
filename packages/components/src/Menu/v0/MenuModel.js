@@ -29,7 +29,7 @@ export class MenuModel {
   }
 
   focusOffset(selectables, offset) {
-    this.showMenu();
+    this.showMenu(selectables);
 
     let newFocus;
     const focused = this.focused();
@@ -62,13 +62,13 @@ export class MenuModel {
   }
 
   focusFirst(selectables) {
-    this.showMenu();
+    this.showMenu(selectables);
 
     this.focused(selectables[0] || null);
   }
 
   focusLast(selectables) {
-    this.showMenu();
+    this.showMenu(selectables);
 
     this.focused(selectables.at(-1) || null);
   }

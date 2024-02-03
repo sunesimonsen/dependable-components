@@ -5,6 +5,18 @@ import { MenuItem } from "./MenuItem.js";
 import { SelectItemEvent } from "./events.js";
 import { findSelectables } from "./children.js";
 
+const compose =
+  (...handlers) =>
+  (e) => {
+    for (const handler of handlers.filter(Boolean)) {
+      handler(e);
+
+      if (e.defaultPrevented) {
+        break;
+      }
+    }
+  };
+
 export class CustomMenu {
   static defaultProps() {
     return {
@@ -46,9 +58,7 @@ export class CustomMenu {
     const handlers = {
       ArrowUp: (e) => {
         e.preventDefault();
-        const selectables = this.getSelectables();
-        this.model.showMenu(selectables);
-        this.model.focusPrevious(selectables);
+        this.model.focusPrevious(this.getSelectables());
       },
       ArrowDown: (e) => {
         e.preventDefault();
@@ -132,7 +142,17 @@ export class CustomMenu {
     }
   }
 
-  render({ id, model, placement, margins, children, ...other }) {
+  render({
+    id,
+    model,
+    placement,
+    margins,
+    onClick,
+    onKeydown,
+    onBlur,
+    children,
+    ...other
+  }) {
     const [trigger, content] = children;
 
     const focusedKey = model.focused()?.key;
@@ -148,9 +168,9 @@ export class CustomMenu {
             "aria-controls": `${model.id}-popup`,
             "aria-activedescendant":
               focusedKey && `${model.id}-item-${focusedKey}`,
-            onClick: this.onTriggerClick,
-            onKeyDown: this.onKeydown,
-            onBlur: this.onBlur,
+            onClick: compose(onClick, this.onTriggerClick),
+            onKeyDown: compose(onKeydown, this.onKeydown),
+            onBlur: compose(onBlur, this.onBlur),
             ...other,
           },
         })}
