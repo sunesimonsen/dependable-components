@@ -51,7 +51,7 @@ export const theme = css`
 `;
 
 export class ThemeProvider {
-  render({ children }) {
-    return html`<div className=${theme}>${children}</div>`;
+  render({ children, ...other }) {
+    return html`<div className=${theme} ...${other}>${children}</div>`;
   }
 }

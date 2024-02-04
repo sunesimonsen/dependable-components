@@ -105,7 +105,7 @@ export class CustomMenu {
       },
     };
 
-    this.onKeydown = (e) => {
+    this.onKeyDown = (e) => {
       const handler = handlers[e.key];
 
       if (handler) {
@@ -148,7 +148,7 @@ export class CustomMenu {
     placement,
     margins,
     onClick,
-    onKeydown,
+    onKeyDown,
     onBlur,
     children,
     ...other
@@ -169,7 +169,7 @@ export class CustomMenu {
             "aria-activedescendant":
               focusedKey && `${model.id}-item-${focusedKey}`,
             onClick: compose(onClick, this.onTriggerClick),
-            onKeyDown: compose(onKeydown, this.onKeydown),
+            onKeyDown: compose(onKeyDown, this.onKeyDown),
             onBlur: compose(onBlur, this.onBlur),
             ...other,
           },

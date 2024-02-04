@@ -18,9 +18,9 @@ export class CustomAutocomplete {
       this.props.model.showMenu([]);
     };
 
-    this.onKeydown = (e) => {
-      if (this.props.onKeydown) {
-        this.props.onKeydown(e);
+    this.onKeyDown = (e) => {
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(e);
       }
 
       if (!e.defaultPrevented) {
@@ -66,7 +66,7 @@ export class CustomAutocomplete {
         ...${other}
         onFocus=${this.onFocus}
         onClick=${this.onClick}
-        onKeydown=${this.onKeydown}
+        onKeyDown=${this.onKeyDown}
       >
         ${children}
       <//>
