@@ -6,13 +6,7 @@
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "module": "src/index.js",
-  "keywords": [
-    "styleguide",
-    "dependable",
-    "view",
-    "UI",
-    "components"
-  ],
+  "keywords": ["styleguide", "dependable", "view", "UI", "components"],
   "bugs": "https://github.com/sunesimonsen/dependable-components/issues",
   "repository": {
     "url": "git@github.com:sunesimonsen/dependable-components.git",
@@ -24,7 +18,7 @@
   "sideEffects": false,
   "dependencies": {
     "@dependable/state": "^0.20.0",
-    "@dependable/view": "^0.18.2",
+    "@dependable/view": "^0.19.0",
     "stylewars": "^2.3.0"
   },
   "publishConfig": {
