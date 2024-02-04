@@ -23,6 +23,7 @@ const inputProps = [
   "onBlur",
   "value",
   ".value",
+  "autofocus",
   "disabled",
   ".disabled",
 ];
