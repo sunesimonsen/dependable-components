@@ -30,8 +30,8 @@ export default class Example {
           <//>
         <//>
         <${ColumnLayout} columns="2" justifyItems="start" gap="0.5em">
+          <${Button} basic>Cancel<//>
           <${Button} type="submit" primary>Submit<//>
-          <${Button}>Cancel<//>
         <//>
       <//>
     `;
