@@ -12,6 +12,8 @@ export const theme = classes(
       --dc-color-secondary-1: rgb(28 175 146 / 8%);
       --dc-color-secondary-2: rgb(28 175 146 / 20%);
 
+      --dc-color-danger-primary-0: rgb(197 73 84);
+
       --dc-color-focus: rgb(31 183 153 / 45%);
     }
   `,
