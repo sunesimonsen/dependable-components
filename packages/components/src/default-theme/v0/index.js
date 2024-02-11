@@ -11,6 +11,14 @@ export const theme = css`
     --dc-color-secondary-1: rgba(31, 115, 183, 0.08);
     --dc-color-secondary-2: rgba(31, 115, 183, 0.2);
 
+    --dc-color-danger-primary-0: rgb(204, 51, 64);
+    --dc-color-danger-primary-1: rgb(140, 35, 44);
+    --dc-color-danger-primary-2: rgb(104, 18, 25);
+
+    --dc-color-danger-secondary-0: transparent;
+    --dc-color-danger-secondary-1: rgba(204, 51, 64, 0.08);
+    --dc-color-danger-secondary-2: rgba(204, 51, 64, 0.2);
+
     --dc-color-neutral-0: rgb(255, 255, 255);
     --dc-color-neutral-1: rgb(248, 249, 249);
     --dc-color-neutral-2: rgb(233, 235, 237);

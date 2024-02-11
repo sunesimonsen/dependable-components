@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultButton from "./DefaultButton.js";
 import ButtonTypes from "./ButtonTypes.js";
+import DangerButton from "./DangerButton.js";
 import MediaButton from "./MediaButton.js";
 import LoadingButton from "./LoadingButton.js";
 import StretchedButton from "./StretchedButton.js";
@@ -33,6 +34,11 @@ export default class Page {
       <p>There are 3 types of Buttons: default, primary, and basic.</p>
       <${Example} src=${new URL("./ButtonTypes.js", import.meta.url)}>
         <${ButtonTypes} />
+      <//>
+      <${Heading} level="3">Danger<//>
+      <p>Use danger styling for Buttons that enable destructive action.</p>
+      <${Example} src=${new URL("./DangerButton.js", import.meta.url)}>
+        <${DangerButton} />
       <//>
       <${Heading} level="3">Media<//>
       <p>Media elements add even more context to a button.</p>

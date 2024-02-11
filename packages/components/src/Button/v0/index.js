@@ -88,7 +88,17 @@ const primaryStyles = css`
   }
 `;
 
-const dangerStyles = css``;
+const dangerStyles = css`
+  & {
+    --dc-color-primary-0: var(--dc-color-danger-primary-0);
+    --dc-color-primary-1: var(--dc-color-danger-primary-1);
+    --dc-color-primary-2: var(--dc-color-danger-primary-2);
+
+    --dc-color-secondary-0: var(--dc-color-danger-secondary-0);
+    --dc-color-secondary-1: var(--dc-color-danger-secondary-1);
+    --dc-color-secondary-2: var(--dc-color-danger-secondary-2);
+  }
+`;
 
 const stretchedStyles = css`
   & {
@@ -126,6 +136,7 @@ export class Button {
     basic,
     primary,
     stretched,
+    danger,
     disabled,
     loading,
     className,
@@ -140,6 +151,7 @@ export class Button {
           basic && basicStyles,
           primary && primaryStyles,
           stretched && stretchedStyles,
+          danger && dangerStyles,
           className,
         )}
         disabled=${disabled}
