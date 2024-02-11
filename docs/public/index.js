@@ -12,6 +12,7 @@ const pages = [
   "center",
   "checkbox",
   "columnlayout",
+  "dialog",
   "iconbutton",
   "icons",
   "index",
@@ -54,6 +55,7 @@ styleguide({
     </ul>
     <h1>Popups</h1>
     <ul>
+      <li><${PageReference} id="dialog">Dialog<//></li>
       <li><${PageReference} id="menu">Menu<//></li>
       <li><${PageReference} id="popup">Popup<//></li>
     </ul>

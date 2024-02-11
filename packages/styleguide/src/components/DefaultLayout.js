@@ -47,7 +47,7 @@ const mainStyles = css`
     overflow: hidden;
   }
 
-  & h2 {
+  & > h2 {
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 44px;
@@ -55,18 +55,18 @@ const mainStyles = css`
     font-weight: 600;
   }
 
-  & h3 {
+  & > h3 {
     margin-bottom: 12px;
     line-height: 32px;
     font-size: 26px;
   }
 
-  & code {
+  & > p > code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
   }
 
-  & code.inline {
+  & > p > code.inline {
     line-height: normal;
     font-size: calc(1em - 1px);
     direction: ltr;
