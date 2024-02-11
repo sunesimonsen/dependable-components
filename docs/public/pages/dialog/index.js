@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 
 import DefaultDialog from "./DefaultDialog.js";
+import DangerDialog from "./DangerDialog.js";
 
 export default class Page {
   render() {
@@ -24,6 +25,11 @@ export default class Page {
       <p>The typical usage of a Dialog component.</p>
       <${Example} src=${new URL("./DefaultDialog.js", import.meta.url)}>
         <${DefaultDialog} />
+      <//>
+      <${Heading} level="3">Danger<//>
+      <p>Use Danger styling for modals that enable a destructive action.</p>
+      <${Example} src=${new URL("./DangerDialog.js", import.meta.url)}>
+        <${DangerDialog} />
       <//>
     `;
   }
