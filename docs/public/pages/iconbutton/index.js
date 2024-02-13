@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultIconButton from "./DefaultIconButton.js";
 import IconButtonTypes from "./IconButtonTypes.js";
+import DangerIconButton from "./DangerIconButton.js";
 import IconButtonShapes from "./IconButtonShapes.js";
 import PressedIconButton from "./PressedIconButton.js";
 
@@ -34,6 +35,11 @@ export default class Page {
       </p>
       <${Example} src=${new URL("./IconButtonTypes.js", import.meta.url)}>
         <${IconButtonTypes} />
+      <//>
+      <${Heading} level="3">Danger<//>
+      <p>Use danger styling for Buttons that enable destructive action.</p>
+      <${Example} src=${new URL("./DangerIconButton.js", import.meta.url)}>
+        <${DangerIconButton} />
       <//>
       <${Heading} level="3">Shape<//>
       <p>Icon buttons are squares by default, but they can be circular too.</p>
