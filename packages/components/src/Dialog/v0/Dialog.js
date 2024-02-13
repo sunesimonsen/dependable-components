@@ -12,6 +12,7 @@ const styles = ({ width, height }) => css`
     border-radius: 4px;
     box-shadow: rgba(47, 57, 65, 0.35) 0px 20px 28px 0px;
     background-color: rgb(255, 255, 255);
+    outline: none;
   }
 
   &::backdrop {
@@ -33,13 +34,20 @@ export class Dialog {
         e.clientY < dialogDimensions.top ||
         e.clientY > dialogDimensions.bottom
       ) {
-        this.props.onClose();
+        this.props.onClose(e);
+      }
+    };
+
+    this.onKeydown = (e) => {
+      if (e.key === "Escape") {
+        this.props.onClose(e);
       }
     };
   }
 
   didMount() {
     this.ref.showModal();
+    this.ref.focus();
   }
 
   render({
@@ -53,6 +61,7 @@ export class Dialog {
         ref=${this.setRef}
         onClick=${!disableBackdrop && this.props.onClose && this.onClick}
         onDialogClose=${this.props.onClose}
+        onKeydown=${this.onKeydown}
         className=${styles({ width, height })}
       >
         ${children}
