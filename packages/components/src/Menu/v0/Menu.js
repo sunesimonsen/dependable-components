@@ -180,6 +180,7 @@ export class CustomMenu {
           onFocusItem=${this.onFocusItem}
         >
           ${model.visible() &&
+          Boolean(content?.children?.length) &&
           clone(content, { props: { id: `${model.id}-popup` } })}
         </div>
       </Context>
