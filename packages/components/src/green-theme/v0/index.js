@@ -14,7 +14,7 @@ export const theme = classes(
 
       --dc-color-danger-primary-0: rgb(197 73 84);
 
-      --dc-color-focus: rgb(31 183 153 / 45%);
+      --dc-focus-ring-color: rgb(31 183 153 / 45%);
     }
   `,
 );

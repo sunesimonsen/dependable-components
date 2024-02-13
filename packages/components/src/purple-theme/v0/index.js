@@ -12,7 +12,7 @@ export const theme = classes(
       --dc-color-secondary-1: rgb(101 31 183 / 8%);
       --dc-color-secondary-2: rgb(101 31 183 / 20%);
 
-      --dc-color-focus: rgb(102 31 183 / 35%);
+      --dc-focus-ring-color: rgb(102 31 183 / 35%);
     }
   `,
 );

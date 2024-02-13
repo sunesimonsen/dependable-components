@@ -32,12 +32,12 @@ export default class Example {
           <${ColorPreview} variable="--dc-color-primary-2" />
         <//>
         <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
-          <${ColorPreview} variable="--dc-color-focus" />
-        <//>
-        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-secondary-0" />
           <${ColorPreview} variable="--dc-color-secondary-1" />
           <${ColorPreview} variable="--dc-color-secondary-2" />
+        <//>
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
+          <${ColorPreview} variable="--dc-focus-ring-color" />
         <//>
         <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-danger-primary-0" />
@@ -48,6 +48,9 @@ export default class Example {
           <${ColorPreview} variable="--dc-color-danger-secondary-0" />
           <${ColorPreview} variable="--dc-color-danger-secondary-1" />
           <${ColorPreview} variable="--dc-color-danger-secondary-2" />
+        <//>
+        <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
+          <${ColorPreview} variable="--dc-focus-ring-color-danger" />
         <//>
         <${ColumnLayout} columns="250px auto" justifyItems="start" gap="0.5em">
           <${ColorPreview} variable="--dc-color-neutral-1" />

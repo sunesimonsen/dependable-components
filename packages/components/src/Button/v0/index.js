@@ -97,6 +97,11 @@ const dangerStyles = css`
     --dc-color-secondary-0: var(--dc-color-danger-secondary-0);
     --dc-color-secondary-1: var(--dc-color-danger-secondary-1);
     --dc-color-secondary-2: var(--dc-color-danger-secondary-2);
+
+    --dc-focus-ring-color: var(--dc-focus-ring-color-danger);
+
+    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
+      var(--dc-focus-ring-color);
   }
 `;
 

@@ -31,9 +31,13 @@ export const theme = css`
     --dc-text-color-1: rgb(104, 115, 125);
     --dc-text-color-0-a-10: rgba(47, 57, 65, 0.1);
 
-    --dc-color-focus: rgba(31, 115, 183, 0.35);
+    --dc-focus-ring-color: rgba(31, 115, 183, 0.35);
+    --dc-focus-ring-color-danger: rgba(204, 51, 64, 0.35);
+    --dc-focus-ring-style: solid;
+    --dc-focus-ring-width: 3px;
 
-    --dc-focus-ring: 3px solid var(--dc-color-focus);
+    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
+      var(--dc-focus-ring-color);
 
     --dc-component-border-radius: 4px;
 
