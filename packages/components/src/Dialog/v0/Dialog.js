@@ -40,7 +40,10 @@ export class Dialog {
 
     this.onKeydown = (e) => {
       if (e.key === "Escape") {
-        this.props.onClose(e);
+        this.props.onClose?.(e);
+      } else if (e.key === "Enter" && e.ctrlKey | e.metaKey) {
+        this.props.onSubmit?.(e);
+        e.preventDefault();
       }
     };
   }
@@ -61,6 +64,7 @@ export class Dialog {
         ref=${this.setRef}
         onClick=${!disableBackdrop && this.props.onClose && this.onClick}
         onDialogClose=${this.props.onClose}
+        onDialogSubmit=${this.props.onSubmit}
         onKeydown=${this.onKeydown}
         className=${styles({ width, height })}
       >

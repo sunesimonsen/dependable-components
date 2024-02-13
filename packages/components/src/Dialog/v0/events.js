@@ -7,3 +7,13 @@ export class DialogCloseEvent extends CustomEvent {
     });
   }
 }
+
+export class DialogSubmitEvent extends CustomEvent {
+  constructor(detail) {
+    super("DialogSubmit", {
+      detail,
+      bubbles: true,
+      cancelable: true,
+    });
+  }
+}

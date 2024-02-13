@@ -7,6 +7,7 @@ import {
   DialogBody,
   DialogFooter,
   DialogCloseButton,
+  DialogSubmitButton,
 } from "@dependable/components/Dialog/v0";
 import { Center } from "@dependable/components/Center/v0";
 
@@ -25,7 +26,7 @@ export default class Example {
 
   renderDialog() {
     return html`
-      <${Dialog} onClose=${this.closeDialog}>
+      <${Dialog} onClose=${this.closeDialog} onSubmit=${this.closeDialog}>
         <${DialogHeader}>Remove plant food from your garden<//>
         <${DialogBody}>
           <p>
@@ -34,9 +35,7 @@ export default class Example {
           </p>
         <//>
         <${DialogFooter}>
-          <${Button} danger primary onClick=${this.closeDialog}>
-            Remove plant food
-          <//>
+          <${DialogSubmitButton} danger primary>Remove plant food<//>
         <//>
         <${DialogCloseButton} />
       <//>
