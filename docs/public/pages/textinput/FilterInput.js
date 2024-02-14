@@ -5,22 +5,15 @@ import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { FilterInput } from "@dependable/components/FilterInput/v0";
 
-const vegetables = [
-  "Asparagus",
-  "Brussel sprouts",
-  "Cauliflower",
-  "Garlic",
-  "Jerusalem artichoke",
-  "Kale",
-  "Lettuce",
-  "Onion",
-  "Mushroom",
-  "Potato",
-  "Radish",
-  "Spinach",
-  "Tomato",
-  "Yam",
-  "Zucchini",
+const planets = [
+  "Mercury",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
 ];
 
 const value = observable("");
@@ -34,7 +27,7 @@ const onClear = (e) => {
 };
 
 const matches = computed(() =>
-  vegetables.filter((v) => v.toLowerCase().includes(value().toLowerCase())),
+  planets.filter((v) => v.toLowerCase().includes(value().toLowerCase())),
 );
 
 export default class Example {
@@ -53,10 +46,10 @@ export default class Example {
   render() {
     return html`
       <${ColumnLayout} columns="300px" justifyItems="start">
-        <label for="filter-vegetable-brand">Filter</label>
+        <label for="filter-planets">Filter planets</label>
         <${FilterInput}
-          id="filter-vegetable-brand"
-          placeholder="Filter vegetable"
+          id="filter-planets"
+          placeholder="Filter planet"
           .value=${value()}
           onInput=${onChange}
           onClear=${onClear}

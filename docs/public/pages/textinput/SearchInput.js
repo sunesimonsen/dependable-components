@@ -5,7 +5,7 @@ import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { SearchInput } from "@dependable/components/SearchInput/v0";
 
-const value = observable("Ford Focus");
+const value = observable("Mercury");
 
 const onChange = (e) => {
   value(e.target.value);
@@ -24,9 +24,9 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px auto">
-          <label for="search-car-brand">Find brand</label>
+          <label for="search-planet">Find planet</label>
           <${SearchInput}
-            id="search-car-brand"
+            id="search-planet"
             .value=${value()}
             onInput=${onChange}
             onClear=${onClear}

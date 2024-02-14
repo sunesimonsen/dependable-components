@@ -17,15 +17,16 @@ const clearStyles = css`
 `;
 
 const inputProps = [
-  "id",
-  "role",
-  "onFocus",
-  "onBlur",
-  "value",
+  ".disabled",
   ".value",
   "autofocus",
   "disabled",
-  ".disabled",
+  "id",
+  "onBlur",
+  "onFocus",
+  "placeholder",
+  "role",
+  "value",
 ];
 
 const isInputProp = (name) =>

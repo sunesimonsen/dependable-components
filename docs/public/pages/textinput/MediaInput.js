@@ -7,9 +7,8 @@ import { MediaInput } from "@dependable/components/MediaInput/v0";
 import { me2, ms2 } from "@dependable/components/spacing/v0";
 
 import SearchStroke16Icon from "@dependable/icons/SearchStroke16Icon";
-import CarStroke12Icon from "@dependable/icons/CarStroke12Icon";
 
-const value = observable("Ford Focus");
+const value = observable("Mercury");
 
 const onChange = (e) => {
   value(e.target.value);
@@ -24,11 +23,11 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px auto">
-          <label for="car-brand">Find brand</label>
+          <label for="media-planet-name">Find planet</label>
           <${MediaInput}>
-            <${CarStroke12Icon} className=${me2} />
+            <span className=${me2}>🌘</span>
             <input
-              id="car-brand"
+              id="media-planet-name"
               type="text"
               .value=${value()}
               onChange=${onChange}

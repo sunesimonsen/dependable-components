@@ -6,7 +6,7 @@ import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { TextInput } from "@dependable/components/TextInput/v0";
 
-const value = observable("Ford Focus");
+const value = observable("Mercury");
 
 const onChange = (e) => {
   value(e.target.value);
@@ -21,9 +21,9 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px auto">
-          <label for="car-model">Car model</label>
+          <label for="planet-name">Planet name</label>
           <${TextInput}
-            id="car-model"
+            id="planet-name"
             type="text"
             .value=${value()}
             onChange=${onChange}

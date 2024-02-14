@@ -24,26 +24,54 @@ const containerStyles = css`
 
 const options = {
   root: [
-    { value: "orange", label: "Orange" },
     {
-      value: "berry",
-      label: "Berry",
-      focus: "strawberry",
+      value: "planets",
+      label: "Planets",
+      focus: "mercury",
       type: SelectOptionNext,
     },
-    { value: "apple", label: "Apple" },
+    {
+      value: "dwarf-planets",
+      label: "Dwarf Planets",
+      focus: "pluto",
+      type: SelectOptionNext,
+    },
+    { value: "moons", label: "Moons", focus: "moon", type: SelectOptionNext },
   ],
-  berry: [
+  planets: [
     {
       value: "root",
-      focus: "berry",
-      label: "Fruits",
+      focus: "planets",
+      label: "Celestial Categories",
       type: SelectOptionPrevious,
     },
-    { value: "separator", type: SelectSeparator },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "loganberry", label: "Loganberry" },
-    { value: "boysenberry", label: "Boysenberry" },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "mercury", label: "Mercury" },
+    { value: "venus", label: "Venus" },
+    { value: "earth", label: "Earth" },
+    { value: "neptune", label: "Neptune" },
+  ],
+  "dwarf-planets": [
+    {
+      value: "root",
+      focus: "dwarf-planets",
+      label: "Celestial Categories",
+      type: SelectOptionPrevious,
+    },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "pluto", label: "Pluto" },
+    { value: "eris", label: "Eris" },
+  ],
+  moons: [
+    {
+      value: "root",
+      focus: "moons",
+      label: "Celestial Categories",
+      type: SelectOptionPrevious,
+    },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "moon", label: "Moon (Earth)" },
+    { value: "io", label: "Io (Jupiter)" },
   ],
 };
 
@@ -91,7 +119,7 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px">
-          <label for="default-select">Brand</label>
+          <label for="default-select">Select a celestial object</label>
           <${CustomSelect}
             model=${this.model}
             onSelect=${this.onSelect}

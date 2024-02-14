@@ -13,21 +13,18 @@ import {
 const id = "DefaultAutocomplete";
 
 const options = [
-  "Asparagus",
-  "Brussel sprouts",
-  "Cauliflower",
-  "Garlic",
-  "Jerusalem artichoke",
-  "Kale",
-  "Lettuce",
-  "Onion",
-  "Mushroom",
-  "Potato",
-  "Radish",
-  "Spinach",
-  "Tomato",
-  "Yam",
-  "Zucchini",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+  "Pluto (Dwarf Planet)",
+  "Eris (Dwarf Planet)",
+  "Makemake (Dwarf Planet)",
+  "Haumea (Dwarf Planet)",
+  "Ceres (Dwarf Planet)",
 ];
 
 const searchText = observable("");
@@ -62,11 +59,11 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px">
-          <label for="placement-autocomplete">Find a vegetable</label>
+          <label for="placement-autocomplete">Planet</label>
           <${Autocomplete}
             id="placement-autocomplete"
-            onSelect=${onSelect}
             placement="top-stretch"
+            onSelect=${onSelect}
           >
             <${AutocompleteInput} .value=${searchText()} onInput=${onInput} />
             <${AutocompletePopup}>${this.renderItems()}<//>

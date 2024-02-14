@@ -13,10 +13,14 @@ import {
 const id = "DefaultSelect";
 
 const options = [
-  { label: "Ford", value: "ford" },
-  { label: "Kia", value: "kia" },
-  { label: "Mazda", value: "mazda" },
-  { label: "Skoda", value: "skoda" },
+  { label: "Mercury", value: "mercury" },
+  { label: "Venus", value: "venus" },
+  { label: "Earth", value: "earth" },
+  { label: "Mars", value: "mars" },
+  { label: "Jupiter", value: "jupiter" },
+  { label: "Saturn", value: "saturn" },
+  { label: "Uranus", value: "uranus" },
+  { label: "Neptune", value: "neptune" },
 ];
 
 const selected = observable(options[0]);
@@ -47,7 +51,7 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px">
-          <label for="default-select">Brand</label>
+          <label for="default-select">Select a planet</label>
           <${Select} id="default-select" onSelect=${this.onSelect}>
             <${SelectInput} .value=${selected().value}>${selected().label}<//>
             <${SelectPopup}>${this.renderItems()}<//>
