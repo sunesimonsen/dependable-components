@@ -20,12 +20,16 @@ export default class Example {
     return html`
       <${Center}>
         <${Menu} onSelect=${this.onSelect}>
-          <${MenuButton}>Options<//>
+          <${MenuButton}>Go to planet<//>
           <${MenuPopup}>
-            <${MenuItem} key="one" value=${1}>One<//>
-            <${MenuItem} key="two" value=${2}>Two<//>
-            <${MenuItem} key="three" value=${3}>Three<//>
-            <${MenuItem} key="four" value=${4}>Four<//>
+            <${MenuItem} key="mercury" value=${0}>Mercury<//>
+            <${MenuItem} key="venus" value=${1}>Venus<//>
+            <${MenuItem} key="earth" value=${2}>Earth<//>
+            <${MenuItem} key="mars" value=${3}>Mars<//>
+            <${MenuItem} key="jupiter" value=${4}>Jupiter<//>
+            <${MenuItem} key="saturn" value=${5}>Saturn<//>
+            <${MenuItem} key="uranus" value=${6}>Uranus<//>
+            <${MenuItem} key="neptune" value=${7}>Neptune<//>
           <//>
         <//>
       </>

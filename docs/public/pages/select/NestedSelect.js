@@ -99,7 +99,7 @@ export default class Example {
     };
   }
 
-  renderItems() {
+  renderOptions() {
     return options[menu()].map(
       (option) => html`
         <${option.type || SelectOption}
@@ -114,19 +114,17 @@ export default class Example {
   }
 
   render() {
-    const items = options[menu()];
-
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px">
-          <label for="default-select">Select a celestial object</label>
+          <label for="default-select">Select a celestial body</label>
           <${CustomSelect}
             model=${this.model}
             onSelect=${this.onSelect}
             placement="top-stretch"
           >
             <${SelectInput} .value=${selected().value}>${selected().label}<//>
-            <${SelectPopup}>${this.renderItems()}<//>
+            <${SelectPopup}>${this.renderOptions()}<//>
           <//>
         <//>
       <//>

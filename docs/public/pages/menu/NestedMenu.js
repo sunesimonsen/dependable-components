@@ -15,16 +15,54 @@ import {
 
 const menus = {
   root: [
-    html`<${MenuItem} key="orange" value=${0}>Orange<//>`,
-    html`<${MenuItemNext} key="berry">Barry<//>`,
-    html`<${MenuItem} key="apple" value=${1}>Apple<//>`,
+    {
+      value: "planets",
+      label: "Planets",
+      focus: "mercury",
+      type: MenuItemNext,
+    },
+    {
+      value: "dwarf-planets",
+      label: "Dwarf Planets",
+      focus: "pluto",
+      type: MenuItemNext,
+    },
+    { value: "moons", label: "Moons", focus: "moon", type: MenuItemNext },
   ],
-  berry: [
-    html`<${MenuItemPrevious} key="root" value="berry">Fruits<//>`,
-    html`<${MenuSeparator} key="separator" />`,
-    html`<${MenuItem} key="strawberry" value=${2}>Strawberry<//>`,
-    html`<${MenuItem} key="loganberry" value=${3}>Loganberry<//>`,
-    html`<${MenuItem} key="boysenberry" value=${4}> Boysenberry <//>`,
+  planets: [
+    {
+      value: "root",
+      focus: "planets",
+      label: "Celestial Categories",
+      type: MenuItemPrevious,
+    },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "mercury", label: "Mercury" },
+    { value: "venus", label: "Venus" },
+    { value: "earth", label: "Earth" },
+    { value: "neptune", label: "Neptune" },
+  ],
+  "dwarf-planets": [
+    {
+      value: "root",
+      focus: "dwarf-planets",
+      label: "Celestial Categories",
+      type: MenuItemPrevious,
+    },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "pluto", label: "Pluto" },
+    { value: "eris", label: "Eris" },
+  ],
+  moons: [
+    {
+      value: "root",
+      focus: "moons",
+      label: "Celestial Categories",
+      type: MenuItemPrevious,
+    },
+    { value: "separator", type: "SelectSeparator" },
+    { value: "moon", label: "Moon (Earth)" },
+    { value: "io", label: "Io (Jupiter)" },
   ],
 };
 
@@ -41,7 +79,7 @@ export default class Example {
         this.model.focused({ key: value });
         e.preventDefault();
       } else {
-        alert(`${key}:${value}`);
+        alert(`${key}: ${value.label}`);
       }
     };
 
@@ -50,6 +88,16 @@ export default class Example {
     };
 
     this.menu = observable("root");
+  }
+
+  renderItems() {
+    return menus[this.menu()].map(
+      (item) => html`
+        <${item.type || MenuItem} key=${item.value} value=${item}>
+          ${item.label}
+        <//>
+      `,
+    );
   }
 
   render() {
@@ -62,8 +110,8 @@ export default class Example {
           onSelect=${this.onSelect}
           onClose=${this.onClose}
         >
-          <${MenuButton}>Options<//>
-          <${MenuPopup}>${items}<//>
+          <${MenuButton}>Go to space<//>
+          <${MenuPopup}>${this.renderItems()}<//>
         <//>
       <//>
     `;
