@@ -11,67 +11,94 @@ const indentedStyles = css`
   }
 `;
 
-const pestResistant = observable(false);
-const needsDirectLight = observable(true);
+const marsMissionReadinessRequirements = [
+  "Spacecraft Assembly Completed",
+  "Mission Crew Fully Trained",
+  "Launch Window Alignment Confirmed",
+];
 
-const outdoorReadinessIndetermine = computed(
-  () => pestResistant() !== needsDirectLight(),
-);
+const selectedRequirements = observable([]);
 
-const outdoorReadinessChecked = computed(
-  () => pestResistant() && needsDirectLight(),
-);
+const marsMissionReadiness = computed(() => {
+  if (selectedRequirements().length === 0) {
+    return "getting-ready";
+  }
 
-const onChange = (e) => {
-  switch (e.target.id) {
-    case "outdoor-readiness":
-      const checked = e.target.checked || e.target.indeterminate;
-      pestResistant(checked);
-      needsDirectLight(checked);
-      break;
-    case "pest-resistant":
-      pestResistant(e.target.checked);
-      break;
-    case "needs-direct-light":
-      needsDirectLight(e.target.checked);
-      break;
+  return selectedRequirements().length ===
+    marsMissionReadinessRequirements.length
+    ? "ready"
+    : "almost-ready";
+});
+
+const toggleMarsMissionReadiness = (e) => {
+  const readiness = marsMissionReadiness();
+  if (readiness === "ready") {
+    selectedRequirements([]);
+  } else {
+    selectedRequirements(marsMissionReadinessRequirements);
   }
 };
 
+const isRequirementSelected = (requirement) =>
+  selectedRequirements().includes(requirement);
+
+const toggleRequirement = (requirement) => () => {
+  if (isRequirementSelected(requirement)) {
+    selectedRequirements(
+      selectedRequirements().filter(
+        (selectedRequirement) => selectedRequirement !== requirement,
+      ),
+    );
+  } else {
+    selectedRequirements([...selectedRequirements(), requirement]);
+  }
+};
+
+let nextId = 0;
+
+class Requirement {
+  render({ requirement }) {
+    const id = nextId++;
+    const checked = isRequirementSelected(requirement);
+
+    return html`
+      <${Checkbox}
+        id="requirement-${id}"
+        .checked=${checked}
+        onChange=${toggleRequirement(requirement)}
+      />
+      <label for="requirement-${id}">${requirement}</label>
+    `;
+  }
+}
+
 export default class Example {
+  renderRequirements() {
+    return marsMissionReadinessRequirements.map(
+      (requirement) => html`<${Requirement} requirement=${requirement} />`,
+    );
+  }
+
   render() {
     return html`
-      <${Center}>
-        <${ColumnLayout} columns="auto" justifyItems="start" gap="0.5em">
-          <${ColumnLayout} columns="auto auto" justifyItems="start" gap="0.5em">
-            <${Checkbox}
-              id="outdoor-readiness"
-              .checked=${outdoorReadinessChecked()}
-              indeterminate=${outdoorReadinessIndetermine()}
-              onChange=${onChange}
-            />
-            <label for="outdoor-readiness">Outdoor readiness</label>
-          <//>
+      <${ColumnLayout} columns="auto" justifyItems="start" gap="0.5em">
+        <${ColumnLayout} columns="auto auto" justifyItems="start" gap="0.5em">
+          <${Checkbox}
+            id="mars-mission-readiness"
+            .checked=${marsMissionReadiness() === "ready"}
+            indeterminate=${marsMissionReadiness() === "almost-ready"}
+            onChange=${toggleMarsMissionReadiness}
+          />
+          <label for="mars-mission-readiness">Mars Mission Readiness</label>
+        <//>
 
-          <${ColumnLayout}
-            className=${indentedStyles}
-            columns="auto auto"
-            justifyItems="start"
-            gap="0.5em"
-          >
-            <${Checkbox}
-              id="pest-resistant"
-              .checked=${pestResistant()}
-              onChange=${onChange}
-            />
-            <label for="pest-resistant">Pest resistant</label>
-            <${Checkbox}
-              id="needs-direct-light"
-              .checked=${needsDirectLight()}
-              onChange=${onChange}
-            />
-            <label for="needs-direct-light">Needs direct light</label>
-          <//>
+        <${ColumnLayout}
+          className=${indentedStyles}
+          columns="auto auto"
+          justifyItems="start"
+          gap="0.5em"
+        >
+          ${this.renderRequirements()}
         <//>
       <//>
     `;

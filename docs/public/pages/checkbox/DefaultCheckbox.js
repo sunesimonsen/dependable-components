@@ -4,45 +4,44 @@ import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { Checkbox } from "@dependable/components/Checkbox/v0";
 
-const availableIngrediences = ["tomatoes", "cucumbers", "lettuce", "beef"];
+const availableParts = [
+  "Telescope",
+  "Spectrometer",
+  "Lander",
+  "Rover",
+  "Communications System",
+];
 
-const selectedIngrediences = observable([]);
+const selectedParts = observable([]);
 
-const selectedIngrediencesSorted = computed(() =>
-  availableIngrediences.filter((id) => selectedIngrediences().includes(id)),
+const selectedPartsSorted = computed(() =>
+  availableParts.filter((id) => selectedParts().includes(id)),
 );
 
-const isIngredienceSelected = (id) =>
-  computed(() => selectedIngrediences().includes(id));
+const isPartSelected = (id) => computed(() => selectedParts().includes(id));
 
-const toggleIngredience = (id) => () => {
-  const selection = selectedIngrediences();
+const togglePart = (id) => () => {
+  const selection = selectedParts();
   const selected = selection.includes(id);
 
-  selectedIngrediences(
-    selected
-      ? selection.filter((v) => v !== id)
-      : [id, ...selectedIngrediences()],
+  selectedParts(
+    selected ? selection.filter((v) => v !== id) : [id, ...selectedParts()],
   );
 };
 
-class SelectedIngredients {
+class SelectedParts {
   render() {
     return `Selected:
-    ${selectedIngrediencesSorted().join(", ") || "nothing"}`;
+    ${selectedPartsSorted().join(", ") || "Nothing"}`;
   }
 }
 
-class IngredientCheckbox {
+class PartCheckbox {
   render({ id }) {
-    const selected = isIngredienceSelected(id);
+    const selected = isPartSelected(id);
 
     return html`
-      <${Checkbox}
-        id=${id}
-        .checked=${selected()}
-        onChange=${toggleIngredience(id)}
-      />
+      <${Checkbox} id=${id} .checked=${selected()} onChange=${togglePart(id)} />
       <label for=${id}>${id}</label>
     `;
   }
@@ -50,9 +49,7 @@ class IngredientCheckbox {
 
 class IngredienceList {
   render() {
-    return availableIngrediences.map(
-      (id) => html`<${IngredientCheckbox} id=${id} />`,
-    );
+    return availableParts.map((id) => html`<${PartCheckbox} id=${id} />`);
   }
 }
 
@@ -61,11 +58,11 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} stretched columns="1" justifyItems="start">
-          <h4>Burger ingredients</h4>
+          <h4>Choose Spacecraft Technologies:</h4>
           <${ColumnLayout} columns="auto auto" justifyItems="start" gap="0.5em">
             <${IngredienceList} />
           <//>
-          <${SelectedIngredients} />
+          <${SelectedParts} />
         <//>
       <//>
     `;

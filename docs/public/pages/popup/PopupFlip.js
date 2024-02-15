@@ -44,42 +44,35 @@ export default class Example {
     return html`
       <${ScrollArea} className=${containerStyles}>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          placerat nulla molestie eros elementum, id aliquam augue pretium.
-          Suspendisse consectetur tincidunt lectus, nec imperdiet nibh molestie
-          at. Integer lorem nulla, consequat quis augue sed, accumsan
-          consectetur ipsum. Nulla venenatis sapien in imperdiet consectetur.
-          Nullam vestibulum nibh nibh, at tristique elit commodo non. Fusce
-          euismod urna quis massa luctus mollis. Vivamus accumsan leo a nisl
-          luctus ultricies sit amet in lorem. Praesent ultrices a augue sit amet
-          lacinia. Vestibulum at quam mattis, eleifend libero eget, imperdiet
-          purus. Quisque ligula metus, suscipit sed quam ut, tempor placerat
-          enim. Integer volutpat, magna non interdum volutpat, augue sem gravida
-          purus, nec pellentesque massa mi accumsan odio. Nunc bibendum accumsan
-          fringilla. Donec quis urna velit. Quisque vitae sollicitudin odio, sit
-          amet imperdiet orci. Aenean blandit fermentum sem, ut mattis velit
-          interdum at. Duis cursus non ipsum tincidunt rhoncus.
+          Space is an endless canvas that has captivated humanity's imagination
+          for millennia. It is the vast expanse that exists beyond Earth's
+          atmosphere, extending in all directions, seemingly without end. Out
+          there, in the void, lies a cosmos filled with marvels and mysteries,
+          from the fiery birth of stars in nebulae to the crushing darkness of
+          black holes. Space is our final frontier, a realm that has spurred
+          countless tales of adventure and exploration. It is the place where
+          celestial bodies, including planets, stars, galaxies, and the remnants
+          of cosmic explosions, dance in the silent poetry of gravitational
+          choreography.
         </p>
         <${Button} ref=${this.createRef("anchorRef")}>Anchor<//>
         <div ref=${this.createRef("popupRef")} className=${popupStyles}>
           Popup content
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          placerat nulla molestie eros elementum, id aliquam augue pretium.
-          Suspendisse consectetur tincidunt lectus, nec imperdiet nibh molestie
-          at. Integer lorem nulla, consequat quis augue sed, accumsan
-          consectetur ipsum. Nulla venenatis sapien in imperdiet consectetur.
-          Nullam vestibulum nibh nibh, at tristique elit commodo non. Fusce
-          euismod urna quis massa luctus mollis. Vivamus accumsan leo a nisl
-          luctus ultricies sit amet in lorem. Praesent ultrices a augue sit amet
-          lacinia. Vestibulum at quam mattis, eleifend libero eget, imperdiet
-          purus. Quisque ligula metus, suscipit sed quam ut, tempor placerat
-          enim. Integer volutpat, magna non interdum volutpat, augue sem gravida
-          purus, nec pellentesque massa mi accumsan odio. Nunc bibendum accumsan
-          fringilla. Donec quis urna velit. Quisque vitae sollicitudin odio, sit
-          amet imperdiet orci. Aenean blandit fermentum sem, ut mattis velit
-          interdum at. Duis cursus non ipsum tincidunt rhoncus.
+          Embarking on a journey through the cosmos reveals the very fabric of
+          existence. As we peer into the night sky, we observe light that has
+          traveled across time and space, possibly originating from stars that
+          have long since ceased to exist. This interstellar travel through the
+          universe is not just a voyage over cosmic distances; it is equally a
+          voyage through time itself. With advancements such as powerful
+          telescopes and space probes, we've peeled back layers of cosmic
+          secrets, uncovering a complex universe where particles can be
+          entangled across vast stretches and massive orbs of gas collapse to
+          ignite nuclear fusion, bringing light to the cosmic darkness. Every
+          discovery pushes the boundaries of knowledge, inviting even more
+          questions about the nature of reality and our place within this grand
+          tapestry.
         </p>
       <//>
     `;

@@ -12,10 +12,14 @@ import {
 const id = "DisabledSelect";
 
 const options = [
-  { label: "Ford", value: "ford" },
-  { label: "Kia", value: "kia" },
-  { label: "Mazda", value: "mazda" },
-  { label: "Skoda", value: "skoda" },
+  { label: "Mercury", value: "mercury" },
+  { label: "Venus", value: "venus" },
+  { label: "Earth", value: "earth" },
+  { label: "Mars", value: "mars" },
+  { label: "Jupiter", value: "jupiter" },
+  { label: "Saturn", value: "saturn" },
+  { label: "Uranus", value: "uranus" },
+  { label: "Neptune", value: "neptune" },
 ];
 
 const selected = observable(options[0]);
@@ -46,7 +50,7 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto 300px">
-          <label for="disabled-select">Brand</label>
+          <label for="disabled-select">Select a planet</label>
           <${Select} id="disabled-select" onSelect=${this.onSelect}>
             <${SelectInput} disabled .value=${selected().value}>
               ${selected().label}
