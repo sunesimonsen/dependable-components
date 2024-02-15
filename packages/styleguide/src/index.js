@@ -8,6 +8,7 @@ import { ScriptLoader } from "./components/ScriptLoader.js";
 export { PageReference } from "./components/PageReference.js";
 export { Title, SubTitle, Line, Heading } from "./components/Page.js";
 export { Example } from "./components/Example.js";
+export { SourceCode } from "./components/SourceCode.js";
 
 const history = createBrowserHistory();
 
