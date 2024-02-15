@@ -6,7 +6,9 @@ import {
   Heading,
   Example,
 } from "@dependable/styleguide";
+
 import DefaultSkeleton from "./DefaultSkeleton.js";
+import RandomWidth from "./RandomWidth.js";
 
 export default class Page {
   render() {
@@ -25,6 +27,17 @@ export default class Page {
       </p>
       <${Example} src=${new URL("./DefaultSkeleton.js", import.meta.url)}>
         <${DefaultSkeleton} />
+      <//>
+      <${Heading} level="3">Random widths<//>
+      <p>
+        If you want to make the skeleton a bit more dynamic, you can
+        specify${" "}
+        <code>from</code> and <code>to</code> properties to randomly pick a
+        procentage width in the given range. Both values default to${" "}
+        <code>100</code>.
+      </p>
+      <${Example} src=${new URL("./RandomWidth.js", import.meta.url)}>
+        <${RandomWidth} />
       <//>
     `;
   }

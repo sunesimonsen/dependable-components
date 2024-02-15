@@ -7,8 +7,7 @@ const styles = css`
     position: relative;
     animation: 300ms linear 0s 1 normal none running &(fade-in);
     border-radius: 4px;
-    width: 100%;
-    height: 100%;
+    width: var(--dc-skeleton-width, 100%);
     overflow: hidden;
     line-height: 0.6;
     background-color: var(--dc-text-color-0-a-10);
@@ -47,8 +46,22 @@ const styles = css`
   }
 `;
 
+const numberBetween = (from, to) =>
+  Math.round(Math.random() * (Number(to) - Number(from)) + Number(from));
+
 export class Skeleton {
+  constructor({ from = 100, to = 100 }) {
+    this.widthStyles = numberBetween(from, to) + "%";
+  }
+
   render({ className }) {
-    return html`<div className=${classes(styles, className)}>${"\u00A0"}</div>`;
+    return html`
+      <div
+        style=${{ "--dc-skeleton-width": this.widthStyles }}
+        className=${classes(styles, className)}
+      >
+        ${"\u00A0"}
+      </div>
+    `;
   }
 }

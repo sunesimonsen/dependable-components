@@ -135,12 +135,15 @@ export class PageSkeleton {
   render() {
     return html`
       <${Page}>
-        <${Title}><${Skeleton} /><//>
-        <${SubTitle}><${Skeleton} /><//>
+        <${Title}><${Skeleton} from="30" to="50" /><//>
+        <${SubTitle}><${Skeleton} from="40" to="60" /><//>
         <${Line}/>
-        <h2><${Skeleton} /></h2>
-        <h3><${Skeleton} /></h3>
-        <p><${Skeleton} /></p>
+        <h2><${Skeleton} from="70" /></h2>
+        <h3><${Skeleton} from="70"/></h3>
+        <p><${Skeleton} from="70"/></p>
+        <p><${Skeleton} from="70"/></p>
+        <p><${Skeleton} from="70"/></p>
+        <p><${Skeleton} from="70"/></p>
       </${Page}>
     `;
   }
