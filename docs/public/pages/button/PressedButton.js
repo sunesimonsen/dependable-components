@@ -8,6 +8,7 @@ import { css } from "stylewars";
 const iconStyles = css`
   & {
     font-size: 64px;
+    user-select: none;
   }
 `;
 
@@ -29,10 +30,17 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="2">
-          <${Button} basic aria-pressed=${String(isDay())} onClick=${toggleDay}>
+          <${Button}
+            id="pressed-button"
+            basic
+            aria-pressed=${String(isDay())}
+            onClick=${toggleDay}
+          >
             Day
           <//>
-          <${DaylightIcon} />
+          <label for="pressed-button">
+            <${DaylightIcon} />
+          </label>
         <//>
       <//>
     `;
