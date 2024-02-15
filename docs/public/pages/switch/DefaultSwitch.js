@@ -8,6 +8,7 @@ import { Switch } from "@dependable/components/Switch/v0";
 const iconStyles = css`
   & {
     font-size: 64px;
+    user-select: none;
   }
 `;
 
@@ -30,7 +31,9 @@ export default class Example {
       <${Center}>
         <${ColumnLayout} columns="2">
           <${Switch} id="switch" .checked=${isDay()} onChange=${toggleDay} />
-          <${DaylightIcon} />
+          <label for="switch">
+            <${DaylightIcon} />
+          </label>
         <//>
       <//>
     `;
