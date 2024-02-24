@@ -8,6 +8,7 @@ const areaStyles = (area, color) => css`
     padding: 10px 20px;
     background-color: ${color};
     text-align: center;
+    color: black;
   }
 `;
 

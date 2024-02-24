@@ -6,8 +6,9 @@ import {
   Heading,
   Example,
 } from "@dependable/styleguide";
+import { theme } from "@dependable/components/default-theme/v0";
 
-import Colors from "./Colors.js";
+import { Colors } from "../../components/Colors.js";
 import ExampleForm from "./ExampleForm.js";
 
 export default class Page {
@@ -20,9 +21,8 @@ export default class Page {
       <${Line} />
       <${Heading} level="3">Colors<//>
       <p>The folowing colors is available as CSS variables.</p>
-      <${Example} src=${new URL("./Colors.js", import.meta.url)}>
-        <${Colors} />
-      <//>
+      <p>You can copy the CSS variable by clicking on the colors.</p>
+      <${Colors} className=${theme} />
       <${Heading} level="3">Example form<//>
       <p>Here you can see the theme applied to the components.</p>
       <${Example} src=${new URL("./ExampleForm.js", import.meta.url)}>

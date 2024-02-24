@@ -2,6 +2,7 @@ import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
 import CheckSmFill12Icon from "@dependable/icons/CheckSmFill12Icon";
 import DashFill12Icon from "@dependable/icons/DashFill12Icon";
+import { transparentColor } from "../../theming/v0";
 
 const styles = css`
   & {
@@ -16,11 +17,11 @@ const styles = css`
     user-select: none;
 
     display: inline-flex;
-    color: var(--dc-color-neutral-0);
+    color: var(--dc-color-background);
     width: 16px;
     height: 16px;
     box-sizing: border-box;
-    border: thin solid var(--dc-color-neutral-0);
+    border: thin solid var(--dc-color-background);
     align-items: center;
     justify-content: center;
     border-radius: 4px;
@@ -28,14 +29,14 @@ const styles = css`
 
   &:checked:not(:disabled) + label,
   &:indeterminate:not(:disabled) + label {
-    border-color: var(--dc-color-primary-0);
-    background-color: var(--dc-color-primary-0);
+    border-color: var(--dc-color-primary-50);
+    background-color: var(--dc-color-primary-50);
   }
 
   &:not(:checked):not(:indeterminate):not(:disabled):not(:focus-visible)
     + label {
-    border-color: var(--dc-color-neutral-3);
-    background-color: var(--dc-color-neutral-0);
+    border-color: var(--dc-color-neutral-80);
+    background-color: var(--dc-color-background);
   }
 
   & + label &-checked-icon,
@@ -56,19 +57,19 @@ const styles = css`
   }
 
   &:not(:checked):not(:indeterminate):not(:disabled) + label:hover {
-    border-color: var(--dc-color-primary-0);
-    background-color: var(--dc-color-secondary-1);
+    border-color: var(--dc-color-primary-50);
+    background-color: ${transparentColor("primary-80", 35)};
   }
 
   &:checked:not(:disabled) + label:hover,
   &:indeterminate:not(:disabled) + label:hover {
-    border-color: var(--dc-color-primary-1);
-    background-color: var(--dc-color-primary-1);
+    border-color: var(--dc-color-primary-30);
+    background-color: var(--dc-color-primary-30);
   }
 
   &:checked:not(:disabled):focus-visible + label,
   &:not(:disabled):focus-visible + label {
-    border-color: var(--dc-color-primary-0);
+    border-color: var(--dc-color-primary-50);
     outline: var(--dc-focus-ring);
   }
 
@@ -79,7 +80,7 @@ const styles = css`
 
   &:disabled + label {
     border-color: transparent;
-    background-color: var(--dc-color-neutral-2);
+    background-color: var(--dc-color-neutral-80);
   }
 `;
 

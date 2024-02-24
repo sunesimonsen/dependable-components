@@ -9,7 +9,7 @@ export const iconPageMap = {
   "icons-26px": () => import(`./pages/icons-26px/index.js`),
   "icons-26px-fill": () => import(`./pages/icons-26px-fill/index.js`),
   "icons-26px-wordmark": () => import(`./pages/icons-26px-wordmark/index.js`),
-};
+}
 
 export class IconNavigation {
   render() {
@@ -21,6 +21,6 @@ export class IconNavigation {
       <li><${PageReference} id="icons-26px">26px<//></li>
       <li><${PageReference} id="icons-26px-fill">26px (fill)<//></li>
       <li><${PageReference} id="icons-26px-wordmark">26px (wordmark)<//></li>
-    `;
+    `
   }
 }

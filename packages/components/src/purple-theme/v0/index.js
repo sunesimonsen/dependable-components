@@ -1,20 +1,56 @@
+import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
-import { theme as defaultTheme } from "../../default-theme/v0/index.js";
+import { color, colorMix } from "../../theming/v0";
+import { baseTheme } from "../../base-theme/v0";
 
 export const theme = classes(
-  defaultTheme,
   css`
     & {
-      --dc-color-primary-0: rgb(105 31 183);
-      --dc-color-primary-1: rgb(91 20 117);
-      --dc-color-primary-2: rgb(44 15 84);
+      --dc-color-foreground: srgb(0.1 0.1 0.1);
+      --dc-color-background: white;
 
-      --dc-color-secondary-1: rgb(101 31 183 / 8%);
-      --dc-color-secondary-2: rgb(101 31 183 / 20%);
+      --dc-color-saturation: 71;
 
-      --dc-focus-ring-color: rgb(102 31 183 / 35%);
+      --dc-color-primary-hue: 271;
+
+      --dc-color-error-hue: 0;
+
+      --dc-color-warning-hue: 33;
+      --dc-color-warning-saturation: 85;
+
+      --dc-color-success-hue: 158;
+      --dc-color-success-saturation: 55;
+
+      --dc-color-dark-saturation: 60;
+
+      --dc-color-dark-background-hue: calc(var(--dc-color-primary-hue) - 15);
+      --dc-color-dark-background: hsl(
+        var(--dc-color-dark-background-hue),
+        50%,
+        10%
+      );
+      --dc-color-dark-foreground: hsl(
+        var(--dc-color-dark-background-hue),
+        50%,
+        95%
+      );
+
+      --dc-color-dark-saturation: 91;
+
+      --dc-color-dark-primary-hue: 271;
+      --dc-color-dark-primary-saturation: var(--dc-color-dark-saturation);
+
+      --dc-color-dark-error-hue: 0;
+      --dc-color-dark-error-saturation: 50;
+
+      --dc-color-dark-warning-hue: 33;
+      --dc-color-dark-warning-saturation: var(--dc-color-dark-saturation);
+
+      --dc-color-dark-success-hue: 158;
+      --dc-color-dark-success-saturation: var(--dc-color-dark-saturation);
     }
   `,
+  baseTheme,
 );
 
 export class ThemeProvider {

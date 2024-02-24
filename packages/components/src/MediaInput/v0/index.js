@@ -17,6 +17,7 @@ const mediaInputStyles = css`
     outline: none;
     padding: 0;
     margin: 0;
+    color: var(--dc-color-foreground);
   }
 
   & > [data-label] + input {
@@ -33,7 +34,7 @@ const mediaInputStyles = css`
   }
 
   & > input:disabled {
-    color: var(--dc-color-neutral-4);
+    color: var(--dc-color-neutral-70);
   }
 `;
 

@@ -1,5 +1,6 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
+import { transparentColor } from "../../theming/v0";
 
 const styles = css`
   & {
@@ -10,7 +11,7 @@ const styles = css`
     width: var(--dc-skeleton-width, 100%);
     overflow: hidden;
     line-height: 0.6;
-    background-color: var(--dc-text-color-0-a-10);
+    background-color: ${transparentColor("neutral-70", 35)};
   }
 
   @keyframes &(fade-in) {
@@ -34,7 +35,7 @@ const styles = css`
     background-image: linear-gradient(
       45deg,
       transparent,
-      var(--dc-text-color-0-a-10),
+      ${transparentColor("neutral-70", 35)},
       transparent
     );
   }

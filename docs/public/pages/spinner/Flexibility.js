@@ -8,7 +8,7 @@ const firstSpinner = css`
   & {
     --dc-spinner-size: 20px;
     --dc-spinner-border-size: 3px;
-    --dc-spinner-background: #daeded;
+    --dc-spinner-background: var(--dc-color-neutral-90);
     --dc-spinner-color: #ffb057;
   }
 `;

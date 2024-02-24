@@ -15,7 +15,7 @@ const styles = css`
     user-select: none;
 
     display: inline-flex;
-    color: var(--dc-color-neutral-0);
+    color: var(--dc-color-background);
     width: 40px;
     height: 20px;
     box-sizing: border-box;
@@ -25,7 +25,7 @@ const styles = css`
   }
 
   &:checked:not(:disabled) + label {
-    background-color: var(--dc-color-primary-0);
+    background-color: var(--dc-color-primary-50);
   }
 
   & + label:before {
@@ -33,7 +33,7 @@ const styles = css`
     position: absolute;
     height: 12px;
     width: 12px;
-    background: var(--dc-color-neutral-0);
+    background: var(--dc-color-background);
     border-radius: 100%;
     transition:
       left 0.15s ease-in-out 0s,
@@ -49,7 +49,7 @@ const styles = css`
   }
 
   &:not(:checked):not(:disabled) + label {
-    background-color: var(--dc-color-neutral-5);
+    background-color: var(--dc-color-neutral-50);
   }
 
   &:not(:checked) + label:before {
@@ -61,11 +61,11 @@ const styles = css`
   }
 
   &:not(:checked):not(:disabled) + label:hover {
-    background-color: var(--dc-color-neutral-6);
+    background-color: var(--dc-color-neutral-40);
   }
 
   &:checked:not(:disabled) + label:hover {
-    background-color: var(--dc-color-primary-1);
+    background-color: var(--dc-color-primary-30);
   }
 
   &:focus-visible + label {
@@ -78,7 +78,7 @@ const styles = css`
   }
 
   &:disabled + label {
-    background-color: var(--dc-color-neutral-2);
+    background-color: var(--dc-color-neutral-80);
   }
 `;
 

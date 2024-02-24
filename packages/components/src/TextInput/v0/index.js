@@ -4,7 +4,7 @@ import { css, classes } from "stylewars";
 export const textInputStyles = css`
   & {
     appearance: none;
-    border: 1px solid var(--dc-color-neutral-3);
+    border: 1px solid var(--dc-color-neutral-70);
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
@@ -14,27 +14,30 @@ export const textInputStyles = css`
     min-height: 40px;
     line-height: 1.28571;
     font-size: 14px;
-    background-color: var(--dc-color-neutral-0);
-    color: var(--dc-text-color-0);
+    background-color: var(--dc-color-background);
+    color: var(--dc-color-foreground);
     transition:
       border-color 0.25s ease-in-out 0s,
       outline 0.1s ease-in-out 0s;
   }
 
+  &[disabled],
+  &:disabled,
+  &[aria-disabled="true"],
   &[readonly],
   &[aria-readonly="true"] {
-    border-color: var(--dc-color-neutral-3);
-    background-color: var(--dc-color-neutral-1);
+    border-color: var(--dc-color-neutral-80);
+    background-color: var(--dc-color-neutral-97);
   }
 
   &:hover {
-    border-color: var(--dc-color-primary-0);
+    border-color: var(--dc-color-primary-50);
   }
 
   &:focus,
   &:focus-within {
     outline: none;
-    border-color: var(--dc-color-primary-0);
+    border-color: var(--dc-color-primary-50);
     outline: var(--dc-focus-ring);
   }
 
@@ -42,9 +45,7 @@ export const textInputStyles = css`
   &:disabled,
   &[aria-disabled="true"] {
     cursor: default;
-    border-color: var(--dc-color-neutral-2);
-    background-color: var(--dc-color-neutral-1);
-    color: var(--dc-color-neutral-4);
+    color: var(--dc-color-neutral-70);
     pointer-events: none;
   }
 `;

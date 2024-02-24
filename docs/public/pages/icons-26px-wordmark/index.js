@@ -35,7 +35,7 @@ const columnStyles = css`
     fill: #bbb;
     margin: 2em 0;
   }
-`;
+`
 
 const copyStyles = css`
   & {
@@ -43,12 +43,13 @@ const copyStyles = css`
     background: none;
     text-align: left;
     cursor: pointer;
+    color: var(--dc-color-foreground);
   }
 
   &:focus {
     outline: none;
   }
-`;
+`
 
 let interceptCopy;
 
@@ -59,30 +60,26 @@ document.addEventListener("copy", (e) => {
   }
 });
 
-const copy = (text) => {
-  interceptCopy = text;
+const copy = text => {
+  interceptCopy = text
   document.execCommand("copy");
   interceptCopy = null;
-};
+}
 
 class IconCopyButton {
   constructor() {
     this.onClick = () => {
-      const name = this.props.children;
-      copy(`import ${name} from "@dependable/icons/${name}";`);
-    };
+      const name = this.props.children
+      copy(`import ${name} from "@dependable/icons/${name}";`)
+    }
   }
 
   render({ children }) {
     return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
+      <button onClick=${this.onClick} className=${copyStyles} title="Click to copy">
         ${children}
       </button>
-    `;
+    `
   }
 }
 
@@ -99,53 +96,54 @@ export default class Page {
       <//>
       <${Line} />
       <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
+        Tip <${TipIcon} /> click on the icon label to copy the
+        import to that clipboard.
       </p>
       <div className=${columnStyles}>
-        <${WordmarkBoldSuite26Icon} />
-        <${IconCopyButton}>WordmarkBoldSuite26Icon<//>
-        <${WordmarkBoldSupport26Icon} />
-        <${IconCopyButton}>WordmarkBoldSupport26Icon<//>
-        <${WordmarkCapitalSuite26Icon} />
-        <${IconCopyButton}>WordmarkCapitalSuite26Icon<//>
-        <${WordmarkCapitalThe26Icon} />
-        <${IconCopyButton}>WordmarkCapitalThe26Icon<//>
-        <${WordmarkCapitalZendesk26Icon} />
-        <${IconCopyButton}>WordmarkCapitalZendesk26Icon<//>
-        <${WordmarkChat26Icon} />
-        <${IconCopyButton}>WordmarkChat26Icon<//>
-        <${WordmarkConnect26Icon} />
-        <${IconCopyButton}>WordmarkConnect26Icon<//>
-        <${WordmarkExplore26Icon} />
-        <${IconCopyButton}>WordmarkExplore26Icon<//>
-        <${WordmarkGarden26Icon} />
-        <${IconCopyButton}>WordmarkGarden26Icon<//>
-        <${WordmarkGather26Icon} />
-        <${IconCopyButton}>WordmarkGather26Icon<//>
-        <${WordmarkGuide26Icon} />
-        <${IconCopyButton}>WordmarkGuide26Icon<//>
-        <${WordmarkHelpCenter26Icon} />
-        <${IconCopyButton}>WordmarkHelpCenter26Icon<//>
-        <${WordmarkInbox26Icon} />
-        <${IconCopyButton}>WordmarkInbox26Icon<//>
-        <${WordmarkMessage26Icon} />
-        <${IconCopyButton}>WordmarkMessage26Icon<//>
-        <${WordmarkMessaging26Icon} />
-        <${IconCopyButton}>WordmarkMessaging26Icon<//>
-        <${WordmarkReach26Icon} />
-        <${IconCopyButton}>WordmarkReach26Icon<//>
-        <${WordmarkSell26Icon} />
-        <${IconCopyButton}>WordmarkSell26Icon<//>
-        <${WordmarkSunshine26Icon} />
-        <${IconCopyButton}>WordmarkSunshine26Icon<//>
-        <${WordmarkSupport26Icon} />
-        <${IconCopyButton}>WordmarkSupport26Icon<//>
-        <${WordmarkTalk26Icon} />
-        <${IconCopyButton}>WordmarkTalk26Icon<//>
-        <${WordmarkZendesk26Icon} />
-        <${IconCopyButton}>WordmarkZendesk26Icon<//>
+         <${WordmarkBoldSuite26Icon} />
+         <${IconCopyButton}>WordmarkBoldSuite26Icon<//>
+         <${WordmarkBoldSupport26Icon} />
+         <${IconCopyButton}>WordmarkBoldSupport26Icon<//>
+         <${WordmarkCapitalSuite26Icon} />
+         <${IconCopyButton}>WordmarkCapitalSuite26Icon<//>
+         <${WordmarkCapitalThe26Icon} />
+         <${IconCopyButton}>WordmarkCapitalThe26Icon<//>
+         <${WordmarkCapitalZendesk26Icon} />
+         <${IconCopyButton}>WordmarkCapitalZendesk26Icon<//>
+         <${WordmarkChat26Icon} />
+         <${IconCopyButton}>WordmarkChat26Icon<//>
+         <${WordmarkConnect26Icon} />
+         <${IconCopyButton}>WordmarkConnect26Icon<//>
+         <${WordmarkExplore26Icon} />
+         <${IconCopyButton}>WordmarkExplore26Icon<//>
+         <${WordmarkGarden26Icon} />
+         <${IconCopyButton}>WordmarkGarden26Icon<//>
+         <${WordmarkGather26Icon} />
+         <${IconCopyButton}>WordmarkGather26Icon<//>
+         <${WordmarkGuide26Icon} />
+         <${IconCopyButton}>WordmarkGuide26Icon<//>
+         <${WordmarkHelpCenter26Icon} />
+         <${IconCopyButton}>WordmarkHelpCenter26Icon<//>
+         <${WordmarkInbox26Icon} />
+         <${IconCopyButton}>WordmarkInbox26Icon<//>
+         <${WordmarkMessage26Icon} />
+         <${IconCopyButton}>WordmarkMessage26Icon<//>
+         <${WordmarkMessaging26Icon} />
+         <${IconCopyButton}>WordmarkMessaging26Icon<//>
+         <${WordmarkReach26Icon} />
+         <${IconCopyButton}>WordmarkReach26Icon<//>
+         <${WordmarkSell26Icon} />
+         <${IconCopyButton}>WordmarkSell26Icon<//>
+         <${WordmarkSunshine26Icon} />
+         <${IconCopyButton}>WordmarkSunshine26Icon<//>
+         <${WordmarkSupport26Icon} />
+         <${IconCopyButton}>WordmarkSupport26Icon<//>
+         <${WordmarkTalk26Icon} />
+         <${IconCopyButton}>WordmarkTalk26Icon<//>
+         <${WordmarkZendesk26Icon} />
+         <${IconCopyButton}>WordmarkZendesk26Icon<//>
       </div>
     `;
   }
 }
+

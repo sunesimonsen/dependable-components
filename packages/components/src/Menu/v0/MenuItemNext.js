@@ -7,7 +7,7 @@ import ChevronLeftStroke16Icon from "@dependable/icons/ChevronLeftStroke16Icon";
 const iconStyles = css`
   & {
     position: absolute;
-    color: var(--dc-text-color-1);
+    color: var(--dc-color-neutral-900);
   }
 `;
 

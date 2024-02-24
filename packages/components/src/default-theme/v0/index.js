@@ -1,66 +1,57 @@
 import { html } from "@dependable/view";
-import { css } from "stylewars";
+import { css, classes } from "stylewars";
+import { color, colorMix, transparentColor } from "../../theming/v0";
+import { baseTheme } from "../../base-theme/v0";
 
-export const theme = css`
-  & {
-    --dc-color-primary-0: rgb(31, 115, 183);
-    --dc-color-primary-1: rgb(20, 74, 117);
-    --dc-color-primary-2: rgb(15, 53, 84);
+export const theme = classes(
+  css`
+    & {
+      --dc-color-foreground: srgb(0.1 0.1 0.1);
+      --dc-color-background: white;
 
-    --dc-color-secondary-0: transparent;
-    --dc-color-secondary-1: rgba(31, 115, 183, 0.08);
-    --dc-color-secondary-2: rgba(31, 115, 183, 0.2);
+      --dc-color-saturation: 71;
 
-    --dc-color-danger-primary-0: rgb(204, 51, 64);
-    --dc-color-danger-primary-1: rgb(140, 35, 44);
-    --dc-color-danger-primary-2: rgb(104, 18, 25);
+      --dc-color-primary-hue: 207;
 
-    --dc-color-danger-secondary-0: transparent;
-    --dc-color-danger-secondary-1: rgba(204, 51, 64, 0.08);
-    --dc-color-danger-secondary-2: rgba(204, 51, 64, 0.2);
+      --dc-color-error-hue: 0;
 
-    --dc-color-neutral-0: rgb(255, 255, 255);
-    --dc-color-neutral-1: rgb(248, 249, 249);
-    --dc-color-neutral-2: rgb(233, 235, 237);
-    --dc-color-neutral-3: rgb(216, 220, 222);
-    --dc-color-neutral-4: rgb(194, 200, 204);
-    --dc-color-neutral-5: rgb(135, 146, 157);
-    --dc-color-neutral-6: rgb(104, 115, 125);
+      --dc-color-warning-hue: 33;
+      --dc-color-warning-saturation: 85;
 
-    --dc-text-color-0: rgb(47, 57, 65);
-    --dc-text-color-1: rgb(104, 115, 125);
-    --dc-text-color-0-a-10: rgba(47, 57, 65, 0.1);
+      --dc-color-success-hue: 158;
+      --dc-color-success-saturation: 55;
 
-    --dc-focus-ring-color: rgba(31, 115, 183, 0.35);
-    --dc-focus-ring-color-danger: rgba(204, 51, 64, 0.35);
-    --dc-focus-ring-style: solid;
-    --dc-focus-ring-width: 3px;
+      --dc-color-dark-saturation: 60;
 
-    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
-      var(--dc-focus-ring-color);
+      --dc-color-dark-background-hue: calc(var(--dc-color-primary-hue) + 15);
+      --dc-color-dark-background: hsl(
+        var(--dc-color-dark-background-hue),
+        50%,
+        15%
+      );
+      --dc-color-dark-foreground: hsl(
+        var(--dc-color-dark-background-hue),
+        50%,
+        95%
+      );
 
-    --dc-component-border-radius: 4px;
+      --dc-color-dark-saturation: 71;
 
-    font-family: Verdana, Geneva, sans-serif;
+      --dc-color-dark-primary-hue: 207;
+      --dc-color-dark-primary-saturation: var(--dc-color-dark-saturation);
 
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Oxygen-Sans,
-      Ubuntu,
-      Cantarell,
-      Helvetica Neue,
-      Arial,
-      sans-serif;
+      --dc-color-dark-error-hue: 0;
+      --dc-color-dark-error-saturation: var(--dc-color-dark-saturation);
 
-    color: var(--dc-text-color-0);
+      --dc-color-dark-warning-hue: 33;
+      --dc-color-dark-warning-saturation: var(--dc-color-dark-saturation);
 
-    box-sizing: border-box;
-  }
-`;
+      --dc-color-dark-success-hue: 158;
+      --dc-color-dark-success-saturation: var(--dc-color-dark-saturation);
+    }
+  `,
+  baseTheme,
+);
 
 export class ThemeProvider {
   render({ children, ...other }) {

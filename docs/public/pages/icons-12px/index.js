@@ -229,7 +229,7 @@ const columnStyles = css`
     fill: #bbb;
     margin: 2em 0;
   }
-`;
+`
 
 const copyStyles = css`
   & {
@@ -237,12 +237,13 @@ const copyStyles = css`
     background: none;
     text-align: left;
     cursor: pointer;
+    color: var(--dc-color-foreground);
   }
 
   &:focus {
     outline: none;
   }
-`;
+`
 
 let interceptCopy;
 
@@ -253,30 +254,26 @@ document.addEventListener("copy", (e) => {
   }
 });
 
-const copy = (text) => {
-  interceptCopy = text;
+const copy = text => {
+  interceptCopy = text
   document.execCommand("copy");
   interceptCopy = null;
-};
+}
 
 class IconCopyButton {
   constructor() {
     this.onClick = () => {
-      const name = this.props.children;
-      copy(`import ${name} from "@dependable/icons/${name}";`);
-    };
+      const name = this.props.children
+      copy(`import ${name} from "@dependable/icons/${name}";`)
+    }
   }
 
   render({ children }) {
     return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
+      <button onClick=${this.onClick} className=${copyStyles} title="Click to copy">
         ${children}
       </button>
-    `;
+    `
   }
 }
 
@@ -293,441 +290,442 @@ export default class Page {
       <//>
       <${Line} />
       <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
+        Tip <${TipIcon} /> click on the icon label to copy the
+        import to that clipboard.
       </p>
       <div className=${columnStyles}>
-        <${I123Stroke12Icon} />
-        <${IconCopyButton}>I123Stroke12Icon<//>
-        <${AdjustStroke12Icon} />
-        <${IconCopyButton}>AdjustStroke12Icon<//>
-        <${AlertErrorStroke12Icon} />
-        <${IconCopyButton}>AlertErrorStroke12Icon<//>
-        <${AlertWarningStroke12Icon} />
-        <${IconCopyButton}>AlertWarningStroke12Icon<//>
-        <${AlignCenterStroke12Icon} />
-        <${IconCopyButton}>AlignCenterStroke12Icon<//>
-        <${AlignJustifyStroke12Icon} />
-        <${IconCopyButton}>AlignJustifyStroke12Icon<//>
-        <${AlignLeftStroke12Icon} />
-        <${IconCopyButton}>AlignLeftStroke12Icon<//>
-        <${AlignRightStroke12Icon} />
-        <${IconCopyButton}>AlignRightStroke12Icon<//>
-        <${AltTextStroke12Icon} />
-        <${IconCopyButton}>AltTextStroke12Icon<//>
-        <${ArrowLeftSmStroke12Icon} />
-        <${IconCopyButton}>ArrowLeftSmStroke12Icon<//>
-        <${ArrowLeftStroke12Icon} />
-        <${IconCopyButton}>ArrowLeftStroke12Icon<//>
-        <${ArrowLeftUpStroke12Icon} />
-        <${IconCopyButton}>ArrowLeftUpStroke12Icon<//>
-        <${ArrowRetweetStroke12Icon} />
-        <${IconCopyButton}>ArrowRetweetStroke12Icon<//>
-        <${ArrowReverseStroke12Icon} />
-        <${IconCopyButton}>ArrowReverseStroke12Icon<//>
-        <${ArrowTrendingStroke12Icon} />
-        <${IconCopyButton}>ArrowTrendingStroke12Icon<//>
-        <${AsteriskStroke12Icon} />
-        <${IconCopyButton}>AsteriskStroke12Icon<//>
-        <${AtStroke12Icon} />
-        <${IconCopyButton}>AtStroke12Icon<//>
-        <${BarChartStroke12Icon} />
-        <${IconCopyButton}>BarChartStroke12Icon<//>
-        <${BasketballStroke12Icon} />
-        <${IconCopyButton}>BasketballStroke12Icon<//>
-        <${BoldStroke12Icon} />
-        <${IconCopyButton}>BoldStroke12Icon<//>
-        <${BookClosedStroke12Icon} />
-        <${IconCopyButton}>BookClosedStroke12Icon<//>
-        <${BookOpenStroke12Icon} />
-        <${IconCopyButton}>BookOpenStroke12Icon<//>
-        <${Box3dStroke12Icon} />
-        <${IconCopyButton}>Box3dStroke12Icon<//>
-        <${BuildingStroke12Icon} />
-        <${IconCopyButton}>BuildingStroke12Icon<//>
-        <${CalendarStroke12Icon} />
-        <${IconCopyButton}>CalendarStroke12Icon<//>
-        <${CameraStroke12Icon} />
-        <${IconCopyButton}>CameraStroke12Icon<//>
-        <${CarStroke12Icon} />
-        <${IconCopyButton}>CarStroke12Icon<//>
-        <${CenterStroke12Icon} />
-        <${IconCopyButton}>CenterStroke12Icon<//>
-        <${CheckBadgeStroke12Icon} />
-        <${IconCopyButton}>CheckBadgeStroke12Icon<//>
-        <${CheckBoxDoubleStroke12Icon} />
-        <${IconCopyButton}>CheckBoxDoubleStroke12Icon<//>
-        <${CheckBoxStroke12Icon} />
-        <${IconCopyButton}>CheckBoxStroke12Icon<//>
-        <${CheckCircleStroke12Icon} />
-        <${IconCopyButton}>CheckCircleStroke12Icon<//>
-        <${CheckDoubleStroke12Icon} />
-        <${IconCopyButton}>CheckDoubleStroke12Icon<//>
-        <${CheckLgStroke12Icon} />
-        <${IconCopyButton}>CheckLgStroke12Icon<//>
-        <${CheckSmStroke12Icon} />
-        <${IconCopyButton}>CheckSmStroke12Icon<//>
-        <${ChevronBoxStroke12Icon} />
-        <${IconCopyButton}>ChevronBoxStroke12Icon<//>
-        <${ChevronDoubleDownStroke12Icon} />
-        <${IconCopyButton}>ChevronDoubleDownStroke12Icon<//>
-        <${ChevronDoubleLeftStroke12Icon} />
-        <${IconCopyButton}>ChevronDoubleLeftStroke12Icon<//>
-        <${ChevronDoubleRightStroke12Icon} />
-        <${IconCopyButton}>ChevronDoubleRightStroke12Icon<//>
-        <${ChevronDoubleUpStroke12Icon} />
-        <${IconCopyButton}>ChevronDoubleUpStroke12Icon<//>
-        <${ChevronDownStroke12Icon} />
-        <${IconCopyButton}>ChevronDownStroke12Icon<//>
-        <${ChevronLeftStroke12Icon} />
-        <${IconCopyButton}>ChevronLeftStroke12Icon<//>
-        <${ChevronRightStroke12Icon} />
-        <${IconCopyButton}>ChevronRightStroke12Icon<//>
-        <${ChevronUpStroke12Icon} />
-        <${IconCopyButton}>ChevronUpStroke12Icon<//>
-        <${CircleFullStroke12Icon} />
-        <${IconCopyButton}>CircleFullStroke12Icon<//>
-        <${CircleLineStroke12Icon} />
-        <${IconCopyButton}>CircleLineStroke12Icon<//>
-        <${CircleSmStroke12Icon} />
-        <${IconCopyButton}>CircleSmStroke12Icon<//>
-        <${CircleStroke12Icon} />
-        <${IconCopyButton}>CircleStroke12Icon<//>
-        <${ClipboardBlankStroke12Icon} />
-        <${IconCopyButton}>ClipboardBlankStroke12Icon<//>
-        <${ClipboardCheckStroke12Icon} />
-        <${IconCopyButton}>ClipboardCheckStroke12Icon<//>
-        <${ClipboardListStroke12Icon} />
-        <${IconCopyButton}>ClipboardListStroke12Icon<//>
-        <${ClockCycleStroke12Icon} />
-        <${IconCopyButton}>ClockCycleStroke12Icon<//>
-        <${ClockInStroke12Icon} />
-        <${IconCopyButton}>ClockInStroke12Icon<//>
-        <${ClockOutStroke12Icon} />
-        <${IconCopyButton}>ClockOutStroke12Icon<//>
-        <${ClockStroke12Icon} />
-        <${IconCopyButton}>ClockStroke12Icon<//>
-        <${CopyStroke12Icon} />
-        <${IconCopyButton}>CopyStroke12Icon<//>
-        <${CreditCardStroke12Icon} />
-        <${IconCopyButton}>CreditCardStroke12Icon<//>
-        <${CssStroke12Icon} />
-        <${IconCopyButton}>CssStroke12Icon<//>
-        <${CursorArrowStroke12Icon} />
-        <${IconCopyButton}>CursorArrowStroke12Icon<//>
-        <${CutleryStroke12Icon} />
-        <${IconCopyButton}>CutleryStroke12Icon<//>
-        <${DashStroke12Icon} />
-        <${IconCopyButton}>DashStroke12Icon<//>
-        <${DatabaseStroke12Icon} />
-        <${IconCopyButton}>DatabaseStroke12Icon<//>
-        <${DecimalStroke12Icon} />
-        <${IconCopyButton}>DecimalStroke12Icon<//>
-        <${DirectionLtrStroke12Icon} />
-        <${IconCopyButton}>DirectionLtrStroke12Icon<//>
-        <${DirectionRtlStroke12Icon} />
-        <${IconCopyButton}>DirectionRtlStroke12Icon<//>
-        <${DocumentSearchStroke12Icon} />
-        <${IconCopyButton}>DocumentSearchStroke12Icon<//>
-        <${DownloadStroke12Icon} />
-        <${IconCopyButton}>DownloadStroke12Icon<//>
-        <${DuplicateStroke12Icon} />
-        <${IconCopyButton}>DuplicateStroke12Icon<//>
-        <${EditRedoStroke12Icon} />
-        <${IconCopyButton}>EditRedoStroke12Icon<//>
-        <${EditUndoStroke12Icon} />
-        <${IconCopyButton}>EditUndoStroke12Icon<//>
-        <${EmailStroke12Icon} />
-        <${IconCopyButton}>EmailStroke12Icon<//>
-        <${EraserStroke12Icon} />
-        <${IconCopyButton}>EraserStroke12Icon<//>
-        <${ExitStroke12Icon} />
-        <${IconCopyButton}>ExitStroke12Icon<//>
-        <${EyeHideStroke12Icon} />
-        <${IconCopyButton}>EyeHideStroke12Icon<//>
-        <${EyeStroke12Icon} />
-        <${IconCopyButton}>EyeStroke12Icon<//>
-        <${FacebookStroke12Icon} />
-        <${IconCopyButton}>FacebookStroke12Icon<//>
-        <${FileDocumentStroke12Icon} />
-        <${IconCopyButton}>FileDocumentStroke12Icon<//>
-        <${FileErrorStroke12Icon} />
-        <${IconCopyButton}>FileErrorStroke12Icon<//>
-        <${FileGenericStroke12Icon} />
-        <${IconCopyButton}>FileGenericStroke12Icon<//>
-        <${FileImageStroke12Icon} />
-        <${IconCopyButton}>FileImageStroke12Icon<//>
-        <${FilePdfStroke12Icon} />
-        <${IconCopyButton}>FilePdfStroke12Icon<//>
-        <${FilePresentationStroke12Icon} />
-        <${IconCopyButton}>FilePresentationStroke12Icon<//>
-        <${FileSpreadsheetStroke12Icon} />
-        <${IconCopyButton}>FileSpreadsheetStroke12Icon<//>
-        <${FileZipStroke12Icon} />
-        <${IconCopyButton}>FileZipStroke12Icon<//>
-        <${FilterStroke12Icon} />
-        <${IconCopyButton}>FilterStroke12Icon<//>
-        <${FlagStroke12Icon} />
-        <${IconCopyButton}>FlagStroke12Icon<//>
-        <${FolderClosedStroke12Icon} />
-        <${IconCopyButton}>FolderClosedStroke12Icon<//>
-        <${FolderOpenStroke12Icon} />
-        <${IconCopyButton}>FolderOpenStroke12Icon<//>
-        <${FullWidthStroke12Icon} />
-        <${IconCopyButton}>FullWidthStroke12Icon<//>
-        <${GearStroke12Icon} />
-        <${IconCopyButton}>GearStroke12Icon<//>
-        <${GithubStroke12Icon} />
-        <${IconCopyButton}>GithubStroke12Icon<//>
-        <${GlobeStroke12Icon} />
-        <${IconCopyButton}>GlobeStroke12Icon<//>
-        <${Grid2x2Stroke12Icon} />
-        <${IconCopyButton}>Grid2x2Stroke12Icon<//>
-        <${Grid3x3Stroke12Icon} />
-        <${IconCopyButton}>Grid3x3Stroke12Icon<//>
-        <${Grip12Icon} />
-        <${IconCopyButton}>Grip12Icon<//>
-        <${HeadingStroke12Icon} />
-        <${IconCopyButton}>HeadingStroke12Icon<//>
-        <${HeartStroke12Icon} />
-        <${IconCopyButton}>HeartStroke12Icon<//>
-        <${HistoryStroke12Icon} />
-        <${IconCopyButton}>HistoryStroke12Icon<//>
-        <${HomeStroke12Icon} />
-        <${IconCopyButton}>HomeStroke12Icon<//>
-        <${HorizontalRuleStroke12Icon} />
-        <${IconCopyButton}>HorizontalRuleStroke12Icon<//>
-        <${ImageStroke12Icon} />
-        <${IconCopyButton}>ImageStroke12Icon<//>
-        <${InboxStroke12Icon} />
-        <${IconCopyButton}>InboxStroke12Icon<//>
-        <${IndentDecreaseStroke12Icon} />
-        <${IconCopyButton}>IndentDecreaseStroke12Icon<//>
-        <${IndentIncreaseStroke12Icon} />
-        <${IconCopyButton}>IndentIncreaseStroke12Icon<//>
-        <${InfoStroke12Icon} />
-        <${IconCopyButton}>InfoStroke12Icon<//>
-        <${InterlockingRingsStroke12Icon} />
-        <${IconCopyButton}>InterlockingRingsStroke12Icon<//>
-        <${ItalicStroke12Icon} />
-        <${IconCopyButton}>ItalicStroke12Icon<//>
-        <${LeafStroke12Icon} />
-        <${IconCopyButton}>LeafStroke12Icon<//>
-        <${LifesaverStroke12Icon} />
-        <${IconCopyButton}>LifesaverStroke12Icon<//>
-        <${LightbulbStroke12Icon} />
-        <${IconCopyButton}>LightbulbStroke12Icon<//>
-        <${LightningBoltStroke12Icon} />
-        <${IconCopyButton}>LightningBoltStroke12Icon<//>
-        <${LineGraphStroke12Icon} />
-        <${IconCopyButton}>LineGraphStroke12Icon<//>
-        <${LineSocialStroke12Icon} />
-        <${IconCopyButton}>LineSocialStroke12Icon<//>
-        <${LinkRemoveStroke12Icon} />
-        <${IconCopyButton}>LinkRemoveStroke12Icon<//>
-        <${LinkStroke12Icon} />
-        <${IconCopyButton}>LinkStroke12Icon<//>
-        <${LinkedinStroke12Icon} />
-        <${IconCopyButton}>LinkedinStroke12Icon<//>
-        <${ListBulletStroke12Icon} />
-        <${IconCopyButton}>ListBulletStroke12Icon<//>
-        <${ListNumberRtlStroke12Icon} />
-        <${IconCopyButton}>ListNumberRtlStroke12Icon<//>
-        <${ListNumberStroke12Icon} />
-        <${IconCopyButton}>ListNumberStroke12Icon<//>
-        <${LocationStroke12Icon} />
-        <${IconCopyButton}>LocationStroke12Icon<//>
-        <${LockLockedStroke12Icon} />
-        <${IconCopyButton}>LockLockedStroke12Icon<//>
-        <${LockUnlockedStroke12Icon} />
-        <${IconCopyButton}>LockUnlockedStroke12Icon<//>
-        <${MarkupStroke12Icon} />
-        <${IconCopyButton}>MarkupStroke12Icon<//>
-        <${MaximizeStroke12Icon} />
-        <${IconCopyButton}>MaximizeStroke12Icon<//>
-        <${MegaphoneStroke12Icon} />
-        <${IconCopyButton}>MegaphoneStroke12Icon<//>
-        <${MenuStroke12Icon} />
-        <${IconCopyButton}>MenuStroke12Icon<//>
-        <${MessengerStroke12Icon} />
-        <${IconCopyButton}>MessengerStroke12Icon<//>
-        <${MicrophoneOffStroke12Icon} />
-        <${IconCopyButton}>MicrophoneOffStroke12Icon<//>
-        <${MicrophoneOnStroke12Icon} />
-        <${IconCopyButton}>MicrophoneOnStroke12Icon<//>
-        <${MinimizeStroke12Icon} />
-        <${IconCopyButton}>MinimizeStroke12Icon<//>
-        <${MobilePhoneStroke12Icon} />
-        <${IconCopyButton}>MobilePhoneStroke12Icon<//>
-        <${MonitorStroke12Icon} />
-        <${IconCopyButton}>MonitorStroke12Icon<//>
-        <${MultilineStroke12Icon} />
-        <${IconCopyButton}>MultilineStroke12Icon<//>
-        <${NewWindowStroke12Icon} />
-        <${IconCopyButton}>NewWindowStroke12Icon<//>
-        <${NotesStroke12Icon} />
-        <${IconCopyButton}>NotesStroke12Icon<//>
-        <${NotificationStroke12Icon} />
-        <${IconCopyButton}>NotificationStroke12Icon<//>
-        <${NumberStroke12Icon} />
-        <${IconCopyButton}>NumberStroke12Icon<//>
-        <${OriginalSizeStroke12Icon} />
-        <${IconCopyButton}>OriginalSizeStroke12Icon<//>
-        <${OverflowStroke12Icon} />
-        <${IconCopyButton}>OverflowStroke12Icon<//>
-        <${OverflowVerticalStroke12Icon} />
-        <${IconCopyButton}>OverflowVerticalStroke12Icon<//>
-        <${PaletteStroke12Icon} />
-        <${IconCopyButton}>PaletteStroke12Icon<//>
-        <${PanelsStroke12Icon} />
-        <${IconCopyButton}>PanelsStroke12Icon<//>
-        <${Paperclip12Icon} />
-        <${IconCopyButton}>Paperclip12Icon<//>
-        <${ParenthesesStroke12Icon} />
-        <${IconCopyButton}>ParenthesesStroke12Icon<//>
-        <${PauseStroke12Icon} />
-        <${IconCopyButton}>PauseStroke12Icon<//>
-        <${PencilStroke12Icon} />
-        <${IconCopyButton}>PencilStroke12Icon<//>
-        <${PhoneCallEndStroke12Icon} />
-        <${IconCopyButton}>PhoneCallEndStroke12Icon<//>
-        <${PhoneCallInStroke12Icon} />
-        <${IconCopyButton}>PhoneCallInStroke12Icon<//>
-        <${PhoneCallOutStroke12Icon} />
-        <${IconCopyButton}>PhoneCallOutStroke12Icon<//>
-        <${PhoneCallPauseStroke12Icon} />
-        <${IconCopyButton}>PhoneCallPauseStroke12Icon<//>
-        <${PhoneCallSpeakerStroke12Icon} />
-        <${IconCopyButton}>PhoneCallSpeakerStroke12Icon<//>
-        <${PhoneCallTransferOnlyStroke12Icon} />
-        <${IconCopyButton}>PhoneCallTransferOnlyStroke12Icon<//>
-        <${PhoneCallTransferStroke12Icon} />
-        <${IconCopyButton}>PhoneCallTransferStroke12Icon<//>
-        <${PhoneStroke12Icon} />
-        <${IconCopyButton}>PhoneStroke12Icon<//>
-        <${PinRemoveStroke12Icon} />
-        <${IconCopyButton}>PinRemoveStroke12Icon<//>
-        <${PinStroke12Icon} />
-        <${IconCopyButton}>PinStroke12Icon<//>
-        <${PlayCircleStroke12Icon} />
-        <${IconCopyButton}>PlayCircleStroke12Icon<//>
-        <${PlayStroke12Icon} />
-        <${IconCopyButton}>PlayStroke12Icon<//>
-        <${PlugStroke12Icon} />
-        <${IconCopyButton}>PlugStroke12Icon<//>
-        <${PlusCircleStroke12Icon} />
-        <${IconCopyButton}>PlusCircleStroke12Icon<//>
-        <${PlusStroke12Icon} />
-        <${IconCopyButton}>PlusStroke12Icon<//>
-        <${PuzzlePieceStroke12Icon} />
-        <${IconCopyButton}>PuzzlePieceStroke12Icon<//>
-        <${QuestionMarkStroke12Icon} />
-        <${IconCopyButton}>QuestionMarkStroke12Icon<//>
-        <${QuoteStroke12Icon} />
-        <${IconCopyButton}>QuoteStroke12Icon<//>
-        <${RearrangeStroke12Icon} />
-        <${IconCopyButton}>RearrangeStroke12Icon<//>
-        <${RecordStroke12Icon} />
-        <${IconCopyButton}>RecordStroke12Icon<//>
-        <${ReloadStroke12Icon} />
-        <${IconCopyButton}>ReloadStroke12Icon<//>
-        <${SandboxStroke12Icon} />
-        <${IconCopyButton}>SandboxStroke12Icon<//>
-        <${SearchStroke12Icon} />
-        <${IconCopyButton}>SearchStroke12Icon<//>
-        <${ShapesStroke12Icon} />
-        <${IconCopyButton}>ShapesStroke12Icon<//>
-        <${ShareStroke12Icon} />
-        <${IconCopyButton}>ShareStroke12Icon<//>
-        <${ShieldStroke12Icon} />
-        <${IconCopyButton}>ShieldStroke12Icon<//>
-        <${ShoppingCartStroke12Icon} />
-        <${IconCopyButton}>ShoppingCartStroke12Icon<//>
-        <${SignpostStroke12Icon} />
-        <${IconCopyButton}>SignpostStroke12Icon<//>
-        <${SlackStroke12Icon} />
-        <${IconCopyButton}>SlackStroke12Icon<//>
-        <${SmileSlightStroke12Icon} />
-        <${IconCopyButton}>SmileSlightStroke12Icon<//>
-        <${SmileyStroke12Icon} />
-        <${IconCopyButton}>SmileyStroke12Icon<//>
-        <${SortStroke12Icon} />
-        <${IconCopyButton}>SortStroke12Icon<//>
-        <${SpeechBubbleConversationStroke12Icon} />
-        <${IconCopyButton}>SpeechBubbleConversationStroke12Icon<//>
-        <${SpeechBubbleLightningBoltStroke12Icon} />
-        <${IconCopyButton}>SpeechBubbleLightningBoltStroke12Icon<//>
-        <${SpeechBubblePlainStroke12Icon} />
-        <${IconCopyButton}>SpeechBubblePlainStroke12Icon<//>
-        <${StarStroke12Icon} />
-        <${IconCopyButton}>StarStroke12Icon<//>
-        <${TableStroke12Icon} />
-        <${IconCopyButton}>TableStroke12Icon<//>
-        <${TagStroke12Icon} />
-        <${IconCopyButton}>TagStroke12Icon<//>
-        <${TerminalCliStroke12Icon} />
-        <${IconCopyButton}>TerminalCliStroke12Icon<//>
-        <${TerminalWindowStroke12Icon} />
-        <${IconCopyButton}>TerminalWindowStroke12Icon<//>
-        <${TextColorStroke12Icon} />
-        <${IconCopyButton}>TextColorStroke12Icon<//>
-        <${TextStroke12Icon} />
-        <${IconCopyButton}>TextStroke12Icon<//>
-        <${ThumbsDownStroke12Icon} />
-        <${IconCopyButton}>ThumbsDownStroke12Icon<//>
-        <${ThumbsUpStroke12Icon} />
-        <${IconCopyButton}>ThumbsUpStroke12Icon<//>
-        <${TranslationCreatedStroke12Icon} />
-        <${IconCopyButton}>TranslationCreatedStroke12Icon<//>
-        <${TranslationDeletedStroke12Icon} />
-        <${IconCopyButton}>TranslationDeletedStroke12Icon<//>
-        <${TranslationExistsStroke12Icon} />
-        <${IconCopyButton}>TranslationExistsStroke12Icon<//>
-        <${TranslationOutdatedStroke12Icon} />
-        <${IconCopyButton}>TranslationOutdatedStroke12Icon<//>
-        <${TranslationUpdatedStroke12Icon} />
-        <${IconCopyButton}>TranslationUpdatedStroke12Icon<//>
-        <${TrashStroke12Icon} />
-        <${IconCopyButton}>TrashStroke12Icon<//>
-        <${TwitterStroke12Icon} />
-        <${IconCopyButton}>TwitterStroke12Icon<//>
-        <${UnderlineStroke12Icon} />
-        <${IconCopyButton}>UnderlineStroke12Icon<//>
-        <${UploadStroke12Icon} />
-        <${IconCopyButton}>UploadStroke12Icon<//>
-        <${UserCircleStroke12Icon} />
-        <${IconCopyButton}>UserCircleStroke12Icon<//>
-        <${UserFollowStroke12Icon} />
-        <${IconCopyButton}>UserFollowStroke12Icon<//>
-        <${UserGroupStroke12Icon} />
-        <${IconCopyButton}>UserGroupStroke12Icon<//>
-        <${UserListStroke12Icon} />
-        <${IconCopyButton}>UserListStroke12Icon<//>
-        <${UserSoloStroke12Icon} />
-        <${IconCopyButton}>UserSoloStroke12Icon<//>
-        <${UserUnfollowStroke12Icon} />
-        <${IconCopyButton}>UserUnfollowStroke12Icon<//>
-        <${VoicemailStroke12Icon} />
-        <${IconCopyButton}>VoicemailStroke12Icon<//>
-        <${VolumeMutedStroke12Icon} />
-        <${IconCopyButton}>VolumeMutedStroke12Icon<//>
-        <${VolumeUnmutedStroke12Icon} />
-        <${IconCopyButton}>VolumeUnmutedStroke12Icon<//>
-        <${WechatStroke12Icon} />
-        <${IconCopyButton}>WechatStroke12Icon<//>
-        <${WhatsappStroke12Icon} />
-        <${IconCopyButton}>WhatsappStroke12Icon<//>
-        <${WrapLeftStroke12Icon} />
-        <${IconCopyButton}>WrapLeftStroke12Icon<//>
-        <${WrapRightStroke12Icon} />
-        <${IconCopyButton}>WrapRightStroke12Icon<//>
-        <${XCircleStroke12Icon} />
-        <${IconCopyButton}>XCircleStroke12Icon<//>
-        <${XStroke12Icon} />
-        <${IconCopyButton}>XStroke12Icon<//>
-        <${ZendeskStroke12Icon} />
-        <${IconCopyButton}>ZendeskStroke12Icon<//>
+         <${I123Stroke12Icon} />
+         <${IconCopyButton}>I123Stroke12Icon<//>
+         <${AdjustStroke12Icon} />
+         <${IconCopyButton}>AdjustStroke12Icon<//>
+         <${AlertErrorStroke12Icon} />
+         <${IconCopyButton}>AlertErrorStroke12Icon<//>
+         <${AlertWarningStroke12Icon} />
+         <${IconCopyButton}>AlertWarningStroke12Icon<//>
+         <${AlignCenterStroke12Icon} />
+         <${IconCopyButton}>AlignCenterStroke12Icon<//>
+         <${AlignJustifyStroke12Icon} />
+         <${IconCopyButton}>AlignJustifyStroke12Icon<//>
+         <${AlignLeftStroke12Icon} />
+         <${IconCopyButton}>AlignLeftStroke12Icon<//>
+         <${AlignRightStroke12Icon} />
+         <${IconCopyButton}>AlignRightStroke12Icon<//>
+         <${AltTextStroke12Icon} />
+         <${IconCopyButton}>AltTextStroke12Icon<//>
+         <${ArrowLeftSmStroke12Icon} />
+         <${IconCopyButton}>ArrowLeftSmStroke12Icon<//>
+         <${ArrowLeftStroke12Icon} />
+         <${IconCopyButton}>ArrowLeftStroke12Icon<//>
+         <${ArrowLeftUpStroke12Icon} />
+         <${IconCopyButton}>ArrowLeftUpStroke12Icon<//>
+         <${ArrowRetweetStroke12Icon} />
+         <${IconCopyButton}>ArrowRetweetStroke12Icon<//>
+         <${ArrowReverseStroke12Icon} />
+         <${IconCopyButton}>ArrowReverseStroke12Icon<//>
+         <${ArrowTrendingStroke12Icon} />
+         <${IconCopyButton}>ArrowTrendingStroke12Icon<//>
+         <${AsteriskStroke12Icon} />
+         <${IconCopyButton}>AsteriskStroke12Icon<//>
+         <${AtStroke12Icon} />
+         <${IconCopyButton}>AtStroke12Icon<//>
+         <${BarChartStroke12Icon} />
+         <${IconCopyButton}>BarChartStroke12Icon<//>
+         <${BasketballStroke12Icon} />
+         <${IconCopyButton}>BasketballStroke12Icon<//>
+         <${BoldStroke12Icon} />
+         <${IconCopyButton}>BoldStroke12Icon<//>
+         <${BookClosedStroke12Icon} />
+         <${IconCopyButton}>BookClosedStroke12Icon<//>
+         <${BookOpenStroke12Icon} />
+         <${IconCopyButton}>BookOpenStroke12Icon<//>
+         <${Box3dStroke12Icon} />
+         <${IconCopyButton}>Box3dStroke12Icon<//>
+         <${BuildingStroke12Icon} />
+         <${IconCopyButton}>BuildingStroke12Icon<//>
+         <${CalendarStroke12Icon} />
+         <${IconCopyButton}>CalendarStroke12Icon<//>
+         <${CameraStroke12Icon} />
+         <${IconCopyButton}>CameraStroke12Icon<//>
+         <${CarStroke12Icon} />
+         <${IconCopyButton}>CarStroke12Icon<//>
+         <${CenterStroke12Icon} />
+         <${IconCopyButton}>CenterStroke12Icon<//>
+         <${CheckBadgeStroke12Icon} />
+         <${IconCopyButton}>CheckBadgeStroke12Icon<//>
+         <${CheckBoxDoubleStroke12Icon} />
+         <${IconCopyButton}>CheckBoxDoubleStroke12Icon<//>
+         <${CheckBoxStroke12Icon} />
+         <${IconCopyButton}>CheckBoxStroke12Icon<//>
+         <${CheckCircleStroke12Icon} />
+         <${IconCopyButton}>CheckCircleStroke12Icon<//>
+         <${CheckDoubleStroke12Icon} />
+         <${IconCopyButton}>CheckDoubleStroke12Icon<//>
+         <${CheckLgStroke12Icon} />
+         <${IconCopyButton}>CheckLgStroke12Icon<//>
+         <${CheckSmStroke12Icon} />
+         <${IconCopyButton}>CheckSmStroke12Icon<//>
+         <${ChevronBoxStroke12Icon} />
+         <${IconCopyButton}>ChevronBoxStroke12Icon<//>
+         <${ChevronDoubleDownStroke12Icon} />
+         <${IconCopyButton}>ChevronDoubleDownStroke12Icon<//>
+         <${ChevronDoubleLeftStroke12Icon} />
+         <${IconCopyButton}>ChevronDoubleLeftStroke12Icon<//>
+         <${ChevronDoubleRightStroke12Icon} />
+         <${IconCopyButton}>ChevronDoubleRightStroke12Icon<//>
+         <${ChevronDoubleUpStroke12Icon} />
+         <${IconCopyButton}>ChevronDoubleUpStroke12Icon<//>
+         <${ChevronDownStroke12Icon} />
+         <${IconCopyButton}>ChevronDownStroke12Icon<//>
+         <${ChevronLeftStroke12Icon} />
+         <${IconCopyButton}>ChevronLeftStroke12Icon<//>
+         <${ChevronRightStroke12Icon} />
+         <${IconCopyButton}>ChevronRightStroke12Icon<//>
+         <${ChevronUpStroke12Icon} />
+         <${IconCopyButton}>ChevronUpStroke12Icon<//>
+         <${CircleFullStroke12Icon} />
+         <${IconCopyButton}>CircleFullStroke12Icon<//>
+         <${CircleLineStroke12Icon} />
+         <${IconCopyButton}>CircleLineStroke12Icon<//>
+         <${CircleSmStroke12Icon} />
+         <${IconCopyButton}>CircleSmStroke12Icon<//>
+         <${CircleStroke12Icon} />
+         <${IconCopyButton}>CircleStroke12Icon<//>
+         <${ClipboardBlankStroke12Icon} />
+         <${IconCopyButton}>ClipboardBlankStroke12Icon<//>
+         <${ClipboardCheckStroke12Icon} />
+         <${IconCopyButton}>ClipboardCheckStroke12Icon<//>
+         <${ClipboardListStroke12Icon} />
+         <${IconCopyButton}>ClipboardListStroke12Icon<//>
+         <${ClockCycleStroke12Icon} />
+         <${IconCopyButton}>ClockCycleStroke12Icon<//>
+         <${ClockInStroke12Icon} />
+         <${IconCopyButton}>ClockInStroke12Icon<//>
+         <${ClockOutStroke12Icon} />
+         <${IconCopyButton}>ClockOutStroke12Icon<//>
+         <${ClockStroke12Icon} />
+         <${IconCopyButton}>ClockStroke12Icon<//>
+         <${CopyStroke12Icon} />
+         <${IconCopyButton}>CopyStroke12Icon<//>
+         <${CreditCardStroke12Icon} />
+         <${IconCopyButton}>CreditCardStroke12Icon<//>
+         <${CssStroke12Icon} />
+         <${IconCopyButton}>CssStroke12Icon<//>
+         <${CursorArrowStroke12Icon} />
+         <${IconCopyButton}>CursorArrowStroke12Icon<//>
+         <${CutleryStroke12Icon} />
+         <${IconCopyButton}>CutleryStroke12Icon<//>
+         <${DashStroke12Icon} />
+         <${IconCopyButton}>DashStroke12Icon<//>
+         <${DatabaseStroke12Icon} />
+         <${IconCopyButton}>DatabaseStroke12Icon<//>
+         <${DecimalStroke12Icon} />
+         <${IconCopyButton}>DecimalStroke12Icon<//>
+         <${DirectionLtrStroke12Icon} />
+         <${IconCopyButton}>DirectionLtrStroke12Icon<//>
+         <${DirectionRtlStroke12Icon} />
+         <${IconCopyButton}>DirectionRtlStroke12Icon<//>
+         <${DocumentSearchStroke12Icon} />
+         <${IconCopyButton}>DocumentSearchStroke12Icon<//>
+         <${DownloadStroke12Icon} />
+         <${IconCopyButton}>DownloadStroke12Icon<//>
+         <${DuplicateStroke12Icon} />
+         <${IconCopyButton}>DuplicateStroke12Icon<//>
+         <${EditRedoStroke12Icon} />
+         <${IconCopyButton}>EditRedoStroke12Icon<//>
+         <${EditUndoStroke12Icon} />
+         <${IconCopyButton}>EditUndoStroke12Icon<//>
+         <${EmailStroke12Icon} />
+         <${IconCopyButton}>EmailStroke12Icon<//>
+         <${EraserStroke12Icon} />
+         <${IconCopyButton}>EraserStroke12Icon<//>
+         <${ExitStroke12Icon} />
+         <${IconCopyButton}>ExitStroke12Icon<//>
+         <${EyeHideStroke12Icon} />
+         <${IconCopyButton}>EyeHideStroke12Icon<//>
+         <${EyeStroke12Icon} />
+         <${IconCopyButton}>EyeStroke12Icon<//>
+         <${FacebookStroke12Icon} />
+         <${IconCopyButton}>FacebookStroke12Icon<//>
+         <${FileDocumentStroke12Icon} />
+         <${IconCopyButton}>FileDocumentStroke12Icon<//>
+         <${FileErrorStroke12Icon} />
+         <${IconCopyButton}>FileErrorStroke12Icon<//>
+         <${FileGenericStroke12Icon} />
+         <${IconCopyButton}>FileGenericStroke12Icon<//>
+         <${FileImageStroke12Icon} />
+         <${IconCopyButton}>FileImageStroke12Icon<//>
+         <${FilePdfStroke12Icon} />
+         <${IconCopyButton}>FilePdfStroke12Icon<//>
+         <${FilePresentationStroke12Icon} />
+         <${IconCopyButton}>FilePresentationStroke12Icon<//>
+         <${FileSpreadsheetStroke12Icon} />
+         <${IconCopyButton}>FileSpreadsheetStroke12Icon<//>
+         <${FileZipStroke12Icon} />
+         <${IconCopyButton}>FileZipStroke12Icon<//>
+         <${FilterStroke12Icon} />
+         <${IconCopyButton}>FilterStroke12Icon<//>
+         <${FlagStroke12Icon} />
+         <${IconCopyButton}>FlagStroke12Icon<//>
+         <${FolderClosedStroke12Icon} />
+         <${IconCopyButton}>FolderClosedStroke12Icon<//>
+         <${FolderOpenStroke12Icon} />
+         <${IconCopyButton}>FolderOpenStroke12Icon<//>
+         <${FullWidthStroke12Icon} />
+         <${IconCopyButton}>FullWidthStroke12Icon<//>
+         <${GearStroke12Icon} />
+         <${IconCopyButton}>GearStroke12Icon<//>
+         <${GithubStroke12Icon} />
+         <${IconCopyButton}>GithubStroke12Icon<//>
+         <${GlobeStroke12Icon} />
+         <${IconCopyButton}>GlobeStroke12Icon<//>
+         <${Grid2x2Stroke12Icon} />
+         <${IconCopyButton}>Grid2x2Stroke12Icon<//>
+         <${Grid3x3Stroke12Icon} />
+         <${IconCopyButton}>Grid3x3Stroke12Icon<//>
+         <${Grip12Icon} />
+         <${IconCopyButton}>Grip12Icon<//>
+         <${HeadingStroke12Icon} />
+         <${IconCopyButton}>HeadingStroke12Icon<//>
+         <${HeartStroke12Icon} />
+         <${IconCopyButton}>HeartStroke12Icon<//>
+         <${HistoryStroke12Icon} />
+         <${IconCopyButton}>HistoryStroke12Icon<//>
+         <${HomeStroke12Icon} />
+         <${IconCopyButton}>HomeStroke12Icon<//>
+         <${HorizontalRuleStroke12Icon} />
+         <${IconCopyButton}>HorizontalRuleStroke12Icon<//>
+         <${ImageStroke12Icon} />
+         <${IconCopyButton}>ImageStroke12Icon<//>
+         <${InboxStroke12Icon} />
+         <${IconCopyButton}>InboxStroke12Icon<//>
+         <${IndentDecreaseStroke12Icon} />
+         <${IconCopyButton}>IndentDecreaseStroke12Icon<//>
+         <${IndentIncreaseStroke12Icon} />
+         <${IconCopyButton}>IndentIncreaseStroke12Icon<//>
+         <${InfoStroke12Icon} />
+         <${IconCopyButton}>InfoStroke12Icon<//>
+         <${InterlockingRingsStroke12Icon} />
+         <${IconCopyButton}>InterlockingRingsStroke12Icon<//>
+         <${ItalicStroke12Icon} />
+         <${IconCopyButton}>ItalicStroke12Icon<//>
+         <${LeafStroke12Icon} />
+         <${IconCopyButton}>LeafStroke12Icon<//>
+         <${LifesaverStroke12Icon} />
+         <${IconCopyButton}>LifesaverStroke12Icon<//>
+         <${LightbulbStroke12Icon} />
+         <${IconCopyButton}>LightbulbStroke12Icon<//>
+         <${LightningBoltStroke12Icon} />
+         <${IconCopyButton}>LightningBoltStroke12Icon<//>
+         <${LineGraphStroke12Icon} />
+         <${IconCopyButton}>LineGraphStroke12Icon<//>
+         <${LineSocialStroke12Icon} />
+         <${IconCopyButton}>LineSocialStroke12Icon<//>
+         <${LinkRemoveStroke12Icon} />
+         <${IconCopyButton}>LinkRemoveStroke12Icon<//>
+         <${LinkStroke12Icon} />
+         <${IconCopyButton}>LinkStroke12Icon<//>
+         <${LinkedinStroke12Icon} />
+         <${IconCopyButton}>LinkedinStroke12Icon<//>
+         <${ListBulletStroke12Icon} />
+         <${IconCopyButton}>ListBulletStroke12Icon<//>
+         <${ListNumberRtlStroke12Icon} />
+         <${IconCopyButton}>ListNumberRtlStroke12Icon<//>
+         <${ListNumberStroke12Icon} />
+         <${IconCopyButton}>ListNumberStroke12Icon<//>
+         <${LocationStroke12Icon} />
+         <${IconCopyButton}>LocationStroke12Icon<//>
+         <${LockLockedStroke12Icon} />
+         <${IconCopyButton}>LockLockedStroke12Icon<//>
+         <${LockUnlockedStroke12Icon} />
+         <${IconCopyButton}>LockUnlockedStroke12Icon<//>
+         <${MarkupStroke12Icon} />
+         <${IconCopyButton}>MarkupStroke12Icon<//>
+         <${MaximizeStroke12Icon} />
+         <${IconCopyButton}>MaximizeStroke12Icon<//>
+         <${MegaphoneStroke12Icon} />
+         <${IconCopyButton}>MegaphoneStroke12Icon<//>
+         <${MenuStroke12Icon} />
+         <${IconCopyButton}>MenuStroke12Icon<//>
+         <${MessengerStroke12Icon} />
+         <${IconCopyButton}>MessengerStroke12Icon<//>
+         <${MicrophoneOffStroke12Icon} />
+         <${IconCopyButton}>MicrophoneOffStroke12Icon<//>
+         <${MicrophoneOnStroke12Icon} />
+         <${IconCopyButton}>MicrophoneOnStroke12Icon<//>
+         <${MinimizeStroke12Icon} />
+         <${IconCopyButton}>MinimizeStroke12Icon<//>
+         <${MobilePhoneStroke12Icon} />
+         <${IconCopyButton}>MobilePhoneStroke12Icon<//>
+         <${MonitorStroke12Icon} />
+         <${IconCopyButton}>MonitorStroke12Icon<//>
+         <${MultilineStroke12Icon} />
+         <${IconCopyButton}>MultilineStroke12Icon<//>
+         <${NewWindowStroke12Icon} />
+         <${IconCopyButton}>NewWindowStroke12Icon<//>
+         <${NotesStroke12Icon} />
+         <${IconCopyButton}>NotesStroke12Icon<//>
+         <${NotificationStroke12Icon} />
+         <${IconCopyButton}>NotificationStroke12Icon<//>
+         <${NumberStroke12Icon} />
+         <${IconCopyButton}>NumberStroke12Icon<//>
+         <${OriginalSizeStroke12Icon} />
+         <${IconCopyButton}>OriginalSizeStroke12Icon<//>
+         <${OverflowStroke12Icon} />
+         <${IconCopyButton}>OverflowStroke12Icon<//>
+         <${OverflowVerticalStroke12Icon} />
+         <${IconCopyButton}>OverflowVerticalStroke12Icon<//>
+         <${PaletteStroke12Icon} />
+         <${IconCopyButton}>PaletteStroke12Icon<//>
+         <${PanelsStroke12Icon} />
+         <${IconCopyButton}>PanelsStroke12Icon<//>
+         <${Paperclip12Icon} />
+         <${IconCopyButton}>Paperclip12Icon<//>
+         <${ParenthesesStroke12Icon} />
+         <${IconCopyButton}>ParenthesesStroke12Icon<//>
+         <${PauseStroke12Icon} />
+         <${IconCopyButton}>PauseStroke12Icon<//>
+         <${PencilStroke12Icon} />
+         <${IconCopyButton}>PencilStroke12Icon<//>
+         <${PhoneCallEndStroke12Icon} />
+         <${IconCopyButton}>PhoneCallEndStroke12Icon<//>
+         <${PhoneCallInStroke12Icon} />
+         <${IconCopyButton}>PhoneCallInStroke12Icon<//>
+         <${PhoneCallOutStroke12Icon} />
+         <${IconCopyButton}>PhoneCallOutStroke12Icon<//>
+         <${PhoneCallPauseStroke12Icon} />
+         <${IconCopyButton}>PhoneCallPauseStroke12Icon<//>
+         <${PhoneCallSpeakerStroke12Icon} />
+         <${IconCopyButton}>PhoneCallSpeakerStroke12Icon<//>
+         <${PhoneCallTransferOnlyStroke12Icon} />
+         <${IconCopyButton}>PhoneCallTransferOnlyStroke12Icon<//>
+         <${PhoneCallTransferStroke12Icon} />
+         <${IconCopyButton}>PhoneCallTransferStroke12Icon<//>
+         <${PhoneStroke12Icon} />
+         <${IconCopyButton}>PhoneStroke12Icon<//>
+         <${PinRemoveStroke12Icon} />
+         <${IconCopyButton}>PinRemoveStroke12Icon<//>
+         <${PinStroke12Icon} />
+         <${IconCopyButton}>PinStroke12Icon<//>
+         <${PlayCircleStroke12Icon} />
+         <${IconCopyButton}>PlayCircleStroke12Icon<//>
+         <${PlayStroke12Icon} />
+         <${IconCopyButton}>PlayStroke12Icon<//>
+         <${PlugStroke12Icon} />
+         <${IconCopyButton}>PlugStroke12Icon<//>
+         <${PlusCircleStroke12Icon} />
+         <${IconCopyButton}>PlusCircleStroke12Icon<//>
+         <${PlusStroke12Icon} />
+         <${IconCopyButton}>PlusStroke12Icon<//>
+         <${PuzzlePieceStroke12Icon} />
+         <${IconCopyButton}>PuzzlePieceStroke12Icon<//>
+         <${QuestionMarkStroke12Icon} />
+         <${IconCopyButton}>QuestionMarkStroke12Icon<//>
+         <${QuoteStroke12Icon} />
+         <${IconCopyButton}>QuoteStroke12Icon<//>
+         <${RearrangeStroke12Icon} />
+         <${IconCopyButton}>RearrangeStroke12Icon<//>
+         <${RecordStroke12Icon} />
+         <${IconCopyButton}>RecordStroke12Icon<//>
+         <${ReloadStroke12Icon} />
+         <${IconCopyButton}>ReloadStroke12Icon<//>
+         <${SandboxStroke12Icon} />
+         <${IconCopyButton}>SandboxStroke12Icon<//>
+         <${SearchStroke12Icon} />
+         <${IconCopyButton}>SearchStroke12Icon<//>
+         <${ShapesStroke12Icon} />
+         <${IconCopyButton}>ShapesStroke12Icon<//>
+         <${ShareStroke12Icon} />
+         <${IconCopyButton}>ShareStroke12Icon<//>
+         <${ShieldStroke12Icon} />
+         <${IconCopyButton}>ShieldStroke12Icon<//>
+         <${ShoppingCartStroke12Icon} />
+         <${IconCopyButton}>ShoppingCartStroke12Icon<//>
+         <${SignpostStroke12Icon} />
+         <${IconCopyButton}>SignpostStroke12Icon<//>
+         <${SlackStroke12Icon} />
+         <${IconCopyButton}>SlackStroke12Icon<//>
+         <${SmileSlightStroke12Icon} />
+         <${IconCopyButton}>SmileSlightStroke12Icon<//>
+         <${SmileyStroke12Icon} />
+         <${IconCopyButton}>SmileyStroke12Icon<//>
+         <${SortStroke12Icon} />
+         <${IconCopyButton}>SortStroke12Icon<//>
+         <${SpeechBubbleConversationStroke12Icon} />
+         <${IconCopyButton}>SpeechBubbleConversationStroke12Icon<//>
+         <${SpeechBubbleLightningBoltStroke12Icon} />
+         <${IconCopyButton}>SpeechBubbleLightningBoltStroke12Icon<//>
+         <${SpeechBubblePlainStroke12Icon} />
+         <${IconCopyButton}>SpeechBubblePlainStroke12Icon<//>
+         <${StarStroke12Icon} />
+         <${IconCopyButton}>StarStroke12Icon<//>
+         <${TableStroke12Icon} />
+         <${IconCopyButton}>TableStroke12Icon<//>
+         <${TagStroke12Icon} />
+         <${IconCopyButton}>TagStroke12Icon<//>
+         <${TerminalCliStroke12Icon} />
+         <${IconCopyButton}>TerminalCliStroke12Icon<//>
+         <${TerminalWindowStroke12Icon} />
+         <${IconCopyButton}>TerminalWindowStroke12Icon<//>
+         <${TextColorStroke12Icon} />
+         <${IconCopyButton}>TextColorStroke12Icon<//>
+         <${TextStroke12Icon} />
+         <${IconCopyButton}>TextStroke12Icon<//>
+         <${ThumbsDownStroke12Icon} />
+         <${IconCopyButton}>ThumbsDownStroke12Icon<//>
+         <${ThumbsUpStroke12Icon} />
+         <${IconCopyButton}>ThumbsUpStroke12Icon<//>
+         <${TranslationCreatedStroke12Icon} />
+         <${IconCopyButton}>TranslationCreatedStroke12Icon<//>
+         <${TranslationDeletedStroke12Icon} />
+         <${IconCopyButton}>TranslationDeletedStroke12Icon<//>
+         <${TranslationExistsStroke12Icon} />
+         <${IconCopyButton}>TranslationExistsStroke12Icon<//>
+         <${TranslationOutdatedStroke12Icon} />
+         <${IconCopyButton}>TranslationOutdatedStroke12Icon<//>
+         <${TranslationUpdatedStroke12Icon} />
+         <${IconCopyButton}>TranslationUpdatedStroke12Icon<//>
+         <${TrashStroke12Icon} />
+         <${IconCopyButton}>TrashStroke12Icon<//>
+         <${TwitterStroke12Icon} />
+         <${IconCopyButton}>TwitterStroke12Icon<//>
+         <${UnderlineStroke12Icon} />
+         <${IconCopyButton}>UnderlineStroke12Icon<//>
+         <${UploadStroke12Icon} />
+         <${IconCopyButton}>UploadStroke12Icon<//>
+         <${UserCircleStroke12Icon} />
+         <${IconCopyButton}>UserCircleStroke12Icon<//>
+         <${UserFollowStroke12Icon} />
+         <${IconCopyButton}>UserFollowStroke12Icon<//>
+         <${UserGroupStroke12Icon} />
+         <${IconCopyButton}>UserGroupStroke12Icon<//>
+         <${UserListStroke12Icon} />
+         <${IconCopyButton}>UserListStroke12Icon<//>
+         <${UserSoloStroke12Icon} />
+         <${IconCopyButton}>UserSoloStroke12Icon<//>
+         <${UserUnfollowStroke12Icon} />
+         <${IconCopyButton}>UserUnfollowStroke12Icon<//>
+         <${VoicemailStroke12Icon} />
+         <${IconCopyButton}>VoicemailStroke12Icon<//>
+         <${VolumeMutedStroke12Icon} />
+         <${IconCopyButton}>VolumeMutedStroke12Icon<//>
+         <${VolumeUnmutedStroke12Icon} />
+         <${IconCopyButton}>VolumeUnmutedStroke12Icon<//>
+         <${WechatStroke12Icon} />
+         <${IconCopyButton}>WechatStroke12Icon<//>
+         <${WhatsappStroke12Icon} />
+         <${IconCopyButton}>WhatsappStroke12Icon<//>
+         <${WrapLeftStroke12Icon} />
+         <${IconCopyButton}>WrapLeftStroke12Icon<//>
+         <${WrapRightStroke12Icon} />
+         <${IconCopyButton}>WrapRightStroke12Icon<//>
+         <${XCircleStroke12Icon} />
+         <${IconCopyButton}>XCircleStroke12Icon<//>
+         <${XStroke12Icon} />
+         <${IconCopyButton}>XStroke12Icon<//>
+         <${ZendeskStroke12Icon} />
+         <${IconCopyButton}>ZendeskStroke12Icon<//>
       </div>
     `;
   }
 }
+

@@ -4,10 +4,10 @@ import { css } from "stylewars";
 const styles = css`
   & {
     box-sizing: border-box;
-    border: 1px solid var(--dc-color-neutral-3);
+    border: 1px solid var(--dc-color-neutral-85);
     border-radius: 4px;
-    box-shadow: rgb(23 73 77 / 15%) 0px 20px 30px 0px;
-    background-color: var(--dc-color-neutral-0);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px 0px;
+    background-color: var(--dc-color-background);
   }
 
   [data-placement="bottom-left"] > &,

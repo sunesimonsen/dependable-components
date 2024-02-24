@@ -4,19 +4,19 @@ import { css, classes } from "stylewars";
 const styles = css`
   & {
     text-decoration: none;
-    color: var(--dc-color-primary-0);
+    color: var(--dc-color-primary-50);
   }
 
   &:focus,
   &:hover {
     outline: none;
     text-decoration: underline;
-    color: var(--dc-color-primary-1);
+    color: var(--dc-color-primary-40);
   }
 
   &:active {
     text-decoration: underline;
-    color: var(--dc-color-primary-2);
+    color: var(--dc-color-primary-30);
   }
 `;
 

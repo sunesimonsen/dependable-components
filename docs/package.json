@@ -13,7 +13,7 @@
     "@dependable/state": "^0.20.0",
     "@dependable/styleguide": "*",
     "@dependable/view": "^0.19.1",
-    "stylewars": "^2.3.0",
+    "stylewars": "^2.4.0",
     "@dependable/vite": "^0.1.0"
   },
   "devDependencies": {
