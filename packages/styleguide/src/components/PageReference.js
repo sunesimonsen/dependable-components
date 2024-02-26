@@ -5,7 +5,7 @@ import { css, classes } from "stylewars";
 
 const styles = css`
   & {
-    color: var(--dc-text-color-0);
+    color: var(--dc-color-foreground);
     text-decoration: none;
     padding: 6px 8px;
     border-radius: 4px;
@@ -13,11 +13,11 @@ const styles = css`
   }
 
   &:hover {
-    background: var(--dc-color-neutral-2);
+    background: var(--dc-color-neutral-90);
   }
 
   &:active {
-    background: var(--dc-color-neutral-3);
+    background: var(--dc-color-neutral-85);
   }
 
   &:focus-visible {
@@ -27,7 +27,7 @@ const styles = css`
 
 const activeStyles = css`
   & {
-    background: var(--dc-color-neutral-2);
+    background: var(--dc-color-neutral-90);
   }
 `;
 

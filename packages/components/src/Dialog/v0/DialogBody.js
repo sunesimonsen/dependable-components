@@ -9,7 +9,6 @@ const styles = css`
     height: 100%;
     overflow: auto;
     line-height: 1.42857;
-    color: rgb(47, 57, 65);
     font-size: 14px;
   }
 

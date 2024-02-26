@@ -19,7 +19,7 @@ const loadingStyles = css`
     --dc-spinner-background: rgba(255, 255, 255, 0.2);
     background: #23241f;
     height: 200px;
-    color: var(--dc-color-neutral-0);
+    color: var(--dc-color-background);
     font-size: 10px;
   }
 `;

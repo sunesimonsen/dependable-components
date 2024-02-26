@@ -4,6 +4,7 @@ import { Link } from "@dependable/nano-router";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { ThemeSelector } from "./ThemeSelector.js";
 import { RTLSwitch } from "./RTLSwitch.js";
+import { ColorSchemeSelector } from "./ColorSchemeSelector.js";
 import { RepositoryButton } from "./RepositoryButton.js";
 
 const logoStyles = css`
@@ -23,18 +24,18 @@ const homeStyles = css`
   & {
     display: flex;
     align-items: center;
-    color: black;
+    color: var(--dc-color-foreground);
     font-size: 24px;
     text-decoration: none;
     padding: 8px 16px;
   }
 
   &:hover {
-    background-color: rgba(47, 57, 65, 0.05);
+    background-color: var(--dc-color-neutral-97);
   }
 
   &:active {
-    background-color: rgba(47, 57, 65, 0.2);
+    background-color: var(--dc-color-neutral-95);
   }
 `;
 
@@ -54,9 +55,10 @@ const topBarStyles = css`
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr;
-    background: var(--dc-color-neutral-0);
+    background: var(--dc-color-background);
     position: relative;
     box-shadow: rgb(47 57 65 / 5%) 0px 16px 24px 0px;
+    border-bottom: thin solid var(--dc-color-neutral-90);
     z-index: 1;
   }
 `;
@@ -78,6 +80,7 @@ export class TopBar {
         <div className=${buttonsStyles}>
           <${RepositoryButton} />
           <${RTLSwitch} />
+          <${ColorSchemeSelector} />
           <${ThemeSelector} />
         </div>
       </header>

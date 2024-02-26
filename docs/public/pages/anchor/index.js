@@ -20,9 +20,10 @@ export default class Page {
       <${Heading} level="2">How to use it<//>
       <${Heading} level="3">Default<//>
       <p>
-        The Anchor component is a styled<code className="inline">${"<a>"}</code
-        >tag. It accepts all standard anchor attributes and signals a way to
-        navigate.
+        The Anchor component is a styled${" "}<code className="inline"
+          >${"<a>"}</code
+        >${" "} tag. It accepts all standard anchor attributes and signals a way
+        to navigate.
       </p>
       <${Example} src=${new URL("./DefaultAnchor.js", import.meta.url)}>
         <${DefaultAnchor} />

@@ -6,7 +6,7 @@ import { Sidebar } from "./Sidebar.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
-import { theme } from "@dependable/components/default-theme/v0";
+import { activeTheme } from "./ThemeSelector.js";
 
 const rootStyles = css`
   & {
@@ -18,23 +18,6 @@ const rootStyles = css`
 
     width: 100%;
     height: 100%;
-
-    font-family: Verdana, Geneva, sans-serif;
-
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Oxygen-Sans,
-      Ubuntu,
-      Cantarell,
-      Helvetica Neue,
-      Arial,
-      sans-serif;
-
-    color: rgb(3, 54, 61);
   }
 `;
 
@@ -43,7 +26,7 @@ const mainStyles = css`
     grid-area: main;
     display: flex;
     flex-direction: column;
-    background: var(--dc-color-neutral-0);
+    background: var(--dc-color-background);
     overflow: hidden;
   }
 
@@ -61,19 +44,19 @@ const mainStyles = css`
     font-size: 26px;
   }
 
-  & > p > code {
+  & p > code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
   }
 
-  & > p > code.inline {
+  & p > code.inline {
     line-height: normal;
     font-size: calc(1em - 1px);
     direction: ltr;
     border-radius: 2px;
     padding: 1.5px;
-    background-color: var(--dc-color-neutral-2);
-    color: rgb(73, 84, 92);
+    background-color: var(--dc-color-neutral-80);
+    color: var(--dc-color-foreground);
     margin: 0 0.7ex;
   }
 `;
@@ -87,15 +70,17 @@ const scrollAreaStyles = css`
 export class DefaultLayout {
   render({ children }) {
     return html`
-      <${BorderLayout} stretched className=${classes(theme, rootStyles)}>
-        <${TopBar} />
-        <${Sidebar} />
-        <main className=${mainStyles}>
-          <${ScrollArea} className=${scrollAreaStyles}>
-            <${ErrorBoundary} name="default-layout">${children}<//>
-          <//>
-        </main>
-      <//>
+      <div className=${classes(activeTheme(), rootStyles)}>
+        <${BorderLayout} stretched>
+          <${TopBar} />
+          <${Sidebar} />
+          <main className=${mainStyles}>
+            <${ScrollArea} className=${scrollAreaStyles}>
+              <${ErrorBoundary} name="default-layout">${children}<//>
+            <//>
+          </main>
+        <//>
+      </div>
     `;
   }
 }

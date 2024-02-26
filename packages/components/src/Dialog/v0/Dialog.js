@@ -1,5 +1,6 @@
 import { html } from "@dependable/view";
 import { css } from "stylewars";
+import { transparentColor } from "@dependable/components/theming/v0";
 
 const styles = ({ width, height }) => css`
   & {
@@ -8,15 +9,22 @@ const styles = ({ width, height }) => css`
     width: ${width};
     height: ${height};
 
-    border: none;
+    border: 1px solid var(--dc-color-neutral-90);
     border-radius: 4px;
-    box-shadow: rgba(47, 57, 65, 0.35) 0px 20px 28px 0px;
-    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 28px 0px;
+    background-color: var(--dc-color-background);
+    color: var(--dc-color-foreground);
     outline: none;
   }
 
   &::backdrop {
     background-color: rgba(47, 57, 65, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &::backdrop {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
   }
 `;
 

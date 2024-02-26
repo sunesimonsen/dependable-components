@@ -86,7 +86,7 @@ export class Heading {
 const titleStyles = css`
   & {
     margin-bottom: 12px;
-    color: rgb(3, 54, 61);
+    color: var(--dc-color-foreground);
     line-height: 1.08333;
     font-size: 48px;
     font-weight: 700;
@@ -101,7 +101,7 @@ export class Title {
 
 const subTitleStyles = css`
   & {
-    color: rgb(104, 115, 125);
+    color: var(--dc-color-neutral-30);
     font-size: 16px;
   }
 `;
@@ -114,7 +114,7 @@ export class SubTitle {
 
 const lineStyles = css`
   & {
-    color: rgb(104, 115, 125);
+    color: var(--dc-color-neutral-30);
     font-size: 16px;
   }
 `;

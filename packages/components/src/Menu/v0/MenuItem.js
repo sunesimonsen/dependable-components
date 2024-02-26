@@ -1,6 +1,7 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { SelectItemEvent, FocusItemEvent } from "./events.js";
+import { transparentColor } from "../../theming/v0";
 
 const styles = css`
   & {
@@ -15,7 +16,7 @@ const styles = css`
     line-height: 20px;
     overflow-wrap: break-word;
     user-select: none;
-    color: var(--dc-text-color-0);
+    color: var(--dc-color-foreground);
     min-width: 120px;
     border: none;
     background: none;
@@ -38,7 +39,7 @@ const styles = css`
 
 const focusedStyles = css`
   & {
-    background: var(--dc-color-secondary-1);
+    background: ${transparentColor("primary-80", 35)};
   }
 `;
 

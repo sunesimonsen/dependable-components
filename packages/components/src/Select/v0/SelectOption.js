@@ -15,7 +15,7 @@ const iconStyles = css`
     justify-content: center;
     transition: opacity 0.1s ease-in-out 0s;
     opacity: 1;
-    color: var(--dc-color-primary-0);
+    color: var(--dc-color-primary-50);
     width: 40px;
   }
 `;

@@ -1,6 +1,7 @@
 import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { Pulse } from "../../Pulse/v0/index.js";
+import { transparentColor } from "@dependable/components/theming/v0";
 
 const styles = css`
   & {
@@ -8,13 +9,13 @@ const styles = css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: var(--dc-color-primary-0);
+    color: var(--dc-color-primary-50);
     border-radius: var(
       --dc-button-border-radius,
       var(--dc-component-border-radius)
     );
     cursor: pointer;
-    border: 1px solid var(--dc-color-primary-0);
+    border: 1px solid var(--dc-color-primary-50);
     height: 2.8em;
     padding: var(--dc-button-padding, 0 1.07143em);
     width: var(--dc-button-width, inherit);
@@ -31,17 +32,19 @@ const styles = css`
       color 0.25s ease-in-out 0s;
   }
 
+  &:hover,
+  &[aria-pressed="true"],
+  &:active {
+    border-color: var(--dc-color-primary-30);
+  }
+
   &:hover {
-    border-color: var(--dc-color-primary-1);
-    background-color: var(--dc-color-secondary-1);
-    color: var(--dc-color-primary-1);
+    background-color: ${transparentColor("neutral-70", 35)};
   }
 
   &[aria-pressed="true"],
   &:active {
-    border-color: var(--dc-color-primary-2);
-    background-color: var(--dc-color-secondary-2);
-    color: var(--dc-color-primary-2);
+    background-color: ${transparentColor("neutral-50", 35)};
   }
 
   &:focus {
@@ -55,8 +58,8 @@ const styles = css`
   &:disabled,
   &:hover:disabled {
     border-color: transparent;
-    background-color: var(--dc-color-neutral-2);
-    color: var(--dc-color-neutral-4);
+    background-color: var(--dc-color-neutral-80);
+    color: var(--dc-color-neutral-50);
     cursor: default;
   }
 `;
@@ -72,33 +75,31 @@ const basicStyles = css`
 
 const primaryStyles = css`
   & {
-    color: var(--dc-color-neutral-0);
-    background-color: var(--dc-color-primary-0);
+    color: white;
+    background-color: var(--dc-color-primary-50);
   }
 
   &:hover {
-    color: var(--dc-color-neutral-0);
-    background-color: var(--dc-color-primary-1);
+    background-color: var(--dc-color-primary-30);
   }
 
   &[aria-pressed="true"],
   &:active {
-    color: var(--dc-color-neutral-0);
-    background-color: var(--dc-color-primary-2);
+    background-color: var(--dc-color-primary-20);
   }
 `;
 
 const dangerStyles = css`
   & {
-    --dc-color-primary-0: var(--dc-color-danger-primary-0);
-    --dc-color-primary-1: var(--dc-color-danger-primary-1);
-    --dc-color-primary-2: var(--dc-color-danger-primary-2);
+    --dc-color-primary-20: var(--dc-color-error-20);
+    --dc-color-primary-30: var(--dc-color-error-30);
+    --dc-color-primary-40: var(--dc-color-error-40);
+    --dc-color-primary-50: var(--dc-color-error-50);
+    --dc-color-primary-70: var(--dc-color-error-70);
+    --dc-color-primary-80: var(--dc-color-error-80);
+    --dc-color-primary-90: var(--dc-color-error-90);
 
-    --dc-color-secondary-0: var(--dc-color-danger-secondary-0);
-    --dc-color-secondary-1: var(--dc-color-danger-secondary-1);
-    --dc-color-secondary-2: var(--dc-color-danger-secondary-2);
-
-    --dc-focus-ring-color: var(--dc-focus-ring-color-danger);
+    --dc-focus-ring-color: ${transparentColor("primary-50", 35)};
 
     --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
       var(--dc-focus-ring-color);

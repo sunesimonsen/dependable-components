@@ -7,8 +7,8 @@ import { css } from "stylewars";
 const popupStyles = css`
   & {
     border-radius: 4px;
-    background: #17494d;
-    color: var(--dc-color-neutral-0);
+    background: var(--dc-color-neutral-20);
+    color: var(--dc-color-neutral-95);
     padding: 0.5em;
     width: 120px;
     text-align: center;

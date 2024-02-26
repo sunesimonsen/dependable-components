@@ -15,6 +15,7 @@ const layoutStyles = css`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
   }
 `;
 
