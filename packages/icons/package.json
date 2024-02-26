@@ -1,7 +1,7 @@
 {
   "name": "@dependable/icons",
   "description": "@dependable/view icon components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "exports": {
