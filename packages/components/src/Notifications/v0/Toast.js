@@ -9,7 +9,7 @@ const styles = css`
     flex-direction: column;
     gap: 10px;
     position: fixed;
-    inset: 16px;
+    inset: 20px;
     width: 400px;
     z-index: 1000;
   }
