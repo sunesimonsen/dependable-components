@@ -19,12 +19,6 @@ const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
   `;
 };
 
-const stretchedStyles = css`
-  & {
-    width: 100%;
-  }
-`;
-
 export class ColumnLayout {
   render({
     gap = "1em",
@@ -40,7 +34,6 @@ export class ColumnLayout {
       <div
         className=${classes(
           styles({ gap, stretched, columns, alignItems, justifyItems }),
-          stretched && stretchedStyles,
           className,
         )}
         ...${other}
