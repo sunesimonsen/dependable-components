@@ -24,7 +24,7 @@ const containerStyles = css`
   }
 
   &[data-type="error"] > header {
-    color: var(--dc-color-error-40);
+    color: var(--dc-color-error-50);
   }
 
   &[data-type="success"] > header {
