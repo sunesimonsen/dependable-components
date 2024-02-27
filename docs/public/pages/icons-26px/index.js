@@ -71,7 +71,7 @@ const columnStyles = css`
     fill: #bbb;
     margin: 2em 0;
   }
-`
+`;
 
 const copyStyles = css`
   & {
@@ -85,7 +85,7 @@ const copyStyles = css`
   &:focus {
     outline: none;
   }
-`
+`;
 
 let interceptCopy;
 
@@ -96,26 +96,30 @@ document.addEventListener("copy", (e) => {
   }
 });
 
-const copy = text => {
-  interceptCopy = text
+const copy = (text) => {
+  interceptCopy = text;
   document.execCommand("copy");
   interceptCopy = null;
-}
+};
 
 class IconCopyButton {
   constructor() {
     this.onClick = () => {
-      const name = this.props.children
-      copy(`import ${name} from "@dependable/icons/${name}";`)
-    }
+      const name = this.props.children;
+      copy(`import ${name} from "@dependable/icons/${name}";`);
+    };
   }
 
   render({ children }) {
     return html`
-      <button onClick=${this.onClick} className=${copyStyles} title="Click to copy">
+      <button
+        onClick=${this.onClick}
+        className=${copyStyles}
+        title="Click to copy"
+      >
         ${children}
       </button>
-    `
+    `;
   }
 }
 
@@ -132,126 +136,125 @@ export default class Page {
       <//>
       <${Line} />
       <p>
-        Tip <${TipIcon} /> click on the icon label to copy the
-        import to that clipboard.
+        Tip <${TipIcon} /> click on the icon label to copy the import to that
+        clipboard.
       </p>
       <div className=${columnStyles}>
-         <${AnswerBot26Icon} />
-         <${IconCopyButton}>AnswerBot26Icon<//>
-         <${App26Icon} />
-         <${IconCopyButton}>App26Icon<//>
-         <${ArrangeContent26Icon} />
-         <${IconCopyButton}>ArrangeContent26Icon<//>
-         <${ArrowRightLeft26Icon} />
-         <${IconCopyButton}>ArrowRightLeft26Icon<//>
-         <${BarChart26Icon} />
-         <${IconCopyButton}>BarChart26Icon<//>
-         <${Book26Icon} />
-         <${IconCopyButton}>Book26Icon<//>
-         <${BotGeneric26Icon} />
-         <${IconCopyButton}>BotGeneric26Icon<//>
-         <${Building26Icon} />
-         <${IconCopyButton}>Building26Icon<//>
-         <${CallIn26Icon} />
-         <${IconCopyButton}>CallIn26Icon<//>
-         <${Chat26Icon} />
-         <${IconCopyButton}>Chat26Icon<//>
-         <${Checkbox26Icon} />
-         <${IconCopyButton}>Checkbox26Icon<//>
-         <${Clipboard26Icon} />
-         <${IconCopyButton}>Clipboard26Icon<//>
-         <${Clock26Icon} />
-         <${IconCopyButton}>Clock26Icon<//>
-         <${CloudUpload26Icon} />
-         <${IconCopyButton}>CloudUpload26Icon<//>
-         <${CreditCard26Icon} />
-         <${IconCopyButton}>CreditCard26Icon<//>
-         <${Customize26Icon} />
-         <${IconCopyButton}>Customize26Icon<//>
-         <${Dashboard26Icon} />
-         <${IconCopyButton}>Dashboard26Icon<//>
-         <${Ellipsis26Icon} />
-         <${IconCopyButton}>Ellipsis26Icon<//>
-         <${FileDocument26Icon} />
-         <${IconCopyButton}>FileDocument26Icon<//>
-         <${FileError26Icon} />
-         <${IconCopyButton}>FileError26Icon<//>
-         <${FileImage26Icon} />
-         <${IconCopyButton}>FileImage26Icon<//>
-         <${FilePdf26Icon} />
-         <${IconCopyButton}>FilePdf26Icon<//>
-         <${FilePresentation26Icon} />
-         <${IconCopyButton}>FilePresentation26Icon<//>
-         <${FileSpreadsheet26Icon} />
-         <${IconCopyButton}>FileSpreadsheet26Icon<//>
-         <${FileZip26Icon} />
-         <${IconCopyButton}>FileZip26Icon<//>
-         <${File26Icon} />
-         <${IconCopyButton}>File26Icon<//>
-         <${Garden26Icon} />
-         <${IconCopyButton}>Garden26Icon<//>
-         <${GridAdd26Icon} />
-         <${IconCopyButton}>GridAdd26Icon<//>
-         <${Headset26Icon} />
-         <${IconCopyButton}>Headset26Icon<//>
-         <${HelpCenter26Icon} />
-         <${IconCopyButton}>HelpCenter26Icon<//>
-         <${Hook26Icon} />
-         <${IconCopyButton}>Hook26Icon<//>
-         <${KnowledgeBase26Icon} />
-         <${IconCopyButton}>KnowledgeBase26Icon<//>
-         <${LineChart26Icon} />
-         <${IconCopyButton}>LineChart26Icon<//>
-         <${Macro26Icon} />
-         <${IconCopyButton}>Macro26Icon<//>
-         <${Moderation26Icon} />
-         <${IconCopyButton}>Moderation26Icon<//>
-         <${Monitor26Icon} />
-         <${IconCopyButton}>Monitor26Icon<//>
-         <${Organization26Icon} />
-         <${IconCopyButton}>Organization26Icon<//>
-         <${Person26Icon} />
-         <${IconCopyButton}>Person26Icon<//>
-         <${Platform26Icon} />
-         <${IconCopyButton}>Platform26Icon<//>
-         <${Play26Icon} />
-         <${IconCopyButton}>Play26Icon<//>
-         <${RelationshapeChat26Icon} />
-         <${IconCopyButton}>RelationshapeChat26Icon<//>
-         <${RelationshapeConnect26Icon} />
-         <${IconCopyButton}>RelationshapeConnect26Icon<//>
-         <${RelationshapeExplore26Icon} />
-         <${IconCopyButton}>RelationshapeExplore26Icon<//>
-         <${RelationshapeGather26Icon} />
-         <${IconCopyButton}>RelationshapeGather26Icon<//>
-         <${RelationshapeGuide26Icon} />
-         <${IconCopyButton}>RelationshapeGuide26Icon<//>
-         <${RelationshapeMessage26Icon} />
-         <${IconCopyButton}>RelationshapeMessage26Icon<//>
-         <${RelationshapeSell26Icon} />
-         <${IconCopyButton}>RelationshapeSell26Icon<//>
-         <${RelationshapeSupport26Icon} />
-         <${IconCopyButton}>RelationshapeSupport26Icon<//>
-         <${RelationshapeTalk26Icon} />
-         <${IconCopyButton}>RelationshapeTalk26Icon<//>
-         <${Search26Icon} />
-         <${IconCopyButton}>Search26Icon<//>
-         <${Security26Icon} />
-         <${IconCopyButton}>Security26Icon<//>
-         <${Shapes26Icon} />
-         <${IconCopyButton}>Shapes26Icon<//>
-         <${Sunshine26Icon} />
-         <${IconCopyButton}>Sunshine26Icon<//>
-         <${UserLock26Icon} />
-         <${IconCopyButton}>UserLock26Icon<//>
-         <${Widget26Icon} />
-         <${IconCopyButton}>Widget26Icon<//>
-         <${Workflow26Icon} />
-         <${IconCopyButton}>Workflow26Icon<//>
-         <${Zendesk26Icon} />
-         <${IconCopyButton}>Zendesk26Icon<//>
+        <${AnswerBot26Icon} />
+        <${IconCopyButton}>AnswerBot26Icon<//>
+        <${App26Icon} />
+        <${IconCopyButton}>App26Icon<//>
+        <${ArrangeContent26Icon} />
+        <${IconCopyButton}>ArrangeContent26Icon<//>
+        <${ArrowRightLeft26Icon} />
+        <${IconCopyButton}>ArrowRightLeft26Icon<//>
+        <${BarChart26Icon} />
+        <${IconCopyButton}>BarChart26Icon<//>
+        <${Book26Icon} />
+        <${IconCopyButton}>Book26Icon<//>
+        <${BotGeneric26Icon} />
+        <${IconCopyButton}>BotGeneric26Icon<//>
+        <${Building26Icon} />
+        <${IconCopyButton}>Building26Icon<//>
+        <${CallIn26Icon} />
+        <${IconCopyButton}>CallIn26Icon<//>
+        <${Chat26Icon} />
+        <${IconCopyButton}>Chat26Icon<//>
+        <${Checkbox26Icon} />
+        <${IconCopyButton}>Checkbox26Icon<//>
+        <${Clipboard26Icon} />
+        <${IconCopyButton}>Clipboard26Icon<//>
+        <${Clock26Icon} />
+        <${IconCopyButton}>Clock26Icon<//>
+        <${CloudUpload26Icon} />
+        <${IconCopyButton}>CloudUpload26Icon<//>
+        <${CreditCard26Icon} />
+        <${IconCopyButton}>CreditCard26Icon<//>
+        <${Customize26Icon} />
+        <${IconCopyButton}>Customize26Icon<//>
+        <${Dashboard26Icon} />
+        <${IconCopyButton}>Dashboard26Icon<//>
+        <${Ellipsis26Icon} />
+        <${IconCopyButton}>Ellipsis26Icon<//>
+        <${FileDocument26Icon} />
+        <${IconCopyButton}>FileDocument26Icon<//>
+        <${FileError26Icon} />
+        <${IconCopyButton}>FileError26Icon<//>
+        <${FileImage26Icon} />
+        <${IconCopyButton}>FileImage26Icon<//>
+        <${FilePdf26Icon} />
+        <${IconCopyButton}>FilePdf26Icon<//>
+        <${FilePresentation26Icon} />
+        <${IconCopyButton}>FilePresentation26Icon<//>
+        <${FileSpreadsheet26Icon} />
+        <${IconCopyButton}>FileSpreadsheet26Icon<//>
+        <${FileZip26Icon} />
+        <${IconCopyButton}>FileZip26Icon<//>
+        <${File26Icon} />
+        <${IconCopyButton}>File26Icon<//>
+        <${Garden26Icon} />
+        <${IconCopyButton}>Garden26Icon<//>
+        <${GridAdd26Icon} />
+        <${IconCopyButton}>GridAdd26Icon<//>
+        <${Headset26Icon} />
+        <${IconCopyButton}>Headset26Icon<//>
+        <${HelpCenter26Icon} />
+        <${IconCopyButton}>HelpCenter26Icon<//>
+        <${Hook26Icon} />
+        <${IconCopyButton}>Hook26Icon<//>
+        <${KnowledgeBase26Icon} />
+        <${IconCopyButton}>KnowledgeBase26Icon<//>
+        <${LineChart26Icon} />
+        <${IconCopyButton}>LineChart26Icon<//>
+        <${Macro26Icon} />
+        <${IconCopyButton}>Macro26Icon<//>
+        <${Moderation26Icon} />
+        <${IconCopyButton}>Moderation26Icon<//>
+        <${Monitor26Icon} />
+        <${IconCopyButton}>Monitor26Icon<//>
+        <${Organization26Icon} />
+        <${IconCopyButton}>Organization26Icon<//>
+        <${Person26Icon} />
+        <${IconCopyButton}>Person26Icon<//>
+        <${Platform26Icon} />
+        <${IconCopyButton}>Platform26Icon<//>
+        <${Play26Icon} />
+        <${IconCopyButton}>Play26Icon<//>
+        <${RelationshapeChat26Icon} />
+        <${IconCopyButton}>RelationshapeChat26Icon<//>
+        <${RelationshapeConnect26Icon} />
+        <${IconCopyButton}>RelationshapeConnect26Icon<//>
+        <${RelationshapeExplore26Icon} />
+        <${IconCopyButton}>RelationshapeExplore26Icon<//>
+        <${RelationshapeGather26Icon} />
+        <${IconCopyButton}>RelationshapeGather26Icon<//>
+        <${RelationshapeGuide26Icon} />
+        <${IconCopyButton}>RelationshapeGuide26Icon<//>
+        <${RelationshapeMessage26Icon} />
+        <${IconCopyButton}>RelationshapeMessage26Icon<//>
+        <${RelationshapeSell26Icon} />
+        <${IconCopyButton}>RelationshapeSell26Icon<//>
+        <${RelationshapeSupport26Icon} />
+        <${IconCopyButton}>RelationshapeSupport26Icon<//>
+        <${RelationshapeTalk26Icon} />
+        <${IconCopyButton}>RelationshapeTalk26Icon<//>
+        <${Search26Icon} />
+        <${IconCopyButton}>Search26Icon<//>
+        <${Security26Icon} />
+        <${IconCopyButton}>Security26Icon<//>
+        <${Shapes26Icon} />
+        <${IconCopyButton}>Shapes26Icon<//>
+        <${Sunshine26Icon} />
+        <${IconCopyButton}>Sunshine26Icon<//>
+        <${UserLock26Icon} />
+        <${IconCopyButton}>UserLock26Icon<//>
+        <${Widget26Icon} />
+        <${IconCopyButton}>Widget26Icon<//>
+        <${Workflow26Icon} />
+        <${IconCopyButton}>Workflow26Icon<//>
+        <${Zendesk26Icon} />
+        <${IconCopyButton}>Zendesk26Icon<//>
       </div>
     `;
   }
 }
-

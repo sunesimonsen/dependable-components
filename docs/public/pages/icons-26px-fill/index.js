@@ -20,7 +20,7 @@ const columnStyles = css`
     fill: #bbb;
     margin: 2em 0;
   }
-`
+`;
 
 const copyStyles = css`
   & {
@@ -34,7 +34,7 @@ const copyStyles = css`
   &:focus {
     outline: none;
   }
-`
+`;
 
 let interceptCopy;
 
@@ -45,26 +45,30 @@ document.addEventListener("copy", (e) => {
   }
 });
 
-const copy = text => {
-  interceptCopy = text
+const copy = (text) => {
+  interceptCopy = text;
   document.execCommand("copy");
   interceptCopy = null;
-}
+};
 
 class IconCopyButton {
   constructor() {
     this.onClick = () => {
-      const name = this.props.children
-      copy(`import ${name} from "@dependable/icons/${name}";`)
-    }
+      const name = this.props.children;
+      copy(`import ${name} from "@dependable/icons/${name}";`);
+    };
   }
 
   render({ children }) {
     return html`
-      <button onClick=${this.onClick} className=${copyStyles} title="Click to copy">
+      <button
+        onClick=${this.onClick}
+        className=${copyStyles}
+        title="Click to copy"
+      >
         ${children}
       </button>
-    `
+    `;
   }
 }
 
@@ -81,24 +85,23 @@ export default class Page {
       <//>
       <${Line} />
       <p>
-        Tip <${TipIcon} /> click on the icon label to copy the
-        import to that clipboard.
+        Tip <${TipIcon} /> click on the icon label to copy the import to that
+        clipboard.
       </p>
       <div className=${columnStyles}>
-         <${CustomerListsFill26Icon} />
-         <${IconCopyButton}>CustomerListsFill26Icon<//>
-         <${EmailFill26Icon} />
-         <${IconCopyButton}>EmailFill26Icon<//>
-         <${GroupFill26Icon} />
-         <${IconCopyButton}>GroupFill26Icon<//>
-         <${HomeFill26Icon} />
-         <${IconCopyButton}>HomeFill26Icon<//>
-         <${SettingsFill26Icon} />
-         <${IconCopyButton}>SettingsFill26Icon<//>
-         <${ViewsFill26Icon} />
-         <${IconCopyButton}>ViewsFill26Icon<//>
+        <${CustomerListsFill26Icon} />
+        <${IconCopyButton}>CustomerListsFill26Icon<//>
+        <${EmailFill26Icon} />
+        <${IconCopyButton}>EmailFill26Icon<//>
+        <${GroupFill26Icon} />
+        <${IconCopyButton}>GroupFill26Icon<//>
+        <${HomeFill26Icon} />
+        <${IconCopyButton}>HomeFill26Icon<//>
+        <${SettingsFill26Icon} />
+        <${IconCopyButton}>SettingsFill26Icon<//>
+        <${ViewsFill26Icon} />
+        <${IconCopyButton}>ViewsFill26Icon<//>
       </div>
     `;
   }
 }
-
