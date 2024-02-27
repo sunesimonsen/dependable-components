@@ -26,10 +26,10 @@ export default class Page {
       <${Heading} level="2">Usage<//>
       <p>
         The icons come in two flavors – monochrome and two-tone. The primary
-        fill/stroke will always be specified as
-        <code className="inline">currentColor</code> This means CSS text color
-        style will cascade to the icon. Two-tone icons can receive a secondary
-        color via the <code className="inline">fill</code> style property.
+        fill/stroke will always be specified as${"\n"}
+        <code>currentColor</code> This means CSS text color style will cascade
+        to the icon. Two-tone icons can receive a secondary color via the
+        <code>fill</code> style property.
       </p>
       <${Example} src=${new URL("./IconUsage.js", import.meta.url)}>
         <${IconUsage} />

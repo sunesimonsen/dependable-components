@@ -39,9 +39,9 @@ export default class Page {
       <${Heading} level="2">Placement<//>
       <p>
         Menu placement can be oriented around a trigger element in different
-        positions. The default placement is
-        <code className="inline">bottom-start</code>. This example demonstrates
-        the <code className="inline">top-start</code> placement.
+        positions. The default placement is${"\n"}
+        <code>bottom-start</code>. This example demonstrates the${"\n"}
+        <code>top-start</code> placement.
       </p>
       <p>
         See the other placements on the${" "}

@@ -48,7 +48,7 @@ export default class Page {
       <//>
       <${Heading} level="3">Pressed<//>
       <p>
-        An icon button can be used as a toggle if
+        An icon button can be used as a toggle if${"\n"}
         <code>aria-pressed=true</code> is specified to indicate that the button
         is pressed.
       </p>

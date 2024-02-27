@@ -47,17 +47,12 @@ const mainStyles = css`
   & p > code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
-  }
-
-  & p > code.inline {
     line-height: normal;
     font-size: calc(1em - 1px);
-    direction: ltr;
     border-radius: 2px;
     padding: 1.5px;
     background-color: var(--dc-color-neutral-80);
     color: var(--dc-color-foreground);
-    margin: 0 0.7ex;
   }
 `;
 
