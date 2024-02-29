@@ -11,8 +11,8 @@ const styles = css`
   &[data-toolbar-layout="start"],
   &[data-toolbar-layout="end"] {
     display: flex;
-    gap: var(--dc-spacing-3);
-    padding: var(--dc-spacing-3);
+    gap: var(--dc-toolbar-gap, var(--dc-spacing-3));
+    padding: var(--dc-toolbar-padding, var(--dc-spacing-3));
   }
 
   &[data-toolbar-layout="end"] {
@@ -38,8 +38,8 @@ const styles = css`
   &[data-toolbar-layout="start center end"] > * {
     display: flex;
     align-items: center;
-    gap: var(--dc-spacing-3);
-    padding: var(--dc-spacing-3);
+    gap: var(--dc-toolbar-gap, var(--dc-spacing-3));
+    padding: var(--dc-toolbar-padding, var(--dc-spacing-3));
   }
 
   &[data-toolbar-layout="start end"] > *:last-child,

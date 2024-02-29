@@ -5,7 +5,7 @@ import { JSFiddleLogo } from "./JSFiddleLogo.js";
 
 const formStyles = css`
   & {
-    display: inline;
+    visibility: hidden;
   }
 `;
 
@@ -69,24 +69,24 @@ export class JSFiddleButton {
     return html`
       <${IconButton} basic onClick=${this.onClick}>
         <${JSFiddleLogo} />
+        <form
+          ref=${this._setFormRef}
+          method="post"
+          target="_blank"
+          action="https://jsfiddle.net/api/post/library/pure/"
+          className=${formStyles}
+        >
+          <input type="hidden" name="title" value="@depository/components" />
+          <input
+            type="hidden"
+            name="description"
+            value="See https://depository-components.surge.sh/ for more information"
+          />
+          <input type="hidden" name="js" />
+          <input type="hidden" name="html" />
+          <input type="hidden" name="css" value=${jsFiddleCSS} />
+        </form>
       <//>
-      <form
-        ref=${this._setFormRef}
-        method="post"
-        target="_blank"
-        action="https://jsfiddle.net/api/post/library/pure/"
-        className=${formStyles}
-      >
-        <input type="hidden" name="title" value="@depository/components" />
-        <input
-          type="hidden"
-          name="description"
-          value="See https://depository-components.surge.sh/ for more information"
-        />
-        <input type="hidden" name="js" />
-        <input type="hidden" name="html" />
-        <input type="hidden" name="css" value=${jsFiddleCSS} />
-      </form>
     `;
   }
 }
