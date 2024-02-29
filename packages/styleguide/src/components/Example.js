@@ -6,6 +6,8 @@ import { IconButton } from "@dependable/components/IconButton/v0";
 import { ExamplePreview } from "./ExamplePreview.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { JSFiddleButton } from "./JSFiddleButton.js";
+import { Bar } from "@dependable/components/Bar/v0";
+import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
 
 import MarkupStroke16Icon from "@dependable/icons/MarkupStroke16Icon";
 
@@ -20,13 +22,10 @@ const styles = css`
 
 const buttonsStyles = css`
   & {
-    display: flex;
-    gap: 2px;
-    justify-content: flex-end;
-    align-items: center;
     background: var(--dc-color-neutral-97);
     border-top: 1px solid var(--dc-color-neutral-85);
-    padding: 4px 8px;
+    --dc-toolbar-padding: var(--dc-spacing-1);
+    --dc-toolbar-gap: var(--dc-spacing-1);
   }
 `;
 
@@ -42,7 +41,7 @@ export class Example {
     return html`
       <div className=${styles}>
         <${ExamplePreview} noPadding=${noPadding}>${children}<//>
-        <div className=${buttonsStyles}>
+        <${ToolbarLayout} sections="end" className=${buttonsStyles}>
           <${JSFiddleButton} src=${src} />
           <${IconButton}
             basic
@@ -51,7 +50,7 @@ export class Example {
           >
             <${MarkupStroke16Icon} />
           <//>
-        </div>
+        <//>
         <${ErrorBoundary} name="source-code">
           ${this.sourceVisible() && html`<${SourceCode} src=${src} />`}
         <//>

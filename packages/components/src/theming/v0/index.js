@@ -1,3 +1,5 @@
+import { css } from "stylewars";
+
 export const color = (name, lightness = 50, saturation) => {
   const saturationString =
     typeof saturation === "number"
@@ -28,4 +30,25 @@ export const transparentColor = (name, procentage) => `
     var(--dc-color-${name}) ${procentage}%,
     transparent
   )
+`;
+
+const withDirection = (field, direction) =>
+  direction ? field + "-" + direction : field;
+
+export const margin = (n, direction) => css`
+  & {
+    ${withDirection("margin", direction)}: var(--dc-spacing-${n});
+  }
+`;
+
+export const padding = (n, direction) => css`
+  & {
+    ${withDirection("padding", direction)}: var(--dc-spacing-${n});
+  }
+`;
+
+export const textAlign = (direction) => css`
+  & {
+    text-align: ${direction};
+  }
 `;

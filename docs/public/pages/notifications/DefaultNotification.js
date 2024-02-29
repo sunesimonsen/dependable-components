@@ -3,7 +3,7 @@ import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { Notification, Toast } from "@dependable/components/Notifications/v0";
-import { me1 } from "@dependable/components/spacing/v0";
+import { margin } from "@dependable/components/theming/v0";
 
 import InfoStroke16Icon from "@dependable/icons/InfoStroke16Icon";
 import AlertWarningStroke16Icon from "@dependable/icons/AlertWarningStroke16Icon";
@@ -67,7 +67,7 @@ class NotificationExample {
 
     return html`
       <${Button} onClick=${this.onClick} stretched>
-        <${Icon} className=${me1} /> ${example.type}
+        <${Icon} className=${margin(1, "inline-end")} /> ${example.type}
       <//>
     `;
   }

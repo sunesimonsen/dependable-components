@@ -13,6 +13,7 @@ const pages = [
   "center",
   "checkbox",
   "columnlayout",
+  "default-theme",
   "dialog",
   "iconbutton",
   "icons",
@@ -21,13 +22,13 @@ const pages = [
   "notifications",
   "popup",
   "pulse",
+  "purple-theme",
   "select",
   "skeleton",
   "spinner",
   "switch",
   "textinput",
-  "default-theme",
-  "purple-theme",
+  "toolbarlayout",
 ];
 
 const pageMap = Object.fromEntries(
@@ -73,6 +74,7 @@ styleguide({
     <h1>Layouts</h1>
     <ul>
       <li><${PageReference} id="bar">Bar<//></li>
+      <li><${PageReference} id="toolbarlayout">Toolbar layout<//></li>
       <li><${PageReference} id="borderlayout">Border layout<//></li>
       <li><${PageReference} id="center">Center<//></li>
       <li><${PageReference} id="columnlayout">Column layout<//></li>

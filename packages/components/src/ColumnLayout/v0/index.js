@@ -21,7 +21,7 @@ const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
 
 export class ColumnLayout {
   render({
-    gap = "1em",
+    gap = "var(--dc-spacing-3)",
     columns = 1,
     stretched,
     alignItems = "center",

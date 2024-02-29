@@ -2,7 +2,7 @@ import { html } from "@dependable/view";
 import { css, classes } from "stylewars";
 import XStroke12Icon from "@dependable/icons/XStroke12Icon";
 import { MediaInput } from "../../MediaInput/v0";
-import { ms2, me2 } from "../../spacing/v0";
+import { margin } from "../../theming/v0";
 
 const clearStyles = css`
   & {
@@ -44,7 +44,7 @@ export class ClearableInput {
         <${XStroke12Icon}
           height="16"
           width="16"
-          className=${classes(ms2, clearStyles)}
+          className=${classes(margin(2, "inline-start"), clearStyles)}
           onClick=${onClear}
         />
       `
@@ -55,7 +55,7 @@ export class ClearableInput {
     const containerProps = filterProps(other, (k) => !isInputProp(k));
     const inputProps = filterProps(other, isInputProp);
 
-    const icon = Icon && html`<${Icon} className=${me2} />`;
+    const icon = Icon && html`<${Icon} className=${margin(2, "inline-end")} />`;
 
     return html`
       <${MediaInput} ...${containerProps}>

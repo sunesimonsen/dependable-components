@@ -15,7 +15,7 @@ export class RTLSwitch {
   render() {
     return html`
       <${ColumnLayout} columns="auto auto" gap="0.7em">
-        <label for="styleguide-rtl">RTL</label>
+        <label for="styleguide-rtl">Right to left</label>
         <${Switch} id="styleguide-rtl" .checked=${rtl()} onChange=${toggle} />
       <//>
     `;

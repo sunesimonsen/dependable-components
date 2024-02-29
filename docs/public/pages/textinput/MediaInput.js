@@ -4,7 +4,7 @@ import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { MediaInput } from "@dependable/components/MediaInput/v0";
-import { me2, ms2 } from "@dependable/components/spacing/v0";
+import { margin } from "@dependable/components/theming/v0";
 
 import SearchStroke16Icon from "@dependable/icons/SearchStroke16Icon";
 
@@ -25,14 +25,14 @@ export default class Example {
         <${ColumnLayout} columns="auto 300px auto">
           <label for="media-planet-name">Find planet</label>
           <${MediaInput}>
-            <span className=${me2}>🌘</span>
+            <span className=${margin(2, "inline-end")}>🌘</span>
             <input
               id="media-planet-name"
               type="text"
               .value=${value()}
               onChange=${onChange}
             />
-            <${SearchStroke16Icon} className=${ms2} />
+            <${SearchStroke16Icon} className=${margin(2, "inline-start")} />
           <//>
           <${Button} onClick=${onSubmit}>Search<//>
         <//>

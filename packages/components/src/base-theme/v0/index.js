@@ -93,8 +93,29 @@ const darkMode = `
   background: var(--dc-color-background);
 `;
 
+const createSpacingVar = (n, base) => {
+  if (n === 1) return `--dc-spacing-${n}: var(--dc-base);`;
+  if (n === 2) return `--dc-spacing-${n}: calc(2 * var(--dc-base));`;
+
+  return `--dc-spacing-${n}: calc(var(--dc-spacing-${n - 1}) + var(--dc-spacing-${n - 2}));`;
+};
+
+const createSpacing = () => {
+  const result = [];
+
+  for (let i = 1; i < 8; i++) {
+    result.push(createSpacingVar(i));
+  }
+
+  return result.join("\n");
+};
+
 export const baseTheme = css`
   & {
+    --dc-base: 4px;
+
+    ${createSpacing()}
+
     ${createPrimaryColors()}
     ${createErrorColors()}
     ${createWarningColors()}
