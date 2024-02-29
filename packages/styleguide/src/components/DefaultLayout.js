@@ -28,6 +28,7 @@ const mainStyles = css`
     flex-direction: column;
     background: var(--dc-color-background);
     overflow: hidden;
+    line-height: 1.5em;
   }
 
   & > h2 {
@@ -50,8 +51,8 @@ const mainStyles = css`
     line-height: normal;
     font-size: calc(1em - 1px);
     border-radius: 2px;
-    padding: 1.5px;
-    background-color: var(--dc-color-neutral-80);
+    padding: 1.5px 1px;
+    background-color: var(--dc-color-neutral-90);
     color: var(--dc-color-foreground);
   }
 `;

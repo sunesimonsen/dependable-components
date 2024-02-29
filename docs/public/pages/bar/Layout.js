@@ -6,7 +6,6 @@ import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { Button } from "@dependable/components/Button/v0";
-import { SearchInput } from "@dependable/components/SearchInput/v0";
 import MenuStroke12Icon from "@dependable/icons/MenuStroke12Icon";
 import SearchStroke12Icon from "@dependable/icons/SearchStroke12Icon";
 import GearStroke12Icon from "@dependable/icons/GearStroke12Icon";
