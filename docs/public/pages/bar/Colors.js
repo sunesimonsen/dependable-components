@@ -7,8 +7,7 @@ const layoutStyles = css`
   & {
     height: 400px;
     text-align: center;
-    --dc-bar-border-width: 6px;
-    --dc-bar-border-style: inset;
+    --dc-bar-border-width: 2px;
   }
 
   & > * {
@@ -17,16 +16,17 @@ const layoutStyles = css`
 
   & > [data-layout="top"],
   & > [data-layout="bottom"] {
-    color: var(--dc-color-primary-20);
-    --dc-bar-background: var(--dc-color-primary-70);
-    --dc-bar-border-color: var(--dc-color-primary-60);
+    color: black;
+    --dc-bar-background: hsl(158, 33%, 53%);
+    --dc-bar-border-color: hsl(158, 33%, 63%);
   }
 
   & > [data-layout="start"],
   & > [data-layout="end"] {
-    color: var(--dc-color-primary-90);
-    --dc-bar-background: var(--dc-color-primary-40);
-    --dc-bar-border-color: var(--dc-color-primary-50);
+    color: black;
+    width: 150px;
+    --dc-bar-background: hsl(32, 100%, 67%);
+    --dc-bar-border-color: hsl(32, 100%, 77%);
   }
 `;
 
