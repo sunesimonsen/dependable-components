@@ -9,6 +9,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultBar from "./DefaultBar.js";
 import Colors from "./Colors.js";
+import Layout from "./Layout.js";
 
 export default class Page {
   render() {
@@ -29,6 +30,11 @@ export default class Page {
       <p>You can easily override the colors of the bar using CSS.</p>
       <${Example} src=${new URL("./Colors.js", import.meta.url)} noPadding>
         <${Colors} />
+      <//>
+      <${Heading} level="3">Layout<//>
+      <p>You can use layout components to arrange items inside for the bar.</p>
+      <${Example} src=${new URL("./Layout.js", import.meta.url)} noPadding>
+        <${Layout} />
       <//>
     `;
   }
