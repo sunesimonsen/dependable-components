@@ -18,7 +18,7 @@ const styles = css`
     border: 1px solid var(--dc-color-primary-50);
     height: 2.8em;
     padding: var(--dc-button-padding, 0 1.07143em);
-    width: var(--dc-button-width, inherit);
+    width: var(--dc-button-width, initial);
     background-color: var(--dc-color-secondary-0);
     font-size: 0.88em;
     box-sizing: border-box;

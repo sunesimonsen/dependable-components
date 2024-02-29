@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 import ChevronDownStroke12Icon from "@dependable/icons/ChevronDownStroke12Icon";
-import { ms1 } from "../../spacing/v0/index.js";
+import { margin } from "../../theming/v0/index.js";
 import { MediaInput } from "../../MediaInput/v0/index.js";
 
 const inputProps = [
@@ -28,7 +28,7 @@ export class SelectInput {
       <${MediaInput} ...${containerProps}>
         <span data-label>${children}</span>
         <input type="text" ...${inputProps} />
-        <${ChevronDownStroke12Icon} className=${ms1} />
+        <${ChevronDownStroke12Icon} className=${margin(1, "inline-start")} />
       <//>
     `;
   }

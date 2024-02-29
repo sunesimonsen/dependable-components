@@ -61,10 +61,9 @@ export default class Page {
       <//>
       <${Heading} level="3">Align items<//>
       <p>
-        You can control <code>align-items</code> using the${"\n"}<code
-          >alignItems</code
-        >
-        property. The default value is <code>center</code>.
+        You can control <code>align-items</code> using
+        the${"\n"}<code>alignItems</code>${"\n"}property. The default value is
+        <code>center</code>.
       </p>
       <${Example} src=${new URL("./AlignItems.js", import.meta.url)}>
         <${AlignItems} />
