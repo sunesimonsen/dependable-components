@@ -8,6 +8,7 @@ import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { SidebarLayout, Sidebar } from "@dependable/components/Sidebar/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { activeTheme } from "./ThemeSelector.js";
+import { Settings } from "./Settings.js";
 
 const rootStyles = css`
   & {
@@ -71,9 +72,16 @@ const scrollAreaStyles = css`
   }
 `;
 
-const sidebarStyles = css`
+const mainSidebarStyles = css`
   & {
     overflow: hidden;
+  }
+`;
+
+const settingsSidebarStyles = css`
+  & {
+    --dc-sidebar-display: none;
+    width: 200px;
   }
 `;
 
@@ -86,7 +94,7 @@ export class DefaultLayout {
           <${Sidebar}
             data-layout="start"
             id="main-sidebar"
-            className=${sidebarStyles}
+            className=${mainSidebarStyles}
           >
             <${ScrollArea} className=${scrollAreaStyles}>
               <${SidebarContent} />
@@ -97,6 +105,13 @@ export class DefaultLayout {
               <${ErrorBoundary} name="default-layout">${children}<//>
             <//>
           </main>
+          <${Sidebar}
+            className=${settingsSidebarStyles}
+            data-layout="end"
+            id="settings-sidebar"
+          >
+            <${Settings} />
+          <//>
         <//>
       </div>
     `;

@@ -2,7 +2,6 @@ import { html } from "@dependable/view";
 import { css } from "stylewars";
 import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { theme as defaultTheme } from "@dependable/components/default-theme/v0";
 import { theme as purpleTheme } from "@dependable/components/purple-theme/v0";
 import {
@@ -46,12 +45,10 @@ export class ThemeSelector {
 
   render() {
     return html`
-      <${ColumnLayout} columns="auto 150px" gap="0.7em">
-        <label for="styleguide-theme">Theme</label>
-        <${Select} id="styleguide-theme" onSelect=${onSelect}>
-          <${SelectInput}>${selected().label}<//>
-          <${SelectPopup}>${this.renderItems()}<//>
-        <//>
+      <label for="styleguide-theme">Theme</label>
+      <${Select} id="styleguide-theme" onSelect=${onSelect}>
+        <${SelectInput}>${selected().label}<//>
+        <${SelectPopup}>${this.renderItems()}<//>
       <//>
     `;
   }

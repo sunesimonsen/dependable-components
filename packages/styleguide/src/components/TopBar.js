@@ -9,6 +9,7 @@ import { RepositoryButton } from "./RepositoryButton.js";
 import { Bar } from "@dependable/components/Bar/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
 import { SidebarToggle } from "@dependable/components/Sidebar/v0";
+import { ToggleSettingsButton } from "./ToggleSettingsButton.js";
 
 const logoStyles = css`
   & {
@@ -64,10 +65,8 @@ export class TopBar {
             <//>
           </div>
           <div>
+            <${ToggleSettingsButton} aria-controls="settings-sidebar" />
             <${RepositoryButton} />
-            <${RTLSwitch} />
-            <${ColorSchemeSelector} />
-            <${ThemeSelector} />
           </div>
         <//>
       <//>

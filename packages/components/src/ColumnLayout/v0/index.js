@@ -15,6 +15,7 @@ const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
       align-items: ${alignItems};
       justify-items: ${justifyItems};
       grid-template-columns: ${gridTemplateColumns};
+      box-sizing: border-box;
     }
   `;
 };

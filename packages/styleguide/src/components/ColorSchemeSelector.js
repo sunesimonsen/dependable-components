@@ -1,7 +1,6 @@
 import { html } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
 import { Switch } from "@dependable/components/Switch/v0";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import {
   Select,
   SelectInput,
@@ -44,12 +43,10 @@ export class ColorSchemeSelector {
 
   render() {
     return html`
-      <${ColumnLayout} columns="auto 150px" gap="0.7em">
-        <label for="styleguide-color-scheme">Color scheme</label>
-        <${Select} id="styleguide-color-scheme" onSelect=${onSelect}>
-          <${SelectInput}>${selected().label}<//>
-          <${SelectPopup}>${this.renderItems()}<//>
-        <//>
+      <label for="styleguide-color-scheme">Color scheme</label>
+      <${Select} id="styleguide-color-scheme" onSelect=${onSelect}>
+        <${SelectInput}>${selected().label}<//>
+        <${SelectPopup}>${this.renderItems()}<//>
       <//>
     `;
   }
