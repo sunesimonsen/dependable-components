@@ -7,8 +7,8 @@ import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 
 const styles = css`
   & {
-    padding: var(--dc-spacing-3);
-    width: 100%;
+    padding: var(--dc-spacing-3) var(--dc-spacing-4);
+    width: 240px;
   }
 `;
 

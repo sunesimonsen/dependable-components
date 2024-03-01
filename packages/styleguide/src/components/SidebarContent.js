@@ -25,7 +25,17 @@ const styles = css`
 `;
 
 export class SidebarContent {
+  constructor() {
+    this.onClick = () => {
+      this.context.visibleSidebar("");
+    };
+  }
+
   render() {
-    return html`<nav className=${styles}>${this.context.navigation}</nav>`;
+    return html`
+      <nav onClick=${this.onClick} className=${styles}>
+        ${this.context.navigation}
+      </nav>
+    `;
   }
 }

@@ -42,6 +42,7 @@ const topBarStyles = css`
     box-shadow: rgb(47 57 65 / 5%) 0px 16px 24px 0px;
     z-index: 1;
     white-space: nowrap;
+    --dc-toolbar-padding: var(--dc-spacing-3) var(--dc-spacing-4);
   }
 `;
 
@@ -53,8 +54,7 @@ export class TopBar {
       <${Bar} className=${topBarStyles} data-layout="top">
         <${ToolbarLayout} sections="start end">
           <div>
-            <${SidebarToggle} aria-controls="main-sidebar" />
-
+            <${SidebarToggle} pill basic aria-controls="main-sidebar" />
             <${Link}
               route="index"
               state=${{ scrollToTop: true }}
@@ -65,8 +65,8 @@ export class TopBar {
             <//>
           </div>
           <div>
-            <${ToggleSettingsButton} aria-controls="settings-sidebar" />
             <${RepositoryButton} />
+            <${ToggleSettingsButton} aria-controls="settings-sidebar" />
           </div>
         <//>
       <//>

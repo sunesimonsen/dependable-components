@@ -25,8 +25,8 @@ const rootStyles = css`
   @media screen and (max-width: 1200px) {
     & {
       --dc-sidebar-display: none;
-      --dc-sidebar-toggle-display: inline;
-      --dc-logo-size: 42px;
+      --dc-sidebar-toggle-display: inline-flex;
+      --dc-logo-size: 40px;
     }
   }
 `;
@@ -81,7 +81,6 @@ const mainSidebarStyles = css`
 const settingsSidebarStyles = css`
   & {
     --dc-sidebar-display: none;
-    width: 200px;
   }
 `;
 

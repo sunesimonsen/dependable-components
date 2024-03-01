@@ -21,7 +21,7 @@ const styles = css`
   @media screen and (max-width: 1200px) {
     & {
       --dc-sidebar-display: none;
-      --dc-sidebar-toggle-display: inline;
+      --dc-sidebar-toggle-display: inline-flex;
     }
   }
 `;

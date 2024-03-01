@@ -43,6 +43,7 @@ export class PageReference {
         params=${{ id }}
         hash=""
         className=${classes(styles, this.isActive() && activeStyles)}
+        state=${{ closeSidebars: true }}
         ...${other}
       >
         ${children}
