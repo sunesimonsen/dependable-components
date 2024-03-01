@@ -26,7 +26,7 @@ export const colorMix = (primaryColor, secondaryColor, procentage) =>
 
 export const transparentColor = (name, procentage) => `
   color-mix(
-    in hsl,
+    in srgb,
     var(--dc-color-${name}) ${procentage}%,
     transparent
   )
