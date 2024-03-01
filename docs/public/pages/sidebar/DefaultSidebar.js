@@ -46,7 +46,7 @@ export default class Example {
           className=${padding(4)}
           style="width: 150px"
         >
-          Start
+          Sidebar
         <//>
         <${ScrollArea}>
           <main>
