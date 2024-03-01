@@ -6,7 +6,7 @@ import { baseTheme } from "../../base-theme/v0";
 export const theme = classes(
   css`
     & {
-      --dc-color-foreground: srgb(0.1 0.1 0.1);
+      --dc-color-foreground: #111;
       --dc-color-background: white;
 
       --dc-color-saturation: 71;
