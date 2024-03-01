@@ -2,9 +2,10 @@ import { html } from "@dependable/view";
 import { computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";
-import { Sidebar } from "./Sidebar.js";
+import { SidebarContent } from "./SidebarContent.js";
 import { ErrorBoundary } from "./ErrorBoundary.js";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
+import { SidebarLayout, Sidebar } from "@dependable/components/Sidebar/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { activeTheme } from "./ThemeSelector.js";
 
@@ -16,18 +17,25 @@ const rootStyles = css`
     left: 0;
     bottom: 0;
 
-    width: 100%;
-    height: 100%;
+    --dc-sidebar-initial-display: flex;
+    --dc-logo-size: 48px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      --dc-sidebar-display: none;
+      --dc-sidebar-toggle-display: inline;
+      --dc-logo-size: 42px;
+    }
   }
 `;
 
 const mainStyles = css`
   & {
-    grid-area: main;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     background: var(--dc-color-background);
-    overflow: hidden;
     line-height: 1.5em;
   }
 
@@ -63,13 +71,27 @@ const scrollAreaStyles = css`
   }
 `;
 
+const sidebarStyles = css`
+  & {
+    overflow: hidden;
+  }
+`;
+
 export class DefaultLayout {
   render({ children }) {
     return html`
       <div className=${classes(activeTheme(), rootStyles)}>
-        <${BorderLayout} stretched>
+        <${SidebarLayout}>
           <${TopBar} />
-          <${Sidebar} />
+          <${Sidebar}
+            data-layout="start"
+            id="main-sidebar"
+            className=${sidebarStyles}
+          >
+            <${ScrollArea} className=${scrollAreaStyles}>
+              <${SidebarContent} />
+            <//>
+          <//>
           <main className=${mainStyles}>
             <${ScrollArea} className=${scrollAreaStyles}>
               <${ErrorBoundary} name="default-layout">${children}<//>
