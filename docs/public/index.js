@@ -24,6 +24,7 @@ const pages = [
   "pulse",
   "purple-theme",
   "select",
+  "sidebar",
   "skeleton",
   "spinner",
   "switch",
@@ -74,6 +75,7 @@ styleguide({
     <h1>Layouts</h1>
     <ul>
       <li><${PageReference} id="bar">Bar<//></li>
+      <li><${PageReference} id="sidebar">Sidebar<//></li>
       <li><${PageReference} id="toolbarlayout">Toolbar layout<//></li>
       <li><${PageReference} id="borderlayout">Border layout<//></li>
       <li><${PageReference} id="center">Center<//></li>
