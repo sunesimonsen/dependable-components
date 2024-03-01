@@ -155,6 +155,7 @@ export class SidebarToggle {
   render({ className, ...other }) {
     return html`
       <${IconButton}
+        basic
         className=${classes(toggleStyles, className)}
         onClick=${this.onClick}
         aria-pressed=${this.pressed()}
