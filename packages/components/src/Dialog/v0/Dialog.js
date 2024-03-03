@@ -15,6 +15,7 @@ const styles = ({ width, height }) => css`
     background-color: var(--dc-color-background);
     color: var(--dc-color-foreground);
     outline: none;
+    overflow: visible;
   }
 
   &::backdrop {
