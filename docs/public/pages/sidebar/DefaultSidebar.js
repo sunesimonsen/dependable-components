@@ -33,7 +33,7 @@ export default class Example {
         <${Bar} data-layout="top">
           <${ToolbarLayout} sections="start end">
             <div>
-              <${SidebarToggle} aria-controls="main-sidebar" />
+              <${SidebarToggle} aria-controls="sidebar-example-main" />
             </div>
             <div>
               <${IconButton}><${GearStroke12Icon} /><//>
@@ -41,7 +41,7 @@ export default class Example {
           <//>
         <//>
         <${Sidebar}
-          id="main-sidebar"
+          id="sidebar-example-main"
           data-layout="start"
           className=${padding(4)}
           style="width: 150px"
