@@ -28,6 +28,7 @@ const pages = [
   "skeleton",
   "spinner",
   "switch",
+  "tags",
   "textinput",
   "toolbarlayout",
 ];
@@ -61,6 +62,10 @@ styleguide({
       <li><${PageReference} id="dialog">Dialog<//></li>
       <li><${PageReference} id="menu">Menu<//></li>
       <li><${PageReference} id="popup">Popup<//></li>
+    </ul>
+    <h1>Data</h1>
+    <ul>
+      <li><${PageReference} id="tags">Tags<//></li>
     </ul>
     <h1>Loaders</h1>
     <ul>
