@@ -8,7 +8,7 @@ const popupStyles = css`
     top: auto;
     bottom: auto;
     right: auto;
-    z-index: 1;
+    z-index: 100;
     box-sizing: border-box;
     visibility: hidden;
   }
