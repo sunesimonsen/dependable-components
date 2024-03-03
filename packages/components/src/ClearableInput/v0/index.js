@@ -22,6 +22,7 @@ const inputProps = [
   "autofocus",
   "disabled",
   "id",
+  "onInput",
   "onBlur",
   "onFocus",
   "placeholder",

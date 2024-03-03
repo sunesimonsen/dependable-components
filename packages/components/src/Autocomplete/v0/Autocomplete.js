@@ -4,13 +4,21 @@ import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { AutocompleteModel } from "./AutocompleteModel.js";
 import { findSelectables } from "../../Menu/v0/children.js";
 
+const compose =
+  (...handlers) =>
+  (e) => {
+    for (const handler of handlers.filter(Boolean)) {
+      handler(e);
+
+      if (e.defaultPrevented) {
+        break;
+      }
+    }
+  };
+
 export class CustomAutocomplete {
   constructor() {
     this.onClick = (e) => {
-      if (this.props.onClick) {
-        this.props.onClick(e);
-      }
-
       e.preventDefault();
     };
 
@@ -19,24 +27,18 @@ export class CustomAutocomplete {
     };
 
     this.onKeyDown = (e) => {
-      if (this.props.onKeyDown) {
-        this.props.onKeyDown(e);
+      if (e.key === "Backspace") {
+        this.showMenu();
       }
 
-      if (!e.defaultPrevented) {
-        if (e.key === "Backspace") {
-          this.showMenu();
-        }
-
-        if (
-          !e.altKey &&
-          !e.ctrlKey &&
-          !e.metaKey &&
-          65 < e.keyCode &&
-          e.keyCode < 222
-        ) {
-          this.showMenu();
-        }
+      if (
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        65 < e.keyCode &&
+        e.keyCode < 222
+      ) {
+        this.showMenu();
       }
     };
   }
@@ -57,16 +59,15 @@ export class CustomAutocomplete {
     return findSelectables(this.props.children);
   }
 
-  render({ model, children, ...other }) {
+  render({ model, onClick, onKeyDown, children, ...other }) {
     return html`
       <${CustomMenu}
         model=${model}
         placement="bottom-stretch"
         role="combobox"
         ...${other}
-        onFocus=${this.onFocus}
-        onClick=${this.onClick}
-        onKeyDown=${this.onKeyDown}
+        onClick=${compose(onClick, this.onClick)}
+        onKeyDown=${compose(onKeyDown, this.onKeyDown)}
       >
         ${children}
       <//>
