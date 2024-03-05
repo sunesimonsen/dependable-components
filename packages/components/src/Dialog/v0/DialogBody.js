@@ -6,7 +6,7 @@ const styles = css`
     display: block;
     margin: 0px;
     padding: 20px 40px;
-    height: 100%;
+    max-height: 80vh;
     overflow: auto;
     line-height: 1.42857;
     font-size: 14px;
