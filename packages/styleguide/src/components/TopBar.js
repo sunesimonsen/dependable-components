@@ -42,7 +42,6 @@ const topBarStyles = css`
     box-shadow: rgb(47 57 65 / 5%) 0px 16px 24px 0px;
     z-index: 1;
     white-space: nowrap;
-    --dc-toolbar-padding: var(--dc-spacing-3) var(--dc-spacing-4);
   }
 `;
 

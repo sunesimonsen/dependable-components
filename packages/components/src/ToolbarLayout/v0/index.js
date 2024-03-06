@@ -12,7 +12,7 @@ const styles = css`
   &[data-toolbar-layout="end"] {
     display: flex;
     gap: var(--dc-toolbar-gap, var(--dc-spacing-3));
-    padding: var(--dc-toolbar-padding, var(--dc-spacing-3));
+    padding: var(--dc-toolbar-padding, var(--dc-spacing-3) var(--dc-spacing-4));
   }
 
   &[data-toolbar-layout="end"] {
@@ -39,7 +39,7 @@ const styles = css`
     display: flex;
     align-items: center;
     gap: var(--dc-toolbar-gap, var(--dc-spacing-3));
-    padding: var(--dc-toolbar-padding, var(--dc-spacing-3));
+    padding: var(--dc-toolbar-padding, var(--dc-spacing-3) var(--dc-spacing-4));
   }
 
   &[data-toolbar-layout="start end"] > *:last-child,
