@@ -5,7 +5,7 @@ import { Bar } from "@dependable/components/Bar/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
-import GearStroke12Icon from "@dependable/icons/GearStroke12Icon";
+import GearStroke16Icon from "@dependable/icons/GearStroke16Icon";
 import {
   SidebarLayout,
   Sidebar,
@@ -26,6 +26,28 @@ const styles = css`
   }
 `;
 
+const settingsSidebarStyles = css`
+  & {
+    --dc-sidebar-display: none;
+    padding: var(--dc-spacing-2);
+  }
+`;
+
+class ToggleSettingsButton extends SidebarToggle {
+  render() {
+    return html`
+      <${IconButton}
+        pill
+        basic
+        onClick=${this.onClick}
+        aria-pressed=${this.pressed()}
+      >
+        <${GearStroke16Icon} />
+      <//>
+    `;
+  }
+}
+
 export default class Example {
   render() {
     return html`
@@ -36,7 +58,9 @@ export default class Example {
               <${SidebarToggle} aria-controls="sidebar-example-main" />
             </div>
             <div>
-              <${IconButton}><${GearStroke12Icon} /><//>
+              <${ToggleSettingsButton}
+                aria-controls="sidebar-example-main-setting"
+              />
             </div>
           <//>
         <//>
@@ -47,6 +71,14 @@ export default class Example {
           style="width: 150px"
         >
           Sidebar
+        <//>
+        <${Sidebar}
+          id="sidebar-example-main-setting"
+          data-layout="end"
+          className=${settingsSidebarStyles}
+          style="width: 150px"
+        >
+          Settings
         <//>
         <${ScrollArea}>
           <main>
