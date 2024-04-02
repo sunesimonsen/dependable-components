@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { Button } from "../../Button/v0/index.js";
 
@@ -17,13 +17,10 @@ const pillStyles = css`
 
 export class IconButton {
   render({ className, pill, children, ...other }) {
-    return html`
-      <${Button}
-        className=${classes(styles, pill && pillStyles, className)}
-        ...${other}
-      >
-        ${children}
-      <//>
-    `;
+    return h(
+      Button,
+      { className: classes(styles, pill && pillStyles, className), ...other },
+      children,
+    );
   }
 }

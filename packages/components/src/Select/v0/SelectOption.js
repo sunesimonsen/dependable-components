@@ -1,7 +1,6 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { MenuItem } from "../../Menu/v0/MenuItem.js";
 import { css } from "stylewars";
-
 import CheckLgStroke16Icon from "@dependable/icons/CheckLgStroke16Icon";
 
 const iconStyles = css`
@@ -24,18 +23,19 @@ export class SelectOption {
   static isSelectable = true;
 
   renderIcon() {
-    return html`<div className=${iconStyles}><${CheckLgStroke16Icon} /></div>`;
+    return h("div", { className: iconStyles }, h(CheckLgStroke16Icon));
   }
 
   render({ children, selected, ...other }) {
-    return html`
-      <${MenuItem}
-        role="option"
-        aria-selected=${selected ? "true" : "false"}
-        ...${other}
-      >
-        ${selected && this.renderIcon()}${children}
-      <//>
-    `;
+    return h(
+      MenuItem,
+      {
+        role: "option",
+        "aria-selected": selected ? "true" : "false",
+        ...other,
+      },
+      selected && this.renderIcon(),
+      children,
+    );
   }
 }

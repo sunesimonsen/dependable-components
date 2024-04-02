@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 
 const styles = css`
@@ -73,8 +73,6 @@ const styles = css`
 
 export class MenuPopup {
   render({ children, ...other }) {
-    return html`
-      <div role="menu" className=${styles} ...${other}>${children}</div>
-    `;
+    return h("div", { role: "menu", className: styles, ...other }, children);
   }
 }

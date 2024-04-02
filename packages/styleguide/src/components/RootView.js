@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { route, params } from "@dependable/nano-router";
 import { DefaultLayout } from "./DefaultLayout.js";
 import { PageContainer } from "./PageContainer.js";
@@ -8,10 +8,9 @@ export class RootView {
     switch (route()) {
       case "page":
         const { id } = params();
-
-        return html`<${DefaultLayout}><${PageContainer} id=${id} /><//>`;
+        return h(DefaultLayout, {}, h(PageContainer, { id: id }));
       default:
-        return html`<${DefaultLayout}><${PageContainer} id="index" /><//>`;
+        return h(DefaultLayout, {}, h(PageContainer, { id: "index" }));
     }
   }
 }

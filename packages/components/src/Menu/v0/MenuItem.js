@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { SelectItemEvent, FocusItemEvent } from "./events.js";
 import { transparentColor } from "../../theming/v0";
@@ -77,18 +77,18 @@ export class MenuItem {
   render({ key, children, ...other }, { model }) {
     const isFocused = this.model.focused()?.key === key;
 
-    return html`
-      <div
-        id=${`${model.id}-item-${key}`}
-        tabindex="-1"
-        role="menuitem"
-        onMouseDown=${this.onMouseDown}
-        onMouseEnter=${this.onMouseEnter}
-        className=${classes(styles, isFocused && focusedStyles)}
-        ...${other}
-      >
-        ${children}
-      </div>
-    `;
+    return h(
+      "div",
+      {
+        id: `${model.id}-item-${key}`,
+        tabindex: "-1",
+        role: "menuitem",
+        onMouseDown: this.onMouseDown,
+        onMouseEnter: this.onMouseEnter,
+        className: classes(styles, isFocused && focusedStyles),
+        ...other,
+      },
+      children,
+    );
   }
 }

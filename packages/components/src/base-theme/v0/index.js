@@ -1,4 +1,3 @@
-import { html } from "@dependable/htm";
 import { css } from "stylewars";
 import { color, colorMix, transparentColor } from "../../theming/v0";
 
@@ -96,7 +95,6 @@ const darkMode = `
 const createSpacingVar = (n, base) => {
   if (n === 1) return `--dc-spacing-${n}: var(--dc-base);`;
   if (n === 2) return `--dc-spacing-${n}: calc(2 * var(--dc-base));`;
-
   return `--dc-spacing-${n}: calc(var(--dc-spacing-${n - 1}) + var(--dc-spacing-${n - 2}));`;
 };
 

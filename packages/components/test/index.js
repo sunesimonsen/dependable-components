@@ -10,8 +10,6 @@ export const expect = unexpected
 
 export const render = (vdom) => {
   const container = document.createElement("div");
-
   renderView(vdom, container);
-
   return container.firstChild;
 };

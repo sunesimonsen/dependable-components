@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 import { Link } from "@dependable/nano-router";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
@@ -49,26 +49,38 @@ export class TopBar {
   render() {
     const { title, logo } = this.context;
 
-    return html`
-      <${Bar} className=${topBarStyles} data-layout="top">
-        <${ToolbarLayout} sections="start end">
-          <div>
-            <${SidebarToggle} pill basic aria-controls="main-sidebar" />
-            <${Link}
-              route="index"
-              state=${{ scrollToTop: true }}
-              className=${homeStyles}
-            >
-              <img src=${logo} className=${logoStyles} />
-              ${title}
-            <//>
-          </div>
-          <div>
-            <${RepositoryButton} />
-            <${ToggleSettingsButton} aria-controls="settings-sidebar" />
-          </div>
-        <//>
-      <//>
-    `;
+    return h(
+      Bar,
+      { className: topBarStyles, "data-layout": "top" },
+      h(
+        ToolbarLayout,
+        { sections: "start end" },
+        h(
+          "div",
+          {},
+          h(SidebarToggle, {
+            pill: true,
+            basic: true,
+            "aria-controls": "main-sidebar",
+          }),
+          h(
+            Link,
+            {
+              route: "index",
+              state: { scrollToTop: true },
+              className: homeStyles,
+            },
+            h("img", { src: logo, className: logoStyles }),
+            title,
+          ),
+        ),
+        h(
+          "div",
+          {},
+          h(RepositoryButton),
+          h(ToggleSettingsButton, { "aria-controls": "settings-sidebar" }),
+        ),
+      ),
+    );
   }
 }

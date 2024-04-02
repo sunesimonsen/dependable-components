@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import CheckSmFill12Icon from "@dependable/icons/CheckSmFill12Icon";
 import DashFill12Icon from "@dependable/icons/DashFill12Icon";
@@ -86,19 +86,21 @@ const styles = css`
 
 export class Checkbox {
   render({ id, className, indeterminate, checked, ...other }) {
-    return html`
-      <input
-        type="checkbox"
-        id=${id}
-        className=${classes(className, styles)}
-        checked=${checked}
-        .indeterminate=${indeterminate}
-        ...${other}
-      />
-      <label for=${id}>
-        <${DashFill12Icon} className=${`${styles}-dash-icon`} />
-        <${CheckSmFill12Icon} className=${`${styles}-checked-icon`} />
-      </label>
-    `;
+    return [
+      h("input", {
+        type: "checkbox",
+        id,
+        className: classes(className, styles),
+        checked,
+        ".indeterminate": indeterminate,
+        ...other,
+      }),
+      h(
+        "label",
+        { for: id },
+        h(DashFill12Icon, { className: `${styles}-dash-icon` }),
+        h(CheckSmFill12Icon, { className: `${styles}-checked-icon` }),
+      ),
+    ];
   }
 }

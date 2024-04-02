@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";
@@ -17,11 +17,9 @@ const rootStyles = css`
     right: 0;
     left: 0;
     bottom: 0;
-
     --dc-sidebar-initial-display: flex;
     --dc-logo-size: 48px;
   }
-
   @media screen and (max-width: 1200px) {
     & {
       --dc-sidebar-display: none;
@@ -39,7 +37,6 @@ const mainStyles = css`
     background: var(--dc-color-background);
     line-height: 1.5em;
   }
-
   & > h2 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -47,13 +44,11 @@ const mainStyles = css`
     font-size: 36px;
     font-weight: 600;
   }
-
   & > h3 {
     margin-bottom: 12px;
     line-height: 32px;
     font-size: 26px;
   }
-
   & p > code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
@@ -86,33 +81,41 @@ const settingsSidebarStyles = css`
 
 export class DefaultLayout {
   render({ children }) {
-    return html`
-      <div className=${classes(activeTheme(), rootStyles)}>
-        <${SidebarLayout}>
-          <${TopBar} />
-          <${Sidebar}
-            data-layout="start"
-            id="main-sidebar"
-            className=${mainSidebarStyles}
-          >
-            <${ScrollArea} className=${scrollAreaStyles}>
-              <${SidebarContent} />
-            <//>
-          <//>
-          <main className=${mainStyles}>
-            <${ScrollArea} className=${scrollAreaStyles}>
-              <${ErrorBoundary} name="default-layout">${children}<//>
-            <//>
-          </main>
-          <${Sidebar}
-            className=${settingsSidebarStyles}
-            data-layout="end"
-            id="settings-sidebar"
-          >
-            <${Settings} />
-          <//>
-        <//>
-      </div>
-    `;
+    return h(
+      "div",
+      { className: classes(activeTheme(), rootStyles) },
+      h(
+        SidebarLayout,
+        {},
+        h(TopBar),
+        h(
+          Sidebar,
+          {
+            "data-layout": "start",
+            id: "main-sidebar",
+            className: mainSidebarStyles,
+          },
+          h(ScrollArea, { className: scrollAreaStyles }, h(SidebarContent)),
+        ),
+        h(
+          "main",
+          { className: mainStyles },
+          h(
+            ScrollArea,
+            { className: scrollAreaStyles },
+            h(ErrorBoundary, { name: "default-layout" }, children),
+          ),
+        ),
+        h(
+          Sidebar,
+          {
+            className: settingsSidebarStyles,
+            "data-layout": "end",
+            id: "settings-sidebar",
+          },
+          h(Settings),
+        ),
+      ),
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { Pulse } from "../../Pulse/v0/index.js";
 import { transparentColor } from "@dependable/components/theming/v0";
@@ -150,25 +150,27 @@ export class Button {
     onClick,
     ...other
   }) {
-    return html`
-      <button
-        className=${classes(
+    return h(
+      "button",
+      {
+        className: classes(
           styles,
           basic && basicStyles,
           primary && primaryStyles,
           stretched && stretchedStyles,
           danger && dangerStyles,
           className,
-        )}
-        disabled=${disabled}
-        onClick=${loading ? null : onClick}
-        ...${other}
-      >
-        ${loading && html`<${Pulse} className=${loaderStyles} />`}
-        <span className=${classes(childrenStyles, loading && loadingStyles)}>
-          ${children}
-        </span>
-      </button>
-    `;
+        ),
+        disabled,
+        onClick: loading ? null : onClick,
+        ...other,
+      },
+      loading && h(Pulse, { className: loaderStyles }),
+      h(
+        "span",
+        { className: classes(childrenStyles, loading && loadingStyles) },
+        children,
+      ),
+    );
   }
 }

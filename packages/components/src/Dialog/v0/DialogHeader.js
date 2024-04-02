@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 
 const styles = css`
@@ -14,6 +14,6 @@ const styles = css`
 
 export class DialogHeader {
   render({ children }) {
-    return html`<h2 className=${styles}>${children}</h2>`;
+    return h("h2", { className: styles }, children);
   }
 }

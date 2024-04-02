@@ -1,6 +1,5 @@
 /* global Prism */
-
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
@@ -41,7 +40,6 @@ export class SourceCode {
     return fetch(src)
       .then(async (response) => {
         this.content = await response.text();
-
         this.status("ready");
       })
       .catch((e) => {
@@ -60,13 +58,13 @@ export class SourceCode {
     }
 
     if (this.status() !== "ready") {
-      return html` <${Center} className=${loadingStyles}><${Spinner} /><//> `;
+      return h(Center, { className: loadingStyles }, h(Spinner));
     }
 
-    return html`
-      <pre className=${preStyles} ref=${this.highlightCode}>
-        <code className="language-js">${this.content}</code>
-      </pre>
-    `;
+    return h(
+      "pre",
+      { className: preStyles, ref: this.highlightCode },
+      h("code", { className: "language-js" }, this.content),
+    );
   }
 }

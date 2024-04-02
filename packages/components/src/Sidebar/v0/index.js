@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { Bar } from "../../Bar/v0";
@@ -18,17 +18,19 @@ export class SidebarLayout {
   }
 
   render({ children, className, ...other }) {
-    return html`
-      <Context visibleSidebar=${this.visibleSidebar}>
-        <${BorderLayout}
-          stretched
-          className=${classes(layoutStyles, className)}
-          ...${other}
-        >
-          ${children}
-        <//>
-      </Context>
-    `;
+    return h(
+      "Context",
+      { visibleSidebar: this.visibleSidebar },
+      h(
+        BorderLayout,
+        {
+          stretched: true,
+          className: classes(layoutStyles, className),
+          ...other,
+        },
+        children,
+      ),
+    );
   }
 }
 
@@ -105,31 +107,40 @@ class Backdrop {
     this.onClick = (e) => {
       const { visibleSidebar } = this.context;
       const controls = this.props["aria-controls"];
+
       visibleSidebar(visibleSidebar() === controls ? "" : controls);
     };
   }
 
   render(props) {
-    return html`
-      <div ...${props} onClick=${this.onClick} className=${backdropStyles} />
-    `;
+    return h("div", {
+      ...props,
+      onClick: this.onClick,
+      className: backdropStyles,
+    });
   }
 }
 
 export class Sidebar {
   render({ children, id, className, ...other }, { visibleSidebar }) {
     const visibility = visibleSidebar() === id ? "visible" : "auto";
-    return html`
-      <${Backdrop} aria-controls=${id} data-sidebar-visibility=${visibility} />
-      <${Bar}
-        id=${id}
-        data-sidebar-visibility=${visibility}
-        className=${classes(sidebarStyles, className)}
-        ...${other}
-      >
-        ${children}
-      <//>
-    `;
+
+    return [
+      h(Backdrop, {
+        "aria-controls": id,
+        "data-sidebar-visibility": visibility,
+      }),
+      h(
+        Bar,
+        {
+          id,
+          "data-sidebar-visibility": visibility,
+          className: classes(sidebarStyles, className),
+          ...other,
+        },
+        children,
+      ),
+    ];
   }
 }
 
@@ -153,15 +164,15 @@ export class SidebarToggle {
   }
 
   render({ className, ...other }) {
-    return html`
-      <${IconButton}
-        className=${classes(toggleStyles, className)}
-        onClick=${this.onClick}
-        aria-pressed=${this.pressed()}
-        ...${other}
-      >
-        <${MenuStroke16Icon} />
-      <//>
-    `;
+    return h(
+      IconButton,
+      {
+        className: classes(toggleStyles, className),
+        onClick: this.onClick,
+        "aria-pressed": this.pressed(),
+        ...other,
+      },
+      h(MenuStroke16Icon),
+    );
   }
 }

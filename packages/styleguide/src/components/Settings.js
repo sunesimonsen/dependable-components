@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { RTLSwitch } from "./RTLSwitch.js";
 import { ColorSchemeSelector } from "./ColorSchemeSelector.js";
@@ -14,14 +14,16 @@ const styles = css`
 
 export class Settings {
   render() {
-    return html`
-      <aside className=${classes(styles)}>
-        <${ColumnLayout} stretched justifyItems="start">
-          <${RTLSwitch} />
-          <${ColorSchemeSelector} />
-          <${ThemeSelector} />
-        <//>
-      </aside>
-    `;
+    return h(
+      "aside",
+      { className: classes(styles) },
+      h(
+        ColumnLayout,
+        { stretched: true, justifyItems: "start" },
+        h(RTLSwitch),
+        h(ColorSchemeSelector),
+        h(ThemeSelector),
+      ),
+    );
   }
 }

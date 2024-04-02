@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import GithubStroke16Icon from "@dependable/icons/GithubStroke16Icon";
 
@@ -10,10 +10,10 @@ export class RepositoryButton {
   }
 
   render() {
-    return html`
-      <${IconButton} basic pill onClick=${this.onClick}>
-        <${GithubStroke16Icon} width="24" height="24" />
-      <//>
-    `;
+    return h(
+      IconButton,
+      { basic: true, pill: true, onClick: this.onClick },
+      h(GithubStroke16Icon, { width: "24", height: "24" }),
+    );
   }
 }

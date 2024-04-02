@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { color, colorMix } from "../../theming/v0";
 import { baseTheme } from "../../base-theme/v0";
@@ -55,6 +55,6 @@ export const theme = classes(
 
 export class ThemeProvider {
   render({ children, ...other }) {
-    return html`<div className=${theme} ...${other}>${children}</div>`;
+    return h("div", { className: theme, ...other }, children);
   }
 }

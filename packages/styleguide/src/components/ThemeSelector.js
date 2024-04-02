@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
@@ -16,7 +16,9 @@ const themes = [
   { key: "purple", label: "Purple", value: purpleTheme },
 ];
 
-const selectedKey = observable(themes[0].key, { id: "selected-theme" });
+const selectedKey = observable(themes[0].key, {
+  id: "selected-theme",
+});
 
 const selected = computed(() =>
   themes.find((theme) => theme.key === selectedKey()),
@@ -30,26 +32,28 @@ export const activeTheme = computed(() => selected().value);
 
 export class ThemeSelector {
   renderItems() {
-    return themes.map(
-      (option) => html`
-        <${SelectOption}
-          key=${option.key}
-          selected=${selectedKey() === option.key}
-          value=${option}
-        >
-          ${option.label}
-        <//>
-      `,
+    return themes.map((option) =>
+      h(
+        SelectOption,
+        {
+          key: option.key,
+          selected: selectedKey() === option.key,
+          value: option,
+        },
+        option.label,
+      ),
     );
   }
 
   render() {
-    return html`
-      <label for="styleguide-theme">Theme</label>
-      <${Select} id="styleguide-theme" onSelect=${onSelect}>
-        <${SelectInput}>${selected().label}<//>
-        <${SelectPopup}>${this.renderItems()}<//>
-      <//>
-    `;
+    return [
+      h("label", { for: "styleguide-theme" }, "Theme"),
+      h(
+        Select,
+        { id: "styleguide-theme", onSelect: onSelect },
+        h(SelectInput, {}, selected().label),
+        h(SelectPopup, {}, this.renderItems()),
+      ),
+    ];
   }
 }

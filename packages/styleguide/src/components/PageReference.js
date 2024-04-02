@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { computed } from "@dependable/state";
 import { route, params, Link } from "@dependable/nano-router";
 import { css, classes } from "stylewars";
@@ -37,17 +37,17 @@ export class PageReference {
   }
 
   render({ id, children, ...other }) {
-    return html`
-      <${Link}
-        route="page"
-        params=${{ id }}
-        hash=""
-        className=${classes(styles, this.isActive() && activeStyles)}
-        state=${{ closeSidebars: true }}
-        ...${other}
-      >
-        ${children}
-      <//>
-    `;
+    return h(
+      Link,
+      {
+        route: "page",
+        params: { id },
+        hash: "",
+        className: classes(styles, this.isActive() && activeStyles),
+        state: { closeSidebars: true },
+        ...other,
+      },
+      children,
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { clone } from "@dependable/view";
 import { observable } from "@dependable/state";
 import { css, classes } from "stylewars";
@@ -52,15 +52,19 @@ class NotificationManager {
     };
 
     const id = this.nextId++;
+
     this.notifications([
       ...this.notifications(),
       clone(notification, {
-        props: { key: "notification-" + id, id, onDismiss },
+        props: {
+          key: "notification-" + id,
+          id,
+          onDismiss,
+        },
       }),
     ]);
   }
 }
-
 export class Toast {
   constructor() {
     this.toast = new NotificationManager();
@@ -68,21 +72,24 @@ export class Toast {
 
   render({ placement = "top-end", limit = 5, className, children, ...other }) {
     let notifications = this.toast.notifications().slice(-limit);
+
     if (placement.startsWith("bottom")) {
       notifications = notifications.reverse();
     }
 
-    return html`
-      <Context toast=${this.toast}>
-        <div
-          className=${classes(styles, className)}
-          data-placement=${placement}
-          ...${other}
-        >
-          ${notifications}
-        </div>
-        ${children}
-      </Context>
-    `;
+    return h(
+      "Context",
+      { toast: this.toast },
+      h(
+        "div",
+        {
+          className: classes(styles, className),
+          "data-placement": placement,
+          ...other,
+        },
+        notifications,
+      ),
+      children,
+    );
   }
 }

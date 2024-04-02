@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -11,6 +11,6 @@ const styles = css`
 
 export class MenuSeparator {
   render() {
-    return html`<div class=${styles} />`;
+    return h("div", { className: styles });
   }
 }

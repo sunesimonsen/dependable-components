@@ -1,5 +1,4 @@
 import { observable } from "@dependable/state";
-
 export class MenuModel {
   constructor({ id }) {
     this.id = id;
@@ -33,6 +32,7 @@ export class MenuModel {
 
     let newFocus;
     const focused = this.focused();
+
     if (focused) {
       const currentIndex = selectables.findIndex(
         ({ key }) => focused.key === key,
@@ -42,7 +42,6 @@ export class MenuModel {
 
       newIndex = Math.min(newIndex, selectables.length - 1);
       newIndex = Math.max(newIndex, 0);
-
       newFocus = selectables[newIndex];
     } else if (offset < 0) {
       newFocus = selectables.at(offset);
@@ -63,13 +62,11 @@ export class MenuModel {
 
   focusFirst(selectables) {
     this.showMenu(selectables);
-
     this.focused(selectables[0] || null);
   }
 
   focusLast(selectables) {
     this.showMenu(selectables);
-
     this.focused(selectables.at(-1) || null);
   }
 }

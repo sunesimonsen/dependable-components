@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { ColumnLayout } from "../../ColumnLayout/v0";
 
@@ -57,14 +57,14 @@ const columnsMapping = {
 
 export class ToolbarLayout {
   render({ children, sections = "start", className, ...other }) {
-    return html`
-      <div
-        data-toolbar-layout=${sections}
-        className=${classes(styles, className)}
-        ...${other}
-      >
-        ${children}
-      <//>
-    `;
+    return h(
+      "div",
+      {
+        "data-toolbar-layout": sections,
+        className: classes(styles, className),
+        ...other,
+      },
+      children,
+    );
   }
 }

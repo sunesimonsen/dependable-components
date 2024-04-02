@@ -1,5 +1,5 @@
+import { h } from "@dependable/view";
 import { clone } from "@dependable/view";
-import { html } from "@dependable/htm";
 import { Popup } from "../../Popup/v0/index.js";
 import { MenuModel } from "./MenuModel.js";
 import { MenuItem } from "./MenuItem.js";
@@ -11,7 +11,6 @@ const compose =
   (e) => {
     for (const handler of handlers.filter(Boolean)) {
       handler(e);
-
       if (e.defaultPrevented) {
         break;
       }
@@ -108,7 +107,6 @@ export class CustomMenu {
 
     this.onKeyDown = (e) => {
       const handler = handlers[e.key];
-
       if (handler) {
         handler(e);
       }
@@ -155,37 +153,40 @@ export class CustomMenu {
     ...other
   }) {
     const [trigger, content] = children;
-
     const focusedKey = model.focused()?.key;
 
-    return html`
-      <Context model=${model}>
-        ${clone(trigger, {
-          props: {
-            id: model.id,
-            ref: this.createRef("triggerRef"),
-            "aria-haspopup": "listbox",
-            "aria-expanded": model.visible() ? "true" : "false",
-            "aria-controls": `${model.id}-popup`,
-            "aria-activedescendant":
-              focusedKey && `${model.id}-item-${focusedKey}`,
-            onClick: compose(onClick, this.onTriggerClick),
-            onKeyDown: compose(onKeyDown, this.onKeyDown),
-            onBlur: compose(onBlur, this.onBlur),
-            ...other,
-          },
-        })}
-        <div
-          ref=${this.createRef("popupRef")}
-          onSelectItem=${this.onSelectItem}
-          onFocusItem=${this.onFocusItem}
-        >
-          ${model.visible() &&
+    return h(
+      "Context",
+      {
+        model: model,
+      },
+      clone(trigger, {
+        props: {
+          id: model.id,
+          ref: this.createRef("triggerRef"),
+          "aria-haspopup": "listbox",
+          "aria-expanded": model.visible() ? "true" : "false",
+          "aria-controls": `${model.id}-popup`,
+          "aria-activedescendant":
+            focusedKey && `${model.id}-item-${focusedKey}`,
+          onClick: compose(onClick, this.onTriggerClick),
+          onKeyDown: compose(onKeyDown, this.onKeyDown),
+          onBlur: compose(onBlur, this.onBlur),
+          ...other,
+        },
+      }),
+      h(
+        "div",
+        {
+          ref: this.createRef("popupRef"),
+          onSelectItem: this.onSelectItem,
+          onFocusItem: this.onFocusItem,
+        },
+        model.visible() &&
           Boolean(content?.children?.length) &&
-          clone(content, { props: { id: `${model.id}-popup` } })}
-        </div>
-      </Context>
-    `;
+          clone(content, { props: { id: `${model.id}-popup` } }),
+      ),
+    );
   }
 }
 
@@ -193,10 +194,12 @@ let nextId = 0;
 
 export class Menu {
   constructor({ id }) {
-    this.model = new MenuModel({ id: id || `menu-${nextId++}` });
+    this.model = new MenuModel({
+      id: id || `menu-${nextId++}`,
+    });
   }
 
   render({ children, ...other }) {
-    return html`<${CustomMenu} model=${this.model} ...${other}>${children}<//>`;
+    return h(CustomMenu, { model: this.model, ...other }, children);
   }
 }

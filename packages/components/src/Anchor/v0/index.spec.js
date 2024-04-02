@@ -1,11 +1,11 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { expect, render } from "../../../test/index.js";
 import { Anchor } from "./index.js";
 
 describe("Anchor", () => {
   it("renders an anchor with the given attributes", () => {
     const element = render(
-      html`<${Anchor} href="https://example.com" target="_blank">Example<//>`,
+      h(Anchor, { href: "https://example.com", target: "_blank" }, "Example"),
     );
 
     expect(

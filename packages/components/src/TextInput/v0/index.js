@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 export const textInputStyles = css`
@@ -52,12 +52,10 @@ export const textInputStyles = css`
 
 export class TextInput {
   render({ className, ...other }) {
-    return html`
-      <input
-        type="text"
-        className=${classes(className, textInputStyles)}
-        ...${other}
-      />
-    `;
+    return h("input", {
+      type: "text",
+      className: classes(className, textInputStyles),
+      ...other,
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { flush } from "@dependable/state";
 import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { AutocompleteModel } from "./AutocompleteModel.js";
@@ -9,7 +9,6 @@ const compose =
   (e) => {
     for (const handler of handlers.filter(Boolean)) {
       handler(e);
-
       if (e.defaultPrevented) {
         break;
       }
@@ -30,7 +29,6 @@ export class CustomAutocomplete {
       if (e.key === "Backspace") {
         this.showMenu();
       }
-
       if (
         !e.altKey &&
         !e.ctrlKey &&
@@ -50,7 +48,6 @@ export class CustomAutocomplete {
       if (this.prevSelectablesCount !== selectablesCount) {
         this.props.model.focusFirst(selectables);
       }
-
       this.prevSelectablesCount = selectablesCount;
     }
   }
@@ -60,18 +57,18 @@ export class CustomAutocomplete {
   }
 
   render({ model, onClick, onKeyDown, children, ...other }) {
-    return html`
-      <${CustomMenu}
-        model=${model}
-        placement="bottom-stretch"
-        role="combobox"
-        ...${other}
-        onClick=${compose(onClick, this.onClick)}
-        onKeyDown=${compose(onKeyDown, this.onKeyDown)}
-      >
-        ${children}
-      <//>
-    `;
+    return h(
+      CustomMenu,
+      {
+        model,
+        placement: "bottom-stretch",
+        role: "combobox",
+        onClick: compose(onClick, this.onClick),
+        onKeyDown: compose(onKeyDown, this.onKeyDown),
+        ...other,
+      },
+      children,
+    );
   }
 }
 
@@ -83,8 +80,6 @@ export class Autocomplete {
   }
 
   render({ children, ...other }) {
-    return html`
-      <${CustomAutocomplete} model=${this.model} ...${other}>${children}<//>
-    `;
+    return h(CustomAutocomplete, { model: this.model, ...other }, children);
   }
 }

@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = ({ stretched }) => css`
@@ -12,14 +12,16 @@ const styles = ({ stretched }) => css`
 
 export class Center {
   static defaultProps() {
-    return { stretched: false };
+    return {
+      stretched: false,
+    };
   }
 
   render({ className, children, stretched, ...other }) {
-    return html`
-      <div className=${classes(styles({ stretched }), className)} ...${other}>
-        ${children}
-      </div>
-    `;
+    return h(
+      "div",
+      { className: classes(styles({ stretched }), className), ...other },
+      children,
+    );
   }
 }
