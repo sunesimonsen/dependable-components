@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css } from "stylewars";
 import XStroke12Icon from "@dependable/icons/XStroke12Icon";
 import InfoStroke16Icon from "@dependable/icons/InfoStroke16Icon";

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 
 export default class ChevronBoxStroke16Icon {
   render(props) {

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { classes } from "stylewars";
 import { Bar } from "@dependable/components/Bar/v0";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";

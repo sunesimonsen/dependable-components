@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
 
 const defaultFallback = html`<h2>Crashed</h2>`;

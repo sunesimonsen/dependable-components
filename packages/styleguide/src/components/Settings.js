@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { RTLSwitch } from "./RTLSwitch.js";
 import { ColorSchemeSelector } from "./ColorSchemeSelector.js";

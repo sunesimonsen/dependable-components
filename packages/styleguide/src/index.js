@@ -1,4 +1,5 @@
-import { html, render } from "@dependable/view";
+import { render } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { routes } from "./routes.js";
 import { Router, Routing } from "@dependable/nano-router";
 import { createBrowserHistory } from "@nano-router/history";

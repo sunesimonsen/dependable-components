@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { Skeleton } from "@dependable/components/Skeleton/v0";

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { expect, render } from "../../../test/index.js";
 import sinon from "sinon";
 import { Button } from "./index.js";

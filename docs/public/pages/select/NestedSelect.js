@@ -1,4 +1,5 @@
-import { html, clone } from "@dependable/view";
+import { clone } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";

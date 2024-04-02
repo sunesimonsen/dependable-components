@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { observable, computed } from "@dependable/state";
 import { Switch } from "@dependable/components/Switch/v0";
 

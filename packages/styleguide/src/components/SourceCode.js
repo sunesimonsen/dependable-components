@@ -1,6 +1,6 @@
 /* global Prism */
 
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";

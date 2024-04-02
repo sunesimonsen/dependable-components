@@ -1,4 +1,5 @@
-import { html, render } from "@dependable/view";
+import { render } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { PageReference } from "@dependable/styleguide";
 
 export const iconPageMap = {

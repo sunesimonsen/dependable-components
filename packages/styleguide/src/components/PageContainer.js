@@ -1,5 +1,5 @@
 import { observable } from "@dependable/state";
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Page, PageSkeleton } from "./Page.js";
 
 export class PageContainer {

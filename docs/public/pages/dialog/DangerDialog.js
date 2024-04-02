@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
 import { Button } from "@dependable/components/Button/v0";
 import {

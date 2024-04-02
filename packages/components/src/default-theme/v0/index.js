@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { color, colorMix, transparentColor } from "../../theming/v0";
 import { baseTheme } from "../../base-theme/v0";

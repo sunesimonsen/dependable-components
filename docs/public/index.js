@@ -1,5 +1,6 @@
 import "@dependable/vite";
-import { html, render } from "@dependable/view";
+import { render } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { styleguide, PageReference } from "@dependable/styleguide";
 import { IconNavigation, iconPageMap } from "./icons-navigation.js";
 import { importmap } from "./importmap.js";

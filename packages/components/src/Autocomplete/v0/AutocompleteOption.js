@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { SelectOption } from "../../Select/v0/SelectOption.js";
 import { css } from "stylewars";
 

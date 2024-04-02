@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { flush } from "@dependable/state";
 import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { AutocompleteModel } from "./AutocompleteModel.js";

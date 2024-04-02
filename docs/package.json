@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "@dependable/components": "*",
+    "@dependable/htm": "^0.2.0",
     "@dependable/icons": "*",
     "@dependable/state": "^0.20.0",
     "@dependable/styleguide": "*",
     "@dependable/view": "^0.19.2",
-    "stylewars": "^2.4.0",
-    "@dependable/vite": "^0.1.0"
+    "@dependable/vite": "^0.1.0",
+    "stylewars": "^2.4.0"
   },
   "devDependencies": {
     "@dependable/rollup-config": "^0.5.0",

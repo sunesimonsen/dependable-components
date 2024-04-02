@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css } from "stylewars";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { JSFiddleLogo } from "./JSFiddleLogo.js";

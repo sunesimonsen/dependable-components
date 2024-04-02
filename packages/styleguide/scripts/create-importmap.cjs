@@ -9,6 +9,7 @@ const main = async () => {
   const packageNames = [
     "stylewars",
     "@dependable/view",
+    "@dependable/htm",
     "@dependable/state",
     "@dependable/icons",
     "@dependable/components",
@@ -24,6 +25,7 @@ const main = async () => {
     imports: {
       stylewars: `https://unpkg.com/stylewars@${versions.stylewars}/dist/bundle.esm.js`,
       "@dependable/state": `https://unpkg.com/@dependable/state@${versions["@dependable/state"]}/dist/dependable-state.esm.js`,
+      "@dependable/htm": `https://unpkg.com/@dependable/htm@${versions["@dependable/htm"]}/dist/dependable-htm.esm.js`,
       "@dependable/view": `https://unpkg.com/@dependable/view@${versions["@dependable/view"]}/dist/dependable-view-index.esm.js`,
       "@dependable/components/": `https://unpkg.com/@dependable/components@latest/src/`,
       "@dependable/icons/": `https://unpkg.com/@dependable/icons@latest/src/`,

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Button } from "@dependable/components/Button/v0";
 import { TextInput } from "@dependable/components/TextInput/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";

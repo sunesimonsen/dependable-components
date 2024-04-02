@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { computed } from "@dependable/state";
 import { route, params, Link } from "@dependable/nano-router";
 import { css, classes } from "stylewars";

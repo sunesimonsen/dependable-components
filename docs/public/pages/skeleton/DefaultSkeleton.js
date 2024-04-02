@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Skeleton } from "@dependable/components/Skeleton/v0";
 
 export default class Example {

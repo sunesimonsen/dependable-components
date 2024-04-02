@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import ChevronDownStroke12Icon from "@dependable/icons/ChevronDownStroke12Icon";
 import { margin } from "../../theming/v0/index.js";
 import { MediaInput } from "../../MediaInput/v0/index.js";

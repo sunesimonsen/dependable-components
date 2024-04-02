@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { MenuItem } from "./MenuItem.js";
 import ChevronRightStroke16Icon from "@dependable/icons/ChevronRightStroke16Icon";

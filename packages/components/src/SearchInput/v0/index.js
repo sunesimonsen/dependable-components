@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import SearchStroke16Icon from "@dependable/icons/SearchStroke16Icon";
 import { ClearableInput } from "../../ClearableInput/v0";
 

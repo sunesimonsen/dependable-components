@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { MenuItemPrevious } from "../../Menu/v0/MenuItemPrevious.js";
 
 export class SelectOptionPrevious {

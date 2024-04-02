@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { MenuItem } from "../../Menu/v0/MenuItem.js";
 import { css } from "stylewars";
 

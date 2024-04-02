@@ -1,4 +1,5 @@
-import { clone, html } from "@dependable/view";
+import { clone } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Popup } from "../../Popup/v0/index.js";
 import { MenuModel } from "./MenuModel.js";
 import { MenuItem } from "./MenuItem.js";

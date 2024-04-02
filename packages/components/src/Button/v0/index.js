@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { Pulse } from "../../Pulse/v0/index.js";
 import { transparentColor } from "@dependable/components/theming/v0";

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";

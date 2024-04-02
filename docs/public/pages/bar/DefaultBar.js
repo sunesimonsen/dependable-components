@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Bar } from "@dependable/components/Bar/v0";
 import { BorderLayout } from "@dependable/components/BorderLayout/v0";
 import { padding } from "@dependable/components/theming/v0";

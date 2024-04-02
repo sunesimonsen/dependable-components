@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import {
   Title,

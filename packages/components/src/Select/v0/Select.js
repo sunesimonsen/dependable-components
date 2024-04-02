@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { SelectModel } from "./SelectModel.js";
 

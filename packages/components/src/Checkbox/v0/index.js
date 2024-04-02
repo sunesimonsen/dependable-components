@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import CheckSmFill12Icon from "@dependable/icons/CheckSmFill12Icon";
 import DashFill12Icon from "@dependable/icons/DashFill12Icon";

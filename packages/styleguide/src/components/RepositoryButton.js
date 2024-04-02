@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import GithubStroke16Icon from "@dependable/icons/GithubStroke16Icon";
 

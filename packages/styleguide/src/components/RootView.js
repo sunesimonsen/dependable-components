@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { route, params } from "@dependable/nano-router";
 import { DefaultLayout } from "./DefaultLayout.js";
 import { PageContainer } from "./PageContainer.js";

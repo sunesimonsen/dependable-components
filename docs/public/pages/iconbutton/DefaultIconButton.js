@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Center } from "@dependable/components/Center/v0";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import Box3dStroke16Icon from "@dependable/icons/Box3dStroke16Icon";

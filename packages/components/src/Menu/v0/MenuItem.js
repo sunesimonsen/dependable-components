@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
 import { SelectItemEvent, FocusItemEvent } from "./events.js";
 import { transparentColor } from "../../theming/v0";
