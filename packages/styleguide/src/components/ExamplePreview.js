@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { dir } from "./RTLSwitch.js";
 
@@ -10,10 +10,10 @@ const paddingStyles = css`
 
 export class ExamplePreview {
   render({ children, noPadding }) {
-    return html`
-      <div dir=${dir()} className=${!noPadding && paddingStyles}>
-        ${children}
-      </div>
-    `;
+    return h(
+      "div",
+      { dir: dir(), className: !noPadding && paddingStyles },
+      children,
+    );
   }
 }

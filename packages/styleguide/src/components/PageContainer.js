@@ -1,5 +1,5 @@
+import { h } from "@dependable/view";
 import { observable } from "@dependable/state";
-import { html } from "@dependable/htm";
 import { Page, PageSkeleton } from "./Page.js";
 
 export class PageContainer {
@@ -18,6 +18,7 @@ export class PageContainer {
 
     try {
       const component = await pageMap[id]();
+
       this.Page = component.default;
       this.status("ready");
     } catch (e) {
@@ -31,8 +32,10 @@ export class PageContainer {
       this.loadComponent();
     }
 
-    if (this.status() !== "ready") return html`<${PageSkeleton} />`;
+    if (this.status() !== "ready") {
+      return h(PageSkeleton);
+    }
 
-    return html`<${Page}><${this.Page} /><//>`;
+    return h(Page, {}, h(this.Page));
   }
 }

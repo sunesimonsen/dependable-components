@@ -1,7 +1,7 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { observable } from "@dependable/state";
 
-const defaultFallback = html`<h2>Crashed</h2>`;
+const defaultFallback = h("h2", {}, "Crashed");
 
 export class ErrorBoundary {
   constructor({ name }) {

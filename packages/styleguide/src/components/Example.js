@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { SourceCode } from "./SourceCode.js";
@@ -8,7 +8,6 @@ import { ErrorBoundary } from "./ErrorBoundary.js";
 import { JSFiddleButton } from "./JSFiddleButton.js";
 import { Bar } from "@dependable/components/Bar/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
-
 import MarkupStroke16Icon from "@dependable/icons/MarkupStroke16Icon";
 
 const styles = css`
@@ -38,23 +37,29 @@ export class Example {
   }
 
   render({ children, src, noPadding }) {
-    return html`
-      <div className=${styles}>
-        <${ExamplePreview} noPadding=${noPadding}>${children}<//>
-        <${ToolbarLayout} sections="end" className=${buttonsStyles}>
-          <${JSFiddleButton} src=${src} />
-          <${IconButton}
-            basic
-            aria-pressed=${String(this.sourceVisible())}
-            onClick=${this.onToggleSource}
-          >
-            <${MarkupStroke16Icon} />
-          <//>
-        <//>
-        <${ErrorBoundary} name="source-code">
-          ${this.sourceVisible() && html`<${SourceCode} src=${src} />`}
-        <//>
-      </div>
-    `;
+    return h(
+      "div",
+      { className: styles },
+      h(ExamplePreview, { noPadding: noPadding }, children),
+      h(
+        ToolbarLayout,
+        { sections: "end", className: buttonsStyles },
+        h(JSFiddleButton, { src: src }),
+        h(
+          IconButton,
+          {
+            basic: true,
+            "aria-pressed": String(this.sourceVisible()),
+            onClick: this.onToggleSource,
+          },
+          h(MarkupStroke16Icon),
+        ),
+      ),
+      h(
+        ErrorBoundary,
+        { name: "source-code" },
+        this.sourceVisible() && h(SourceCode, { src: src }),
+      ),
+    );
   }
 }

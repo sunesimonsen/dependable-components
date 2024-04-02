@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
 import { Switch } from "@dependable/components/Switch/v0";
 import {
@@ -28,26 +28,28 @@ const onSelect = (e) => {
 
 export class ColorSchemeSelector {
   renderItems() {
-    return options.map(
-      (option) => html`
-        <${SelectOption}
-          key=${option.key}
-          selected=${colorScheme() === option.key}
-          value=${option}
-        >
-          ${option.label}
-        <//>
-      `,
+    return options.map((option) =>
+      h(
+        SelectOption,
+        {
+          key: option.key,
+          selected: colorScheme() === option.key,
+          value: option,
+        },
+        option.label,
+      ),
     );
   }
 
   render() {
-    return html`
-      <label for="styleguide-color-scheme">Color scheme</label>
-      <${Select} id="styleguide-color-scheme" onSelect=${onSelect}>
-        <${SelectInput}>${selected().label}<//>
-        <${SelectPopup}>${this.renderItems()}<//>
-      <//>
-    `;
+    return [
+      h("label", { for: "styleguide-color-scheme" }, "Color scheme"),
+      h(
+        Select,
+        { id: "styleguide-color-scheme", onSelect: onSelect },
+        h(SelectInput, {}, selected().label),
+        h(SelectPopup, {}, this.renderItems()),
+      ),
+    ];
   }
 }

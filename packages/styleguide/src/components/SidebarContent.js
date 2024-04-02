@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 
 const styles = css`
@@ -32,10 +32,10 @@ export class SidebarContent {
   }
 
   render() {
-    return html`
-      <nav onClick=${this.onClick} className=${styles}>
-        ${this.context.navigation}
-      </nav>
-    `;
+    return h(
+      "nav",
+      { onClick: this.onClick, className: styles },
+      this.context.navigation,
+    );
   }
 }
