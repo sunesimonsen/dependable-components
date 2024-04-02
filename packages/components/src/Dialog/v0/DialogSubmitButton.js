@@ -1,7 +1,6 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Button } from "../../Button/v0";
 import { DialogSubmitEvent } from "./events.js";
-
 export class DialogSubmitButton {
   constructor() {
     this.onClick = (e) => {
@@ -11,8 +10,10 @@ export class DialogSubmitButton {
   }
 
   render({ children, ...other }) {
-    return html`
-      <${Button} primary onClick=${this.onClick} ...${other}>${children}<//>
-    `;
+    return h(
+      Button,
+      { primary: true, onClick: this.onClick, ...other },
+      children,
+    );
   }
 }

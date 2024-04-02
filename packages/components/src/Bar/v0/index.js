@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const border = `var(--dc-bar-border-width, 1px)`;
@@ -30,8 +30,10 @@ const styles = css`
 
 export class Bar {
   render({ children, className, ...other }) {
-    return html`
-      <div className=${classes(styles, className)} ...${other}>${children}</div>
-    `;
+    return h(
+      "div",
+      { className: classes(styles, className), ...other },
+      children,
+    );
   }
 }

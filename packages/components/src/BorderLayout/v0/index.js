@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const containerStyles = ({ gap, stretched }) => css`
@@ -40,13 +40,13 @@ const containerStyles = ({ gap, stretched }) => css`
 
 export class BorderLayout {
   render({ className, stretched, gap = "0", children, ...other }) {
-    return html`
-      <div
-        className=${classes(containerStyles({ stretched }), className)}
-        ...${other}
-      >
-        ${children}
-      </div>
-    `;
+    return h(
+      "div",
+      {
+        className: classes(containerStyles({ stretched }), className),
+        ...other,
+      },
+      children,
+    );
   }
 }

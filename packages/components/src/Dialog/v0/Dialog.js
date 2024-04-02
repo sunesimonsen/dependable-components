@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 import { transparentColor } from "@dependable/components/theming/v0";
 
@@ -64,21 +64,26 @@ export class Dialog {
 
   render({
     disableBackdrop,
+    onClose,
+    onSubmit,
     width = "576px",
     height = "fit-content",
     children,
   }) {
-    return html`
-      <dialog
-        ref=${this.setRef}
-        onClick=${!disableBackdrop && this.props.onClose && this.onClick}
-        onDialogClose=${this.props.onClose}
-        onDialogSubmit=${this.props.onSubmit}
-        onKeydown=${this.onKeydown}
-        className=${styles({ width, height })}
-      >
-        ${children}
-      </dialog>
-    `;
+    return h(
+      "dialog",
+      {
+        ref: this.setRef,
+        onClick: !disableBackdrop && onClose && this.onClick,
+        onDialogClose: onClose,
+        onDialogSubmit: onSubmit,
+        onKeydown: this.onKeydown,
+        className: styles({
+          width,
+          height,
+        }),
+      },
+      children,
+    );
   }
 }

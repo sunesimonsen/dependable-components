@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { textInputStyles } from "../../TextInput/v0/index.js";
 
@@ -80,16 +80,16 @@ export class MediaInput {
     const input = children.filter(Boolean).find(({ type }) => type === "input");
     const disabled = input.props[".disabled"] || input.props.disabled;
 
-    return html`
-      <span
-        ref=${combineRefs(this.setRef, ref)}
-        className=${classes(className, mediaInputStyles, textInputStyles)}
-        disabled=${disabled}
-        onMouseDown=${this.focusInput}
-        ...${other}
-      >
-        ${children}
-      </span>
-    `;
+    return h(
+      "span",
+      {
+        ref: combineRefs(this.setRef, ref),
+        className: classes(className, mediaInputStyles, textInputStyles),
+        disabled,
+        onMouseDown: this.focusInput,
+        ...other,
+      },
+      children,
+    );
   }
 }

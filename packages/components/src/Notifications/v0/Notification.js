@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css } from "stylewars";
 import XStroke12Icon from "@dependable/icons/XStroke12Icon";
 import InfoStroke16Icon from "@dependable/icons/InfoStroke16Icon";
@@ -83,15 +83,15 @@ export class Notification {
   }
 
   renderClose() {
-    return html`
-      <button
-        aria-label="Close Notification"
-        className=${closeStyles}
-        onClick=${this.onDismiss}
-      >
-        <${XStroke12Icon} />
-      </button>
-    `;
+    return h(
+      "button",
+      {
+        "aria-label": "Close Notification",
+        className: closeStyles,
+        onClick: this.onDismiss,
+      },
+      h(XStroke12Icon, null),
+    );
   }
 
   didMount() {
@@ -105,15 +105,17 @@ export class Notification {
   render({ type = "info", title, dismissable = false, children }) {
     const Icon = typeToIcon[type];
 
-    return html`
-      <div role="status" data-type=${type} className=${containerStyles}>
-        <header>
-          <${Icon} className=${iconStyles} />
-          <strong>${title}</strong>
-          ${dismissable && this.renderClose()}
-        </header>
-        <div>${children}</div>
-      </div>
-    `;
+    return h(
+      "div",
+      { role: "status", "data-type": type, className: containerStyles },
+      h(
+        "header",
+        {},
+        h(Icon, { className: iconStyles }),
+        h("strong", {}, title),
+        dismissable && this.renderClose(),
+      ),
+      h("div", {}, children),
+    );
   }
 }

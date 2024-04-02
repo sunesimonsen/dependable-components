@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { MenuItem } from "./MenuItem.js";
 import ChevronRightStroke16Icon from "@dependable/icons/ChevronRightStroke16Icon";
@@ -43,19 +43,17 @@ const rightIconStyles = css`
 export class MenuItemPrevious {
   static isSelectable = true;
 
-  render({ children, ...other }) {
-    return html`
-      <${MenuItem} ...${other}>
-        <${ChevronLeftStroke16Icon}
-          className=${classes(iconStyles, leftIconStyles)}
-        />
-        ${children}
-        <${ChevronRightStroke16Icon}
-          className=${classes(iconStyles, rightIconStyles)}
-        />
-      <//>
-    `;
+  render({ children, ...props }) {
+    return h(
+      MenuItem,
+      props,
+      h(ChevronLeftStroke16Icon, {
+        className: classes(iconStyles, leftIconStyles),
+      }),
+      children,
+      h(ChevronRightStroke16Icon, {
+        className: classes(iconStyles, rightIconStyles),
+      }),
+    );
   }
 }
-
-MenuItemPrevious.isPreviousAction = true;

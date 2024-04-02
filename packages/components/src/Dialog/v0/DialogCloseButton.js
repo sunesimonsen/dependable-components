@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { IconButton } from "../../IconButton/v0";
 import XStroke16Icon from "@dependable/icons/XStroke16Icon";
@@ -20,16 +20,16 @@ export class DialogCloseButton {
   }
 
   render({ children, className, ...other }) {
-    return html`
-      <${IconButton}
-        className=${classes(className, styles)}
-        pill
-        basic
-        onClick=${this.onClick}
-        ...${other}
-      >
-        <${XStroke16Icon} />
-      <//>
-    `;
+    return h(
+      IconButton,
+      {
+        className: classes(className, styles),
+        pill: true,
+        basic: true,
+        onClick: this.onClick,
+        ...other,
+      },
+      h(XStroke16Icon),
+    );
   }
 }

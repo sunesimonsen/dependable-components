@@ -5,7 +5,6 @@ export const color = (name, lightness = 50, saturation) => {
     typeof saturation === "number"
       ? saturation
       : `var(--dc-color-${name}-saturation, var(--dc-color-saturation))`;
-
   return `
     hsl(
       var(--dc-color-${name}-hue),
@@ -15,8 +14,7 @@ export const color = (name, lightness = 50, saturation) => {
   `;
 };
 
-export const colorMix = (primaryColor, secondaryColor, procentage) =>
-  `
+export const colorMix = (primaryColor, secondaryColor, procentage) => `
     color-mix(
       in srgb,
       var(--dc-color-${primaryColor}) ${procentage}%,

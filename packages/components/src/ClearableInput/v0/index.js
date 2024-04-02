@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import XStroke12Icon from "@dependable/icons/XStroke12Icon";
 import { MediaInput } from "../../MediaInput/v0";
@@ -41,14 +41,12 @@ export class ClearableInput {
     return (
       this.props[".value"] &&
       onClear &&
-      html`
-        <${XStroke12Icon}
-          height="16"
-          width="16"
-          className=${classes(margin(2, "inline-start"), clearStyles)}
-          onClick=${onClear}
-        />
-      `
+      h(XStroke12Icon, {
+        height: "16",
+        width: "16",
+        className: classes(margin(2, "inline-start"), clearStyles),
+        onClick: onClear,
+      })
     );
   }
 
@@ -56,14 +54,18 @@ export class ClearableInput {
     const containerProps = filterProps(other, (k) => !isInputProp(k));
     const inputProps = filterProps(other, isInputProp);
 
-    const icon = Icon && html`<${Icon} className=${margin(2, "inline-end")} />`;
+    const icon =
+      Icon &&
+      h(Icon, {
+        className: margin(2, "inline-end"),
+      });
 
-    return html`
-      <${MediaInput} ...${containerProps}>
-        ${icon}
-        <input autocomplete="off" type="text" ...${inputProps} />
-        ${this.renderClear({ onClear })}
-      <//>
-    `;
+    return h(
+      MediaInput,
+      containerProps,
+      icon,
+      h("input", { autocomplete: "off", type: "text", ...inputProps }),
+      this.renderClear({ onClear }),
+    );
   }
 }

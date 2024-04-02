@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -84,16 +84,16 @@ const styles = css`
 
 export class Switch {
   render({ id, className, indeterminate, checked, ...other }) {
-    return html`
-      <input
-        type="checkbox"
-        id=${id}
-        className=${classes(className, styles)}
-        checked=${checked}
-        .indeterminate=${indeterminate}
-        ...${other}
-      />
-      <label for=${id}></label>
-    `;
+    return [
+      h("input", {
+        type: "checkbox",
+        id,
+        className: classes(className, styles),
+        checked,
+        ".indeterminate": indeterminate,
+        ...other,
+      }),
+      h("label", { for: id }),
+    ];
   }
 }

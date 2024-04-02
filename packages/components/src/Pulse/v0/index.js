@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -43,12 +43,12 @@ const styles = css`
 
 export class Pulse {
   render({ className }) {
-    return html`
-      <div className=${classes(styles, className)} role="progressbar">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    `;
+    return h(
+      "div",
+      { className: classes(styles, className), role: "progressbar" },
+      h("div"),
+      h("div"),
+      h("div"),
+    );
   }
 }

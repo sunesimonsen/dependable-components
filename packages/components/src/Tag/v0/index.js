@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -24,14 +24,15 @@ const hueStyles = (hue) => css`
 
 export class Tag {
   render({ hue, children }) {
-    return html`
-      <span
-        className=${classes(
+    return h(
+      "span",
+      {
+        className: classes(
           styles,
           typeof hue !== "undefined" && hueStyles(hue),
-        )}
-        >${children}</span
-      >
-    `;
+        ),
+      },
+      children,
+    );
   }
 }

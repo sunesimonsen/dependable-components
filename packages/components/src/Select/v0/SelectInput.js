@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import ChevronDownStroke12Icon from "@dependable/icons/ChevronDownStroke12Icon";
 import { margin } from "../../theming/v0/index.js";
 import { MediaInput } from "../../MediaInput/v0/index.js";
@@ -24,12 +24,12 @@ export class SelectInput {
     const containerProps = filterProps(other, (k) => !isInputProp(k));
     const inputProps = filterProps(other, isInputProp);
 
-    return html`
-      <${MediaInput} ...${containerProps}>
-        <span data-label>${children}</span>
-        <input type="text" ...${inputProps} />
-        <${ChevronDownStroke12Icon} className=${margin(1, "inline-start")} />
-      <//>
-    `;
+    return h(
+      MediaInput,
+      containerProps,
+      h("span", { "data-label": true }, children),
+      h("input", { type: "text", ...inputProps }),
+      h(ChevronDownStroke12Icon, { className: margin(1, "inline-start") }),
+    );
   }
 }

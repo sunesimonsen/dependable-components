@@ -1,11 +1,11 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { expect, render } from "../../../test/index.js";
 import sinon from "sinon";
 import { Button } from "./index.js";
 
 describe("Button", () => {
   it("renders a button with the given attributes", () => {
-    const element = render(html`<${Button} title="My button">My button<//>`);
+    const element = render(h(Button, { title: "My button" }, "My button"));
 
     expect(
       element,
@@ -16,7 +16,7 @@ describe("Button", () => {
 
   it("respond to clicks", () => {
     const clickSpy = sinon.spy().named("onClick");
-    const element = render(html`<${Button} onClick=${clickSpy}>My button<//>`);
+    const element = render(h(Button, { onClick: clickSpy }, "My button"));
 
     element.dispatchEvent(new CustomEvent("click"));
 
@@ -25,7 +25,7 @@ describe("Button", () => {
 
   describe("when disabled", () => {
     it("is has a disabled attribute", () => {
-      const element = render(html`<${Button} disabled>My button<//>`);
+      const element = render(h(Button, { disabled: true }, "My button"));
 
       expect(element, "to match", "[disabled]");
     });
@@ -33,15 +33,16 @@ describe("Button", () => {
 
   describe("when loading", () => {
     it("renders a button with a loading overlay", () => {
-      const element = render(html`<${Button} loading>My button<//>`);
+      const element = render(h(Button, { loading: true }, "My button"));
 
       expect(element, "to contain elements matching", "[role=progressbar]");
     });
 
     it("doesn't respond to clicks", () => {
       const clickSpy = sinon.spy().named("onClick");
+
       const element = render(
-        html`<${Button} onClick=${clickSpy} loading>My button<//>`,
+        h(Button, { onClick: clickSpy, loading: true }, "My button"),
       );
 
       element.dispatchEvent(new CustomEvent("click"));

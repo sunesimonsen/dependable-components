@@ -1,19 +1,19 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { CustomMenu } from "../../Menu/v0/Menu.js";
 import { SelectModel } from "./SelectModel.js";
 
 export class CustomSelect {
   render({ model, children, ...other }) {
-    return html`
-      <${CustomMenu}
-        model=${model}
-        placement="bottom-stretch"
-        role="combobox"
-        ...${other}
-      >
-        ${children}
-      <//>
-    `;
+    return h(
+      CustomMenu,
+      {
+        model: model,
+        placement: "bottom-stretch",
+        role: "combobox",
+        ...other,
+      },
+      children,
+    );
   }
 }
 
@@ -25,8 +25,6 @@ export class Select {
   }
 
   render({ children, ...other }) {
-    return html`
-      <${CustomSelect} model=${this.model} ...${other}>${children}<//>
-    `;
+    return h(CustomSelect, { model: this.model, ...other }, children);
   }
 }

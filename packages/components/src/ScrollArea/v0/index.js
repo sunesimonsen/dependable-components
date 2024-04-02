@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -24,13 +24,13 @@ const popupContainerStyles = css`
 
 export class ScrollArea {
   render({ overflow = "hidden auto", className, children, ...other }) {
-    return html`
-      <div
-        className=${classes(styles, overflowStyles(overflow), className)}
-        ...${other}
-      >
-        <div className=${popupContainerStyles}>${children}</div>
-      </div>
-    `;
+    return h(
+      "div",
+      {
+        className: classes(styles, overflowStyles(overflow), className),
+        ...other,
+      },
+      h("div", { className: popupContainerStyles }, children),
+    );
   }
 }

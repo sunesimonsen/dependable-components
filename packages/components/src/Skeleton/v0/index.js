@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { transparentColor } from "../../theming/v0";
 
@@ -56,13 +56,13 @@ export class Skeleton {
   }
 
   render({ className }) {
-    return html`
-      <div
-        style=${{ "--dc-skeleton-width": this.widthStyles }}
-        className=${classes(styles, className)}
-      >
-        ${"\u00A0"}
-      </div>
-    `;
+    return h(
+      "div",
+      {
+        style: { "--dc-skeleton-width": this.widthStyles },
+        className: classes(styles, className),
+      },
+      "\u00A0",
+    );
   }
 }

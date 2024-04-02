@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -22,8 +22,10 @@ const styles = css`
 
 export class Anchor {
   render({ children, className, ...other }) {
-    return html`
-      <a className=${classes(styles, className)} ...${other}>${children}</a>
-    `;
+    return h(
+      "a",
+      { className: classes(styles, className), ...other },
+      children,
+    );
   }
 }

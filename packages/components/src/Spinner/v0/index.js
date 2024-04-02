@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = css`
@@ -34,10 +34,10 @@ const styles = css`
 
 export class Spinner {
   render({ className }) {
-    return html`
-      <div className=${classes(styles, className)} role="progressbar">
-        Loading...
-      </div>
-    `;
+    return h(
+      "div",
+      { className: classes(styles, className), role: "progressbar" },
+      "Loading...",
+    );
   }
 }

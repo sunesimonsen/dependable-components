@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 
 const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
@@ -6,7 +6,6 @@ const styles = ({ gap, stretched, columns, alignItems, justifyItems }) => {
     typeof columns === "number" || columns.match(/^\d+$/)
       ? `repeat(${columns}, 1fr)`
       : columns;
-
   return css`
     & {
       display: ${stretched ? "grid" : "inline-grid"};
@@ -31,16 +30,16 @@ export class ColumnLayout {
     children,
     ...other
   }) {
-    return html`
-      <div
-        className=${classes(
+    return h(
+      "div",
+      {
+        className: classes(
           styles({ gap, stretched, columns, alignItems, justifyItems }),
           className,
-        )}
-        ...${other}
-      >
-        ${children}
-      </div>
-    `;
+        ),
+        ...other,
+      },
+      children,
+    );
   }
 }
