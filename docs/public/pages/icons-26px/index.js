@@ -67,6 +67,7 @@ const columnStyles = css`
   & {
     display: grid;
     grid-template-columns: auto 1fr auto 1fr;
+    align-items: center;
     gap: 1em;
     fill: #bbb;
     margin: 2em 0;
