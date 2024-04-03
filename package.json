@@ -13,7 +13,8 @@
     "format": "prettier --write '**/*.{js,mjs,md,json}'",
     "test": "lerna run test",
     "publish": "lerna publish --no-private",
-    "publish-docs": "lerna run publish-docs"
+    "publish-docs": "lerna run publish-docs",
+    "import-icons": "lerna run import-icons"
   },
   "devDependencies": {
     "lerna": "^8.0.1",

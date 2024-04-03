@@ -300,8 +300,7 @@ export default class Page {
         {},
         "Tip ",
         h(TipIcon),
-        " click on the icon label to copy the",
-        "import to that clipboard.",
+        " click on the icon label to copy the import.",
       ),
       h(
         "div",
