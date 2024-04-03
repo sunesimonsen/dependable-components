@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -75,78 +75,84 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>26px (wordmark)<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${WordmarkBoldSuite26Icon} />
-        <${IconCopyButton}>WordmarkBoldSuite26Icon<//>
-        <${WordmarkBoldSupport26Icon} />
-        <${IconCopyButton}>WordmarkBoldSupport26Icon<//>
-        <${WordmarkCapitalSuite26Icon} />
-        <${IconCopyButton}>WordmarkCapitalSuite26Icon<//>
-        <${WordmarkCapitalThe26Icon} />
-        <${IconCopyButton}>WordmarkCapitalThe26Icon<//>
-        <${WordmarkCapitalZendesk26Icon} />
-        <${IconCopyButton}>WordmarkCapitalZendesk26Icon<//>
-        <${WordmarkChat26Icon} />
-        <${IconCopyButton}>WordmarkChat26Icon<//>
-        <${WordmarkConnect26Icon} />
-        <${IconCopyButton}>WordmarkConnect26Icon<//>
-        <${WordmarkExplore26Icon} />
-        <${IconCopyButton}>WordmarkExplore26Icon<//>
-        <${WordmarkGarden26Icon} />
-        <${IconCopyButton}>WordmarkGarden26Icon<//>
-        <${WordmarkGather26Icon} />
-        <${IconCopyButton}>WordmarkGather26Icon<//>
-        <${WordmarkGuide26Icon} />
-        <${IconCopyButton}>WordmarkGuide26Icon<//>
-        <${WordmarkHelpCenter26Icon} />
-        <${IconCopyButton}>WordmarkHelpCenter26Icon<//>
-        <${WordmarkInbox26Icon} />
-        <${IconCopyButton}>WordmarkInbox26Icon<//>
-        <${WordmarkMessage26Icon} />
-        <${IconCopyButton}>WordmarkMessage26Icon<//>
-        <${WordmarkMessaging26Icon} />
-        <${IconCopyButton}>WordmarkMessaging26Icon<//>
-        <${WordmarkReach26Icon} />
-        <${IconCopyButton}>WordmarkReach26Icon<//>
-        <${WordmarkSell26Icon} />
-        <${IconCopyButton}>WordmarkSell26Icon<//>
-        <${WordmarkSunshine26Icon} />
-        <${IconCopyButton}>WordmarkSunshine26Icon<//>
-        <${WordmarkSupport26Icon} />
-        <${IconCopyButton}>WordmarkSupport26Icon<//>
-        <${WordmarkTalk26Icon} />
-        <${IconCopyButton}>WordmarkTalk26Icon<//>
-        <${WordmarkZendesk26Icon} />
-        <${IconCopyButton}>WordmarkZendesk26Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "26px (wordmark)"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(WordmarkBoldSuite26Icon),
+        h(IconCopyButton, {}, "WordmarkBoldSuite26Icon"),
+        h(WordmarkBoldSupport26Icon),
+        h(IconCopyButton, {}, "WordmarkBoldSupport26Icon"),
+        h(WordmarkCapitalSuite26Icon),
+        h(IconCopyButton, {}, "WordmarkCapitalSuite26Icon"),
+        h(WordmarkCapitalThe26Icon),
+        h(IconCopyButton, {}, "WordmarkCapitalThe26Icon"),
+        h(WordmarkCapitalZendesk26Icon),
+        h(IconCopyButton, {}, "WordmarkCapitalZendesk26Icon"),
+        h(WordmarkChat26Icon),
+        h(IconCopyButton, {}, "WordmarkChat26Icon"),
+        h(WordmarkConnect26Icon),
+        h(IconCopyButton, {}, "WordmarkConnect26Icon"),
+        h(WordmarkExplore26Icon),
+        h(IconCopyButton, {}, "WordmarkExplore26Icon"),
+        h(WordmarkGarden26Icon),
+        h(IconCopyButton, {}, "WordmarkGarden26Icon"),
+        h(WordmarkGather26Icon),
+        h(IconCopyButton, {}, "WordmarkGather26Icon"),
+        h(WordmarkGuide26Icon),
+        h(IconCopyButton, {}, "WordmarkGuide26Icon"),
+        h(WordmarkHelpCenter26Icon),
+        h(IconCopyButton, {}, "WordmarkHelpCenter26Icon"),
+        h(WordmarkInbox26Icon),
+        h(IconCopyButton, {}, "WordmarkInbox26Icon"),
+        h(WordmarkMessage26Icon),
+        h(IconCopyButton, {}, "WordmarkMessage26Icon"),
+        h(WordmarkMessaging26Icon),
+        h(IconCopyButton, {}, "WordmarkMessaging26Icon"),
+        h(WordmarkReach26Icon),
+        h(IconCopyButton, {}, "WordmarkReach26Icon"),
+        h(WordmarkSell26Icon),
+        h(IconCopyButton, {}, "WordmarkSell26Icon"),
+        h(WordmarkSunshine26Icon),
+        h(IconCopyButton, {}, "WordmarkSunshine26Icon"),
+        h(WordmarkSupport26Icon),
+        h(IconCopyButton, {}, "WordmarkSupport26Icon"),
+        h(WordmarkTalk26Icon),
+        h(IconCopyButton, {}, "WordmarkTalk26Icon"),
+        h(WordmarkZendesk26Icon),
+        h(IconCopyButton, {}, "WordmarkZendesk26Icon"),
+      ),
+    ];
   }
 }

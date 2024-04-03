@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -111,150 +111,156 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>26px<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${AnswerBot26Icon} />
-        <${IconCopyButton}>AnswerBot26Icon<//>
-        <${App26Icon} />
-        <${IconCopyButton}>App26Icon<//>
-        <${ArrangeContent26Icon} />
-        <${IconCopyButton}>ArrangeContent26Icon<//>
-        <${ArrowRightLeft26Icon} />
-        <${IconCopyButton}>ArrowRightLeft26Icon<//>
-        <${BarChart26Icon} />
-        <${IconCopyButton}>BarChart26Icon<//>
-        <${Book26Icon} />
-        <${IconCopyButton}>Book26Icon<//>
-        <${BotGeneric26Icon} />
-        <${IconCopyButton}>BotGeneric26Icon<//>
-        <${Building26Icon} />
-        <${IconCopyButton}>Building26Icon<//>
-        <${CallIn26Icon} />
-        <${IconCopyButton}>CallIn26Icon<//>
-        <${Chat26Icon} />
-        <${IconCopyButton}>Chat26Icon<//>
-        <${Checkbox26Icon} />
-        <${IconCopyButton}>Checkbox26Icon<//>
-        <${Clipboard26Icon} />
-        <${IconCopyButton}>Clipboard26Icon<//>
-        <${Clock26Icon} />
-        <${IconCopyButton}>Clock26Icon<//>
-        <${CloudUpload26Icon} />
-        <${IconCopyButton}>CloudUpload26Icon<//>
-        <${CreditCard26Icon} />
-        <${IconCopyButton}>CreditCard26Icon<//>
-        <${Customize26Icon} />
-        <${IconCopyButton}>Customize26Icon<//>
-        <${Dashboard26Icon} />
-        <${IconCopyButton}>Dashboard26Icon<//>
-        <${Ellipsis26Icon} />
-        <${IconCopyButton}>Ellipsis26Icon<//>
-        <${FileDocument26Icon} />
-        <${IconCopyButton}>FileDocument26Icon<//>
-        <${FileError26Icon} />
-        <${IconCopyButton}>FileError26Icon<//>
-        <${FileImage26Icon} />
-        <${IconCopyButton}>FileImage26Icon<//>
-        <${FilePdf26Icon} />
-        <${IconCopyButton}>FilePdf26Icon<//>
-        <${FilePresentation26Icon} />
-        <${IconCopyButton}>FilePresentation26Icon<//>
-        <${FileSpreadsheet26Icon} />
-        <${IconCopyButton}>FileSpreadsheet26Icon<//>
-        <${FileZip26Icon} />
-        <${IconCopyButton}>FileZip26Icon<//>
-        <${File26Icon} />
-        <${IconCopyButton}>File26Icon<//>
-        <${Garden26Icon} />
-        <${IconCopyButton}>Garden26Icon<//>
-        <${GridAdd26Icon} />
-        <${IconCopyButton}>GridAdd26Icon<//>
-        <${Headset26Icon} />
-        <${IconCopyButton}>Headset26Icon<//>
-        <${HelpCenter26Icon} />
-        <${IconCopyButton}>HelpCenter26Icon<//>
-        <${Hook26Icon} />
-        <${IconCopyButton}>Hook26Icon<//>
-        <${KnowledgeBase26Icon} />
-        <${IconCopyButton}>KnowledgeBase26Icon<//>
-        <${LineChart26Icon} />
-        <${IconCopyButton}>LineChart26Icon<//>
-        <${Macro26Icon} />
-        <${IconCopyButton}>Macro26Icon<//>
-        <${Moderation26Icon} />
-        <${IconCopyButton}>Moderation26Icon<//>
-        <${Monitor26Icon} />
-        <${IconCopyButton}>Monitor26Icon<//>
-        <${Organization26Icon} />
-        <${IconCopyButton}>Organization26Icon<//>
-        <${Person26Icon} />
-        <${IconCopyButton}>Person26Icon<//>
-        <${Platform26Icon} />
-        <${IconCopyButton}>Platform26Icon<//>
-        <${Play26Icon} />
-        <${IconCopyButton}>Play26Icon<//>
-        <${RelationshapeChat26Icon} />
-        <${IconCopyButton}>RelationshapeChat26Icon<//>
-        <${RelationshapeConnect26Icon} />
-        <${IconCopyButton}>RelationshapeConnect26Icon<//>
-        <${RelationshapeExplore26Icon} />
-        <${IconCopyButton}>RelationshapeExplore26Icon<//>
-        <${RelationshapeGather26Icon} />
-        <${IconCopyButton}>RelationshapeGather26Icon<//>
-        <${RelationshapeGuide26Icon} />
-        <${IconCopyButton}>RelationshapeGuide26Icon<//>
-        <${RelationshapeMessage26Icon} />
-        <${IconCopyButton}>RelationshapeMessage26Icon<//>
-        <${RelationshapeSell26Icon} />
-        <${IconCopyButton}>RelationshapeSell26Icon<//>
-        <${RelationshapeSupport26Icon} />
-        <${IconCopyButton}>RelationshapeSupport26Icon<//>
-        <${RelationshapeTalk26Icon} />
-        <${IconCopyButton}>RelationshapeTalk26Icon<//>
-        <${Search26Icon} />
-        <${IconCopyButton}>Search26Icon<//>
-        <${Security26Icon} />
-        <${IconCopyButton}>Security26Icon<//>
-        <${Shapes26Icon} />
-        <${IconCopyButton}>Shapes26Icon<//>
-        <${Sunshine26Icon} />
-        <${IconCopyButton}>Sunshine26Icon<//>
-        <${UserLock26Icon} />
-        <${IconCopyButton}>UserLock26Icon<//>
-        <${Widget26Icon} />
-        <${IconCopyButton}>Widget26Icon<//>
-        <${Workflow26Icon} />
-        <${IconCopyButton}>Workflow26Icon<//>
-        <${Zendesk26Icon} />
-        <${IconCopyButton}>Zendesk26Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "26px"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(AnswerBot26Icon),
+        h(IconCopyButton, {}, "AnswerBot26Icon"),
+        h(App26Icon),
+        h(IconCopyButton, {}, "App26Icon"),
+        h(ArrangeContent26Icon),
+        h(IconCopyButton, {}, "ArrangeContent26Icon"),
+        h(ArrowRightLeft26Icon),
+        h(IconCopyButton, {}, "ArrowRightLeft26Icon"),
+        h(BarChart26Icon),
+        h(IconCopyButton, {}, "BarChart26Icon"),
+        h(Book26Icon),
+        h(IconCopyButton, {}, "Book26Icon"),
+        h(BotGeneric26Icon),
+        h(IconCopyButton, {}, "BotGeneric26Icon"),
+        h(Building26Icon),
+        h(IconCopyButton, {}, "Building26Icon"),
+        h(CallIn26Icon),
+        h(IconCopyButton, {}, "CallIn26Icon"),
+        h(Chat26Icon),
+        h(IconCopyButton, {}, "Chat26Icon"),
+        h(Checkbox26Icon),
+        h(IconCopyButton, {}, "Checkbox26Icon"),
+        h(Clipboard26Icon),
+        h(IconCopyButton, {}, "Clipboard26Icon"),
+        h(Clock26Icon),
+        h(IconCopyButton, {}, "Clock26Icon"),
+        h(CloudUpload26Icon),
+        h(IconCopyButton, {}, "CloudUpload26Icon"),
+        h(CreditCard26Icon),
+        h(IconCopyButton, {}, "CreditCard26Icon"),
+        h(Customize26Icon),
+        h(IconCopyButton, {}, "Customize26Icon"),
+        h(Dashboard26Icon),
+        h(IconCopyButton, {}, "Dashboard26Icon"),
+        h(Ellipsis26Icon),
+        h(IconCopyButton, {}, "Ellipsis26Icon"),
+        h(FileDocument26Icon),
+        h(IconCopyButton, {}, "FileDocument26Icon"),
+        h(FileError26Icon),
+        h(IconCopyButton, {}, "FileError26Icon"),
+        h(FileImage26Icon),
+        h(IconCopyButton, {}, "FileImage26Icon"),
+        h(FilePdf26Icon),
+        h(IconCopyButton, {}, "FilePdf26Icon"),
+        h(FilePresentation26Icon),
+        h(IconCopyButton, {}, "FilePresentation26Icon"),
+        h(FileSpreadsheet26Icon),
+        h(IconCopyButton, {}, "FileSpreadsheet26Icon"),
+        h(FileZip26Icon),
+        h(IconCopyButton, {}, "FileZip26Icon"),
+        h(File26Icon),
+        h(IconCopyButton, {}, "File26Icon"),
+        h(Garden26Icon),
+        h(IconCopyButton, {}, "Garden26Icon"),
+        h(GridAdd26Icon),
+        h(IconCopyButton, {}, "GridAdd26Icon"),
+        h(Headset26Icon),
+        h(IconCopyButton, {}, "Headset26Icon"),
+        h(HelpCenter26Icon),
+        h(IconCopyButton, {}, "HelpCenter26Icon"),
+        h(Hook26Icon),
+        h(IconCopyButton, {}, "Hook26Icon"),
+        h(KnowledgeBase26Icon),
+        h(IconCopyButton, {}, "KnowledgeBase26Icon"),
+        h(LineChart26Icon),
+        h(IconCopyButton, {}, "LineChart26Icon"),
+        h(Macro26Icon),
+        h(IconCopyButton, {}, "Macro26Icon"),
+        h(Moderation26Icon),
+        h(IconCopyButton, {}, "Moderation26Icon"),
+        h(Monitor26Icon),
+        h(IconCopyButton, {}, "Monitor26Icon"),
+        h(Organization26Icon),
+        h(IconCopyButton, {}, "Organization26Icon"),
+        h(Person26Icon),
+        h(IconCopyButton, {}, "Person26Icon"),
+        h(Platform26Icon),
+        h(IconCopyButton, {}, "Platform26Icon"),
+        h(Play26Icon),
+        h(IconCopyButton, {}, "Play26Icon"),
+        h(RelationshapeChat26Icon),
+        h(IconCopyButton, {}, "RelationshapeChat26Icon"),
+        h(RelationshapeConnect26Icon),
+        h(IconCopyButton, {}, "RelationshapeConnect26Icon"),
+        h(RelationshapeExplore26Icon),
+        h(IconCopyButton, {}, "RelationshapeExplore26Icon"),
+        h(RelationshapeGather26Icon),
+        h(IconCopyButton, {}, "RelationshapeGather26Icon"),
+        h(RelationshapeGuide26Icon),
+        h(IconCopyButton, {}, "RelationshapeGuide26Icon"),
+        h(RelationshapeMessage26Icon),
+        h(IconCopyButton, {}, "RelationshapeMessage26Icon"),
+        h(RelationshapeSell26Icon),
+        h(IconCopyButton, {}, "RelationshapeSell26Icon"),
+        h(RelationshapeSupport26Icon),
+        h(IconCopyButton, {}, "RelationshapeSupport26Icon"),
+        h(RelationshapeTalk26Icon),
+        h(IconCopyButton, {}, "RelationshapeTalk26Icon"),
+        h(Search26Icon),
+        h(IconCopyButton, {}, "Search26Icon"),
+        h(Security26Icon),
+        h(IconCopyButton, {}, "Security26Icon"),
+        h(Shapes26Icon),
+        h(IconCopyButton, {}, "Shapes26Icon"),
+        h(Sunshine26Icon),
+        h(IconCopyButton, {}, "Sunshine26Icon"),
+        h(UserLock26Icon),
+        h(IconCopyButton, {}, "UserLock26Icon"),
+        h(Widget26Icon),
+        h(IconCopyButton, {}, "Widget26Icon"),
+        h(Workflow26Icon),
+        h(IconCopyButton, {}, "Workflow26Icon"),
+        h(Zendesk26Icon),
+        h(IconCopyButton, {}, "Zendesk26Icon"),
+      ),
+    ];
   }
 }

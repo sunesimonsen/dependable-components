@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -17,7 +17,7 @@ const columnStyles = css`
     fill: #bbb;
     margin: 2em 0;
   }
-`
+`;
 
 const copyStyles = css`
   & {
@@ -31,7 +31,7 @@ const copyStyles = css`
   &:focus {
     outline: none;
   }
-`
+`;
 
 let interceptCopy;
 
@@ -42,52 +42,61 @@ document.addEventListener("copy", (e) => {
   }
 });
 
-const copy = text => {
-  interceptCopy = text
+const copy = (text) => {
+  interceptCopy = text;
   document.execCommand("copy");
   interceptCopy = null;
-}
+};
 
 class IconCopyButton {
   constructor() {
     this.onClick = () => {
-      const name = this.props.children
-      copy(`import ${name} from "@dependable/icons/${name}";`)
-    }
+      const name = this.props.children;
+      copy(`import ${name} from "@dependable/icons/${name}";`);
+    };
   }
 
   render({ children }) {
-    return html`
-      <button onClick=${this.onClick} className=${copyStyles} title="Click to copy">
-        ${children}
-      </button>
-    `
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}><%-key%><//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the
-        import to that clipboard.
-      </p>
-      <div className=${columnStyles}>
+    return [
+      h(Title, {}, "<%-key%>"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
 <% for(let { name } of items) { -%>
-         <${<%-name%>} />
-         <${IconCopyButton}><%-name%><//>
+        h(<%-name%>),
+        h(IconCopyButton, {}, "<%-name%>"),
 <% } -%>
-      </div>
-    `;
+      ),
+    ];
   }
 }
-

@@ -23,7 +23,6 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@dependable/htm": "^0.2.0",
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.19.2",
     "stylewars": "^2.4.0"

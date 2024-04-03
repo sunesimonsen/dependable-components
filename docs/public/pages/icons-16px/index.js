@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -269,466 +269,472 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>16px<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${I123Stroke16Icon} />
-        <${IconCopyButton}>I123Stroke16Icon<//>
-        <${AdjustStroke16Icon} />
-        <${IconCopyButton}>AdjustStroke16Icon<//>
-        <${AlertErrorStroke16Icon} />
-        <${IconCopyButton}>AlertErrorStroke16Icon<//>
-        <${AlertWarningStroke16Icon} />
-        <${IconCopyButton}>AlertWarningStroke16Icon<//>
-        <${AlignCenterStroke16Icon} />
-        <${IconCopyButton}>AlignCenterStroke16Icon<//>
-        <${AlignJustifyStroke16Icon} />
-        <${IconCopyButton}>AlignJustifyStroke16Icon<//>
-        <${AlignLeftStroke16Icon} />
-        <${IconCopyButton}>AlignLeftStroke16Icon<//>
-        <${AlignRightStroke16Icon} />
-        <${IconCopyButton}>AlignRightStroke16Icon<//>
-        <${AltTextStroke16Icon} />
-        <${IconCopyButton}>AltTextStroke16Icon<//>
-        <${ArrowLeftSmStroke16Icon} />
-        <${IconCopyButton}>ArrowLeftSmStroke16Icon<//>
-        <${ArrowLeftStroke16Icon} />
-        <${IconCopyButton}>ArrowLeftStroke16Icon<//>
-        <${ArrowLeftUpStroke16Icon} />
-        <${IconCopyButton}>ArrowLeftUpStroke16Icon<//>
-        <${ArrowRetweetStroke16Icon} />
-        <${IconCopyButton}>ArrowRetweetStroke16Icon<//>
-        <${ArrowReverseStroke16Icon} />
-        <${IconCopyButton}>ArrowReverseStroke16Icon<//>
-        <${ArrowTrendingStroke16Icon} />
-        <${IconCopyButton}>ArrowTrendingStroke16Icon<//>
-        <${AsteriskStroke16Icon} />
-        <${IconCopyButton}>AsteriskStroke16Icon<//>
-        <${AtStroke16Icon} />
-        <${IconCopyButton}>AtStroke16Icon<//>
-        <${BarChartStroke16Icon} />
-        <${IconCopyButton}>BarChartStroke16Icon<//>
-        <${BasketballStroke16Icon} />
-        <${IconCopyButton}>BasketballStroke16Icon<//>
-        <${BoldStroke16Icon} />
-        <${IconCopyButton}>BoldStroke16Icon<//>
-        <${BookClosedStroke16Icon} />
-        <${IconCopyButton}>BookClosedStroke16Icon<//>
-        <${BookOpenStroke16Icon} />
-        <${IconCopyButton}>BookOpenStroke16Icon<//>
-        <${Box3dStroke16Icon} />
-        <${IconCopyButton}>Box3dStroke16Icon<//>
-        <${BuildingStroke16Icon} />
-        <${IconCopyButton}>BuildingStroke16Icon<//>
-        <${CalendarStroke16Icon} />
-        <${IconCopyButton}>CalendarStroke16Icon<//>
-        <${CameraStroke16Icon} />
-        <${IconCopyButton}>CameraStroke16Icon<//>
-        <${CarStroke16Icon} />
-        <${IconCopyButton}>CarStroke16Icon<//>
-        <${CenterStroke16Icon} />
-        <${IconCopyButton}>CenterStroke16Icon<//>
-        <${CheckBadgeStroke16Icon} />
-        <${IconCopyButton}>CheckBadgeStroke16Icon<//>
-        <${CheckBoxDoubleStroke16Icon} />
-        <${IconCopyButton}>CheckBoxDoubleStroke16Icon<//>
-        <${CheckBoxStroke16Icon} />
-        <${IconCopyButton}>CheckBoxStroke16Icon<//>
-        <${CheckCircleStroke16Icon} />
-        <${IconCopyButton}>CheckCircleStroke16Icon<//>
-        <${CheckDoubleStroke16Icon} />
-        <${IconCopyButton}>CheckDoubleStroke16Icon<//>
-        <${CheckLgStroke16Icon} />
-        <${IconCopyButton}>CheckLgStroke16Icon<//>
-        <${CheckSmStroke16Icon} />
-        <${IconCopyButton}>CheckSmStroke16Icon<//>
-        <${ChevronBoxStroke16Icon} />
-        <${IconCopyButton}>ChevronBoxStroke16Icon<//>
-        <${ChevronDoubleDownStroke16Icon} />
-        <${IconCopyButton}>ChevronDoubleDownStroke16Icon<//>
-        <${ChevronDoubleLeftStroke16Icon} />
-        <${IconCopyButton}>ChevronDoubleLeftStroke16Icon<//>
-        <${ChevronDoubleRightStroke16Icon} />
-        <${IconCopyButton}>ChevronDoubleRightStroke16Icon<//>
-        <${ChevronDoubleUpStroke16Icon} />
-        <${IconCopyButton}>ChevronDoubleUpStroke16Icon<//>
-        <${ChevronDownStroke16Icon} />
-        <${IconCopyButton}>ChevronDownStroke16Icon<//>
-        <${ChevronLeftStroke16Icon} />
-        <${IconCopyButton}>ChevronLeftStroke16Icon<//>
-        <${ChevronRightStroke16Icon} />
-        <${IconCopyButton}>ChevronRightStroke16Icon<//>
-        <${ChevronUpStroke16Icon} />
-        <${IconCopyButton}>ChevronUpStroke16Icon<//>
-        <${CircleFullStroke16Icon} />
-        <${IconCopyButton}>CircleFullStroke16Icon<//>
-        <${CircleLineStroke16Icon} />
-        <${IconCopyButton}>CircleLineStroke16Icon<//>
-        <${CircleSmStroke16Icon} />
-        <${IconCopyButton}>CircleSmStroke16Icon<//>
-        <${CircleStroke16Icon} />
-        <${IconCopyButton}>CircleStroke16Icon<//>
-        <${ClipboardBlankStroke16Icon} />
-        <${IconCopyButton}>ClipboardBlankStroke16Icon<//>
-        <${ClipboardCheckStroke16Icon} />
-        <${IconCopyButton}>ClipboardCheckStroke16Icon<//>
-        <${ClipboardListStroke16Icon} />
-        <${IconCopyButton}>ClipboardListStroke16Icon<//>
-        <${ClockCycleStroke16Icon} />
-        <${IconCopyButton}>ClockCycleStroke16Icon<//>
-        <${ClockInStroke16Icon} />
-        <${IconCopyButton}>ClockInStroke16Icon<//>
-        <${ClockOutStroke16Icon} />
-        <${IconCopyButton}>ClockOutStroke16Icon<//>
-        <${ClockStroke16Icon} />
-        <${IconCopyButton}>ClockStroke16Icon<//>
-        <${CopyStroke16Icon} />
-        <${IconCopyButton}>CopyStroke16Icon<//>
-        <${CreditCardStroke16Icon} />
-        <${IconCopyButton}>CreditCardStroke16Icon<//>
-        <${CssStroke16Icon} />
-        <${IconCopyButton}>CssStroke16Icon<//>
-        <${CursorArrowStroke16Icon} />
-        <${IconCopyButton}>CursorArrowStroke16Icon<//>
-        <${CutleryStroke16Icon} />
-        <${IconCopyButton}>CutleryStroke16Icon<//>
-        <${DashStroke16Icon} />
-        <${IconCopyButton}>DashStroke16Icon<//>
-        <${DatabaseStroke16Icon} />
-        <${IconCopyButton}>DatabaseStroke16Icon<//>
-        <${DecimalStroke16Icon} />
-        <${IconCopyButton}>DecimalStroke16Icon<//>
-        <${DirectionLtrStroke16Icon} />
-        <${IconCopyButton}>DirectionLtrStroke16Icon<//>
-        <${DirectionRtlStroke16Icon} />
-        <${IconCopyButton}>DirectionRtlStroke16Icon<//>
-        <${DocumentSearchStroke16Icon} />
-        <${IconCopyButton}>DocumentSearchStroke16Icon<//>
-        <${DownloadStroke16Icon} />
-        <${IconCopyButton}>DownloadStroke16Icon<//>
-        <${DuplicateStroke16Icon} />
-        <${IconCopyButton}>DuplicateStroke16Icon<//>
-        <${EditRedoStroke16Icon} />
-        <${IconCopyButton}>EditRedoStroke16Icon<//>
-        <${EditUndoStroke16Icon} />
-        <${IconCopyButton}>EditUndoStroke16Icon<//>
-        <${EmailStroke16Icon} />
-        <${IconCopyButton}>EmailStroke16Icon<//>
-        <${EraserStroke16Icon} />
-        <${IconCopyButton}>EraserStroke16Icon<//>
-        <${ExitStroke16Icon} />
-        <${IconCopyButton}>ExitStroke16Icon<//>
-        <${EyeHideStroke16Icon} />
-        <${IconCopyButton}>EyeHideStroke16Icon<//>
-        <${EyeStroke16Icon} />
-        <${IconCopyButton}>EyeStroke16Icon<//>
-        <${FacebookStroke16Icon} />
-        <${IconCopyButton}>FacebookStroke16Icon<//>
-        <${FileDocumentStroke16Icon} />
-        <${IconCopyButton}>FileDocumentStroke16Icon<//>
-        <${FileErrorStroke16Icon} />
-        <${IconCopyButton}>FileErrorStroke16Icon<//>
-        <${FileGenericStroke16Icon} />
-        <${IconCopyButton}>FileGenericStroke16Icon<//>
-        <${FileImageStroke16Icon} />
-        <${IconCopyButton}>FileImageStroke16Icon<//>
-        <${FilePdfStroke16Icon} />
-        <${IconCopyButton}>FilePdfStroke16Icon<//>
-        <${FilePresentationStroke16Icon} />
-        <${IconCopyButton}>FilePresentationStroke16Icon<//>
-        <${FileSpreadsheetStroke16Icon} />
-        <${IconCopyButton}>FileSpreadsheetStroke16Icon<//>
-        <${FileZipStroke16Icon} />
-        <${IconCopyButton}>FileZipStroke16Icon<//>
-        <${FilterStroke16Icon} />
-        <${IconCopyButton}>FilterStroke16Icon<//>
-        <${FlagStroke16Icon} />
-        <${IconCopyButton}>FlagStroke16Icon<//>
-        <${FolderClosedStroke16Icon} />
-        <${IconCopyButton}>FolderClosedStroke16Icon<//>
-        <${FolderOpenStroke16Icon} />
-        <${IconCopyButton}>FolderOpenStroke16Icon<//>
-        <${FullWidthStroke16Icon} />
-        <${IconCopyButton}>FullWidthStroke16Icon<//>
-        <${GearStroke16Icon} />
-        <${IconCopyButton}>GearStroke16Icon<//>
-        <${GithubStroke16Icon} />
-        <${IconCopyButton}>GithubStroke16Icon<//>
-        <${GlobeStroke16Icon} />
-        <${IconCopyButton}>GlobeStroke16Icon<//>
-        <${Grid2x2Stroke16Icon} />
-        <${IconCopyButton}>Grid2x2Stroke16Icon<//>
-        <${Grid3x3Stroke16Icon} />
-        <${IconCopyButton}>Grid3x3Stroke16Icon<//>
-        <${Grip16Icon} />
-        <${IconCopyButton}>Grip16Icon<//>
-        <${HeadingStroke16Icon} />
-        <${IconCopyButton}>HeadingStroke16Icon<//>
-        <${HeartStroke16Icon} />
-        <${IconCopyButton}>HeartStroke16Icon<//>
-        <${HistoryStroke16Icon} />
-        <${IconCopyButton}>HistoryStroke16Icon<//>
-        <${HomeStroke16Icon} />
-        <${IconCopyButton}>HomeStroke16Icon<//>
-        <${HorizontalRuleStroke16Icon} />
-        <${IconCopyButton}>HorizontalRuleStroke16Icon<//>
-        <${ImageStroke16Icon} />
-        <${IconCopyButton}>ImageStroke16Icon<//>
-        <${InboxStroke16Icon} />
-        <${IconCopyButton}>InboxStroke16Icon<//>
-        <${IndentDecreaseStroke16Icon} />
-        <${IconCopyButton}>IndentDecreaseStroke16Icon<//>
-        <${IndentIncreaseStroke16Icon} />
-        <${IconCopyButton}>IndentIncreaseStroke16Icon<//>
-        <${InfoStroke16Icon} />
-        <${IconCopyButton}>InfoStroke16Icon<//>
-        <${InterlockingRingsStroke16Icon} />
-        <${IconCopyButton}>InterlockingRingsStroke16Icon<//>
-        <${ItalicStroke16Icon} />
-        <${IconCopyButton}>ItalicStroke16Icon<//>
-        <${LeafStroke16Icon} />
-        <${IconCopyButton}>LeafStroke16Icon<//>
-        <${LifesaverStroke16Icon} />
-        <${IconCopyButton}>LifesaverStroke16Icon<//>
-        <${LightbulbStroke16Icon} />
-        <${IconCopyButton}>LightbulbStroke16Icon<//>
-        <${LightningBoltStroke16Icon} />
-        <${IconCopyButton}>LightningBoltStroke16Icon<//>
-        <${LineGraphStroke16Icon} />
-        <${IconCopyButton}>LineGraphStroke16Icon<//>
-        <${LineSocialStroke16Icon} />
-        <${IconCopyButton}>LineSocialStroke16Icon<//>
-        <${LinkRemoveStroke16Icon} />
-        <${IconCopyButton}>LinkRemoveStroke16Icon<//>
-        <${LinkStroke16Icon} />
-        <${IconCopyButton}>LinkStroke16Icon<//>
-        <${LinkedinStroke16Icon} />
-        <${IconCopyButton}>LinkedinStroke16Icon<//>
-        <${ListBulletStroke16Icon} />
-        <${IconCopyButton}>ListBulletStroke16Icon<//>
-        <${ListNumberRtlStroke16Icon} />
-        <${IconCopyButton}>ListNumberRtlStroke16Icon<//>
-        <${ListNumberStroke16Icon} />
-        <${IconCopyButton}>ListNumberStroke16Icon<//>
-        <${LocationStroke16Icon} />
-        <${IconCopyButton}>LocationStroke16Icon<//>
-        <${LockLockedStroke16Icon} />
-        <${IconCopyButton}>LockLockedStroke16Icon<//>
-        <${LockUnlockedStroke16Icon} />
-        <${IconCopyButton}>LockUnlockedStroke16Icon<//>
-        <${MarkupStroke16Icon} />
-        <${IconCopyButton}>MarkupStroke16Icon<//>
-        <${MaximizeStroke16Icon} />
-        <${IconCopyButton}>MaximizeStroke16Icon<//>
-        <${MegaphoneStroke16Icon} />
-        <${IconCopyButton}>MegaphoneStroke16Icon<//>
-        <${MenuStroke16Icon} />
-        <${IconCopyButton}>MenuStroke16Icon<//>
-        <${MessengerStroke16Icon} />
-        <${IconCopyButton}>MessengerStroke16Icon<//>
-        <${MicrophoneOffStroke16Icon} />
-        <${IconCopyButton}>MicrophoneOffStroke16Icon<//>
-        <${MicrophoneOnStroke16Icon} />
-        <${IconCopyButton}>MicrophoneOnStroke16Icon<//>
-        <${MinimizeStroke16Icon} />
-        <${IconCopyButton}>MinimizeStroke16Icon<//>
-        <${MobilePhoneStroke16Icon} />
-        <${IconCopyButton}>MobilePhoneStroke16Icon<//>
-        <${MonitorStroke16Icon} />
-        <${IconCopyButton}>MonitorStroke16Icon<//>
-        <${MultilineStroke16Icon} />
-        <${IconCopyButton}>MultilineStroke16Icon<//>
-        <${NewWindowStroke16Icon} />
-        <${IconCopyButton}>NewWindowStroke16Icon<//>
-        <${NotesStroke16Icon} />
-        <${IconCopyButton}>NotesStroke16Icon<//>
-        <${NotificationStroke16Icon} />
-        <${IconCopyButton}>NotificationStroke16Icon<//>
-        <${NumberStroke16Icon} />
-        <${IconCopyButton}>NumberStroke16Icon<//>
-        <${OriginalSizeStroke16Icon} />
-        <${IconCopyButton}>OriginalSizeStroke16Icon<//>
-        <${OverflowStroke16Icon} />
-        <${IconCopyButton}>OverflowStroke16Icon<//>
-        <${OverflowVerticalStroke16Icon} />
-        <${IconCopyButton}>OverflowVerticalStroke16Icon<//>
-        <${PaletteStroke16Icon} />
-        <${IconCopyButton}>PaletteStroke16Icon<//>
-        <${PanelsStroke16Icon} />
-        <${IconCopyButton}>PanelsStroke16Icon<//>
-        <${Paperclip16Icon} />
-        <${IconCopyButton}>Paperclip16Icon<//>
-        <${ParenthesesStroke16Icon} />
-        <${IconCopyButton}>ParenthesesStroke16Icon<//>
-        <${PauseStroke16Icon} />
-        <${IconCopyButton}>PauseStroke16Icon<//>
-        <${PencilStroke16Icon} />
-        <${IconCopyButton}>PencilStroke16Icon<//>
-        <${PhoneCallEndStroke16Icon} />
-        <${IconCopyButton}>PhoneCallEndStroke16Icon<//>
-        <${PhoneCallInStroke16Icon} />
-        <${IconCopyButton}>PhoneCallInStroke16Icon<//>
-        <${PhoneCallOutStroke16Icon} />
-        <${IconCopyButton}>PhoneCallOutStroke16Icon<//>
-        <${PhoneCallPauseStroke16Icon} />
-        <${IconCopyButton}>PhoneCallPauseStroke16Icon<//>
-        <${PhoneCallSpeakerStroke16Icon} />
-        <${IconCopyButton}>PhoneCallSpeakerStroke16Icon<//>
-        <${PhoneCallTransferOnlyStroke16Icon} />
-        <${IconCopyButton}>PhoneCallTransferOnlyStroke16Icon<//>
-        <${PhoneCallTransferStroke16Icon} />
-        <${IconCopyButton}>PhoneCallTransferStroke16Icon<//>
-        <${PhoneStroke16Icon} />
-        <${IconCopyButton}>PhoneStroke16Icon<//>
-        <${PinRemoveStroke16Icon} />
-        <${IconCopyButton}>PinRemoveStroke16Icon<//>
-        <${PinStroke16Icon} />
-        <${IconCopyButton}>PinStroke16Icon<//>
-        <${PlayCircleStroke16Icon} />
-        <${IconCopyButton}>PlayCircleStroke16Icon<//>
-        <${PlayStroke16Icon} />
-        <${IconCopyButton}>PlayStroke16Icon<//>
-        <${PlugStroke16Icon} />
-        <${IconCopyButton}>PlugStroke16Icon<//>
-        <${PlusCircleStroke16Icon} />
-        <${IconCopyButton}>PlusCircleStroke16Icon<//>
-        <${PlusStroke16Icon} />
-        <${IconCopyButton}>PlusStroke16Icon<//>
-        <${PuzzlePieceStroke16Icon} />
-        <${IconCopyButton}>PuzzlePieceStroke16Icon<//>
-        <${QuestionMarkStroke16Icon} />
-        <${IconCopyButton}>QuestionMarkStroke16Icon<//>
-        <${QuoteStroke16Icon} />
-        <${IconCopyButton}>QuoteStroke16Icon<//>
-        <${RearrangeStroke16Icon} />
-        <${IconCopyButton}>RearrangeStroke16Icon<//>
-        <${RecordStroke16Icon} />
-        <${IconCopyButton}>RecordStroke16Icon<//>
-        <${ReloadStroke16Icon} />
-        <${IconCopyButton}>ReloadStroke16Icon<//>
-        <${SandboxStroke16Icon} />
-        <${IconCopyButton}>SandboxStroke16Icon<//>
-        <${SearchStroke16Icon} />
-        <${IconCopyButton}>SearchStroke16Icon<//>
-        <${ShapesStroke16Icon} />
-        <${IconCopyButton}>ShapesStroke16Icon<//>
-        <${ShareStroke16Icon} />
-        <${IconCopyButton}>ShareStroke16Icon<//>
-        <${ShieldStroke16Icon} />
-        <${IconCopyButton}>ShieldStroke16Icon<//>
-        <${ShoppingCartStroke16Icon} />
-        <${IconCopyButton}>ShoppingCartStroke16Icon<//>
-        <${SignpostStroke16Icon} />
-        <${IconCopyButton}>SignpostStroke16Icon<//>
-        <${SlackStroke16Icon} />
-        <${IconCopyButton}>SlackStroke16Icon<//>
-        <${SmileSlightStroke16Icon} />
-        <${IconCopyButton}>SmileSlightStroke16Icon<//>
-        <${SmileyStroke16Icon} />
-        <${IconCopyButton}>SmileyStroke16Icon<//>
-        <${SortStroke16Icon} />
-        <${IconCopyButton}>SortStroke16Icon<//>
-        <${SpeechBubbleConversationStroke16Icon} />
-        <${IconCopyButton}>SpeechBubbleConversationStroke16Icon<//>
-        <${SpeechBubbleLightningBoltStroke16Icon} />
-        <${IconCopyButton}>SpeechBubbleLightningBoltStroke16Icon<//>
-        <${SpeechBubblePlainStroke16Icon} />
-        <${IconCopyButton}>SpeechBubblePlainStroke16Icon<//>
-        <${StarStroke16Icon} />
-        <${IconCopyButton}>StarStroke16Icon<//>
-        <${TableStroke16Icon} />
-        <${IconCopyButton}>TableStroke16Icon<//>
-        <${TagStroke16Icon} />
-        <${IconCopyButton}>TagStroke16Icon<//>
-        <${TerminalCliStroke16Icon} />
-        <${IconCopyButton}>TerminalCliStroke16Icon<//>
-        <${TerminalWindowStroke16Icon} />
-        <${IconCopyButton}>TerminalWindowStroke16Icon<//>
-        <${TextColorStroke16Icon} />
-        <${IconCopyButton}>TextColorStroke16Icon<//>
-        <${TextStroke16Icon} />
-        <${IconCopyButton}>TextStroke16Icon<//>
-        <${ThumbsDownStroke16Icon} />
-        <${IconCopyButton}>ThumbsDownStroke16Icon<//>
-        <${ThumbsUpStroke16Icon} />
-        <${IconCopyButton}>ThumbsUpStroke16Icon<//>
-        <${TranslationCreatedStroke16Icon} />
-        <${IconCopyButton}>TranslationCreatedStroke16Icon<//>
-        <${TranslationDeletedStroke16Icon} />
-        <${IconCopyButton}>TranslationDeletedStroke16Icon<//>
-        <${TranslationExistsStroke16Icon} />
-        <${IconCopyButton}>TranslationExistsStroke16Icon<//>
-        <${TranslationOutdatedStroke16Icon} />
-        <${IconCopyButton}>TranslationOutdatedStroke16Icon<//>
-        <${TranslationUpdatedStroke16Icon} />
-        <${IconCopyButton}>TranslationUpdatedStroke16Icon<//>
-        <${TrashStroke16Icon} />
-        <${IconCopyButton}>TrashStroke16Icon<//>
-        <${TwitterStroke16Icon} />
-        <${IconCopyButton}>TwitterStroke16Icon<//>
-        <${UnderlineStroke16Icon} />
-        <${IconCopyButton}>UnderlineStroke16Icon<//>
-        <${UploadStroke16Icon} />
-        <${IconCopyButton}>UploadStroke16Icon<//>
-        <${UserCircleStroke16Icon} />
-        <${IconCopyButton}>UserCircleStroke16Icon<//>
-        <${UserFollowStroke16Icon} />
-        <${IconCopyButton}>UserFollowStroke16Icon<//>
-        <${UserGroupStroke16Icon} />
-        <${IconCopyButton}>UserGroupStroke16Icon<//>
-        <${UserListStroke16Icon} />
-        <${IconCopyButton}>UserListStroke16Icon<//>
-        <${UserSoloStroke16Icon} />
-        <${IconCopyButton}>UserSoloStroke16Icon<//>
-        <${UserUnfollowStroke16Icon} />
-        <${IconCopyButton}>UserUnfollowStroke16Icon<//>
-        <${VoicemailStroke16Icon} />
-        <${IconCopyButton}>VoicemailStroke16Icon<//>
-        <${VolumeMutedStroke16Icon} />
-        <${IconCopyButton}>VolumeMutedStroke16Icon<//>
-        <${VolumeUnmutedStroke16Icon} />
-        <${IconCopyButton}>VolumeUnmutedStroke16Icon<//>
-        <${WechatStroke16Icon} />
-        <${IconCopyButton}>WechatStroke16Icon<//>
-        <${WhatsappStroke16Icon} />
-        <${IconCopyButton}>WhatsappStroke16Icon<//>
-        <${WrapLeftStroke16Icon} />
-        <${IconCopyButton}>WrapLeftStroke16Icon<//>
-        <${WrapRightStroke16Icon} />
-        <${IconCopyButton}>WrapRightStroke16Icon<//>
-        <${XCircleStroke16Icon} />
-        <${IconCopyButton}>XCircleStroke16Icon<//>
-        <${XStroke16Icon} />
-        <${IconCopyButton}>XStroke16Icon<//>
-        <${ZendeskStroke16Icon} />
-        <${IconCopyButton}>ZendeskStroke16Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "16px"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(I123Stroke16Icon),
+        h(IconCopyButton, {}, "I123Stroke16Icon"),
+        h(AdjustStroke16Icon),
+        h(IconCopyButton, {}, "AdjustStroke16Icon"),
+        h(AlertErrorStroke16Icon),
+        h(IconCopyButton, {}, "AlertErrorStroke16Icon"),
+        h(AlertWarningStroke16Icon),
+        h(IconCopyButton, {}, "AlertWarningStroke16Icon"),
+        h(AlignCenterStroke16Icon),
+        h(IconCopyButton, {}, "AlignCenterStroke16Icon"),
+        h(AlignJustifyStroke16Icon),
+        h(IconCopyButton, {}, "AlignJustifyStroke16Icon"),
+        h(AlignLeftStroke16Icon),
+        h(IconCopyButton, {}, "AlignLeftStroke16Icon"),
+        h(AlignRightStroke16Icon),
+        h(IconCopyButton, {}, "AlignRightStroke16Icon"),
+        h(AltTextStroke16Icon),
+        h(IconCopyButton, {}, "AltTextStroke16Icon"),
+        h(ArrowLeftSmStroke16Icon),
+        h(IconCopyButton, {}, "ArrowLeftSmStroke16Icon"),
+        h(ArrowLeftStroke16Icon),
+        h(IconCopyButton, {}, "ArrowLeftStroke16Icon"),
+        h(ArrowLeftUpStroke16Icon),
+        h(IconCopyButton, {}, "ArrowLeftUpStroke16Icon"),
+        h(ArrowRetweetStroke16Icon),
+        h(IconCopyButton, {}, "ArrowRetweetStroke16Icon"),
+        h(ArrowReverseStroke16Icon),
+        h(IconCopyButton, {}, "ArrowReverseStroke16Icon"),
+        h(ArrowTrendingStroke16Icon),
+        h(IconCopyButton, {}, "ArrowTrendingStroke16Icon"),
+        h(AsteriskStroke16Icon),
+        h(IconCopyButton, {}, "AsteriskStroke16Icon"),
+        h(AtStroke16Icon),
+        h(IconCopyButton, {}, "AtStroke16Icon"),
+        h(BarChartStroke16Icon),
+        h(IconCopyButton, {}, "BarChartStroke16Icon"),
+        h(BasketballStroke16Icon),
+        h(IconCopyButton, {}, "BasketballStroke16Icon"),
+        h(BoldStroke16Icon),
+        h(IconCopyButton, {}, "BoldStroke16Icon"),
+        h(BookClosedStroke16Icon),
+        h(IconCopyButton, {}, "BookClosedStroke16Icon"),
+        h(BookOpenStroke16Icon),
+        h(IconCopyButton, {}, "BookOpenStroke16Icon"),
+        h(Box3dStroke16Icon),
+        h(IconCopyButton, {}, "Box3dStroke16Icon"),
+        h(BuildingStroke16Icon),
+        h(IconCopyButton, {}, "BuildingStroke16Icon"),
+        h(CalendarStroke16Icon),
+        h(IconCopyButton, {}, "CalendarStroke16Icon"),
+        h(CameraStroke16Icon),
+        h(IconCopyButton, {}, "CameraStroke16Icon"),
+        h(CarStroke16Icon),
+        h(IconCopyButton, {}, "CarStroke16Icon"),
+        h(CenterStroke16Icon),
+        h(IconCopyButton, {}, "CenterStroke16Icon"),
+        h(CheckBadgeStroke16Icon),
+        h(IconCopyButton, {}, "CheckBadgeStroke16Icon"),
+        h(CheckBoxDoubleStroke16Icon),
+        h(IconCopyButton, {}, "CheckBoxDoubleStroke16Icon"),
+        h(CheckBoxStroke16Icon),
+        h(IconCopyButton, {}, "CheckBoxStroke16Icon"),
+        h(CheckCircleStroke16Icon),
+        h(IconCopyButton, {}, "CheckCircleStroke16Icon"),
+        h(CheckDoubleStroke16Icon),
+        h(IconCopyButton, {}, "CheckDoubleStroke16Icon"),
+        h(CheckLgStroke16Icon),
+        h(IconCopyButton, {}, "CheckLgStroke16Icon"),
+        h(CheckSmStroke16Icon),
+        h(IconCopyButton, {}, "CheckSmStroke16Icon"),
+        h(ChevronBoxStroke16Icon),
+        h(IconCopyButton, {}, "ChevronBoxStroke16Icon"),
+        h(ChevronDoubleDownStroke16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleDownStroke16Icon"),
+        h(ChevronDoubleLeftStroke16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleLeftStroke16Icon"),
+        h(ChevronDoubleRightStroke16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleRightStroke16Icon"),
+        h(ChevronDoubleUpStroke16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleUpStroke16Icon"),
+        h(ChevronDownStroke16Icon),
+        h(IconCopyButton, {}, "ChevronDownStroke16Icon"),
+        h(ChevronLeftStroke16Icon),
+        h(IconCopyButton, {}, "ChevronLeftStroke16Icon"),
+        h(ChevronRightStroke16Icon),
+        h(IconCopyButton, {}, "ChevronRightStroke16Icon"),
+        h(ChevronUpStroke16Icon),
+        h(IconCopyButton, {}, "ChevronUpStroke16Icon"),
+        h(CircleFullStroke16Icon),
+        h(IconCopyButton, {}, "CircleFullStroke16Icon"),
+        h(CircleLineStroke16Icon),
+        h(IconCopyButton, {}, "CircleLineStroke16Icon"),
+        h(CircleSmStroke16Icon),
+        h(IconCopyButton, {}, "CircleSmStroke16Icon"),
+        h(CircleStroke16Icon),
+        h(IconCopyButton, {}, "CircleStroke16Icon"),
+        h(ClipboardBlankStroke16Icon),
+        h(IconCopyButton, {}, "ClipboardBlankStroke16Icon"),
+        h(ClipboardCheckStroke16Icon),
+        h(IconCopyButton, {}, "ClipboardCheckStroke16Icon"),
+        h(ClipboardListStroke16Icon),
+        h(IconCopyButton, {}, "ClipboardListStroke16Icon"),
+        h(ClockCycleStroke16Icon),
+        h(IconCopyButton, {}, "ClockCycleStroke16Icon"),
+        h(ClockInStroke16Icon),
+        h(IconCopyButton, {}, "ClockInStroke16Icon"),
+        h(ClockOutStroke16Icon),
+        h(IconCopyButton, {}, "ClockOutStroke16Icon"),
+        h(ClockStroke16Icon),
+        h(IconCopyButton, {}, "ClockStroke16Icon"),
+        h(CopyStroke16Icon),
+        h(IconCopyButton, {}, "CopyStroke16Icon"),
+        h(CreditCardStroke16Icon),
+        h(IconCopyButton, {}, "CreditCardStroke16Icon"),
+        h(CssStroke16Icon),
+        h(IconCopyButton, {}, "CssStroke16Icon"),
+        h(CursorArrowStroke16Icon),
+        h(IconCopyButton, {}, "CursorArrowStroke16Icon"),
+        h(CutleryStroke16Icon),
+        h(IconCopyButton, {}, "CutleryStroke16Icon"),
+        h(DashStroke16Icon),
+        h(IconCopyButton, {}, "DashStroke16Icon"),
+        h(DatabaseStroke16Icon),
+        h(IconCopyButton, {}, "DatabaseStroke16Icon"),
+        h(DecimalStroke16Icon),
+        h(IconCopyButton, {}, "DecimalStroke16Icon"),
+        h(DirectionLtrStroke16Icon),
+        h(IconCopyButton, {}, "DirectionLtrStroke16Icon"),
+        h(DirectionRtlStroke16Icon),
+        h(IconCopyButton, {}, "DirectionRtlStroke16Icon"),
+        h(DocumentSearchStroke16Icon),
+        h(IconCopyButton, {}, "DocumentSearchStroke16Icon"),
+        h(DownloadStroke16Icon),
+        h(IconCopyButton, {}, "DownloadStroke16Icon"),
+        h(DuplicateStroke16Icon),
+        h(IconCopyButton, {}, "DuplicateStroke16Icon"),
+        h(EditRedoStroke16Icon),
+        h(IconCopyButton, {}, "EditRedoStroke16Icon"),
+        h(EditUndoStroke16Icon),
+        h(IconCopyButton, {}, "EditUndoStroke16Icon"),
+        h(EmailStroke16Icon),
+        h(IconCopyButton, {}, "EmailStroke16Icon"),
+        h(EraserStroke16Icon),
+        h(IconCopyButton, {}, "EraserStroke16Icon"),
+        h(ExitStroke16Icon),
+        h(IconCopyButton, {}, "ExitStroke16Icon"),
+        h(EyeHideStroke16Icon),
+        h(IconCopyButton, {}, "EyeHideStroke16Icon"),
+        h(EyeStroke16Icon),
+        h(IconCopyButton, {}, "EyeStroke16Icon"),
+        h(FacebookStroke16Icon),
+        h(IconCopyButton, {}, "FacebookStroke16Icon"),
+        h(FileDocumentStroke16Icon),
+        h(IconCopyButton, {}, "FileDocumentStroke16Icon"),
+        h(FileErrorStroke16Icon),
+        h(IconCopyButton, {}, "FileErrorStroke16Icon"),
+        h(FileGenericStroke16Icon),
+        h(IconCopyButton, {}, "FileGenericStroke16Icon"),
+        h(FileImageStroke16Icon),
+        h(IconCopyButton, {}, "FileImageStroke16Icon"),
+        h(FilePdfStroke16Icon),
+        h(IconCopyButton, {}, "FilePdfStroke16Icon"),
+        h(FilePresentationStroke16Icon),
+        h(IconCopyButton, {}, "FilePresentationStroke16Icon"),
+        h(FileSpreadsheetStroke16Icon),
+        h(IconCopyButton, {}, "FileSpreadsheetStroke16Icon"),
+        h(FileZipStroke16Icon),
+        h(IconCopyButton, {}, "FileZipStroke16Icon"),
+        h(FilterStroke16Icon),
+        h(IconCopyButton, {}, "FilterStroke16Icon"),
+        h(FlagStroke16Icon),
+        h(IconCopyButton, {}, "FlagStroke16Icon"),
+        h(FolderClosedStroke16Icon),
+        h(IconCopyButton, {}, "FolderClosedStroke16Icon"),
+        h(FolderOpenStroke16Icon),
+        h(IconCopyButton, {}, "FolderOpenStroke16Icon"),
+        h(FullWidthStroke16Icon),
+        h(IconCopyButton, {}, "FullWidthStroke16Icon"),
+        h(GearStroke16Icon),
+        h(IconCopyButton, {}, "GearStroke16Icon"),
+        h(GithubStroke16Icon),
+        h(IconCopyButton, {}, "GithubStroke16Icon"),
+        h(GlobeStroke16Icon),
+        h(IconCopyButton, {}, "GlobeStroke16Icon"),
+        h(Grid2x2Stroke16Icon),
+        h(IconCopyButton, {}, "Grid2x2Stroke16Icon"),
+        h(Grid3x3Stroke16Icon),
+        h(IconCopyButton, {}, "Grid3x3Stroke16Icon"),
+        h(Grip16Icon),
+        h(IconCopyButton, {}, "Grip16Icon"),
+        h(HeadingStroke16Icon),
+        h(IconCopyButton, {}, "HeadingStroke16Icon"),
+        h(HeartStroke16Icon),
+        h(IconCopyButton, {}, "HeartStroke16Icon"),
+        h(HistoryStroke16Icon),
+        h(IconCopyButton, {}, "HistoryStroke16Icon"),
+        h(HomeStroke16Icon),
+        h(IconCopyButton, {}, "HomeStroke16Icon"),
+        h(HorizontalRuleStroke16Icon),
+        h(IconCopyButton, {}, "HorizontalRuleStroke16Icon"),
+        h(ImageStroke16Icon),
+        h(IconCopyButton, {}, "ImageStroke16Icon"),
+        h(InboxStroke16Icon),
+        h(IconCopyButton, {}, "InboxStroke16Icon"),
+        h(IndentDecreaseStroke16Icon),
+        h(IconCopyButton, {}, "IndentDecreaseStroke16Icon"),
+        h(IndentIncreaseStroke16Icon),
+        h(IconCopyButton, {}, "IndentIncreaseStroke16Icon"),
+        h(InfoStroke16Icon),
+        h(IconCopyButton, {}, "InfoStroke16Icon"),
+        h(InterlockingRingsStroke16Icon),
+        h(IconCopyButton, {}, "InterlockingRingsStroke16Icon"),
+        h(ItalicStroke16Icon),
+        h(IconCopyButton, {}, "ItalicStroke16Icon"),
+        h(LeafStroke16Icon),
+        h(IconCopyButton, {}, "LeafStroke16Icon"),
+        h(LifesaverStroke16Icon),
+        h(IconCopyButton, {}, "LifesaverStroke16Icon"),
+        h(LightbulbStroke16Icon),
+        h(IconCopyButton, {}, "LightbulbStroke16Icon"),
+        h(LightningBoltStroke16Icon),
+        h(IconCopyButton, {}, "LightningBoltStroke16Icon"),
+        h(LineGraphStroke16Icon),
+        h(IconCopyButton, {}, "LineGraphStroke16Icon"),
+        h(LineSocialStroke16Icon),
+        h(IconCopyButton, {}, "LineSocialStroke16Icon"),
+        h(LinkRemoveStroke16Icon),
+        h(IconCopyButton, {}, "LinkRemoveStroke16Icon"),
+        h(LinkStroke16Icon),
+        h(IconCopyButton, {}, "LinkStroke16Icon"),
+        h(LinkedinStroke16Icon),
+        h(IconCopyButton, {}, "LinkedinStroke16Icon"),
+        h(ListBulletStroke16Icon),
+        h(IconCopyButton, {}, "ListBulletStroke16Icon"),
+        h(ListNumberRtlStroke16Icon),
+        h(IconCopyButton, {}, "ListNumberRtlStroke16Icon"),
+        h(ListNumberStroke16Icon),
+        h(IconCopyButton, {}, "ListNumberStroke16Icon"),
+        h(LocationStroke16Icon),
+        h(IconCopyButton, {}, "LocationStroke16Icon"),
+        h(LockLockedStroke16Icon),
+        h(IconCopyButton, {}, "LockLockedStroke16Icon"),
+        h(LockUnlockedStroke16Icon),
+        h(IconCopyButton, {}, "LockUnlockedStroke16Icon"),
+        h(MarkupStroke16Icon),
+        h(IconCopyButton, {}, "MarkupStroke16Icon"),
+        h(MaximizeStroke16Icon),
+        h(IconCopyButton, {}, "MaximizeStroke16Icon"),
+        h(MegaphoneStroke16Icon),
+        h(IconCopyButton, {}, "MegaphoneStroke16Icon"),
+        h(MenuStroke16Icon),
+        h(IconCopyButton, {}, "MenuStroke16Icon"),
+        h(MessengerStroke16Icon),
+        h(IconCopyButton, {}, "MessengerStroke16Icon"),
+        h(MicrophoneOffStroke16Icon),
+        h(IconCopyButton, {}, "MicrophoneOffStroke16Icon"),
+        h(MicrophoneOnStroke16Icon),
+        h(IconCopyButton, {}, "MicrophoneOnStroke16Icon"),
+        h(MinimizeStroke16Icon),
+        h(IconCopyButton, {}, "MinimizeStroke16Icon"),
+        h(MobilePhoneStroke16Icon),
+        h(IconCopyButton, {}, "MobilePhoneStroke16Icon"),
+        h(MonitorStroke16Icon),
+        h(IconCopyButton, {}, "MonitorStroke16Icon"),
+        h(MultilineStroke16Icon),
+        h(IconCopyButton, {}, "MultilineStroke16Icon"),
+        h(NewWindowStroke16Icon),
+        h(IconCopyButton, {}, "NewWindowStroke16Icon"),
+        h(NotesStroke16Icon),
+        h(IconCopyButton, {}, "NotesStroke16Icon"),
+        h(NotificationStroke16Icon),
+        h(IconCopyButton, {}, "NotificationStroke16Icon"),
+        h(NumberStroke16Icon),
+        h(IconCopyButton, {}, "NumberStroke16Icon"),
+        h(OriginalSizeStroke16Icon),
+        h(IconCopyButton, {}, "OriginalSizeStroke16Icon"),
+        h(OverflowStroke16Icon),
+        h(IconCopyButton, {}, "OverflowStroke16Icon"),
+        h(OverflowVerticalStroke16Icon),
+        h(IconCopyButton, {}, "OverflowVerticalStroke16Icon"),
+        h(PaletteStroke16Icon),
+        h(IconCopyButton, {}, "PaletteStroke16Icon"),
+        h(PanelsStroke16Icon),
+        h(IconCopyButton, {}, "PanelsStroke16Icon"),
+        h(Paperclip16Icon),
+        h(IconCopyButton, {}, "Paperclip16Icon"),
+        h(ParenthesesStroke16Icon),
+        h(IconCopyButton, {}, "ParenthesesStroke16Icon"),
+        h(PauseStroke16Icon),
+        h(IconCopyButton, {}, "PauseStroke16Icon"),
+        h(PencilStroke16Icon),
+        h(IconCopyButton, {}, "PencilStroke16Icon"),
+        h(PhoneCallEndStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallEndStroke16Icon"),
+        h(PhoneCallInStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallInStroke16Icon"),
+        h(PhoneCallOutStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallOutStroke16Icon"),
+        h(PhoneCallPauseStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallPauseStroke16Icon"),
+        h(PhoneCallSpeakerStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallSpeakerStroke16Icon"),
+        h(PhoneCallTransferOnlyStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferOnlyStroke16Icon"),
+        h(PhoneCallTransferStroke16Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferStroke16Icon"),
+        h(PhoneStroke16Icon),
+        h(IconCopyButton, {}, "PhoneStroke16Icon"),
+        h(PinRemoveStroke16Icon),
+        h(IconCopyButton, {}, "PinRemoveStroke16Icon"),
+        h(PinStroke16Icon),
+        h(IconCopyButton, {}, "PinStroke16Icon"),
+        h(PlayCircleStroke16Icon),
+        h(IconCopyButton, {}, "PlayCircleStroke16Icon"),
+        h(PlayStroke16Icon),
+        h(IconCopyButton, {}, "PlayStroke16Icon"),
+        h(PlugStroke16Icon),
+        h(IconCopyButton, {}, "PlugStroke16Icon"),
+        h(PlusCircleStroke16Icon),
+        h(IconCopyButton, {}, "PlusCircleStroke16Icon"),
+        h(PlusStroke16Icon),
+        h(IconCopyButton, {}, "PlusStroke16Icon"),
+        h(PuzzlePieceStroke16Icon),
+        h(IconCopyButton, {}, "PuzzlePieceStroke16Icon"),
+        h(QuestionMarkStroke16Icon),
+        h(IconCopyButton, {}, "QuestionMarkStroke16Icon"),
+        h(QuoteStroke16Icon),
+        h(IconCopyButton, {}, "QuoteStroke16Icon"),
+        h(RearrangeStroke16Icon),
+        h(IconCopyButton, {}, "RearrangeStroke16Icon"),
+        h(RecordStroke16Icon),
+        h(IconCopyButton, {}, "RecordStroke16Icon"),
+        h(ReloadStroke16Icon),
+        h(IconCopyButton, {}, "ReloadStroke16Icon"),
+        h(SandboxStroke16Icon),
+        h(IconCopyButton, {}, "SandboxStroke16Icon"),
+        h(SearchStroke16Icon),
+        h(IconCopyButton, {}, "SearchStroke16Icon"),
+        h(ShapesStroke16Icon),
+        h(IconCopyButton, {}, "ShapesStroke16Icon"),
+        h(ShareStroke16Icon),
+        h(IconCopyButton, {}, "ShareStroke16Icon"),
+        h(ShieldStroke16Icon),
+        h(IconCopyButton, {}, "ShieldStroke16Icon"),
+        h(ShoppingCartStroke16Icon),
+        h(IconCopyButton, {}, "ShoppingCartStroke16Icon"),
+        h(SignpostStroke16Icon),
+        h(IconCopyButton, {}, "SignpostStroke16Icon"),
+        h(SlackStroke16Icon),
+        h(IconCopyButton, {}, "SlackStroke16Icon"),
+        h(SmileSlightStroke16Icon),
+        h(IconCopyButton, {}, "SmileSlightStroke16Icon"),
+        h(SmileyStroke16Icon),
+        h(IconCopyButton, {}, "SmileyStroke16Icon"),
+        h(SortStroke16Icon),
+        h(IconCopyButton, {}, "SortStroke16Icon"),
+        h(SpeechBubbleConversationStroke16Icon),
+        h(IconCopyButton, {}, "SpeechBubbleConversationStroke16Icon"),
+        h(SpeechBubbleLightningBoltStroke16Icon),
+        h(IconCopyButton, {}, "SpeechBubbleLightningBoltStroke16Icon"),
+        h(SpeechBubblePlainStroke16Icon),
+        h(IconCopyButton, {}, "SpeechBubblePlainStroke16Icon"),
+        h(StarStroke16Icon),
+        h(IconCopyButton, {}, "StarStroke16Icon"),
+        h(TableStroke16Icon),
+        h(IconCopyButton, {}, "TableStroke16Icon"),
+        h(TagStroke16Icon),
+        h(IconCopyButton, {}, "TagStroke16Icon"),
+        h(TerminalCliStroke16Icon),
+        h(IconCopyButton, {}, "TerminalCliStroke16Icon"),
+        h(TerminalWindowStroke16Icon),
+        h(IconCopyButton, {}, "TerminalWindowStroke16Icon"),
+        h(TextColorStroke16Icon),
+        h(IconCopyButton, {}, "TextColorStroke16Icon"),
+        h(TextStroke16Icon),
+        h(IconCopyButton, {}, "TextStroke16Icon"),
+        h(ThumbsDownStroke16Icon),
+        h(IconCopyButton, {}, "ThumbsDownStroke16Icon"),
+        h(ThumbsUpStroke16Icon),
+        h(IconCopyButton, {}, "ThumbsUpStroke16Icon"),
+        h(TranslationCreatedStroke16Icon),
+        h(IconCopyButton, {}, "TranslationCreatedStroke16Icon"),
+        h(TranslationDeletedStroke16Icon),
+        h(IconCopyButton, {}, "TranslationDeletedStroke16Icon"),
+        h(TranslationExistsStroke16Icon),
+        h(IconCopyButton, {}, "TranslationExistsStroke16Icon"),
+        h(TranslationOutdatedStroke16Icon),
+        h(IconCopyButton, {}, "TranslationOutdatedStroke16Icon"),
+        h(TranslationUpdatedStroke16Icon),
+        h(IconCopyButton, {}, "TranslationUpdatedStroke16Icon"),
+        h(TrashStroke16Icon),
+        h(IconCopyButton, {}, "TrashStroke16Icon"),
+        h(TwitterStroke16Icon),
+        h(IconCopyButton, {}, "TwitterStroke16Icon"),
+        h(UnderlineStroke16Icon),
+        h(IconCopyButton, {}, "UnderlineStroke16Icon"),
+        h(UploadStroke16Icon),
+        h(IconCopyButton, {}, "UploadStroke16Icon"),
+        h(UserCircleStroke16Icon),
+        h(IconCopyButton, {}, "UserCircleStroke16Icon"),
+        h(UserFollowStroke16Icon),
+        h(IconCopyButton, {}, "UserFollowStroke16Icon"),
+        h(UserGroupStroke16Icon),
+        h(IconCopyButton, {}, "UserGroupStroke16Icon"),
+        h(UserListStroke16Icon),
+        h(IconCopyButton, {}, "UserListStroke16Icon"),
+        h(UserSoloStroke16Icon),
+        h(IconCopyButton, {}, "UserSoloStroke16Icon"),
+        h(UserUnfollowStroke16Icon),
+        h(IconCopyButton, {}, "UserUnfollowStroke16Icon"),
+        h(VoicemailStroke16Icon),
+        h(IconCopyButton, {}, "VoicemailStroke16Icon"),
+        h(VolumeMutedStroke16Icon),
+        h(IconCopyButton, {}, "VolumeMutedStroke16Icon"),
+        h(VolumeUnmutedStroke16Icon),
+        h(IconCopyButton, {}, "VolumeUnmutedStroke16Icon"),
+        h(WechatStroke16Icon),
+        h(IconCopyButton, {}, "WechatStroke16Icon"),
+        h(WhatsappStroke16Icon),
+        h(IconCopyButton, {}, "WhatsappStroke16Icon"),
+        h(WrapLeftStroke16Icon),
+        h(IconCopyButton, {}, "WrapLeftStroke16Icon"),
+        h(WrapRightStroke16Icon),
+        h(IconCopyButton, {}, "WrapRightStroke16Icon"),
+        h(XCircleStroke16Icon),
+        h(IconCopyButton, {}, "XCircleStroke16Icon"),
+        h(XStroke16Icon),
+        h(IconCopyButton, {}, "XStroke16Icon"),
+        h(ZendeskStroke16Icon),
+        h(IconCopyButton, {}, "ZendeskStroke16Icon"),
+      ),
+    ];
   }
 }

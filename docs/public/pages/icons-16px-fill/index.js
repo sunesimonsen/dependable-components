@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -267,462 +267,468 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>16px (fill)<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${I123Fill16Icon} />
-        <${IconCopyButton}>I123Fill16Icon<//>
-        <${AdjustFill16Icon} />
-        <${IconCopyButton}>AdjustFill16Icon<//>
-        <${AlertErrorFill16Icon} />
-        <${IconCopyButton}>AlertErrorFill16Icon<//>
-        <${AlertWarningFill16Icon} />
-        <${IconCopyButton}>AlertWarningFill16Icon<//>
-        <${AlignCenterFill16Icon} />
-        <${IconCopyButton}>AlignCenterFill16Icon<//>
-        <${AlignJustifyFill16Icon} />
-        <${IconCopyButton}>AlignJustifyFill16Icon<//>
-        <${AlignLeftFill16Icon} />
-        <${IconCopyButton}>AlignLeftFill16Icon<//>
-        <${AlignRightFill16Icon} />
-        <${IconCopyButton}>AlignRightFill16Icon<//>
-        <${AltTextFill16Icon} />
-        <${IconCopyButton}>AltTextFill16Icon<//>
-        <${ArrowLeftFill16Icon} />
-        <${IconCopyButton}>ArrowLeftFill16Icon<//>
-        <${ArrowLeftSmFill16Icon} />
-        <${IconCopyButton}>ArrowLeftSmFill16Icon<//>
-        <${ArrowLeftUpFill16Icon} />
-        <${IconCopyButton}>ArrowLeftUpFill16Icon<//>
-        <${ArrowRetweetFill16Icon} />
-        <${IconCopyButton}>ArrowRetweetFill16Icon<//>
-        <${ArrowReverseFill16Icon} />
-        <${IconCopyButton}>ArrowReverseFill16Icon<//>
-        <${ArrowTrendingFill16Icon} />
-        <${IconCopyButton}>ArrowTrendingFill16Icon<//>
-        <${AsteriskFill16Icon} />
-        <${IconCopyButton}>AsteriskFill16Icon<//>
-        <${AtFill16Icon} />
-        <${IconCopyButton}>AtFill16Icon<//>
-        <${BarChartFill16Icon} />
-        <${IconCopyButton}>BarChartFill16Icon<//>
-        <${BasketballFill16Icon} />
-        <${IconCopyButton}>BasketballFill16Icon<//>
-        <${BoldFill16Icon} />
-        <${IconCopyButton}>BoldFill16Icon<//>
-        <${BookClosedFill16Icon} />
-        <${IconCopyButton}>BookClosedFill16Icon<//>
-        <${BookOpenFill16Icon} />
-        <${IconCopyButton}>BookOpenFill16Icon<//>
-        <${Box3dFill16Icon} />
-        <${IconCopyButton}>Box3dFill16Icon<//>
-        <${BuildingFill16Icon} />
-        <${IconCopyButton}>BuildingFill16Icon<//>
-        <${CalendarFill16Icon} />
-        <${IconCopyButton}>CalendarFill16Icon<//>
-        <${CameraFill16Icon} />
-        <${IconCopyButton}>CameraFill16Icon<//>
-        <${CarFill16Icon} />
-        <${IconCopyButton}>CarFill16Icon<//>
-        <${CenterFill16Icon} />
-        <${IconCopyButton}>CenterFill16Icon<//>
-        <${CheckBadgeFill16Icon} />
-        <${IconCopyButton}>CheckBadgeFill16Icon<//>
-        <${CheckBoxDoubleFill16Icon} />
-        <${IconCopyButton}>CheckBoxDoubleFill16Icon<//>
-        <${CheckBoxFill16Icon} />
-        <${IconCopyButton}>CheckBoxFill16Icon<//>
-        <${CheckCircleFill16Icon} />
-        <${IconCopyButton}>CheckCircleFill16Icon<//>
-        <${CheckDoubleFill16Icon} />
-        <${IconCopyButton}>CheckDoubleFill16Icon<//>
-        <${CheckLgFill16Icon} />
-        <${IconCopyButton}>CheckLgFill16Icon<//>
-        <${CheckSmFill16Icon} />
-        <${IconCopyButton}>CheckSmFill16Icon<//>
-        <${ChevronBoxFill16Icon} />
-        <${IconCopyButton}>ChevronBoxFill16Icon<//>
-        <${ChevronDoubleDownFill16Icon} />
-        <${IconCopyButton}>ChevronDoubleDownFill16Icon<//>
-        <${ChevronDoubleLeftFill16Icon} />
-        <${IconCopyButton}>ChevronDoubleLeftFill16Icon<//>
-        <${ChevronDoubleRightFill16Icon} />
-        <${IconCopyButton}>ChevronDoubleRightFill16Icon<//>
-        <${ChevronDoubleUpFill16Icon} />
-        <${IconCopyButton}>ChevronDoubleUpFill16Icon<//>
-        <${ChevronDownFill16Icon} />
-        <${IconCopyButton}>ChevronDownFill16Icon<//>
-        <${ChevronLeftFill16Icon} />
-        <${IconCopyButton}>ChevronLeftFill16Icon<//>
-        <${ChevronRightFill16Icon} />
-        <${IconCopyButton}>ChevronRightFill16Icon<//>
-        <${ChevronUpFill16Icon} />
-        <${IconCopyButton}>ChevronUpFill16Icon<//>
-        <${CircleFill16Icon} />
-        <${IconCopyButton}>CircleFill16Icon<//>
-        <${CircleFullFill16Icon} />
-        <${IconCopyButton}>CircleFullFill16Icon<//>
-        <${CircleLineFill16Icon} />
-        <${IconCopyButton}>CircleLineFill16Icon<//>
-        <${CircleSmFill16Icon} />
-        <${IconCopyButton}>CircleSmFill16Icon<//>
-        <${ClipboardBlankFill16Icon} />
-        <${IconCopyButton}>ClipboardBlankFill16Icon<//>
-        <${ClipboardCheckFill16Icon} />
-        <${IconCopyButton}>ClipboardCheckFill16Icon<//>
-        <${ClipboardListFill16Icon} />
-        <${IconCopyButton}>ClipboardListFill16Icon<//>
-        <${ClockCycleFill16Icon} />
-        <${IconCopyButton}>ClockCycleFill16Icon<//>
-        <${ClockFill16Icon} />
-        <${IconCopyButton}>ClockFill16Icon<//>
-        <${ClockInFill16Icon} />
-        <${IconCopyButton}>ClockInFill16Icon<//>
-        <${ClockOutFill16Icon} />
-        <${IconCopyButton}>ClockOutFill16Icon<//>
-        <${CopyFill16Icon} />
-        <${IconCopyButton}>CopyFill16Icon<//>
-        <${CreditCardFill16Icon} />
-        <${IconCopyButton}>CreditCardFill16Icon<//>
-        <${CssFill16Icon} />
-        <${IconCopyButton}>CssFill16Icon<//>
-        <${CursorArrowFill16Icon} />
-        <${IconCopyButton}>CursorArrowFill16Icon<//>
-        <${CutleryFill16Icon} />
-        <${IconCopyButton}>CutleryFill16Icon<//>
-        <${DashFill16Icon} />
-        <${IconCopyButton}>DashFill16Icon<//>
-        <${DatabaseFill16Icon} />
-        <${IconCopyButton}>DatabaseFill16Icon<//>
-        <${DecimalFill16Icon} />
-        <${IconCopyButton}>DecimalFill16Icon<//>
-        <${DirectionLtrFill16Icon} />
-        <${IconCopyButton}>DirectionLtrFill16Icon<//>
-        <${DirectionRtlFill16Icon} />
-        <${IconCopyButton}>DirectionRtlFill16Icon<//>
-        <${DocumentSearchFill16Icon} />
-        <${IconCopyButton}>DocumentSearchFill16Icon<//>
-        <${DownloadFill16Icon} />
-        <${IconCopyButton}>DownloadFill16Icon<//>
-        <${DuplicateFill16Icon} />
-        <${IconCopyButton}>DuplicateFill16Icon<//>
-        <${EditRedoFill16Icon} />
-        <${IconCopyButton}>EditRedoFill16Icon<//>
-        <${EditUndoFill16Icon} />
-        <${IconCopyButton}>EditUndoFill16Icon<//>
-        <${EmailFill16Icon} />
-        <${IconCopyButton}>EmailFill16Icon<//>
-        <${EraserFill16Icon} />
-        <${IconCopyButton}>EraserFill16Icon<//>
-        <${ExitFill16Icon} />
-        <${IconCopyButton}>ExitFill16Icon<//>
-        <${EyeFill16Icon} />
-        <${IconCopyButton}>EyeFill16Icon<//>
-        <${EyeHideFill16Icon} />
-        <${IconCopyButton}>EyeHideFill16Icon<//>
-        <${FacebookFill16Icon} />
-        <${IconCopyButton}>FacebookFill16Icon<//>
-        <${FileDocumentFill16Icon} />
-        <${IconCopyButton}>FileDocumentFill16Icon<//>
-        <${FileErrorFill16Icon} />
-        <${IconCopyButton}>FileErrorFill16Icon<//>
-        <${FileGenericFill16Icon} />
-        <${IconCopyButton}>FileGenericFill16Icon<//>
-        <${FileImageFill16Icon} />
-        <${IconCopyButton}>FileImageFill16Icon<//>
-        <${FilePdfFill16Icon} />
-        <${IconCopyButton}>FilePdfFill16Icon<//>
-        <${FilePresentationFill16Icon} />
-        <${IconCopyButton}>FilePresentationFill16Icon<//>
-        <${FileSpreadsheetFill16Icon} />
-        <${IconCopyButton}>FileSpreadsheetFill16Icon<//>
-        <${FileZipFill16Icon} />
-        <${IconCopyButton}>FileZipFill16Icon<//>
-        <${FilterFill16Icon} />
-        <${IconCopyButton}>FilterFill16Icon<//>
-        <${FlagFill16Icon} />
-        <${IconCopyButton}>FlagFill16Icon<//>
-        <${FolderClosedFill16Icon} />
-        <${IconCopyButton}>FolderClosedFill16Icon<//>
-        <${FolderOpenFill16Icon} />
-        <${IconCopyButton}>FolderOpenFill16Icon<//>
-        <${FullWidthFill16Icon} />
-        <${IconCopyButton}>FullWidthFill16Icon<//>
-        <${GearFill16Icon} />
-        <${IconCopyButton}>GearFill16Icon<//>
-        <${GithubFill16Icon} />
-        <${IconCopyButton}>GithubFill16Icon<//>
-        <${GlobeFill16Icon} />
-        <${IconCopyButton}>GlobeFill16Icon<//>
-        <${Grid2x2Fill16Icon} />
-        <${IconCopyButton}>Grid2x2Fill16Icon<//>
-        <${Grid3x3Fill16Icon} />
-        <${IconCopyButton}>Grid3x3Fill16Icon<//>
-        <${HeadingFill16Icon} />
-        <${IconCopyButton}>HeadingFill16Icon<//>
-        <${HeartFill16Icon} />
-        <${IconCopyButton}>HeartFill16Icon<//>
-        <${HistoryFill16Icon} />
-        <${IconCopyButton}>HistoryFill16Icon<//>
-        <${HomeFill16Icon} />
-        <${IconCopyButton}>HomeFill16Icon<//>
-        <${HorizontalRuleFill16Icon} />
-        <${IconCopyButton}>HorizontalRuleFill16Icon<//>
-        <${ImageFill16Icon} />
-        <${IconCopyButton}>ImageFill16Icon<//>
-        <${InboxFill16Icon} />
-        <${IconCopyButton}>InboxFill16Icon<//>
-        <${IndentDecreaseFill16Icon} />
-        <${IconCopyButton}>IndentDecreaseFill16Icon<//>
-        <${IndentIncreaseFill16Icon} />
-        <${IconCopyButton}>IndentIncreaseFill16Icon<//>
-        <${InfoFill16Icon} />
-        <${IconCopyButton}>InfoFill16Icon<//>
-        <${InterlockingRingsFill16Icon} />
-        <${IconCopyButton}>InterlockingRingsFill16Icon<//>
-        <${ItalicFill16Icon} />
-        <${IconCopyButton}>ItalicFill16Icon<//>
-        <${LeafFill16Icon} />
-        <${IconCopyButton}>LeafFill16Icon<//>
-        <${LifesaverFill16Icon} />
-        <${IconCopyButton}>LifesaverFill16Icon<//>
-        <${LightbulbFill16Icon} />
-        <${IconCopyButton}>LightbulbFill16Icon<//>
-        <${LightningBoltFill16Icon} />
-        <${IconCopyButton}>LightningBoltFill16Icon<//>
-        <${LineGraphFill16Icon} />
-        <${IconCopyButton}>LineGraphFill16Icon<//>
-        <${LineSocialFill16Icon} />
-        <${IconCopyButton}>LineSocialFill16Icon<//>
-        <${LinkFill16Icon} />
-        <${IconCopyButton}>LinkFill16Icon<//>
-        <${LinkRemoveFill16Icon} />
-        <${IconCopyButton}>LinkRemoveFill16Icon<//>
-        <${LinkedinFill16Icon} />
-        <${IconCopyButton}>LinkedinFill16Icon<//>
-        <${ListBulletFill16Icon} />
-        <${IconCopyButton}>ListBulletFill16Icon<//>
-        <${ListNumberFill16Icon} />
-        <${IconCopyButton}>ListNumberFill16Icon<//>
-        <${ListNumberRtlFill16Icon} />
-        <${IconCopyButton}>ListNumberRtlFill16Icon<//>
-        <${LocationFill16Icon} />
-        <${IconCopyButton}>LocationFill16Icon<//>
-        <${LockLockedFill16Icon} />
-        <${IconCopyButton}>LockLockedFill16Icon<//>
-        <${LockUnlockedFill16Icon} />
-        <${IconCopyButton}>LockUnlockedFill16Icon<//>
-        <${MarkupFill16Icon} />
-        <${IconCopyButton}>MarkupFill16Icon<//>
-        <${MaximizeFill16Icon} />
-        <${IconCopyButton}>MaximizeFill16Icon<//>
-        <${MegaphoneFill16Icon} />
-        <${IconCopyButton}>MegaphoneFill16Icon<//>
-        <${MenuFill16Icon} />
-        <${IconCopyButton}>MenuFill16Icon<//>
-        <${MessengerFill16Icon} />
-        <${IconCopyButton}>MessengerFill16Icon<//>
-        <${MicrophoneOffFill16Icon} />
-        <${IconCopyButton}>MicrophoneOffFill16Icon<//>
-        <${MicrophoneOnFill16Icon} />
-        <${IconCopyButton}>MicrophoneOnFill16Icon<//>
-        <${MinimizeFill16Icon} />
-        <${IconCopyButton}>MinimizeFill16Icon<//>
-        <${MobilePhoneFill16Icon} />
-        <${IconCopyButton}>MobilePhoneFill16Icon<//>
-        <${MonitorFill16Icon} />
-        <${IconCopyButton}>MonitorFill16Icon<//>
-        <${MultilineFill16Icon} />
-        <${IconCopyButton}>MultilineFill16Icon<//>
-        <${NewWindowFill16Icon} />
-        <${IconCopyButton}>NewWindowFill16Icon<//>
-        <${NotesFill16Icon} />
-        <${IconCopyButton}>NotesFill16Icon<//>
-        <${NotificationFill16Icon} />
-        <${IconCopyButton}>NotificationFill16Icon<//>
-        <${NumberFill16Icon} />
-        <${IconCopyButton}>NumberFill16Icon<//>
-        <${OriginalSizeFill16Icon} />
-        <${IconCopyButton}>OriginalSizeFill16Icon<//>
-        <${OverflowFill16Icon} />
-        <${IconCopyButton}>OverflowFill16Icon<//>
-        <${OverflowVerticalFill16Icon} />
-        <${IconCopyButton}>OverflowVerticalFill16Icon<//>
-        <${PaletteFill16Icon} />
-        <${IconCopyButton}>PaletteFill16Icon<//>
-        <${PanelsFill16Icon} />
-        <${IconCopyButton}>PanelsFill16Icon<//>
-        <${ParenthesesFill16Icon} />
-        <${IconCopyButton}>ParenthesesFill16Icon<//>
-        <${PauseFill16Icon} />
-        <${IconCopyButton}>PauseFill16Icon<//>
-        <${PencilFill16Icon} />
-        <${IconCopyButton}>PencilFill16Icon<//>
-        <${PhoneCallEndFill16Icon} />
-        <${IconCopyButton}>PhoneCallEndFill16Icon<//>
-        <${PhoneCallInFill16Icon} />
-        <${IconCopyButton}>PhoneCallInFill16Icon<//>
-        <${PhoneCallOutFill16Icon} />
-        <${IconCopyButton}>PhoneCallOutFill16Icon<//>
-        <${PhoneCallPauseFill16Icon} />
-        <${IconCopyButton}>PhoneCallPauseFill16Icon<//>
-        <${PhoneCallSpeakerFill16Icon} />
-        <${IconCopyButton}>PhoneCallSpeakerFill16Icon<//>
-        <${PhoneCallTransferFill16Icon} />
-        <${IconCopyButton}>PhoneCallTransferFill16Icon<//>
-        <${PhoneCallTransferOnlyFill16Icon} />
-        <${IconCopyButton}>PhoneCallTransferOnlyFill16Icon<//>
-        <${PhoneFill16Icon} />
-        <${IconCopyButton}>PhoneFill16Icon<//>
-        <${PinFill16Icon} />
-        <${IconCopyButton}>PinFill16Icon<//>
-        <${PinRemoveFill16Icon} />
-        <${IconCopyButton}>PinRemoveFill16Icon<//>
-        <${PlayCircleFill16Icon} />
-        <${IconCopyButton}>PlayCircleFill16Icon<//>
-        <${PlayFill16Icon} />
-        <${IconCopyButton}>PlayFill16Icon<//>
-        <${PlugFill16Icon} />
-        <${IconCopyButton}>PlugFill16Icon<//>
-        <${PlusCircleFill16Icon} />
-        <${IconCopyButton}>PlusCircleFill16Icon<//>
-        <${PlusFill16Icon} />
-        <${IconCopyButton}>PlusFill16Icon<//>
-        <${PuzzlePieceFill16Icon} />
-        <${IconCopyButton}>PuzzlePieceFill16Icon<//>
-        <${QuestionMarkFill16Icon} />
-        <${IconCopyButton}>QuestionMarkFill16Icon<//>
-        <${QuoteFill16Icon} />
-        <${IconCopyButton}>QuoteFill16Icon<//>
-        <${RearrangeFill16Icon} />
-        <${IconCopyButton}>RearrangeFill16Icon<//>
-        <${RecordFill16Icon} />
-        <${IconCopyButton}>RecordFill16Icon<//>
-        <${ReloadFill16Icon} />
-        <${IconCopyButton}>ReloadFill16Icon<//>
-        <${SandboxFill16Icon} />
-        <${IconCopyButton}>SandboxFill16Icon<//>
-        <${SearchFill16Icon} />
-        <${IconCopyButton}>SearchFill16Icon<//>
-        <${ShapesFill16Icon} />
-        <${IconCopyButton}>ShapesFill16Icon<//>
-        <${ShareFill16Icon} />
-        <${IconCopyButton}>ShareFill16Icon<//>
-        <${ShieldFill16Icon} />
-        <${IconCopyButton}>ShieldFill16Icon<//>
-        <${ShoppingCartFill16Icon} />
-        <${IconCopyButton}>ShoppingCartFill16Icon<//>
-        <${SignpostFill16Icon} />
-        <${IconCopyButton}>SignpostFill16Icon<//>
-        <${SlackFill16Icon} />
-        <${IconCopyButton}>SlackFill16Icon<//>
-        <${SmileSlightFill16Icon} />
-        <${IconCopyButton}>SmileSlightFill16Icon<//>
-        <${SmileyFill16Icon} />
-        <${IconCopyButton}>SmileyFill16Icon<//>
-        <${SortFill16Icon} />
-        <${IconCopyButton}>SortFill16Icon<//>
-        <${SpeechBubbleConversationFill16Icon} />
-        <${IconCopyButton}>SpeechBubbleConversationFill16Icon<//>
-        <${SpeechBubbleLightningBoltFill16Icon} />
-        <${IconCopyButton}>SpeechBubbleLightningBoltFill16Icon<//>
-        <${SpeechBubblePlainFill16Icon} />
-        <${IconCopyButton}>SpeechBubblePlainFill16Icon<//>
-        <${StarFill16Icon} />
-        <${IconCopyButton}>StarFill16Icon<//>
-        <${TableFill16Icon} />
-        <${IconCopyButton}>TableFill16Icon<//>
-        <${TagFill16Icon} />
-        <${IconCopyButton}>TagFill16Icon<//>
-        <${TerminalCliFill16Icon} />
-        <${IconCopyButton}>TerminalCliFill16Icon<//>
-        <${TerminalWindowFill16Icon} />
-        <${IconCopyButton}>TerminalWindowFill16Icon<//>
-        <${TextColorFill16Icon} />
-        <${IconCopyButton}>TextColorFill16Icon<//>
-        <${TextFill16Icon} />
-        <${IconCopyButton}>TextFill16Icon<//>
-        <${ThumbsDownFill16Icon} />
-        <${IconCopyButton}>ThumbsDownFill16Icon<//>
-        <${ThumbsUpFill16Icon} />
-        <${IconCopyButton}>ThumbsUpFill16Icon<//>
-        <${TranslationCreatedFill16Icon} />
-        <${IconCopyButton}>TranslationCreatedFill16Icon<//>
-        <${TranslationDeletedFill16Icon} />
-        <${IconCopyButton}>TranslationDeletedFill16Icon<//>
-        <${TranslationExistsFill16Icon} />
-        <${IconCopyButton}>TranslationExistsFill16Icon<//>
-        <${TranslationOutdatedFill16Icon} />
-        <${IconCopyButton}>TranslationOutdatedFill16Icon<//>
-        <${TranslationUpdatedFill16Icon} />
-        <${IconCopyButton}>TranslationUpdatedFill16Icon<//>
-        <${TrashFill16Icon} />
-        <${IconCopyButton}>TrashFill16Icon<//>
-        <${TwitterFill16Icon} />
-        <${IconCopyButton}>TwitterFill16Icon<//>
-        <${UnderlineFill16Icon} />
-        <${IconCopyButton}>UnderlineFill16Icon<//>
-        <${UploadFill16Icon} />
-        <${IconCopyButton}>UploadFill16Icon<//>
-        <${UserCircleFill16Icon} />
-        <${IconCopyButton}>UserCircleFill16Icon<//>
-        <${UserFollowFill16Icon} />
-        <${IconCopyButton}>UserFollowFill16Icon<//>
-        <${UserGroupFill16Icon} />
-        <${IconCopyButton}>UserGroupFill16Icon<//>
-        <${UserListFill16Icon} />
-        <${IconCopyButton}>UserListFill16Icon<//>
-        <${UserSoloFill16Icon} />
-        <${IconCopyButton}>UserSoloFill16Icon<//>
-        <${UserUnfollowFill16Icon} />
-        <${IconCopyButton}>UserUnfollowFill16Icon<//>
-        <${VoicemailFill16Icon} />
-        <${IconCopyButton}>VoicemailFill16Icon<//>
-        <${VolumeMutedFill16Icon} />
-        <${IconCopyButton}>VolumeMutedFill16Icon<//>
-        <${VolumeUnmutedFill16Icon} />
-        <${IconCopyButton}>VolumeUnmutedFill16Icon<//>
-        <${WechatFill16Icon} />
-        <${IconCopyButton}>WechatFill16Icon<//>
-        <${WhatsappFill16Icon} />
-        <${IconCopyButton}>WhatsappFill16Icon<//>
-        <${WrapLeftFill16Icon} />
-        <${IconCopyButton}>WrapLeftFill16Icon<//>
-        <${WrapRightFill16Icon} />
-        <${IconCopyButton}>WrapRightFill16Icon<//>
-        <${XCircleFill16Icon} />
-        <${IconCopyButton}>XCircleFill16Icon<//>
-        <${XFill16Icon} />
-        <${IconCopyButton}>XFill16Icon<//>
-        <${ZendeskFill16Icon} />
-        <${IconCopyButton}>ZendeskFill16Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "16px (fill)"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(I123Fill16Icon),
+        h(IconCopyButton, {}, "I123Fill16Icon"),
+        h(AdjustFill16Icon),
+        h(IconCopyButton, {}, "AdjustFill16Icon"),
+        h(AlertErrorFill16Icon),
+        h(IconCopyButton, {}, "AlertErrorFill16Icon"),
+        h(AlertWarningFill16Icon),
+        h(IconCopyButton, {}, "AlertWarningFill16Icon"),
+        h(AlignCenterFill16Icon),
+        h(IconCopyButton, {}, "AlignCenterFill16Icon"),
+        h(AlignJustifyFill16Icon),
+        h(IconCopyButton, {}, "AlignJustifyFill16Icon"),
+        h(AlignLeftFill16Icon),
+        h(IconCopyButton, {}, "AlignLeftFill16Icon"),
+        h(AlignRightFill16Icon),
+        h(IconCopyButton, {}, "AlignRightFill16Icon"),
+        h(AltTextFill16Icon),
+        h(IconCopyButton, {}, "AltTextFill16Icon"),
+        h(ArrowLeftFill16Icon),
+        h(IconCopyButton, {}, "ArrowLeftFill16Icon"),
+        h(ArrowLeftSmFill16Icon),
+        h(IconCopyButton, {}, "ArrowLeftSmFill16Icon"),
+        h(ArrowLeftUpFill16Icon),
+        h(IconCopyButton, {}, "ArrowLeftUpFill16Icon"),
+        h(ArrowRetweetFill16Icon),
+        h(IconCopyButton, {}, "ArrowRetweetFill16Icon"),
+        h(ArrowReverseFill16Icon),
+        h(IconCopyButton, {}, "ArrowReverseFill16Icon"),
+        h(ArrowTrendingFill16Icon),
+        h(IconCopyButton, {}, "ArrowTrendingFill16Icon"),
+        h(AsteriskFill16Icon),
+        h(IconCopyButton, {}, "AsteriskFill16Icon"),
+        h(AtFill16Icon),
+        h(IconCopyButton, {}, "AtFill16Icon"),
+        h(BarChartFill16Icon),
+        h(IconCopyButton, {}, "BarChartFill16Icon"),
+        h(BasketballFill16Icon),
+        h(IconCopyButton, {}, "BasketballFill16Icon"),
+        h(BoldFill16Icon),
+        h(IconCopyButton, {}, "BoldFill16Icon"),
+        h(BookClosedFill16Icon),
+        h(IconCopyButton, {}, "BookClosedFill16Icon"),
+        h(BookOpenFill16Icon),
+        h(IconCopyButton, {}, "BookOpenFill16Icon"),
+        h(Box3dFill16Icon),
+        h(IconCopyButton, {}, "Box3dFill16Icon"),
+        h(BuildingFill16Icon),
+        h(IconCopyButton, {}, "BuildingFill16Icon"),
+        h(CalendarFill16Icon),
+        h(IconCopyButton, {}, "CalendarFill16Icon"),
+        h(CameraFill16Icon),
+        h(IconCopyButton, {}, "CameraFill16Icon"),
+        h(CarFill16Icon),
+        h(IconCopyButton, {}, "CarFill16Icon"),
+        h(CenterFill16Icon),
+        h(IconCopyButton, {}, "CenterFill16Icon"),
+        h(CheckBadgeFill16Icon),
+        h(IconCopyButton, {}, "CheckBadgeFill16Icon"),
+        h(CheckBoxDoubleFill16Icon),
+        h(IconCopyButton, {}, "CheckBoxDoubleFill16Icon"),
+        h(CheckBoxFill16Icon),
+        h(IconCopyButton, {}, "CheckBoxFill16Icon"),
+        h(CheckCircleFill16Icon),
+        h(IconCopyButton, {}, "CheckCircleFill16Icon"),
+        h(CheckDoubleFill16Icon),
+        h(IconCopyButton, {}, "CheckDoubleFill16Icon"),
+        h(CheckLgFill16Icon),
+        h(IconCopyButton, {}, "CheckLgFill16Icon"),
+        h(CheckSmFill16Icon),
+        h(IconCopyButton, {}, "CheckSmFill16Icon"),
+        h(ChevronBoxFill16Icon),
+        h(IconCopyButton, {}, "ChevronBoxFill16Icon"),
+        h(ChevronDoubleDownFill16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleDownFill16Icon"),
+        h(ChevronDoubleLeftFill16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleLeftFill16Icon"),
+        h(ChevronDoubleRightFill16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleRightFill16Icon"),
+        h(ChevronDoubleUpFill16Icon),
+        h(IconCopyButton, {}, "ChevronDoubleUpFill16Icon"),
+        h(ChevronDownFill16Icon),
+        h(IconCopyButton, {}, "ChevronDownFill16Icon"),
+        h(ChevronLeftFill16Icon),
+        h(IconCopyButton, {}, "ChevronLeftFill16Icon"),
+        h(ChevronRightFill16Icon),
+        h(IconCopyButton, {}, "ChevronRightFill16Icon"),
+        h(ChevronUpFill16Icon),
+        h(IconCopyButton, {}, "ChevronUpFill16Icon"),
+        h(CircleFill16Icon),
+        h(IconCopyButton, {}, "CircleFill16Icon"),
+        h(CircleFullFill16Icon),
+        h(IconCopyButton, {}, "CircleFullFill16Icon"),
+        h(CircleLineFill16Icon),
+        h(IconCopyButton, {}, "CircleLineFill16Icon"),
+        h(CircleSmFill16Icon),
+        h(IconCopyButton, {}, "CircleSmFill16Icon"),
+        h(ClipboardBlankFill16Icon),
+        h(IconCopyButton, {}, "ClipboardBlankFill16Icon"),
+        h(ClipboardCheckFill16Icon),
+        h(IconCopyButton, {}, "ClipboardCheckFill16Icon"),
+        h(ClipboardListFill16Icon),
+        h(IconCopyButton, {}, "ClipboardListFill16Icon"),
+        h(ClockCycleFill16Icon),
+        h(IconCopyButton, {}, "ClockCycleFill16Icon"),
+        h(ClockFill16Icon),
+        h(IconCopyButton, {}, "ClockFill16Icon"),
+        h(ClockInFill16Icon),
+        h(IconCopyButton, {}, "ClockInFill16Icon"),
+        h(ClockOutFill16Icon),
+        h(IconCopyButton, {}, "ClockOutFill16Icon"),
+        h(CopyFill16Icon),
+        h(IconCopyButton, {}, "CopyFill16Icon"),
+        h(CreditCardFill16Icon),
+        h(IconCopyButton, {}, "CreditCardFill16Icon"),
+        h(CssFill16Icon),
+        h(IconCopyButton, {}, "CssFill16Icon"),
+        h(CursorArrowFill16Icon),
+        h(IconCopyButton, {}, "CursorArrowFill16Icon"),
+        h(CutleryFill16Icon),
+        h(IconCopyButton, {}, "CutleryFill16Icon"),
+        h(DashFill16Icon),
+        h(IconCopyButton, {}, "DashFill16Icon"),
+        h(DatabaseFill16Icon),
+        h(IconCopyButton, {}, "DatabaseFill16Icon"),
+        h(DecimalFill16Icon),
+        h(IconCopyButton, {}, "DecimalFill16Icon"),
+        h(DirectionLtrFill16Icon),
+        h(IconCopyButton, {}, "DirectionLtrFill16Icon"),
+        h(DirectionRtlFill16Icon),
+        h(IconCopyButton, {}, "DirectionRtlFill16Icon"),
+        h(DocumentSearchFill16Icon),
+        h(IconCopyButton, {}, "DocumentSearchFill16Icon"),
+        h(DownloadFill16Icon),
+        h(IconCopyButton, {}, "DownloadFill16Icon"),
+        h(DuplicateFill16Icon),
+        h(IconCopyButton, {}, "DuplicateFill16Icon"),
+        h(EditRedoFill16Icon),
+        h(IconCopyButton, {}, "EditRedoFill16Icon"),
+        h(EditUndoFill16Icon),
+        h(IconCopyButton, {}, "EditUndoFill16Icon"),
+        h(EmailFill16Icon),
+        h(IconCopyButton, {}, "EmailFill16Icon"),
+        h(EraserFill16Icon),
+        h(IconCopyButton, {}, "EraserFill16Icon"),
+        h(ExitFill16Icon),
+        h(IconCopyButton, {}, "ExitFill16Icon"),
+        h(EyeFill16Icon),
+        h(IconCopyButton, {}, "EyeFill16Icon"),
+        h(EyeHideFill16Icon),
+        h(IconCopyButton, {}, "EyeHideFill16Icon"),
+        h(FacebookFill16Icon),
+        h(IconCopyButton, {}, "FacebookFill16Icon"),
+        h(FileDocumentFill16Icon),
+        h(IconCopyButton, {}, "FileDocumentFill16Icon"),
+        h(FileErrorFill16Icon),
+        h(IconCopyButton, {}, "FileErrorFill16Icon"),
+        h(FileGenericFill16Icon),
+        h(IconCopyButton, {}, "FileGenericFill16Icon"),
+        h(FileImageFill16Icon),
+        h(IconCopyButton, {}, "FileImageFill16Icon"),
+        h(FilePdfFill16Icon),
+        h(IconCopyButton, {}, "FilePdfFill16Icon"),
+        h(FilePresentationFill16Icon),
+        h(IconCopyButton, {}, "FilePresentationFill16Icon"),
+        h(FileSpreadsheetFill16Icon),
+        h(IconCopyButton, {}, "FileSpreadsheetFill16Icon"),
+        h(FileZipFill16Icon),
+        h(IconCopyButton, {}, "FileZipFill16Icon"),
+        h(FilterFill16Icon),
+        h(IconCopyButton, {}, "FilterFill16Icon"),
+        h(FlagFill16Icon),
+        h(IconCopyButton, {}, "FlagFill16Icon"),
+        h(FolderClosedFill16Icon),
+        h(IconCopyButton, {}, "FolderClosedFill16Icon"),
+        h(FolderOpenFill16Icon),
+        h(IconCopyButton, {}, "FolderOpenFill16Icon"),
+        h(FullWidthFill16Icon),
+        h(IconCopyButton, {}, "FullWidthFill16Icon"),
+        h(GearFill16Icon),
+        h(IconCopyButton, {}, "GearFill16Icon"),
+        h(GithubFill16Icon),
+        h(IconCopyButton, {}, "GithubFill16Icon"),
+        h(GlobeFill16Icon),
+        h(IconCopyButton, {}, "GlobeFill16Icon"),
+        h(Grid2x2Fill16Icon),
+        h(IconCopyButton, {}, "Grid2x2Fill16Icon"),
+        h(Grid3x3Fill16Icon),
+        h(IconCopyButton, {}, "Grid3x3Fill16Icon"),
+        h(HeadingFill16Icon),
+        h(IconCopyButton, {}, "HeadingFill16Icon"),
+        h(HeartFill16Icon),
+        h(IconCopyButton, {}, "HeartFill16Icon"),
+        h(HistoryFill16Icon),
+        h(IconCopyButton, {}, "HistoryFill16Icon"),
+        h(HomeFill16Icon),
+        h(IconCopyButton, {}, "HomeFill16Icon"),
+        h(HorizontalRuleFill16Icon),
+        h(IconCopyButton, {}, "HorizontalRuleFill16Icon"),
+        h(ImageFill16Icon),
+        h(IconCopyButton, {}, "ImageFill16Icon"),
+        h(InboxFill16Icon),
+        h(IconCopyButton, {}, "InboxFill16Icon"),
+        h(IndentDecreaseFill16Icon),
+        h(IconCopyButton, {}, "IndentDecreaseFill16Icon"),
+        h(IndentIncreaseFill16Icon),
+        h(IconCopyButton, {}, "IndentIncreaseFill16Icon"),
+        h(InfoFill16Icon),
+        h(IconCopyButton, {}, "InfoFill16Icon"),
+        h(InterlockingRingsFill16Icon),
+        h(IconCopyButton, {}, "InterlockingRingsFill16Icon"),
+        h(ItalicFill16Icon),
+        h(IconCopyButton, {}, "ItalicFill16Icon"),
+        h(LeafFill16Icon),
+        h(IconCopyButton, {}, "LeafFill16Icon"),
+        h(LifesaverFill16Icon),
+        h(IconCopyButton, {}, "LifesaverFill16Icon"),
+        h(LightbulbFill16Icon),
+        h(IconCopyButton, {}, "LightbulbFill16Icon"),
+        h(LightningBoltFill16Icon),
+        h(IconCopyButton, {}, "LightningBoltFill16Icon"),
+        h(LineGraphFill16Icon),
+        h(IconCopyButton, {}, "LineGraphFill16Icon"),
+        h(LineSocialFill16Icon),
+        h(IconCopyButton, {}, "LineSocialFill16Icon"),
+        h(LinkFill16Icon),
+        h(IconCopyButton, {}, "LinkFill16Icon"),
+        h(LinkRemoveFill16Icon),
+        h(IconCopyButton, {}, "LinkRemoveFill16Icon"),
+        h(LinkedinFill16Icon),
+        h(IconCopyButton, {}, "LinkedinFill16Icon"),
+        h(ListBulletFill16Icon),
+        h(IconCopyButton, {}, "ListBulletFill16Icon"),
+        h(ListNumberFill16Icon),
+        h(IconCopyButton, {}, "ListNumberFill16Icon"),
+        h(ListNumberRtlFill16Icon),
+        h(IconCopyButton, {}, "ListNumberRtlFill16Icon"),
+        h(LocationFill16Icon),
+        h(IconCopyButton, {}, "LocationFill16Icon"),
+        h(LockLockedFill16Icon),
+        h(IconCopyButton, {}, "LockLockedFill16Icon"),
+        h(LockUnlockedFill16Icon),
+        h(IconCopyButton, {}, "LockUnlockedFill16Icon"),
+        h(MarkupFill16Icon),
+        h(IconCopyButton, {}, "MarkupFill16Icon"),
+        h(MaximizeFill16Icon),
+        h(IconCopyButton, {}, "MaximizeFill16Icon"),
+        h(MegaphoneFill16Icon),
+        h(IconCopyButton, {}, "MegaphoneFill16Icon"),
+        h(MenuFill16Icon),
+        h(IconCopyButton, {}, "MenuFill16Icon"),
+        h(MessengerFill16Icon),
+        h(IconCopyButton, {}, "MessengerFill16Icon"),
+        h(MicrophoneOffFill16Icon),
+        h(IconCopyButton, {}, "MicrophoneOffFill16Icon"),
+        h(MicrophoneOnFill16Icon),
+        h(IconCopyButton, {}, "MicrophoneOnFill16Icon"),
+        h(MinimizeFill16Icon),
+        h(IconCopyButton, {}, "MinimizeFill16Icon"),
+        h(MobilePhoneFill16Icon),
+        h(IconCopyButton, {}, "MobilePhoneFill16Icon"),
+        h(MonitorFill16Icon),
+        h(IconCopyButton, {}, "MonitorFill16Icon"),
+        h(MultilineFill16Icon),
+        h(IconCopyButton, {}, "MultilineFill16Icon"),
+        h(NewWindowFill16Icon),
+        h(IconCopyButton, {}, "NewWindowFill16Icon"),
+        h(NotesFill16Icon),
+        h(IconCopyButton, {}, "NotesFill16Icon"),
+        h(NotificationFill16Icon),
+        h(IconCopyButton, {}, "NotificationFill16Icon"),
+        h(NumberFill16Icon),
+        h(IconCopyButton, {}, "NumberFill16Icon"),
+        h(OriginalSizeFill16Icon),
+        h(IconCopyButton, {}, "OriginalSizeFill16Icon"),
+        h(OverflowFill16Icon),
+        h(IconCopyButton, {}, "OverflowFill16Icon"),
+        h(OverflowVerticalFill16Icon),
+        h(IconCopyButton, {}, "OverflowVerticalFill16Icon"),
+        h(PaletteFill16Icon),
+        h(IconCopyButton, {}, "PaletteFill16Icon"),
+        h(PanelsFill16Icon),
+        h(IconCopyButton, {}, "PanelsFill16Icon"),
+        h(ParenthesesFill16Icon),
+        h(IconCopyButton, {}, "ParenthesesFill16Icon"),
+        h(PauseFill16Icon),
+        h(IconCopyButton, {}, "PauseFill16Icon"),
+        h(PencilFill16Icon),
+        h(IconCopyButton, {}, "PencilFill16Icon"),
+        h(PhoneCallEndFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallEndFill16Icon"),
+        h(PhoneCallInFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallInFill16Icon"),
+        h(PhoneCallOutFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallOutFill16Icon"),
+        h(PhoneCallPauseFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallPauseFill16Icon"),
+        h(PhoneCallSpeakerFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallSpeakerFill16Icon"),
+        h(PhoneCallTransferFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferFill16Icon"),
+        h(PhoneCallTransferOnlyFill16Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferOnlyFill16Icon"),
+        h(PhoneFill16Icon),
+        h(IconCopyButton, {}, "PhoneFill16Icon"),
+        h(PinFill16Icon),
+        h(IconCopyButton, {}, "PinFill16Icon"),
+        h(PinRemoveFill16Icon),
+        h(IconCopyButton, {}, "PinRemoveFill16Icon"),
+        h(PlayCircleFill16Icon),
+        h(IconCopyButton, {}, "PlayCircleFill16Icon"),
+        h(PlayFill16Icon),
+        h(IconCopyButton, {}, "PlayFill16Icon"),
+        h(PlugFill16Icon),
+        h(IconCopyButton, {}, "PlugFill16Icon"),
+        h(PlusCircleFill16Icon),
+        h(IconCopyButton, {}, "PlusCircleFill16Icon"),
+        h(PlusFill16Icon),
+        h(IconCopyButton, {}, "PlusFill16Icon"),
+        h(PuzzlePieceFill16Icon),
+        h(IconCopyButton, {}, "PuzzlePieceFill16Icon"),
+        h(QuestionMarkFill16Icon),
+        h(IconCopyButton, {}, "QuestionMarkFill16Icon"),
+        h(QuoteFill16Icon),
+        h(IconCopyButton, {}, "QuoteFill16Icon"),
+        h(RearrangeFill16Icon),
+        h(IconCopyButton, {}, "RearrangeFill16Icon"),
+        h(RecordFill16Icon),
+        h(IconCopyButton, {}, "RecordFill16Icon"),
+        h(ReloadFill16Icon),
+        h(IconCopyButton, {}, "ReloadFill16Icon"),
+        h(SandboxFill16Icon),
+        h(IconCopyButton, {}, "SandboxFill16Icon"),
+        h(SearchFill16Icon),
+        h(IconCopyButton, {}, "SearchFill16Icon"),
+        h(ShapesFill16Icon),
+        h(IconCopyButton, {}, "ShapesFill16Icon"),
+        h(ShareFill16Icon),
+        h(IconCopyButton, {}, "ShareFill16Icon"),
+        h(ShieldFill16Icon),
+        h(IconCopyButton, {}, "ShieldFill16Icon"),
+        h(ShoppingCartFill16Icon),
+        h(IconCopyButton, {}, "ShoppingCartFill16Icon"),
+        h(SignpostFill16Icon),
+        h(IconCopyButton, {}, "SignpostFill16Icon"),
+        h(SlackFill16Icon),
+        h(IconCopyButton, {}, "SlackFill16Icon"),
+        h(SmileSlightFill16Icon),
+        h(IconCopyButton, {}, "SmileSlightFill16Icon"),
+        h(SmileyFill16Icon),
+        h(IconCopyButton, {}, "SmileyFill16Icon"),
+        h(SortFill16Icon),
+        h(IconCopyButton, {}, "SortFill16Icon"),
+        h(SpeechBubbleConversationFill16Icon),
+        h(IconCopyButton, {}, "SpeechBubbleConversationFill16Icon"),
+        h(SpeechBubbleLightningBoltFill16Icon),
+        h(IconCopyButton, {}, "SpeechBubbleLightningBoltFill16Icon"),
+        h(SpeechBubblePlainFill16Icon),
+        h(IconCopyButton, {}, "SpeechBubblePlainFill16Icon"),
+        h(StarFill16Icon),
+        h(IconCopyButton, {}, "StarFill16Icon"),
+        h(TableFill16Icon),
+        h(IconCopyButton, {}, "TableFill16Icon"),
+        h(TagFill16Icon),
+        h(IconCopyButton, {}, "TagFill16Icon"),
+        h(TerminalCliFill16Icon),
+        h(IconCopyButton, {}, "TerminalCliFill16Icon"),
+        h(TerminalWindowFill16Icon),
+        h(IconCopyButton, {}, "TerminalWindowFill16Icon"),
+        h(TextColorFill16Icon),
+        h(IconCopyButton, {}, "TextColorFill16Icon"),
+        h(TextFill16Icon),
+        h(IconCopyButton, {}, "TextFill16Icon"),
+        h(ThumbsDownFill16Icon),
+        h(IconCopyButton, {}, "ThumbsDownFill16Icon"),
+        h(ThumbsUpFill16Icon),
+        h(IconCopyButton, {}, "ThumbsUpFill16Icon"),
+        h(TranslationCreatedFill16Icon),
+        h(IconCopyButton, {}, "TranslationCreatedFill16Icon"),
+        h(TranslationDeletedFill16Icon),
+        h(IconCopyButton, {}, "TranslationDeletedFill16Icon"),
+        h(TranslationExistsFill16Icon),
+        h(IconCopyButton, {}, "TranslationExistsFill16Icon"),
+        h(TranslationOutdatedFill16Icon),
+        h(IconCopyButton, {}, "TranslationOutdatedFill16Icon"),
+        h(TranslationUpdatedFill16Icon),
+        h(IconCopyButton, {}, "TranslationUpdatedFill16Icon"),
+        h(TrashFill16Icon),
+        h(IconCopyButton, {}, "TrashFill16Icon"),
+        h(TwitterFill16Icon),
+        h(IconCopyButton, {}, "TwitterFill16Icon"),
+        h(UnderlineFill16Icon),
+        h(IconCopyButton, {}, "UnderlineFill16Icon"),
+        h(UploadFill16Icon),
+        h(IconCopyButton, {}, "UploadFill16Icon"),
+        h(UserCircleFill16Icon),
+        h(IconCopyButton, {}, "UserCircleFill16Icon"),
+        h(UserFollowFill16Icon),
+        h(IconCopyButton, {}, "UserFollowFill16Icon"),
+        h(UserGroupFill16Icon),
+        h(IconCopyButton, {}, "UserGroupFill16Icon"),
+        h(UserListFill16Icon),
+        h(IconCopyButton, {}, "UserListFill16Icon"),
+        h(UserSoloFill16Icon),
+        h(IconCopyButton, {}, "UserSoloFill16Icon"),
+        h(UserUnfollowFill16Icon),
+        h(IconCopyButton, {}, "UserUnfollowFill16Icon"),
+        h(VoicemailFill16Icon),
+        h(IconCopyButton, {}, "VoicemailFill16Icon"),
+        h(VolumeMutedFill16Icon),
+        h(IconCopyButton, {}, "VolumeMutedFill16Icon"),
+        h(VolumeUnmutedFill16Icon),
+        h(IconCopyButton, {}, "VolumeUnmutedFill16Icon"),
+        h(WechatFill16Icon),
+        h(IconCopyButton, {}, "WechatFill16Icon"),
+        h(WhatsappFill16Icon),
+        h(IconCopyButton, {}, "WhatsappFill16Icon"),
+        h(WrapLeftFill16Icon),
+        h(IconCopyButton, {}, "WrapLeftFill16Icon"),
+        h(WrapRightFill16Icon),
+        h(IconCopyButton, {}, "WrapRightFill16Icon"),
+        h(XCircleFill16Icon),
+        h(IconCopyButton, {}, "XCircleFill16Icon"),
+        h(XFill16Icon),
+        h(IconCopyButton, {}, "XFill16Icon"),
+        h(ZendeskFill16Icon),
+        h(IconCopyButton, {}, "ZendeskFill16Icon"),
+      ),
+    ];
   }
 }
