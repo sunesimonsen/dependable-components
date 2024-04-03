@@ -7,10 +7,7 @@
   "exports": {
     "./*": "./src/*.js"
   },
-  "files": [
-    "svgs",
-    "components"
-  ],
+  "files": ["src"],
   "scripts": {
     "format": "cd ../.. && npm run format",
     "import-icons": "node ./scripts/import-icons.js && npm run format"
