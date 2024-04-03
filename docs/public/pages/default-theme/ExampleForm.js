@@ -20,7 +20,7 @@ export default class Example {
           <label for="last-name">Last name:</label>
           <${TextInput} id="last-name" placeholder="Last name" />
           <label for="gender">Gender:</label>
-          <${Select}>
+          <${Select} id="gender">
             <${SelectInput}>Select a gender<//>
             <${SelectPopup}>
               <${SelectOption} key="other" value="female">Other<//>

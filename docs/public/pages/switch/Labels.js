@@ -8,14 +8,14 @@ export default class Example {
     return html`
       <${Center}>
         <${ColumnLayout} columns="auto auto" justifyItems="start">
-          <${Switch} id="switch-default" />
-          <label for="switch-default">Default</label>
-          <${Switch} id="switch-checked" checked />
-          <label for="switch-checked">Checked</label>
-          <${Switch} id="switch-disabled" disabled />
-          <label for="switch-disabled">Disabled</label>
-          <${Switch} id="switch-checked-disabled" disabled checked />
-          <label for="switch-checked-disabled">Disabled (checked)</label>
+          <${Switch} id="labels-switch-default" />
+          <label for="labels-switch-default">Default</label>
+          <${Switch} id="labels-switch-checked" checked />
+          <label for="labels-switch-checked">Checked</label>
+          <${Switch} id="labels-switch-disabled" disabled />
+          <label for="labels-switch-disabled">Disabled</label>
+          <${Switch} id="labels-switch-checked-disabled" disabled checked />
+          <label for="labels-switch-checked-disabled">Disabled (checked)</label>
         <//>
       <//>
     `;

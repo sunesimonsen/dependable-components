@@ -51,9 +51,10 @@ export const textInputStyles = css`
 `;
 
 export class TextInput {
-  render({ className, ...other }) {
+  render({ className, autocomplete = "false", ...other }) {
     return h("input", {
       type: "text",
+      autocomplete,
       className: classes(className, textInputStyles),
       ...other,
     });

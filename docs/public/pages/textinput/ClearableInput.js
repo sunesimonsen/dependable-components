@@ -23,7 +23,7 @@ class ClearableExample {
       alert(`Current value: ${this.value()}`);
     };
 
-    this.id = id++;
+    this.id = `clearable-${id++}`;
   }
 
   render({ Icon }) {
