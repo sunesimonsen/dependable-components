@@ -7,8 +7,12 @@
   "exports": {
     "./*": "./src/*.js"
   },
+  "files": [
+    "svgs",
+    "components"
+  ],
   "scripts": {
-    "format": "prettier --write '**/*.{js,mjs,md,json}'",
+    "format": "cd ../.. && npm run format",
     "import-icons": "node ./scripts/import-icons.js && npm run format"
   },
   "devDependencies": {
@@ -17,12 +21,13 @@
     "@transformation/file": "^7.0.2",
     "@transformation/glob": "^7.0.2",
     "@zendeskgarden/svg-icons": "^7.0.0",
-    "change-case": "^4.1.2"
+    "change-case": "^4.1.2",
+    "fast-xml-parser": "^4.3.6"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@dependable/htm": "^0.2.0"
+    "@dependable/view": "^0.19.2"
   }
 }

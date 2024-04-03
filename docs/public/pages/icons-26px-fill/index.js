@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -60,48 +60,54 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>26px (fill)<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${CustomerListsFill26Icon} />
-        <${IconCopyButton}>CustomerListsFill26Icon<//>
-        <${EmailFill26Icon} />
-        <${IconCopyButton}>EmailFill26Icon<//>
-        <${GroupFill26Icon} />
-        <${IconCopyButton}>GroupFill26Icon<//>
-        <${HomeFill26Icon} />
-        <${IconCopyButton}>HomeFill26Icon<//>
-        <${SettingsFill26Icon} />
-        <${IconCopyButton}>SettingsFill26Icon<//>
-        <${ViewsFill26Icon} />
-        <${IconCopyButton}>ViewsFill26Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "26px (fill)"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(CustomerListsFill26Icon),
+        h(IconCopyButton, {}, "CustomerListsFill26Icon"),
+        h(EmailFill26Icon),
+        h(IconCopyButton, {}, "EmailFill26Icon"),
+        h(GroupFill26Icon),
+        h(IconCopyButton, {}, "GroupFill26Icon"),
+        h(HomeFill26Icon),
+        h(IconCopyButton, {}, "HomeFill26Icon"),
+        h(SettingsFill26Icon),
+        h(IconCopyButton, {}, "SettingsFill26Icon"),
+        h(ViewsFill26Icon),
+        h(IconCopyButton, {}, "ViewsFill26Icon"),
+      ),
+    ];
   }
 }

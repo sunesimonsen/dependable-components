@@ -20,6 +20,9 @@
     "prettier": "^3.2.5"
   },
   "workspaces": {
-    "packages": ["packages/*", "docs"]
+    "packages": [
+      "packages/*",
+      "docs"
+    ]
   }
 }

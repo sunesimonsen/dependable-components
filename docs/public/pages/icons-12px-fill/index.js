@@ -1,4 +1,4 @@
-import { html } from "@dependable/htm";
+import { h } from "@dependable/view";
 import { Title, SubTitle, Line } from "@dependable/styleguide";
 import { Anchor } from "@dependable/components/Anchor/v0";
 import { css } from "stylewars";
@@ -267,462 +267,468 @@ class IconCopyButton {
   }
 
   render({ children }) {
-    return html`
-      <button
-        onClick=${this.onClick}
-        className=${copyStyles}
-        title="Click to copy"
-      >
-        ${children}
-      </button>
-    `;
+    return h(
+      "button",
+      { onClick: this.onClick, className: copyStyles, title: "Click to copy" },
+      children,
+    );
   }
 }
 
 export default class Page {
   render() {
-    return html`
-      <${Title}>12px (fill)<//>
-      <${SubTitle}>
-        ${"These icon components is extracted from "}
-        <${Anchor} href="https://garden.zendesk.com/design/icons">
-          Zendesk Garden
-        <//>
-        ${" and turned into components."}
-      <//>
-      <${Line} />
-      <p>
-        Tip <${TipIcon} /> click on the icon label to copy the import to that
-        clipboard.
-      </p>
-      <div className=${columnStyles}>
-        <${I123Fill12Icon} />
-        <${IconCopyButton}>I123Fill12Icon<//>
-        <${AdjustFill12Icon} />
-        <${IconCopyButton}>AdjustFill12Icon<//>
-        <${AlertErrorFill12Icon} />
-        <${IconCopyButton}>AlertErrorFill12Icon<//>
-        <${AlertWarningFill12Icon} />
-        <${IconCopyButton}>AlertWarningFill12Icon<//>
-        <${AlignCenterFill12Icon} />
-        <${IconCopyButton}>AlignCenterFill12Icon<//>
-        <${AlignJustifyFill12Icon} />
-        <${IconCopyButton}>AlignJustifyFill12Icon<//>
-        <${AlignLeftFill12Icon} />
-        <${IconCopyButton}>AlignLeftFill12Icon<//>
-        <${AlignRightFill12Icon} />
-        <${IconCopyButton}>AlignRightFill12Icon<//>
-        <${AltTextFill12Icon} />
-        <${IconCopyButton}>AltTextFill12Icon<//>
-        <${ArrowLeftFill12Icon} />
-        <${IconCopyButton}>ArrowLeftFill12Icon<//>
-        <${ArrowLeftSmFill12Icon} />
-        <${IconCopyButton}>ArrowLeftSmFill12Icon<//>
-        <${ArrowLeftUpFill12Icon} />
-        <${IconCopyButton}>ArrowLeftUpFill12Icon<//>
-        <${ArrowRetweetFill12Icon} />
-        <${IconCopyButton}>ArrowRetweetFill12Icon<//>
-        <${ArrowReverseFill12Icon} />
-        <${IconCopyButton}>ArrowReverseFill12Icon<//>
-        <${ArrowTrendingFill12Icon} />
-        <${IconCopyButton}>ArrowTrendingFill12Icon<//>
-        <${AsteriskFill12Icon} />
-        <${IconCopyButton}>AsteriskFill12Icon<//>
-        <${AtFill12Icon} />
-        <${IconCopyButton}>AtFill12Icon<//>
-        <${BarChartFill12Icon} />
-        <${IconCopyButton}>BarChartFill12Icon<//>
-        <${BasketballFill12Icon} />
-        <${IconCopyButton}>BasketballFill12Icon<//>
-        <${BoldFill12Icon} />
-        <${IconCopyButton}>BoldFill12Icon<//>
-        <${BookClosedFill12Icon} />
-        <${IconCopyButton}>BookClosedFill12Icon<//>
-        <${BookOpenFill12Icon} />
-        <${IconCopyButton}>BookOpenFill12Icon<//>
-        <${Box3dFill12Icon} />
-        <${IconCopyButton}>Box3dFill12Icon<//>
-        <${BuildingFill12Icon} />
-        <${IconCopyButton}>BuildingFill12Icon<//>
-        <${CalendarFill12Icon} />
-        <${IconCopyButton}>CalendarFill12Icon<//>
-        <${CameraFill12Icon} />
-        <${IconCopyButton}>CameraFill12Icon<//>
-        <${CarFill12Icon} />
-        <${IconCopyButton}>CarFill12Icon<//>
-        <${CenterFill12Icon} />
-        <${IconCopyButton}>CenterFill12Icon<//>
-        <${CheckBadgeFill12Icon} />
-        <${IconCopyButton}>CheckBadgeFill12Icon<//>
-        <${CheckBoxDoubleFill12Icon} />
-        <${IconCopyButton}>CheckBoxDoubleFill12Icon<//>
-        <${CheckBoxFill12Icon} />
-        <${IconCopyButton}>CheckBoxFill12Icon<//>
-        <${CheckCircleFill12Icon} />
-        <${IconCopyButton}>CheckCircleFill12Icon<//>
-        <${CheckDoubleFill12Icon} />
-        <${IconCopyButton}>CheckDoubleFill12Icon<//>
-        <${CheckLgFill12Icon} />
-        <${IconCopyButton}>CheckLgFill12Icon<//>
-        <${CheckSmFill12Icon} />
-        <${IconCopyButton}>CheckSmFill12Icon<//>
-        <${ChevronBoxFill12Icon} />
-        <${IconCopyButton}>ChevronBoxFill12Icon<//>
-        <${ChevronDoubleDownFill12Icon} />
-        <${IconCopyButton}>ChevronDoubleDownFill12Icon<//>
-        <${ChevronDoubleLeftFill12Icon} />
-        <${IconCopyButton}>ChevronDoubleLeftFill12Icon<//>
-        <${ChevronDoubleRightFill12Icon} />
-        <${IconCopyButton}>ChevronDoubleRightFill12Icon<//>
-        <${ChevronDoubleUpFill12Icon} />
-        <${IconCopyButton}>ChevronDoubleUpFill12Icon<//>
-        <${ChevronDownFill12Icon} />
-        <${IconCopyButton}>ChevronDownFill12Icon<//>
-        <${ChevronLeftFill12Icon} />
-        <${IconCopyButton}>ChevronLeftFill12Icon<//>
-        <${ChevronRightFill12Icon} />
-        <${IconCopyButton}>ChevronRightFill12Icon<//>
-        <${ChevronUpFill12Icon} />
-        <${IconCopyButton}>ChevronUpFill12Icon<//>
-        <${CircleFill12Icon} />
-        <${IconCopyButton}>CircleFill12Icon<//>
-        <${CircleFullFill12Icon} />
-        <${IconCopyButton}>CircleFullFill12Icon<//>
-        <${CircleLineFill12Icon} />
-        <${IconCopyButton}>CircleLineFill12Icon<//>
-        <${CircleSmFill12Icon} />
-        <${IconCopyButton}>CircleSmFill12Icon<//>
-        <${ClipboardBlankFill12Icon} />
-        <${IconCopyButton}>ClipboardBlankFill12Icon<//>
-        <${ClipboardCheckFill12Icon} />
-        <${IconCopyButton}>ClipboardCheckFill12Icon<//>
-        <${ClipboardListFill12Icon} />
-        <${IconCopyButton}>ClipboardListFill12Icon<//>
-        <${ClockCycleFill12Icon} />
-        <${IconCopyButton}>ClockCycleFill12Icon<//>
-        <${ClockFill12Icon} />
-        <${IconCopyButton}>ClockFill12Icon<//>
-        <${ClockInFill12Icon} />
-        <${IconCopyButton}>ClockInFill12Icon<//>
-        <${ClockOutFill12Icon} />
-        <${IconCopyButton}>ClockOutFill12Icon<//>
-        <${CopyFill12Icon} />
-        <${IconCopyButton}>CopyFill12Icon<//>
-        <${CreditCardFill12Icon} />
-        <${IconCopyButton}>CreditCardFill12Icon<//>
-        <${CssFill12Icon} />
-        <${IconCopyButton}>CssFill12Icon<//>
-        <${CursorArrowFill12Icon} />
-        <${IconCopyButton}>CursorArrowFill12Icon<//>
-        <${CutleryFill12Icon} />
-        <${IconCopyButton}>CutleryFill12Icon<//>
-        <${DashFill12Icon} />
-        <${IconCopyButton}>DashFill12Icon<//>
-        <${DatabaseFill12Icon} />
-        <${IconCopyButton}>DatabaseFill12Icon<//>
-        <${DecimalFill12Icon} />
-        <${IconCopyButton}>DecimalFill12Icon<//>
-        <${DirectionLtrFill12Icon} />
-        <${IconCopyButton}>DirectionLtrFill12Icon<//>
-        <${DirectionRtlFill12Icon} />
-        <${IconCopyButton}>DirectionRtlFill12Icon<//>
-        <${DocumentSearchFill12Icon} />
-        <${IconCopyButton}>DocumentSearchFill12Icon<//>
-        <${DownloadFill12Icon} />
-        <${IconCopyButton}>DownloadFill12Icon<//>
-        <${DuplicateFill12Icon} />
-        <${IconCopyButton}>DuplicateFill12Icon<//>
-        <${EditRedoFill12Icon} />
-        <${IconCopyButton}>EditRedoFill12Icon<//>
-        <${EditUndoFill12Icon} />
-        <${IconCopyButton}>EditUndoFill12Icon<//>
-        <${EmailFill12Icon} />
-        <${IconCopyButton}>EmailFill12Icon<//>
-        <${EraserFill12Icon} />
-        <${IconCopyButton}>EraserFill12Icon<//>
-        <${ExitFill12Icon} />
-        <${IconCopyButton}>ExitFill12Icon<//>
-        <${EyeFill12Icon} />
-        <${IconCopyButton}>EyeFill12Icon<//>
-        <${EyeHideFill12Icon} />
-        <${IconCopyButton}>EyeHideFill12Icon<//>
-        <${FacebookFill12Icon} />
-        <${IconCopyButton}>FacebookFill12Icon<//>
-        <${FileDocumentFill12Icon} />
-        <${IconCopyButton}>FileDocumentFill12Icon<//>
-        <${FileErrorFill12Icon} />
-        <${IconCopyButton}>FileErrorFill12Icon<//>
-        <${FileGenericFill12Icon} />
-        <${IconCopyButton}>FileGenericFill12Icon<//>
-        <${FileImageFill12Icon} />
-        <${IconCopyButton}>FileImageFill12Icon<//>
-        <${FilePdfFill12Icon} />
-        <${IconCopyButton}>FilePdfFill12Icon<//>
-        <${FilePresentationFill12Icon} />
-        <${IconCopyButton}>FilePresentationFill12Icon<//>
-        <${FileSpreadsheetFill12Icon} />
-        <${IconCopyButton}>FileSpreadsheetFill12Icon<//>
-        <${FileZipFill12Icon} />
-        <${IconCopyButton}>FileZipFill12Icon<//>
-        <${FilterFill12Icon} />
-        <${IconCopyButton}>FilterFill12Icon<//>
-        <${FlagFill12Icon} />
-        <${IconCopyButton}>FlagFill12Icon<//>
-        <${FolderClosedFill12Icon} />
-        <${IconCopyButton}>FolderClosedFill12Icon<//>
-        <${FolderOpenFill12Icon} />
-        <${IconCopyButton}>FolderOpenFill12Icon<//>
-        <${FullWidthFill12Icon} />
-        <${IconCopyButton}>FullWidthFill12Icon<//>
-        <${GearFill12Icon} />
-        <${IconCopyButton}>GearFill12Icon<//>
-        <${GithubFill12Icon} />
-        <${IconCopyButton}>GithubFill12Icon<//>
-        <${GlobeFill12Icon} />
-        <${IconCopyButton}>GlobeFill12Icon<//>
-        <${Grid2x2Fill12Icon} />
-        <${IconCopyButton}>Grid2x2Fill12Icon<//>
-        <${Grid3x3Fill12Icon} />
-        <${IconCopyButton}>Grid3x3Fill12Icon<//>
-        <${HeadingFill12Icon} />
-        <${IconCopyButton}>HeadingFill12Icon<//>
-        <${HeartFill12Icon} />
-        <${IconCopyButton}>HeartFill12Icon<//>
-        <${HistoryFill12Icon} />
-        <${IconCopyButton}>HistoryFill12Icon<//>
-        <${HomeFill12Icon} />
-        <${IconCopyButton}>HomeFill12Icon<//>
-        <${HorizontalRuleFill12Icon} />
-        <${IconCopyButton}>HorizontalRuleFill12Icon<//>
-        <${ImageFill12Icon} />
-        <${IconCopyButton}>ImageFill12Icon<//>
-        <${InboxFill12Icon} />
-        <${IconCopyButton}>InboxFill12Icon<//>
-        <${IndentDecreaseFill12Icon} />
-        <${IconCopyButton}>IndentDecreaseFill12Icon<//>
-        <${IndentIncreaseFill12Icon} />
-        <${IconCopyButton}>IndentIncreaseFill12Icon<//>
-        <${InfoFill12Icon} />
-        <${IconCopyButton}>InfoFill12Icon<//>
-        <${InterlockingRingsFill12Icon} />
-        <${IconCopyButton}>InterlockingRingsFill12Icon<//>
-        <${ItalicFill12Icon} />
-        <${IconCopyButton}>ItalicFill12Icon<//>
-        <${LeafFill12Icon} />
-        <${IconCopyButton}>LeafFill12Icon<//>
-        <${LifesaverFill12Icon} />
-        <${IconCopyButton}>LifesaverFill12Icon<//>
-        <${LightbulbFill12Icon} />
-        <${IconCopyButton}>LightbulbFill12Icon<//>
-        <${LightningBoltFill12Icon} />
-        <${IconCopyButton}>LightningBoltFill12Icon<//>
-        <${LineGraphFill12Icon} />
-        <${IconCopyButton}>LineGraphFill12Icon<//>
-        <${LineSocialFill12Icon} />
-        <${IconCopyButton}>LineSocialFill12Icon<//>
-        <${LinkFill12Icon} />
-        <${IconCopyButton}>LinkFill12Icon<//>
-        <${LinkRemoveFill12Icon} />
-        <${IconCopyButton}>LinkRemoveFill12Icon<//>
-        <${LinkedinFill12Icon} />
-        <${IconCopyButton}>LinkedinFill12Icon<//>
-        <${ListBulletFill12Icon} />
-        <${IconCopyButton}>ListBulletFill12Icon<//>
-        <${ListNumberFill12Icon} />
-        <${IconCopyButton}>ListNumberFill12Icon<//>
-        <${ListNumberRtlFill12Icon} />
-        <${IconCopyButton}>ListNumberRtlFill12Icon<//>
-        <${LocationFill12Icon} />
-        <${IconCopyButton}>LocationFill12Icon<//>
-        <${LockLockedFill12Icon} />
-        <${IconCopyButton}>LockLockedFill12Icon<//>
-        <${LockUnlockedFill12Icon} />
-        <${IconCopyButton}>LockUnlockedFill12Icon<//>
-        <${MarkupFill12Icon} />
-        <${IconCopyButton}>MarkupFill12Icon<//>
-        <${MaximizeFill12Icon} />
-        <${IconCopyButton}>MaximizeFill12Icon<//>
-        <${MegaphoneFill12Icon} />
-        <${IconCopyButton}>MegaphoneFill12Icon<//>
-        <${MenuFill12Icon} />
-        <${IconCopyButton}>MenuFill12Icon<//>
-        <${MessengerFill12Icon} />
-        <${IconCopyButton}>MessengerFill12Icon<//>
-        <${MicrophoneOffFill12Icon} />
-        <${IconCopyButton}>MicrophoneOffFill12Icon<//>
-        <${MicrophoneOnFill12Icon} />
-        <${IconCopyButton}>MicrophoneOnFill12Icon<//>
-        <${MinimizeFill12Icon} />
-        <${IconCopyButton}>MinimizeFill12Icon<//>
-        <${MobilePhoneFill12Icon} />
-        <${IconCopyButton}>MobilePhoneFill12Icon<//>
-        <${MonitorFill12Icon} />
-        <${IconCopyButton}>MonitorFill12Icon<//>
-        <${MultilineFill12Icon} />
-        <${IconCopyButton}>MultilineFill12Icon<//>
-        <${NewWindowFill12Icon} />
-        <${IconCopyButton}>NewWindowFill12Icon<//>
-        <${NotesFill12Icon} />
-        <${IconCopyButton}>NotesFill12Icon<//>
-        <${NotificationFill12Icon} />
-        <${IconCopyButton}>NotificationFill12Icon<//>
-        <${NumberFill12Icon} />
-        <${IconCopyButton}>NumberFill12Icon<//>
-        <${OriginalSizeFill12Icon} />
-        <${IconCopyButton}>OriginalSizeFill12Icon<//>
-        <${OverflowFill12Icon} />
-        <${IconCopyButton}>OverflowFill12Icon<//>
-        <${OverflowVerticalFill12Icon} />
-        <${IconCopyButton}>OverflowVerticalFill12Icon<//>
-        <${PaletteFill12Icon} />
-        <${IconCopyButton}>PaletteFill12Icon<//>
-        <${PanelsFill12Icon} />
-        <${IconCopyButton}>PanelsFill12Icon<//>
-        <${ParenthesesFill12Icon} />
-        <${IconCopyButton}>ParenthesesFill12Icon<//>
-        <${PauseFill12Icon} />
-        <${IconCopyButton}>PauseFill12Icon<//>
-        <${PencilFill12Icon} />
-        <${IconCopyButton}>PencilFill12Icon<//>
-        <${PhoneCallEndFill12Icon} />
-        <${IconCopyButton}>PhoneCallEndFill12Icon<//>
-        <${PhoneCallInFill12Icon} />
-        <${IconCopyButton}>PhoneCallInFill12Icon<//>
-        <${PhoneCallOutFill12Icon} />
-        <${IconCopyButton}>PhoneCallOutFill12Icon<//>
-        <${PhoneCallPauseFill12Icon} />
-        <${IconCopyButton}>PhoneCallPauseFill12Icon<//>
-        <${PhoneCallSpeakerFill12Icon} />
-        <${IconCopyButton}>PhoneCallSpeakerFill12Icon<//>
-        <${PhoneCallTransferFill12Icon} />
-        <${IconCopyButton}>PhoneCallTransferFill12Icon<//>
-        <${PhoneCallTransferOnlyFill12Icon} />
-        <${IconCopyButton}>PhoneCallTransferOnlyFill12Icon<//>
-        <${PhoneFill12Icon} />
-        <${IconCopyButton}>PhoneFill12Icon<//>
-        <${PinFill12Icon} />
-        <${IconCopyButton}>PinFill12Icon<//>
-        <${PinRemoveFill12Icon} />
-        <${IconCopyButton}>PinRemoveFill12Icon<//>
-        <${PlayCircleFill12Icon} />
-        <${IconCopyButton}>PlayCircleFill12Icon<//>
-        <${PlayFill12Icon} />
-        <${IconCopyButton}>PlayFill12Icon<//>
-        <${PlugFill12Icon} />
-        <${IconCopyButton}>PlugFill12Icon<//>
-        <${PlusCircleFill12Icon} />
-        <${IconCopyButton}>PlusCircleFill12Icon<//>
-        <${PlusFill12Icon} />
-        <${IconCopyButton}>PlusFill12Icon<//>
-        <${PuzzlePieceFill12Icon} />
-        <${IconCopyButton}>PuzzlePieceFill12Icon<//>
-        <${QuestionMarkFill12Icon} />
-        <${IconCopyButton}>QuestionMarkFill12Icon<//>
-        <${QuoteFill12Icon} />
-        <${IconCopyButton}>QuoteFill12Icon<//>
-        <${RearrangeFill12Icon} />
-        <${IconCopyButton}>RearrangeFill12Icon<//>
-        <${RecordFill12Icon} />
-        <${IconCopyButton}>RecordFill12Icon<//>
-        <${ReloadFill12Icon} />
-        <${IconCopyButton}>ReloadFill12Icon<//>
-        <${SandboxFill12Icon} />
-        <${IconCopyButton}>SandboxFill12Icon<//>
-        <${SearchFill12Icon} />
-        <${IconCopyButton}>SearchFill12Icon<//>
-        <${ShapesFill12Icon} />
-        <${IconCopyButton}>ShapesFill12Icon<//>
-        <${ShareFill12Icon} />
-        <${IconCopyButton}>ShareFill12Icon<//>
-        <${ShieldFill12Icon} />
-        <${IconCopyButton}>ShieldFill12Icon<//>
-        <${ShoppingCartFill12Icon} />
-        <${IconCopyButton}>ShoppingCartFill12Icon<//>
-        <${SignpostFill12Icon} />
-        <${IconCopyButton}>SignpostFill12Icon<//>
-        <${SlackFill12Icon} />
-        <${IconCopyButton}>SlackFill12Icon<//>
-        <${SmileSlightFill12Icon} />
-        <${IconCopyButton}>SmileSlightFill12Icon<//>
-        <${SmileyFill12Icon} />
-        <${IconCopyButton}>SmileyFill12Icon<//>
-        <${SortFill12Icon} />
-        <${IconCopyButton}>SortFill12Icon<//>
-        <${SpeechBubbleConversationFill12Icon} />
-        <${IconCopyButton}>SpeechBubbleConversationFill12Icon<//>
-        <${SpeechBubbleLightningBoltFill12Icon} />
-        <${IconCopyButton}>SpeechBubbleLightningBoltFill12Icon<//>
-        <${SpeechBubblePlainFill12Icon} />
-        <${IconCopyButton}>SpeechBubblePlainFill12Icon<//>
-        <${StarFill12Icon} />
-        <${IconCopyButton}>StarFill12Icon<//>
-        <${TableFill12Icon} />
-        <${IconCopyButton}>TableFill12Icon<//>
-        <${TagFill12Icon} />
-        <${IconCopyButton}>TagFill12Icon<//>
-        <${TerminalCliFill12Icon} />
-        <${IconCopyButton}>TerminalCliFill12Icon<//>
-        <${TerminalWindowFill12Icon} />
-        <${IconCopyButton}>TerminalWindowFill12Icon<//>
-        <${TextColorFill12Icon} />
-        <${IconCopyButton}>TextColorFill12Icon<//>
-        <${TextFill12Icon} />
-        <${IconCopyButton}>TextFill12Icon<//>
-        <${ThumbsDownFill12Icon} />
-        <${IconCopyButton}>ThumbsDownFill12Icon<//>
-        <${ThumbsUpFill12Icon} />
-        <${IconCopyButton}>ThumbsUpFill12Icon<//>
-        <${TranslationCreatedFill12Icon} />
-        <${IconCopyButton}>TranslationCreatedFill12Icon<//>
-        <${TranslationDeletedFill12Icon} />
-        <${IconCopyButton}>TranslationDeletedFill12Icon<//>
-        <${TranslationExistsFill12Icon} />
-        <${IconCopyButton}>TranslationExistsFill12Icon<//>
-        <${TranslationOutdatedFill12Icon} />
-        <${IconCopyButton}>TranslationOutdatedFill12Icon<//>
-        <${TranslationUpdatedFill12Icon} />
-        <${IconCopyButton}>TranslationUpdatedFill12Icon<//>
-        <${TrashFill12Icon} />
-        <${IconCopyButton}>TrashFill12Icon<//>
-        <${TwitterFill12Icon} />
-        <${IconCopyButton}>TwitterFill12Icon<//>
-        <${UnderlineFill12Icon} />
-        <${IconCopyButton}>UnderlineFill12Icon<//>
-        <${UploadFill12Icon} />
-        <${IconCopyButton}>UploadFill12Icon<//>
-        <${UserCircleFill12Icon} />
-        <${IconCopyButton}>UserCircleFill12Icon<//>
-        <${UserFollowFill12Icon} />
-        <${IconCopyButton}>UserFollowFill12Icon<//>
-        <${UserGroupFill12Icon} />
-        <${IconCopyButton}>UserGroupFill12Icon<//>
-        <${UserListFill12Icon} />
-        <${IconCopyButton}>UserListFill12Icon<//>
-        <${UserSoloFill12Icon} />
-        <${IconCopyButton}>UserSoloFill12Icon<//>
-        <${UserUnfollowFill12Icon} />
-        <${IconCopyButton}>UserUnfollowFill12Icon<//>
-        <${VoicemailFill12Icon} />
-        <${IconCopyButton}>VoicemailFill12Icon<//>
-        <${VolumeMutedFill12Icon} />
-        <${IconCopyButton}>VolumeMutedFill12Icon<//>
-        <${VolumeUnmutedFill12Icon} />
-        <${IconCopyButton}>VolumeUnmutedFill12Icon<//>
-        <${WechatFill12Icon} />
-        <${IconCopyButton}>WechatFill12Icon<//>
-        <${WhatsappFill12Icon} />
-        <${IconCopyButton}>WhatsappFill12Icon<//>
-        <${WrapLeftFill12Icon} />
-        <${IconCopyButton}>WrapLeftFill12Icon<//>
-        <${WrapRightFill12Icon} />
-        <${IconCopyButton}>WrapRightFill12Icon<//>
-        <${XCircleFill12Icon} />
-        <${IconCopyButton}>XCircleFill12Icon<//>
-        <${XFill12Icon} />
-        <${IconCopyButton}>XFill12Icon<//>
-        <${ZendeskFill12Icon} />
-        <${IconCopyButton}>ZendeskFill12Icon<//>
-      </div>
-    `;
+    return [
+      h(Title, {}, "12px (fill)"),
+      h(
+        SubTitle,
+        {},
+        "These icon components is extracted from ",
+        h(
+          Anchor,
+          { href: "https://garden.zendesk.com/design/icons" },
+          "Zendesk Garden",
+        ),
+        " and turned into components.",
+      ),
+      h(Line),
+      h(
+        "p",
+        {},
+        "Tip ",
+        h(TipIcon),
+        " click on the icon label to copy the",
+        "import to that clipboard.",
+      ),
+      h(
+        "div",
+        { className: columnStyles },
+        h(I123Fill12Icon),
+        h(IconCopyButton, {}, "I123Fill12Icon"),
+        h(AdjustFill12Icon),
+        h(IconCopyButton, {}, "AdjustFill12Icon"),
+        h(AlertErrorFill12Icon),
+        h(IconCopyButton, {}, "AlertErrorFill12Icon"),
+        h(AlertWarningFill12Icon),
+        h(IconCopyButton, {}, "AlertWarningFill12Icon"),
+        h(AlignCenterFill12Icon),
+        h(IconCopyButton, {}, "AlignCenterFill12Icon"),
+        h(AlignJustifyFill12Icon),
+        h(IconCopyButton, {}, "AlignJustifyFill12Icon"),
+        h(AlignLeftFill12Icon),
+        h(IconCopyButton, {}, "AlignLeftFill12Icon"),
+        h(AlignRightFill12Icon),
+        h(IconCopyButton, {}, "AlignRightFill12Icon"),
+        h(AltTextFill12Icon),
+        h(IconCopyButton, {}, "AltTextFill12Icon"),
+        h(ArrowLeftFill12Icon),
+        h(IconCopyButton, {}, "ArrowLeftFill12Icon"),
+        h(ArrowLeftSmFill12Icon),
+        h(IconCopyButton, {}, "ArrowLeftSmFill12Icon"),
+        h(ArrowLeftUpFill12Icon),
+        h(IconCopyButton, {}, "ArrowLeftUpFill12Icon"),
+        h(ArrowRetweetFill12Icon),
+        h(IconCopyButton, {}, "ArrowRetweetFill12Icon"),
+        h(ArrowReverseFill12Icon),
+        h(IconCopyButton, {}, "ArrowReverseFill12Icon"),
+        h(ArrowTrendingFill12Icon),
+        h(IconCopyButton, {}, "ArrowTrendingFill12Icon"),
+        h(AsteriskFill12Icon),
+        h(IconCopyButton, {}, "AsteriskFill12Icon"),
+        h(AtFill12Icon),
+        h(IconCopyButton, {}, "AtFill12Icon"),
+        h(BarChartFill12Icon),
+        h(IconCopyButton, {}, "BarChartFill12Icon"),
+        h(BasketballFill12Icon),
+        h(IconCopyButton, {}, "BasketballFill12Icon"),
+        h(BoldFill12Icon),
+        h(IconCopyButton, {}, "BoldFill12Icon"),
+        h(BookClosedFill12Icon),
+        h(IconCopyButton, {}, "BookClosedFill12Icon"),
+        h(BookOpenFill12Icon),
+        h(IconCopyButton, {}, "BookOpenFill12Icon"),
+        h(Box3dFill12Icon),
+        h(IconCopyButton, {}, "Box3dFill12Icon"),
+        h(BuildingFill12Icon),
+        h(IconCopyButton, {}, "BuildingFill12Icon"),
+        h(CalendarFill12Icon),
+        h(IconCopyButton, {}, "CalendarFill12Icon"),
+        h(CameraFill12Icon),
+        h(IconCopyButton, {}, "CameraFill12Icon"),
+        h(CarFill12Icon),
+        h(IconCopyButton, {}, "CarFill12Icon"),
+        h(CenterFill12Icon),
+        h(IconCopyButton, {}, "CenterFill12Icon"),
+        h(CheckBadgeFill12Icon),
+        h(IconCopyButton, {}, "CheckBadgeFill12Icon"),
+        h(CheckBoxDoubleFill12Icon),
+        h(IconCopyButton, {}, "CheckBoxDoubleFill12Icon"),
+        h(CheckBoxFill12Icon),
+        h(IconCopyButton, {}, "CheckBoxFill12Icon"),
+        h(CheckCircleFill12Icon),
+        h(IconCopyButton, {}, "CheckCircleFill12Icon"),
+        h(CheckDoubleFill12Icon),
+        h(IconCopyButton, {}, "CheckDoubleFill12Icon"),
+        h(CheckLgFill12Icon),
+        h(IconCopyButton, {}, "CheckLgFill12Icon"),
+        h(CheckSmFill12Icon),
+        h(IconCopyButton, {}, "CheckSmFill12Icon"),
+        h(ChevronBoxFill12Icon),
+        h(IconCopyButton, {}, "ChevronBoxFill12Icon"),
+        h(ChevronDoubleDownFill12Icon),
+        h(IconCopyButton, {}, "ChevronDoubleDownFill12Icon"),
+        h(ChevronDoubleLeftFill12Icon),
+        h(IconCopyButton, {}, "ChevronDoubleLeftFill12Icon"),
+        h(ChevronDoubleRightFill12Icon),
+        h(IconCopyButton, {}, "ChevronDoubleRightFill12Icon"),
+        h(ChevronDoubleUpFill12Icon),
+        h(IconCopyButton, {}, "ChevronDoubleUpFill12Icon"),
+        h(ChevronDownFill12Icon),
+        h(IconCopyButton, {}, "ChevronDownFill12Icon"),
+        h(ChevronLeftFill12Icon),
+        h(IconCopyButton, {}, "ChevronLeftFill12Icon"),
+        h(ChevronRightFill12Icon),
+        h(IconCopyButton, {}, "ChevronRightFill12Icon"),
+        h(ChevronUpFill12Icon),
+        h(IconCopyButton, {}, "ChevronUpFill12Icon"),
+        h(CircleFill12Icon),
+        h(IconCopyButton, {}, "CircleFill12Icon"),
+        h(CircleFullFill12Icon),
+        h(IconCopyButton, {}, "CircleFullFill12Icon"),
+        h(CircleLineFill12Icon),
+        h(IconCopyButton, {}, "CircleLineFill12Icon"),
+        h(CircleSmFill12Icon),
+        h(IconCopyButton, {}, "CircleSmFill12Icon"),
+        h(ClipboardBlankFill12Icon),
+        h(IconCopyButton, {}, "ClipboardBlankFill12Icon"),
+        h(ClipboardCheckFill12Icon),
+        h(IconCopyButton, {}, "ClipboardCheckFill12Icon"),
+        h(ClipboardListFill12Icon),
+        h(IconCopyButton, {}, "ClipboardListFill12Icon"),
+        h(ClockCycleFill12Icon),
+        h(IconCopyButton, {}, "ClockCycleFill12Icon"),
+        h(ClockFill12Icon),
+        h(IconCopyButton, {}, "ClockFill12Icon"),
+        h(ClockInFill12Icon),
+        h(IconCopyButton, {}, "ClockInFill12Icon"),
+        h(ClockOutFill12Icon),
+        h(IconCopyButton, {}, "ClockOutFill12Icon"),
+        h(CopyFill12Icon),
+        h(IconCopyButton, {}, "CopyFill12Icon"),
+        h(CreditCardFill12Icon),
+        h(IconCopyButton, {}, "CreditCardFill12Icon"),
+        h(CssFill12Icon),
+        h(IconCopyButton, {}, "CssFill12Icon"),
+        h(CursorArrowFill12Icon),
+        h(IconCopyButton, {}, "CursorArrowFill12Icon"),
+        h(CutleryFill12Icon),
+        h(IconCopyButton, {}, "CutleryFill12Icon"),
+        h(DashFill12Icon),
+        h(IconCopyButton, {}, "DashFill12Icon"),
+        h(DatabaseFill12Icon),
+        h(IconCopyButton, {}, "DatabaseFill12Icon"),
+        h(DecimalFill12Icon),
+        h(IconCopyButton, {}, "DecimalFill12Icon"),
+        h(DirectionLtrFill12Icon),
+        h(IconCopyButton, {}, "DirectionLtrFill12Icon"),
+        h(DirectionRtlFill12Icon),
+        h(IconCopyButton, {}, "DirectionRtlFill12Icon"),
+        h(DocumentSearchFill12Icon),
+        h(IconCopyButton, {}, "DocumentSearchFill12Icon"),
+        h(DownloadFill12Icon),
+        h(IconCopyButton, {}, "DownloadFill12Icon"),
+        h(DuplicateFill12Icon),
+        h(IconCopyButton, {}, "DuplicateFill12Icon"),
+        h(EditRedoFill12Icon),
+        h(IconCopyButton, {}, "EditRedoFill12Icon"),
+        h(EditUndoFill12Icon),
+        h(IconCopyButton, {}, "EditUndoFill12Icon"),
+        h(EmailFill12Icon),
+        h(IconCopyButton, {}, "EmailFill12Icon"),
+        h(EraserFill12Icon),
+        h(IconCopyButton, {}, "EraserFill12Icon"),
+        h(ExitFill12Icon),
+        h(IconCopyButton, {}, "ExitFill12Icon"),
+        h(EyeFill12Icon),
+        h(IconCopyButton, {}, "EyeFill12Icon"),
+        h(EyeHideFill12Icon),
+        h(IconCopyButton, {}, "EyeHideFill12Icon"),
+        h(FacebookFill12Icon),
+        h(IconCopyButton, {}, "FacebookFill12Icon"),
+        h(FileDocumentFill12Icon),
+        h(IconCopyButton, {}, "FileDocumentFill12Icon"),
+        h(FileErrorFill12Icon),
+        h(IconCopyButton, {}, "FileErrorFill12Icon"),
+        h(FileGenericFill12Icon),
+        h(IconCopyButton, {}, "FileGenericFill12Icon"),
+        h(FileImageFill12Icon),
+        h(IconCopyButton, {}, "FileImageFill12Icon"),
+        h(FilePdfFill12Icon),
+        h(IconCopyButton, {}, "FilePdfFill12Icon"),
+        h(FilePresentationFill12Icon),
+        h(IconCopyButton, {}, "FilePresentationFill12Icon"),
+        h(FileSpreadsheetFill12Icon),
+        h(IconCopyButton, {}, "FileSpreadsheetFill12Icon"),
+        h(FileZipFill12Icon),
+        h(IconCopyButton, {}, "FileZipFill12Icon"),
+        h(FilterFill12Icon),
+        h(IconCopyButton, {}, "FilterFill12Icon"),
+        h(FlagFill12Icon),
+        h(IconCopyButton, {}, "FlagFill12Icon"),
+        h(FolderClosedFill12Icon),
+        h(IconCopyButton, {}, "FolderClosedFill12Icon"),
+        h(FolderOpenFill12Icon),
+        h(IconCopyButton, {}, "FolderOpenFill12Icon"),
+        h(FullWidthFill12Icon),
+        h(IconCopyButton, {}, "FullWidthFill12Icon"),
+        h(GearFill12Icon),
+        h(IconCopyButton, {}, "GearFill12Icon"),
+        h(GithubFill12Icon),
+        h(IconCopyButton, {}, "GithubFill12Icon"),
+        h(GlobeFill12Icon),
+        h(IconCopyButton, {}, "GlobeFill12Icon"),
+        h(Grid2x2Fill12Icon),
+        h(IconCopyButton, {}, "Grid2x2Fill12Icon"),
+        h(Grid3x3Fill12Icon),
+        h(IconCopyButton, {}, "Grid3x3Fill12Icon"),
+        h(HeadingFill12Icon),
+        h(IconCopyButton, {}, "HeadingFill12Icon"),
+        h(HeartFill12Icon),
+        h(IconCopyButton, {}, "HeartFill12Icon"),
+        h(HistoryFill12Icon),
+        h(IconCopyButton, {}, "HistoryFill12Icon"),
+        h(HomeFill12Icon),
+        h(IconCopyButton, {}, "HomeFill12Icon"),
+        h(HorizontalRuleFill12Icon),
+        h(IconCopyButton, {}, "HorizontalRuleFill12Icon"),
+        h(ImageFill12Icon),
+        h(IconCopyButton, {}, "ImageFill12Icon"),
+        h(InboxFill12Icon),
+        h(IconCopyButton, {}, "InboxFill12Icon"),
+        h(IndentDecreaseFill12Icon),
+        h(IconCopyButton, {}, "IndentDecreaseFill12Icon"),
+        h(IndentIncreaseFill12Icon),
+        h(IconCopyButton, {}, "IndentIncreaseFill12Icon"),
+        h(InfoFill12Icon),
+        h(IconCopyButton, {}, "InfoFill12Icon"),
+        h(InterlockingRingsFill12Icon),
+        h(IconCopyButton, {}, "InterlockingRingsFill12Icon"),
+        h(ItalicFill12Icon),
+        h(IconCopyButton, {}, "ItalicFill12Icon"),
+        h(LeafFill12Icon),
+        h(IconCopyButton, {}, "LeafFill12Icon"),
+        h(LifesaverFill12Icon),
+        h(IconCopyButton, {}, "LifesaverFill12Icon"),
+        h(LightbulbFill12Icon),
+        h(IconCopyButton, {}, "LightbulbFill12Icon"),
+        h(LightningBoltFill12Icon),
+        h(IconCopyButton, {}, "LightningBoltFill12Icon"),
+        h(LineGraphFill12Icon),
+        h(IconCopyButton, {}, "LineGraphFill12Icon"),
+        h(LineSocialFill12Icon),
+        h(IconCopyButton, {}, "LineSocialFill12Icon"),
+        h(LinkFill12Icon),
+        h(IconCopyButton, {}, "LinkFill12Icon"),
+        h(LinkRemoveFill12Icon),
+        h(IconCopyButton, {}, "LinkRemoveFill12Icon"),
+        h(LinkedinFill12Icon),
+        h(IconCopyButton, {}, "LinkedinFill12Icon"),
+        h(ListBulletFill12Icon),
+        h(IconCopyButton, {}, "ListBulletFill12Icon"),
+        h(ListNumberFill12Icon),
+        h(IconCopyButton, {}, "ListNumberFill12Icon"),
+        h(ListNumberRtlFill12Icon),
+        h(IconCopyButton, {}, "ListNumberRtlFill12Icon"),
+        h(LocationFill12Icon),
+        h(IconCopyButton, {}, "LocationFill12Icon"),
+        h(LockLockedFill12Icon),
+        h(IconCopyButton, {}, "LockLockedFill12Icon"),
+        h(LockUnlockedFill12Icon),
+        h(IconCopyButton, {}, "LockUnlockedFill12Icon"),
+        h(MarkupFill12Icon),
+        h(IconCopyButton, {}, "MarkupFill12Icon"),
+        h(MaximizeFill12Icon),
+        h(IconCopyButton, {}, "MaximizeFill12Icon"),
+        h(MegaphoneFill12Icon),
+        h(IconCopyButton, {}, "MegaphoneFill12Icon"),
+        h(MenuFill12Icon),
+        h(IconCopyButton, {}, "MenuFill12Icon"),
+        h(MessengerFill12Icon),
+        h(IconCopyButton, {}, "MessengerFill12Icon"),
+        h(MicrophoneOffFill12Icon),
+        h(IconCopyButton, {}, "MicrophoneOffFill12Icon"),
+        h(MicrophoneOnFill12Icon),
+        h(IconCopyButton, {}, "MicrophoneOnFill12Icon"),
+        h(MinimizeFill12Icon),
+        h(IconCopyButton, {}, "MinimizeFill12Icon"),
+        h(MobilePhoneFill12Icon),
+        h(IconCopyButton, {}, "MobilePhoneFill12Icon"),
+        h(MonitorFill12Icon),
+        h(IconCopyButton, {}, "MonitorFill12Icon"),
+        h(MultilineFill12Icon),
+        h(IconCopyButton, {}, "MultilineFill12Icon"),
+        h(NewWindowFill12Icon),
+        h(IconCopyButton, {}, "NewWindowFill12Icon"),
+        h(NotesFill12Icon),
+        h(IconCopyButton, {}, "NotesFill12Icon"),
+        h(NotificationFill12Icon),
+        h(IconCopyButton, {}, "NotificationFill12Icon"),
+        h(NumberFill12Icon),
+        h(IconCopyButton, {}, "NumberFill12Icon"),
+        h(OriginalSizeFill12Icon),
+        h(IconCopyButton, {}, "OriginalSizeFill12Icon"),
+        h(OverflowFill12Icon),
+        h(IconCopyButton, {}, "OverflowFill12Icon"),
+        h(OverflowVerticalFill12Icon),
+        h(IconCopyButton, {}, "OverflowVerticalFill12Icon"),
+        h(PaletteFill12Icon),
+        h(IconCopyButton, {}, "PaletteFill12Icon"),
+        h(PanelsFill12Icon),
+        h(IconCopyButton, {}, "PanelsFill12Icon"),
+        h(ParenthesesFill12Icon),
+        h(IconCopyButton, {}, "ParenthesesFill12Icon"),
+        h(PauseFill12Icon),
+        h(IconCopyButton, {}, "PauseFill12Icon"),
+        h(PencilFill12Icon),
+        h(IconCopyButton, {}, "PencilFill12Icon"),
+        h(PhoneCallEndFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallEndFill12Icon"),
+        h(PhoneCallInFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallInFill12Icon"),
+        h(PhoneCallOutFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallOutFill12Icon"),
+        h(PhoneCallPauseFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallPauseFill12Icon"),
+        h(PhoneCallSpeakerFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallSpeakerFill12Icon"),
+        h(PhoneCallTransferFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferFill12Icon"),
+        h(PhoneCallTransferOnlyFill12Icon),
+        h(IconCopyButton, {}, "PhoneCallTransferOnlyFill12Icon"),
+        h(PhoneFill12Icon),
+        h(IconCopyButton, {}, "PhoneFill12Icon"),
+        h(PinFill12Icon),
+        h(IconCopyButton, {}, "PinFill12Icon"),
+        h(PinRemoveFill12Icon),
+        h(IconCopyButton, {}, "PinRemoveFill12Icon"),
+        h(PlayCircleFill12Icon),
+        h(IconCopyButton, {}, "PlayCircleFill12Icon"),
+        h(PlayFill12Icon),
+        h(IconCopyButton, {}, "PlayFill12Icon"),
+        h(PlugFill12Icon),
+        h(IconCopyButton, {}, "PlugFill12Icon"),
+        h(PlusCircleFill12Icon),
+        h(IconCopyButton, {}, "PlusCircleFill12Icon"),
+        h(PlusFill12Icon),
+        h(IconCopyButton, {}, "PlusFill12Icon"),
+        h(PuzzlePieceFill12Icon),
+        h(IconCopyButton, {}, "PuzzlePieceFill12Icon"),
+        h(QuestionMarkFill12Icon),
+        h(IconCopyButton, {}, "QuestionMarkFill12Icon"),
+        h(QuoteFill12Icon),
+        h(IconCopyButton, {}, "QuoteFill12Icon"),
+        h(RearrangeFill12Icon),
+        h(IconCopyButton, {}, "RearrangeFill12Icon"),
+        h(RecordFill12Icon),
+        h(IconCopyButton, {}, "RecordFill12Icon"),
+        h(ReloadFill12Icon),
+        h(IconCopyButton, {}, "ReloadFill12Icon"),
+        h(SandboxFill12Icon),
+        h(IconCopyButton, {}, "SandboxFill12Icon"),
+        h(SearchFill12Icon),
+        h(IconCopyButton, {}, "SearchFill12Icon"),
+        h(ShapesFill12Icon),
+        h(IconCopyButton, {}, "ShapesFill12Icon"),
+        h(ShareFill12Icon),
+        h(IconCopyButton, {}, "ShareFill12Icon"),
+        h(ShieldFill12Icon),
+        h(IconCopyButton, {}, "ShieldFill12Icon"),
+        h(ShoppingCartFill12Icon),
+        h(IconCopyButton, {}, "ShoppingCartFill12Icon"),
+        h(SignpostFill12Icon),
+        h(IconCopyButton, {}, "SignpostFill12Icon"),
+        h(SlackFill12Icon),
+        h(IconCopyButton, {}, "SlackFill12Icon"),
+        h(SmileSlightFill12Icon),
+        h(IconCopyButton, {}, "SmileSlightFill12Icon"),
+        h(SmileyFill12Icon),
+        h(IconCopyButton, {}, "SmileyFill12Icon"),
+        h(SortFill12Icon),
+        h(IconCopyButton, {}, "SortFill12Icon"),
+        h(SpeechBubbleConversationFill12Icon),
+        h(IconCopyButton, {}, "SpeechBubbleConversationFill12Icon"),
+        h(SpeechBubbleLightningBoltFill12Icon),
+        h(IconCopyButton, {}, "SpeechBubbleLightningBoltFill12Icon"),
+        h(SpeechBubblePlainFill12Icon),
+        h(IconCopyButton, {}, "SpeechBubblePlainFill12Icon"),
+        h(StarFill12Icon),
+        h(IconCopyButton, {}, "StarFill12Icon"),
+        h(TableFill12Icon),
+        h(IconCopyButton, {}, "TableFill12Icon"),
+        h(TagFill12Icon),
+        h(IconCopyButton, {}, "TagFill12Icon"),
+        h(TerminalCliFill12Icon),
+        h(IconCopyButton, {}, "TerminalCliFill12Icon"),
+        h(TerminalWindowFill12Icon),
+        h(IconCopyButton, {}, "TerminalWindowFill12Icon"),
+        h(TextColorFill12Icon),
+        h(IconCopyButton, {}, "TextColorFill12Icon"),
+        h(TextFill12Icon),
+        h(IconCopyButton, {}, "TextFill12Icon"),
+        h(ThumbsDownFill12Icon),
+        h(IconCopyButton, {}, "ThumbsDownFill12Icon"),
+        h(ThumbsUpFill12Icon),
+        h(IconCopyButton, {}, "ThumbsUpFill12Icon"),
+        h(TranslationCreatedFill12Icon),
+        h(IconCopyButton, {}, "TranslationCreatedFill12Icon"),
+        h(TranslationDeletedFill12Icon),
+        h(IconCopyButton, {}, "TranslationDeletedFill12Icon"),
+        h(TranslationExistsFill12Icon),
+        h(IconCopyButton, {}, "TranslationExistsFill12Icon"),
+        h(TranslationOutdatedFill12Icon),
+        h(IconCopyButton, {}, "TranslationOutdatedFill12Icon"),
+        h(TranslationUpdatedFill12Icon),
+        h(IconCopyButton, {}, "TranslationUpdatedFill12Icon"),
+        h(TrashFill12Icon),
+        h(IconCopyButton, {}, "TrashFill12Icon"),
+        h(TwitterFill12Icon),
+        h(IconCopyButton, {}, "TwitterFill12Icon"),
+        h(UnderlineFill12Icon),
+        h(IconCopyButton, {}, "UnderlineFill12Icon"),
+        h(UploadFill12Icon),
+        h(IconCopyButton, {}, "UploadFill12Icon"),
+        h(UserCircleFill12Icon),
+        h(IconCopyButton, {}, "UserCircleFill12Icon"),
+        h(UserFollowFill12Icon),
+        h(IconCopyButton, {}, "UserFollowFill12Icon"),
+        h(UserGroupFill12Icon),
+        h(IconCopyButton, {}, "UserGroupFill12Icon"),
+        h(UserListFill12Icon),
+        h(IconCopyButton, {}, "UserListFill12Icon"),
+        h(UserSoloFill12Icon),
+        h(IconCopyButton, {}, "UserSoloFill12Icon"),
+        h(UserUnfollowFill12Icon),
+        h(IconCopyButton, {}, "UserUnfollowFill12Icon"),
+        h(VoicemailFill12Icon),
+        h(IconCopyButton, {}, "VoicemailFill12Icon"),
+        h(VolumeMutedFill12Icon),
+        h(IconCopyButton, {}, "VolumeMutedFill12Icon"),
+        h(VolumeUnmutedFill12Icon),
+        h(IconCopyButton, {}, "VolumeUnmutedFill12Icon"),
+        h(WechatFill12Icon),
+        h(IconCopyButton, {}, "WechatFill12Icon"),
+        h(WhatsappFill12Icon),
+        h(IconCopyButton, {}, "WhatsappFill12Icon"),
+        h(WrapLeftFill12Icon),
+        h(IconCopyButton, {}, "WrapLeftFill12Icon"),
+        h(WrapRightFill12Icon),
+        h(IconCopyButton, {}, "WrapRightFill12Icon"),
+        h(XCircleFill12Icon),
+        h(IconCopyButton, {}, "XCircleFill12Icon"),
+        h(XFill12Icon),
+        h(IconCopyButton, {}, "XFill12Icon"),
+        h(ZendeskFill12Icon),
+        h(IconCopyButton, {}, "ZendeskFill12Icon"),
+      ),
+    ];
   }
 }

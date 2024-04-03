@@ -25,12 +25,16 @@ const main = async () => {
     imports: {
       stylewars: `https://unpkg.com/stylewars@${versions.stylewars}/dist/bundle.esm.js`,
       "@dependable/state": `https://unpkg.com/@dependable/state@${versions["@dependable/state"]}/dist/dependable-state.esm.js`,
-      "@dependable/htm": `https://unpkg.com/@dependable/htm@${versions["@dependable/htm"]}/dist/dependable-htm.esm.js`,
       "@dependable/view": `https://unpkg.com/@dependable/view@${versions["@dependable/view"]}/dist/dependable-view-index.esm.js`,
       "@dependable/components/": `https://unpkg.com/@dependable/components@latest/src/`,
       "@dependable/icons/": `https://unpkg.com/@dependable/icons@latest/src/`,
     },
   };
+
+  if (versions["@dependable/htm"]) {
+    importmap.imports["@dependable/htm"] =
+      `https://unpkg.com/@dependable/htm@${versions["@dependable/htm"]}/dist/dependable-htm.esm.js`;
+  }
 
   const content = `\
 export const importmap = \`${JSON.stringify(importmap, null, 2)}\`;`;

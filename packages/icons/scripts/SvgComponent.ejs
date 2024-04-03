@@ -1,7 +1,9 @@
-import { html } from "@dependable/htm";
+import { h, clone } from "@dependable/view";
+
+const svg = <%-data%>;
 
 export default class <%-name%> {
   render(props) {
-    return html`<%-data.replace(/<svg([^>]*)>/m, '<svg$1 ...${props}>')%>`
+    return clone(svg, { props });
   }
 }

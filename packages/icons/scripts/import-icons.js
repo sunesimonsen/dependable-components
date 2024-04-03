@@ -1,14 +1,17 @@
 const { join } = require("path");
 const fs = require("fs").promises;
 const { capitalCase } = require("change-case");
+const { XMLParser } = require("fast-xml-parser");
 const {
   extend,
   forEach,
   groupBy,
   map,
+  filter,
+  fork,
   program,
   sortBy,
-  splitIterable,
+  transform,
   tap,
   toArray,
 } = require("@transformation/core");
@@ -24,10 +27,51 @@ const source = join(
   "svg-icons",
   "src",
 );
+
 const dest = "./src";
+fs.mkdir("./src", { recursive: true });
 
 const keyToPageName = (key) =>
   "icons-" + key.replace(/[()]/g, "").replace(" ", "-");
+
+const xmlParser = new XMLParser({
+  ignoreAttributes: false,
+});
+
+const svgToVDom = (name, node) => {
+  if (Array.isArray(node)) {
+    return node.map((instance) => svgToVDom(name, instance)).join(",");
+  }
+
+  const children = [];
+  const attributes = {};
+
+  for (const key of Object.keys(node)) {
+    if (key.startsWith("@_")) {
+      attributes[key.slice(2)] = node[key];
+    } else {
+      children.push(svgToVDom(key, node[key]));
+    }
+  }
+
+  const attributeString =
+    "{" +
+    Object.entries(attributes)
+      .map(
+        ([name, value]) => JSON.stringify(name) + ":" + JSON.stringify(value),
+      )
+      .join(",") +
+    "}";
+
+  return (
+    "h(" + [JSON.stringify(name), attributeString, ...children].join(",") + ")"
+  );
+};
+
+const svgToVDomTransformation = map((svg) => {
+  const tree = xmlParser.parse(svg);
+  return svgToVDom("svg", tree.svg);
+});
 
 program(
   glob({
@@ -55,17 +99,24 @@ program(
     }
 
     return {
-      dir: dest,
       size,
       style,
       name,
-      path: join(dest, `${name}.js`),
+      path,
       data,
     };
   }),
-  forEach(({ dir }) => fs.mkdir(dir, { recursive: true })),
-  writeTemplate(join(__dirname, "SvgComponent.ejs"), ({ path }) => path),
-  tap("path"),
+  tap("name"),
+  filter(({ data }) => Boolean(data)),
+  fork(
+    transform({
+      data: svgToVDomTransformation,
+    }),
+    writeTemplate(join(__dirname, "SvgComponent.ejs"), ({ name }) =>
+      join(dest, `${name}.js`),
+    ),
+  ),
+  tap("name"),
   groupBy(({ size, style }) =>
     style === "default" ? `${size}px` : `${size}px (${style})`,
   ),
