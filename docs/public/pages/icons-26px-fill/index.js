@@ -29,6 +29,7 @@ const copyStyles = css`
     text-align: left;
     cursor: pointer;
     color: var(--dc-color-foreground);
+    font-family: var(--dc-font-family);
   }
 
   &:focus {

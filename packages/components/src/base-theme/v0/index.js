@@ -127,20 +127,9 @@ export const baseTheme = css`
     --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
       var(--dc-focus-ring-color);
 
-    font-family: Verdana, Geneva, sans-serif;
+    --dc-font-family: Verdana, Geneva, sans-serif;
 
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Oxygen-Sans,
-      Ubuntu,
-      Cantarell,
-      Helvetica Neue,
-      Arial,
-      sans-serif;
+    font-family: var(--dc-font-family);
 
     box-sizing: border-box;
 

@@ -18,6 +18,7 @@ const mediaInputStyles = css`
     padding: 0;
     margin: 0;
     color: var(--dc-color-foreground);
+    font-family: var(--dc-font-family);
   }
 
   & > [data-label] + input {

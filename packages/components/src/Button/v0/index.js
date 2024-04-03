@@ -21,6 +21,7 @@ const styles = css`
     width: var(--dc-button-width, initial);
     background-color: var(--dc-color-secondary-0);
     font-size: 0.88em;
+    font-family: var(--dc-font-family);
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
