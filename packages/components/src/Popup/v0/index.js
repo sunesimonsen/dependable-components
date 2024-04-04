@@ -157,17 +157,11 @@ export class Popup {
 
     this._margins = { top: 0, start: 0, end: 0, bottom: 0, ...margins };
 
-    if (detectDir(anchor) === "rtl") {
-      this._placement = this._placement.replace(
-        /(start|end)/,
-        ($0) => flip[$0],
-      );
-      const start = this._margins.start;
-      this._margins.start = this._margins.end;
-      this._margins.end = start;
-    }
+    this._dir = "ltr";
+    this._updateDirection(detectDir(anchor));
 
     this.update = this.update.bind(this);
+    this._directionChanged = this._directionChanged.bind(this);
 
     this._overflow = options.overflow || "none";
   }
@@ -225,8 +219,30 @@ export class Popup {
     );
   }
 
+  _updateDirection(dir) {
+    if (dir !== this._dir) {
+      this._placement = this._placement.replace(
+        /(start|end)/,
+        ($0) => flip[$0],
+      );
+      const start = this._margins.start;
+      this._margins.start = this._margins.end;
+      this._margins.end = start;
+
+      this._dir = dir;
+    }
+  }
+
+  _directionChanged(e) {
+    console.log("direction changed", e.detail.direction);
+    this._updateDirection(e.detail.direction);
+    this.update();
+  }
+
   show() {
     if (this.visible) return;
+
+    this._updateDirection(detectDir(this._anchor));
 
     if (this._placement.includes("stretch")) {
       const anchorRect = this._anchor.getBoundingClientRect();
@@ -234,13 +250,13 @@ export class Popup {
     }
 
     this._container = this._anchor.offsetParent?.parentElement;
-    // this.update();
 
     setTimeout(() => {
       this.update();
       this._popup.classList.add(visibleStyles);
       window.addEventListener("resize", this.update);
       window.addEventListener("scroll", this.update, true);
+      window.addEventListener("DirecionChanged", this._directionChanged);
       this.visible = true;
     }, 0);
   }
@@ -250,6 +266,7 @@ export class Popup {
 
     window.removeEventListener("resize", this.update);
     window.removeEventListener("scroll", this.update, true);
+    window.removeEventListener("DirecionChanged", this._directionChanged);
     this._popup.classList.remove(visibleStyles);
     this.visible = false;
   }

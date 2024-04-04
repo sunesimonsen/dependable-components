@@ -1,6 +1,7 @@
 import { h } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
 import { Switch } from "@dependable/components/Switch/v0";
+import { DirectionChangedEvent } from "@dependable/components/direction/v0";
 
 const rtl = observable(sessionStorage.getItem("styleguide-dir") === "rtl", {
   id: "rtl",
@@ -9,8 +10,12 @@ const rtl = observable(sessionStorage.getItem("styleguide-dir") === "rtl", {
 export const dir = computed(() => (rtl() ? "rtl" : "ltr"));
 
 const toggle = (e) => {
-  sessionStorage.setItem("styleguide-dir", e.target.checked ? "rtl" : "ltr");
+  const newDir = e.target.checked ? "rtl" : "ltr";
+  sessionStorage.setItem("styleguide-dir", newDir);
+
   rtl(e.target.checked);
+
+  e.target.dispatchEvent(new DirectionChangedEvent({ direction: newDir }));
 };
 
 export class RTLSwitch {
