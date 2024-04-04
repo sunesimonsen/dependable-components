@@ -234,7 +234,6 @@ export class Popup {
   }
 
   _directionChanged(e) {
-    console.log("direction changed", e.detail.direction);
     this._updateDirection(e.detail.direction);
     this.update();
   }
