@@ -117,7 +117,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="default-select">Select a celestial body</label>
           <${CustomSelect}
             model=${this.model}

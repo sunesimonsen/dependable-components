@@ -28,15 +28,17 @@ class ClearableExample {
 
   render({ Icon }) {
     return html`
-      <label for=${this.id}>Find planet</label>
-      <${ClearableInput}
-        id=${this.id}
-        .value=${this.value()}
-        onInput=${this.onChange}
-        onClear=${this.onClear}
-        Icon=${Icon}
-      />
-      <${Button} onClick=${this.onSubmit}>Search<//>
+      <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
+        <label for=${this.id}>Find planet</label>
+        <${ClearableInput}
+          id=${this.id}
+          .value=${this.value()}
+          onInput=${this.onChange}
+          onClear=${this.onClear}
+          Icon=${Icon}
+        />
+        <${Button} onClick=${this.onSubmit}>Search<//>
+      <//>
     `;
   }
 }
@@ -51,7 +53,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px auto">
+        <${ColumnLayout} columns="300px" justifyItems="start">
           <${ClearableExample} />
           <${ClearableExample} Icon=${PlanetIcon} />
         <//>

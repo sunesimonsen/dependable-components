@@ -1,6 +1,8 @@
 import { html } from "@dependable/htm";
+import { css } from "stylewars";
 import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
+import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { Notification, Toast } from "@dependable/components/Notifications/v0";
 import {
@@ -28,7 +30,7 @@ class NotificationExample {
   }
 
   render({ children }) {
-    return html` <${Button} onClick=${this.onClick}>${children}<//> `;
+    return html`<${Button} stretched onClick=${this.onClick}>${children}<//>`;
   }
 }
 
@@ -41,6 +43,13 @@ const placements = [
   "bottom-end",
 ];
 
+const containerStyles = css`
+  & {
+    padding: 40px;
+    min-width: 350px;
+  }
+`;
+
 export default class Example {
   renderPlacements(placement) {
     return html`
@@ -52,9 +61,11 @@ export default class Example {
 
   render() {
     return html`
-      <${Center}>
-        <${ColumnLayout} columns="3" stretched>
-          ${placements.map(this.renderPlacements)}
+      <${ScrollArea} overflow="auto">
+        <${Center} className=${containerStyles}>
+          <${ColumnLayout} columns="3" stretched>
+            ${placements.map(this.renderPlacements)}
+          <//>
         <//>
       <//>
     `;

@@ -49,7 +49,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="disabled-select">Select a planet</label>
           <${Select} id="disabled-select" onSelect=${this.onSelect}>
             <${SelectInput} disabled .value=${selected().value}>

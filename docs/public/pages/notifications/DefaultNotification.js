@@ -82,7 +82,7 @@ export default class Example {
     return html`
       <${Toast}>
         <${Center}>
-          <${ColumnLayout} columns="4">
+          <${ColumnLayout} columns="2">
             ${examples.map((example) =>
               this.renderNotificationExample(example),
             )}

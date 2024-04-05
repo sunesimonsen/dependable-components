@@ -14,6 +14,12 @@ const styles = css`
     z-index: 1000;
   }
 
+  @media screen and (max-width: 500px) {
+    & {
+      width: 80vw;
+    }
+  }
+
   &[data-placement^="top"] {
     inset-block-end: auto;
   }

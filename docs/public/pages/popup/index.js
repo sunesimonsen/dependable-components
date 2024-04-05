@@ -38,7 +38,7 @@ export default class Page {
       <//>
       <${Heading} level="3">Placement<//>
       <p>You can specify the placement of the popup relative to the anchor</p>
-      <${Example} src=${new URL("./Placement.js", import.meta.url)}>
+      <${Example} noPadding src=${new URL("./Placement.js", import.meta.url)}>
         <${Placement} />
       <//>
       <p>It is also possible to stretch the popup to the size of the anchor.</p>

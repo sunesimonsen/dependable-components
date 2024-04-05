@@ -50,7 +50,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="default-select">Select a planet</label>
           <${Select} id="default-select" onSelect=${this.onSelect}>
             <${SelectInput} .value=${selected().value}>${selected().label}<//>

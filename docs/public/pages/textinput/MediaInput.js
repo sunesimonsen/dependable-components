@@ -22,7 +22,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px auto">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="media-planet-name">Find planet</label>
           <${MediaInput}>
             <span className=${margin(2, "inline-end")}>🌘</span>

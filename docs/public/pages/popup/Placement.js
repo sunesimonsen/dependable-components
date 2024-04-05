@@ -1,6 +1,7 @@
 import { html } from "@dependable/htm";
 import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
+import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { Popup } from "@dependable/components/Popup/v0";
 import { css } from "stylewars";
 
@@ -26,7 +27,9 @@ const anchorStyles = css`
 
 const containerStyles = css`
   & {
+    padding: 40px;
     height: 300px;
+    min-width: 700px;
   }
 `;
 
@@ -90,11 +93,16 @@ export default class Example {
 
   render() {
     return html`
-      <${Center} className=${containerStyles}>
-        <${Center} className=${anchorStyles} ref=${this.createRef("anchorRef")}>
-          Anchor
+      <${ScrollArea} overflow="auto">
+        <${Center} className=${containerStyles}>
+          <${Center}
+            className=${anchorStyles}
+            ref=${this.createRef("anchorRef")}
+          >
+            Anchor
+          <//>
+          ${this.popupElements()}
         <//>
-        ${this.popupElements()}
       <//>
     `;
   }

@@ -45,16 +45,18 @@ export default class Example {
 
   render() {
     return html`
-      <${ColumnLayout} columns="300px" justifyItems="start">
-        <label for="filter-planets">Filter planets</label>
-        <${FilterInput}
-          id="filter-planets"
-          placeholder="Filter planet"
-          .value=${value()}
-          onInput=${onChange}
-          onClear=${onClear}
-        />
-        ${this.renderItems()}
+      <${Center}>
+        <${ColumnLayout} columns="300px" justifyItems="start">
+          <label for="filter-planets">Filter planets</label>
+          <${FilterInput}
+            id="filter-planets"
+            placeholder="Filter planet"
+            .value=${value()}
+            onInput=${onChange}
+            onClear=${onClear}
+          />
+          ${this.renderItems()}
+        <//>
       <//>
     `;
   }

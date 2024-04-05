@@ -23,7 +23,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px auto">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="search-planet">Find planet</label>
           <${SearchInput}
             id="search-planet"

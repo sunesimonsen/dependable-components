@@ -58,7 +58,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="placement-autocomplete">Planet</label>
           <${Autocomplete}
             id="placement-autocomplete"

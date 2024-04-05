@@ -20,7 +20,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="auto 300px auto">
+        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
           <label for="planet-name-readonly">Planet name</label>
           <${TextInput}
             id="planet-name-readonly"
