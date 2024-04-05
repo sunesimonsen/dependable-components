@@ -125,8 +125,10 @@ export class SubTitle {
 
 const lineStyles = css`
   & {
-    color: var(--dc-color-neutral-30);
     font-size: 16px;
+    border-width: 1px 0 0 0;
+    border-color: var(--dc-color-neutral-70);
+    border-style: solid;
   }
 `;
 
