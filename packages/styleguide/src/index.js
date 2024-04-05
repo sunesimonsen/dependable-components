@@ -12,13 +12,6 @@ export { Title, SubTitle, Line, Heading } from "./components/Page.js";
 export { Example } from "./components/Example.js";
 export { SourceCode } from "./components/SourceCode.js";
 
-const history = createBrowserHistory();
-
-const router = new Router({
-  routes,
-  history,
-});
-
 document.body.setAttribute("data-prefers-color-scheme", colorScheme());
 
 colorScheme.subscribe(() => {

@@ -16,6 +16,13 @@ const logoStyles = css`
     width: var(--dc-logo-size);
     height: var(--dc-logo-size);
   }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      width: 26px;
+      height: 26px;
+    }
+  }
 `;
 
 const homeStyles = css`
@@ -26,6 +33,13 @@ const homeStyles = css`
     text-decoration: none;
     align-items: center;
     gap: var(--dc-spacing-3);
+  }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      font-size: 18px;
+      gap: var(--dc-spacing-2);
+    }
   }
 
   &:hover {

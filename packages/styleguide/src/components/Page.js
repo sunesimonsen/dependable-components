@@ -9,6 +9,12 @@ const contentStyles = css`
     width: 800px;
     margin: 30px auto;
   }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      width: 90vw;
+    }
+  }
 `;
 
 export class Page {
