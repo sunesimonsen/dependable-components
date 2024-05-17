@@ -1,4 +1,3 @@
-import { h } from "@dependable/view";
 import { html } from "@dependable/htm";
 import { Center } from "@dependable/components/Center/v0";
 import { ErrorBoundary } from "@dependable/components/ErrorBoundary/v0";
@@ -9,7 +8,7 @@ class Failing {
   }
 
   render() {
-    return h("p", {}, "I'll failed when I'm mounted");
+    return html`<p>I'll failed when I'm mounted</p>`;
   }
 }
 
