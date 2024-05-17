@@ -1,10 +1,8 @@
 import { h } from "@dependable/view";
-import { computed } from "@dependable/state";
 import { css, classes } from "stylewars";
 import { TopBar } from "./TopBar.js";
 import { SidebarContent } from "./SidebarContent.js";
-import { ErrorBoundary } from "./ErrorBoundary.js";
-import { BorderLayout } from "@dependable/components/BorderLayout/v0";
+import { FatalErrorBoundary } from "./FatalErrorBoundary.js";
 import { SidebarLayout, Sidebar } from "@dependable/components/Sidebar/v0";
 import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { activeTheme } from "./ThemeSelector.js";
@@ -103,7 +101,7 @@ export class DefaultLayout {
           h(
             ScrollArea,
             { className: scrollAreaStyles },
-            h(ErrorBoundary, { name: "default-layout" }, children),
+            h(FatalErrorBoundary, { name: "DefaultLayout" }, children),
           ),
         ),
         h(

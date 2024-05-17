@@ -4,9 +4,8 @@ import { css } from "stylewars";
 import { SourceCode } from "./SourceCode.js";
 import { IconButton } from "@dependable/components/IconButton/v0";
 import { ExamplePreview } from "./ExamplePreview.js";
-import { ErrorBoundary } from "./ErrorBoundary.js";
+import { FatalErrorBoundary } from "./FatalErrorBoundary.js";
 import { JSFiddleButton } from "./JSFiddleButton.js";
-import { Bar } from "@dependable/components/Bar/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
 import MarkupStroke16Icon from "@dependable/icons/MarkupStroke16Icon";
 
@@ -56,7 +55,7 @@ export class Example {
         ),
       ),
       h(
-        ErrorBoundary,
+        FatalErrorBoundary,
         { name: "source-code" },
         this.sourceVisible() && h(SourceCode, { src: src }),
       ),

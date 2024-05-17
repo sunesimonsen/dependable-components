@@ -1,18 +1,17 @@
-import { h } from "@dependable/view";
 import { observable } from "@dependable/state";
-
-const defaultFallback = h("h2", {}, "Crashed");
 
 export class ErrorBoundary {
   constructor({ name }) {
     this.failed = observable(null);
     this.didCatch = (e) => {
-      console.error(e);
+      if (this.props.onError) {
+        this.props.onError(name, e);
+      }
       this.failed(e);
     };
   }
 
-  render({ children, fallback = defaultFallback }) {
+  render({ children, fallback }) {
     return this.failed() ? fallback : children;
   }
 }

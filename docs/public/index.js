@@ -16,6 +16,7 @@ const pages = [
   "columnlayout",
   "default-theme",
   "dialog",
+  "errorboundary",
   "iconbutton",
   "icons",
   "index",
@@ -29,6 +30,7 @@ const pages = [
   "skeleton",
   "spinner",
   "switch",
+  "suspense",
   "tags",
   "textinput",
   "toolbarlayout",
@@ -86,6 +88,11 @@ styleguide({
       <li><${PageReference} id="borderlayout">Border layout<//></li>
       <li><${PageReference} id="center">Center<//></li>
       <li><${PageReference} id="columnlayout">Column layout<//></li>
+    </ul>
+    <h1>Life cycle</h1>
+    <ul>
+      <li><${PageReference} id="suspense">Suspense<//></li>
+      <li><${PageReference} id="errorboundary">Error boundary<//></li>
     </ul>
     <h1>Icons</h1>
     <ul>
