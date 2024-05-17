@@ -3,7 +3,7 @@ import { observable } from "@dependable/state";
 import { ErrorBoundary } from "@dependable/components/ErrorBoundary/v0";
 import { Center } from "@dependable/components/Center/v0";
 
-const fallback = h("p", {}, "Crashed :-/");
+const fallback = h(Center, { stretched: true }, h("p", {}, "Crashed :-/"));
 
 export class FatalErrorBoundary {
   constructor() {
@@ -16,9 +16,9 @@ export class FatalErrorBoundary {
 
   render({ name, children }) {
     return h(
-      Center,
-      {},
-      h(ErrorBoundary, { name, fallback, onError: this.onError }, children),
+      ErrorBoundary,
+      { name, fallback, onError: this.onError },
+      children,
     );
   }
 }

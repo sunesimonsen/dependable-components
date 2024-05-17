@@ -45,11 +45,7 @@ export class SourceCode {
       };
     });
 
-    const loadingScreen = h(
-      Center,
-      { stretched: true, className: loadingStyles },
-      h(Spinner),
-    );
+    const loadingScreen = h(Center, { className: loadingStyles }, h(Spinner));
 
     return h(
       Suspense,
