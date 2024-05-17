@@ -4,6 +4,7 @@ import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
 import { Spinner } from "@dependable/components/Spinner/v0";
+import { Suspense, lazy } from "@dependable/components/Suspense/v0";
 
 const preStyles = css`
   & {
@@ -32,39 +33,32 @@ export class SourceCode {
     this.status = observable("uninitialised");
   }
 
-  loadComponent() {
-    const src = this.props.src;
-
-    this.status("loading");
-
-    return fetch(src)
-      .then(async (response) => {
-        this.content = await response.text();
-        this.status("ready");
-      })
-      .catch((e) => {
-        console.error(e);
-        this.status("failed");
-      });
-  }
-
-  didMount() {
-    this.loadComponent();
-  }
-
   render({ src }) {
-    if (this.status() === "failed") {
-      throw new Error(`Component ${src} could not be loaded`);
-    }
+    const Content = lazy(async () => {
+      const response = await fetch(src);
+      const content = await response.text();
 
-    if (this.status() !== "ready") {
-      return h(Center, { className: loadingStyles }, h(Spinner));
-    }
+      return class Content {
+        render() {
+          return content;
+        }
+      };
+    });
+
+    const loadingScreen = h(
+      Center,
+      { stretched: true, className: loadingStyles },
+      h(Spinner),
+    );
 
     return h(
-      "pre",
-      { className: preStyles, ref: this.highlightCode },
-      h("code", { className: "language-js" }, this.content),
+      Suspense,
+      { fallback: loadingScreen },
+      h(
+        "pre",
+        { className: preStyles, ref: this.highlightCode },
+        h("code", { className: "language-js" }, h(Content)),
+      ),
     );
   }
 }
