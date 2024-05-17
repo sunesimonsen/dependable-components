@@ -1,5 +1,4 @@
 import "@dependable/vite";
-import { render } from "@dependable/view";
 import { html } from "@dependable/htm";
 import { styleguide, PageReference } from "@dependable/styleguide";
 import { IconNavigation, iconPageMap } from "./icons-navigation.js";
@@ -36,7 +35,7 @@ const pages = [
   "toolbarlayout",
 ];
 
-const pageMap = Object.fromEntries(
+const pageLoaders = Object.fromEntries(
   pages.map((id) => [id, () => import(`./pages/${id}/index.js`)]),
 );
 
@@ -105,5 +104,5 @@ styleguide({
       <li><${PageReference} id="purple-theme">Purple theme<//></li>
     </ul>
   `,
-  pageMap: { ...pageMap, ...iconPageMap },
+  pageLoaders: { ...pageLoaders, ...iconPageMap },
 });

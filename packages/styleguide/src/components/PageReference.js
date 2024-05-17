@@ -1,5 +1,4 @@
 import { h } from "@dependable/view";
-import { computed } from "@dependable/state";
 import { route, params, Link } from "@dependable/nano-router";
 import { css, classes } from "stylewars";
 

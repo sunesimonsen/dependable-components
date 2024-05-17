@@ -1,41 +1,15 @@
 import { h } from "@dependable/view";
-import { observable } from "@dependable/state";
 import { Page, PageSkeleton } from "./Page.js";
+import { Suspense } from "@dependable/components/Suspense/v0";
 
 export class PageContainer {
-  constructor() {
-    this.Page = null;
-    this.pageId = observable(null);
-    this.status = observable("uninitialized");
-  }
-
-  async loadComponent() {
-    const { id } = this.props;
+  render({ id }) {
     const { pageMap } = this.context;
 
-    this.pageId(id);
-    this.status("loading");
-
-    try {
-      const component = await pageMap[id]();
-
-      this.Page = component.default;
-      this.status("ready");
-    } catch (e) {
-      console.error(e);
-      this.status("failed");
-    }
-  }
-
-  render({ id }) {
-    if (this.pageId() !== id) {
-      this.loadComponent();
-    }
-
-    if (this.status() !== "ready") {
-      return h(PageSkeleton);
-    }
-
-    return h(Page, {}, h(this.Page));
+    return h(
+      Suspense,
+      { fallback: h(PageSkeleton) },
+      h(Page, {}, h(pageMap[id])),
+    );
   }
 }

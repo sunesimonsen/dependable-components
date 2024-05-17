@@ -15,6 +15,10 @@ export class FatalErrorBoundary {
   }
 
   render({ name, children }) {
-    return h(Center, {}, h(ErrorBoundary, { name, fallback }, children));
+    return h(
+      Center,
+      {},
+      h(ErrorBoundary, { name, fallback, onError: this.onError }, children),
+    );
   }
 }

@@ -6,6 +6,7 @@ import { createBrowserHistory } from "@nano-router/history";
 import { RootView } from "./components/RootView.js";
 import { ScriptLoader } from "./components/ScriptLoader.js";
 import { colorScheme } from "./components/ColorSchemeSelector.js";
+import { lazy } from "@dependable/components/Suspense/v0";
 
 export { PageReference } from "./components/PageReference.js";
 export { Title, SubTitle, Line, Heading } from "./components/Page.js";
@@ -23,7 +24,7 @@ export const styleguide = ({
   title,
   repository,
   navigation,
-  pageMap,
+  pageLoaders,
   importmap,
 }) => {
   const history = createBrowserHistory();
@@ -32,6 +33,16 @@ export const styleguide = ({
     routes,
     history,
   });
+
+  const pageMap = Object.fromEntries(
+    Object.entries(pageLoaders).map(([id, loader]) => [
+      id,
+      lazy(async () => {
+        const module = await loader();
+        return module.default;
+      }),
+    ]),
+  );
 
   render(
     h(
