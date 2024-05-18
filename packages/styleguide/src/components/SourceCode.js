@@ -4,7 +4,7 @@ import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
 import { Spinner } from "@dependable/components/Spinner/v0";
-import { Suspense, lazy } from "@dependable/components/Suspense/v0";
+import { Cache, LOADED } from "@dependable/cache";
 
 const preStyles = css`
   & {
@@ -24,6 +24,8 @@ const loadingStyles = css`
   }
 `;
 
+const sourceCodeCache = new Cache();
+
 export class SourceCode {
   constructor() {
     this.highlightCode = (ref) => {
@@ -34,27 +36,23 @@ export class SourceCode {
   }
 
   render({ src }) {
-    const Content = lazy(async () => {
+    sourceCodeCache.initialize(src, async () => {
       const response = await fetch(src);
-      const content = await response.text();
-
-      return class Content {
-        render() {
-          return content;
-        }
-      };
+      return await response.text();
     });
 
-    const loadingScreen = h(Center, { className: loadingStyles }, h(Spinner));
+    const [content, status, error] = sourceCodeCache.byId(src);
+
+    if (error) throw error;
+
+    if (status !== LOADED) {
+      return h(Center, { className: loadingStyles }, h(Spinner));
+    }
 
     return h(
-      Suspense,
-      { fallback: loadingScreen },
-      h(
-        "pre",
-        { className: preStyles, ref: this.highlightCode },
-        h("code", { className: "language-js" }, h(Content)),
-      ),
+      "pre",
+      { className: preStyles, ref: this.highlightCode },
+      h("code", { className: "language-js" }, content),
     );
   }
 }

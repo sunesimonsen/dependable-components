@@ -1,15 +1,22 @@
 import { h } from "@dependable/view";
 import { Page, PageSkeleton } from "./Page.js";
-import { Suspense } from "@dependable/components/Suspense/v0";
+import { Cache, LOADED } from "@dependable/cache";
+
+const pageCache = new Cache();
 
 export class PageContainer {
   render({ id }) {
-    const { pageMap } = this.context;
+    const { pageLoaders } = this.context;
+    pageCache.initialize(id, pageLoaders[id]);
 
-    return h(
-      Suspense,
-      { fallback: h(PageSkeleton) },
-      h(Page, {}, h(pageMap[id])),
-    );
+    const [module, status, error] = pageCache.byId(id);
+
+    if (error) throw error;
+
+    if (status !== LOADED) {
+      return h(PageSkeleton);
+    }
+
+    return h(Page, {}, h(module.default));
   }
 }
