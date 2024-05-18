@@ -8,6 +8,7 @@ import {
 } from "@dependable/styleguide";
 
 import LazyLoading from "./LazyLoading.js";
+import Nesting from "./Nesting.js";
 import FailLazyLoading from "./FailLazyLoading.js";
 
 export default class Page {
@@ -30,6 +31,16 @@ export default class Page {
       </p>
       <${Example} src=${new URL("./LazyLoading.js", import.meta.url)}>
         <${LazyLoading} />
+      <//>
+      <${Heading} level="3">Nested loading states<//>
+      <p>This example shows how you can nested suspense boundaries.</p>
+      <p>
+        First the Boxes component is loaded with one loading fallback. When the
+        component is done loading 8 lazy loaded boxes with separate suspense
+        boundaries is rendered.
+      </p>
+      <${Example} src=${new URL("./Nesting.js", import.meta.url)}>
+        <${Nesting} />
       <//>
       <${Heading} level="3">Failing to load a component lazily<//>
       <p>

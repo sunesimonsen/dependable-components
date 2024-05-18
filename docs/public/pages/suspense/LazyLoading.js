@@ -28,7 +28,7 @@ const fallback = html`<p>Loading...</p>`;
 export default class Example {
   render() {
     return html`
-      <${Center}>
+      <${Center} style="height: 70px">
         <${Suspense} fallback=${fallback}>
           <${ColumnLayout} columns="2">
             <${IconButton}><${LazyBotGeneric26Icon} /><//>
