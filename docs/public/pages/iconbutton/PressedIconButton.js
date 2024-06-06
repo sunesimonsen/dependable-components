@@ -10,6 +10,8 @@ import { css } from "stylewars";
 const iconStyles = css`
   & {
     font-size: 64px;
+    user-select: none;
+    line-height: initial;
   }
 `;
 
@@ -32,13 +34,16 @@ export default class Example {
       <${Center}>
         <${ColumnLayout} columns="2">
           <${IconButton}
+            id="pressed-button"
             pill
             aria-pressed=${String(isDay())}
             onClick=${toggleDay}
           >
             <${LightbulbStroke12Icon} />
           <//>
-          <${DaylightIcon} />
+          <label for="pressed-button">
+            <${DaylightIcon} />
+          </label>
         <//>
       <//>
     `;

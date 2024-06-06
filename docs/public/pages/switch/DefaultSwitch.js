@@ -9,6 +9,7 @@ const iconStyles = css`
   & {
     font-size: 64px;
     user-select: none;
+    line-height: initial;
   }
 `;
 
