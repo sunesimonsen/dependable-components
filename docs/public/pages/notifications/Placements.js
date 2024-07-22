@@ -2,7 +2,6 @@ import { html } from "@dependable/htm";
 import { css } from "stylewars";
 import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
-import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { Notification, Toast } from "@dependable/components/Notifications/v0";
 import {
@@ -45,7 +44,6 @@ const placements = [
 
 const containerStyles = css`
   & {
-    padding: 40px;
     min-width: 350px;
   }
 `;
@@ -61,11 +59,9 @@ export default class Example {
 
   render() {
     return html`
-      <${ScrollArea} overflow="auto">
-        <${Center} className=${containerStyles}>
-          <${ColumnLayout} columns="3" stretched>
-            ${placements.map(this.renderPlacements)}
-          <//>
+      <${Center} className=${containerStyles}>
+        <${ColumnLayout} columns="3" stretched>
+          ${placements.map(this.renderPlacements)}
         <//>
       <//>
     `;

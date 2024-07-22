@@ -31,7 +31,7 @@ export default class Page {
         There are 6 placement options available. The Notification occupies the
         top-end position by default.
       </p>
-      <${Example} noPadding src=${new URL("./Placements.js", import.meta.url)}>
+      <${Example} src=${new URL("./Placements.js", import.meta.url)}>
         <${Placements} />
       <//>
       <${Heading} level="3">Notification area<//>
