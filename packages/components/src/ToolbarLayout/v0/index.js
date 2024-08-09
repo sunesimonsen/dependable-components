@@ -48,13 +48,6 @@ const styles = css`
   }
 `;
 
-const columnsMapping = {
-  "start center end": "1fr auto 1fr",
-  "start end": "1fr 1fr",
-  start: "1fr",
-  end: "1fr",
-};
-
 export class ToolbarLayout {
   render({ children, sections = "start", className, ...other }) {
     return h(
