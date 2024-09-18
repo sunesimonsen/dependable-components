@@ -32,6 +32,7 @@ const pages = [
   "tags",
   "textinput",
   "toolbarlayout",
+  "validation",
 ];
 
 const pageLoaders = Object.fromEntries(
@@ -90,6 +91,7 @@ styleguide({
     <h1>Error handling</h1>
     <ul>
       <li><${PageReference} id="errorboundary">Error boundary<//></li>
+      <li><${PageReference} id="validation">Validation<//></li>
     </ul>
     <h1>Icons</h1>
     <ul>
