@@ -23,13 +23,14 @@ const hueStyles = (hue) => css`
 `;
 
 export class Tag {
-  render({ hue, children }) {
+  render({ className, hue, children }) {
     return h(
       "span",
       {
         className: classes(
           styles,
           typeof hue !== "undefined" && hueStyles(hue),
+          className,
         ),
       },
       children,
