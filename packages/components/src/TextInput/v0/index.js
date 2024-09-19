@@ -78,7 +78,7 @@ export class TextInput {
       type: "text",
       autocomplete,
       className: classes(className, textInputStyles),
-      "data-validation": validation,
+      "data-validation": validation && validation,
       "aria-invalid": validation && "true",
       ...other,
     });
