@@ -1,6 +1,5 @@
 import { h } from "@dependable/view";
 import { css } from "stylewars";
-import { transparentColor } from "@dependable/components/theming/v0";
 
 const styles = ({ width, height }) => css`
   & {
@@ -34,19 +33,6 @@ export class Dialog {
     this.setRef = (ref) => {
       this.ref = ref;
     };
-
-    this.onClick = (e) => {
-      const dialogDimensions = this.ref.getBoundingClientRect();
-      if (
-        e.clientX < dialogDimensions.left ||
-        e.clientX > dialogDimensions.right ||
-        e.clientY < dialogDimensions.top ||
-        e.clientY > dialogDimensions.bottom
-      ) {
-        this.props.onClose(e);
-      }
-    };
-
     this.onKeydown = (e) => {
       if (e.key === "Escape") {
         this.props.onClose?.(e);
@@ -63,7 +49,6 @@ export class Dialog {
   }
 
   render({
-    disableBackdrop,
     onClose,
     onSubmit,
     width = "576px",
@@ -74,7 +59,6 @@ export class Dialog {
       "dialog",
       {
         ref: this.setRef,
-        onClick: !disableBackdrop && onClose && this.onClick,
         onDialogClose: onClose,
         onDialogSubmit: onSubmit,
         onKeydown: this.onKeydown,
