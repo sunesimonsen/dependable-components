@@ -1,12 +1,13 @@
 import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
+import { transparentColor } from "../../theming/v0";
 
 export const textInputStyles = css`
   & {
     appearance: none;
     border: 1px solid var(--dc-color-neutral-70);
     border-radius: 4px;
-    width: 100%;
+    width: var(--dc-text-input-width, 100%);
     box-sizing: border-box;
     vertical-align: middle;
     font-family: inherit;
@@ -48,14 +49,37 @@ export const textInputStyles = css`
     color: var(--dc-color-neutral-70);
     pointer-events: none;
   }
+
+  &[data-validation="success"] {
+    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
+      ${transparentColor("success-40", 35)};
+
+    border-color: var(--dc-color-success-40);
+  }
+
+  &[data-validation="warning"] {
+    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
+      ${transparentColor("warning-50", 35)};
+
+    border-color: var(--dc-color-warning-50);
+  }
+
+  &[data-validation="error"] {
+    --dc-focus-ring: var(--dc-focus-ring-width) var(--dc-focus-ring-style)
+      ${transparentColor("error-40", 35)};
+
+    border-color: var(--dc-color-error-40);
+  }
 `;
 
 export class TextInput {
-  render({ className, autocomplete = "false", ...other }) {
+  render({ className, validation, autocomplete = "false", ...other }) {
     return h("input", {
       type: "text",
       autocomplete,
       className: classes(className, textInputStyles),
+      "data-validation": validation,
+      "aria-invalid": validation && "true",
       ...other,
     });
   }

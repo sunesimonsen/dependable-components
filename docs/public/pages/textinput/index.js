@@ -1,4 +1,5 @@
 import { html } from "@dependable/htm";
+import { Anchor } from "@dependable/components/anchor/v0";
 import {
   Title,
   SubTitle,
@@ -13,6 +14,7 @@ import SearchInput from "./SearchInput.js";
 import FilterInput from "./FilterInput.js";
 import DisabledInput from "./DisabledInput.js";
 import ReadonlyInput from "./ReadonlyInput.js";
+import Validations from "./Validations.js";
 
 export default class Page {
   render() {
@@ -58,6 +60,15 @@ export default class Page {
       <p>A read-only Input prevents user modification but allows selection.</p>
       <${Example} src=${new URL("./ReadonlyInput.js", import.meta.url)}>
         <${ReadonlyInput} />
+      <//>
+
+      <${Heading} level="3">Validation<//>
+      <p>
+        Show success, warning, and danger validation messages with the
+        <${Anchor} href="./validation">Validation<//> component.
+      </p>
+      <${Example} src=${new URL("./Validations.js", import.meta.url)}>
+        <${Validations} />
       <//>
     `;
   }

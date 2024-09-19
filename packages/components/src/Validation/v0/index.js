@@ -7,13 +7,11 @@ import CheckCircleStroke16Icon from "@dependable/icons/CheckCircleStroke16Icon";
 
 const styles = css`
   & {
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--dc-color-error-60);
-    font-size: smaller;
-    color: var(--dc-text-color-0);
     display: flex;
+    font-size: smaller;
     align-items: center;
+    color: var(--dc-text-color-0);
+    white-space: nowrap;
   }
 
   &[data-type="warning"] {
