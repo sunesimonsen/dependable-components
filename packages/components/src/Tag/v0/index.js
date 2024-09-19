@@ -7,8 +7,7 @@ const styles = css`
     padding: 0.2em 0.4em;
     border-radius: 0.2em;
     font-size: smaller;
-    font-weight: bold;
-    color: var(--dc-color-neutral-30);
+    color: var(--dc-color-neutral-20);
     background: var(--dc-color-neutral-90);
     box-sizing: border-box;
     line-height: normal;
@@ -17,7 +16,7 @@ const styles = css`
 
 const hueStyles = (hue) => css`
   & {
-    color: hsl(${hue}, 100%, 95%);
+    color: white;
     background: hsl(${hue}, 71%, 40%);
   }
 `;
