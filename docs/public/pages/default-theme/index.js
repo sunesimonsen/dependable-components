@@ -25,7 +25,7 @@ export default class Page {
       <${Colors} className=${theme} />
       <${Heading} level="3">Example form<//>
       <p>Here you can see the theme applied to the components.</p>
-      <${Example} src=${new URL("./ExampleForm.js", import.meta.url)}>
+      <${Example} src=${new URL("./ExampleForm.js", import.meta.url)} noPadding>
         <${ExampleForm} />
       <//>
     `;

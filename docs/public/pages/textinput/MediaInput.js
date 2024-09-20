@@ -3,6 +3,7 @@ import { observable } from "@dependable/state";
 import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import { MediaInput } from "@dependable/components/MediaInput/v0";
 import { margin } from "@dependable/components/theming/v0";
 
@@ -22,17 +23,19 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
-          <label for="media-planet-name">Find planet</label>
-          <${MediaInput}>
-            <span className=${margin(2, "inline-end")}>🌘</span>
-            <input
-              id="media-planet-name"
-              type="text"
-              .value=${value()}
-              onChange=${onChange}
-            />
-            <${SearchStroke16Icon} className=${margin(2, "inline-start")} />
+        <${ColumnLayout} justifyItems="start">
+          <${FieldLayout} width="300px">
+            <label for="media-planet-name">Find planet</label>
+            <${MediaInput}>
+              <span className=${margin(2, "inline-end")}>🌘</span>
+              <input
+                id="media-planet-name"
+                type="text"
+                .value=${value()}
+                onChange=${onChange}
+              />
+              <${SearchStroke16Icon} className=${margin(2, "inline-start")} />
+            <//>
           <//>
           <${Button} onClick=${onSubmit}>Search<//>
         <//>

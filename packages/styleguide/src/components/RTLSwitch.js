@@ -1,6 +1,7 @@
 import { h } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
 import { Switch } from "@dependable/components/Switch/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import { DirectionChangedEvent } from "@dependable/components/direction/v0";
 
 const rtl = observable(sessionStorage.getItem("styleguide-dir") === "rtl", {
@@ -20,9 +21,15 @@ const toggle = (e) => {
 
 export class RTLSwitch {
   render() {
-    return [
+    return h(
+      FieldLayout,
+      {},
       h("label", { for: "styleguide-rtl" }, "Right to left"),
-      h(Switch, { id: "styleguide-rtl", ".checked": rtl(), onChange: toggle }),
-    ];
+      h(Switch, {
+        id: "styleguide-rtl",
+        ".checked": rtl(),
+        onChange: toggle,
+      }),
+    );
   }
 }

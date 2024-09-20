@@ -1,6 +1,6 @@
 import { h } from "@dependable/view";
 import { observable, computed } from "@dependable/state";
-import { Switch } from "@dependable/components/Switch/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import {
   Select,
   SelectInput,
@@ -42,7 +42,9 @@ export class ColorSchemeSelector {
   }
 
   render() {
-    return [
+    return h(
+      FieldLayout,
+      { width: "100%" },
       h("label", { for: "styleguide-color-scheme" }, "Color scheme"),
       h(
         Select,
@@ -50,6 +52,6 @@ export class ColorSchemeSelector {
         h(SelectInput, {}, selected().label),
         h(SelectPopup, {}, this.renderItems()),
       ),
-    ];
+    );
   }
 }

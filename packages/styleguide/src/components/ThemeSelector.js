@@ -1,9 +1,9 @@
 import { h } from "@dependable/view";
-import { css } from "stylewars";
 import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
 import { theme as defaultTheme } from "@dependable/components/default-theme/v0";
 import { theme as purpleTheme } from "@dependable/components/purple-theme/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import {
   Select,
   SelectInput,
@@ -46,7 +46,9 @@ export class ThemeSelector {
   }
 
   render() {
-    return [
+    return h(
+      FieldLayout,
+      { width: "100%" },
       h("label", { for: "styleguide-theme" }, "Theme"),
       h(
         Select,
@@ -54,6 +56,6 @@ export class ThemeSelector {
         h(SelectInput, {}, selected().label),
         h(SelectPopup, {}, this.renderItems()),
       ),
-    ];
+    );
   }
 }

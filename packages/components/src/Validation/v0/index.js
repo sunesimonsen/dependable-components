@@ -9,9 +9,8 @@ const styles = css`
   & {
     display: flex;
     font-size: smaller;
-    align-items: center;
+    line-height: 1.3em;
     color: var(--dc-text-color-0);
-    white-space: nowrap;
   }
 
   &[data-type="warning"] {
