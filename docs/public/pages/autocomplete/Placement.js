@@ -1,8 +1,7 @@
 import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
-import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import {
   Autocomplete,
   AutocompleteInput,
@@ -58,7 +57,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
+        <${FieldLayout} width="300px">
           <label for="placement-autocomplete">Planet</label>
           <${Autocomplete}
             id="placement-autocomplete"

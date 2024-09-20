@@ -1,9 +1,8 @@
-import { clone } from "@dependable/view";
 import { html } from "@dependable/htm";
 import { observable } from "@dependable/state";
 import { css } from "stylewars";
 import { Center } from "@dependable/components/Center/v0";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import {
   CustomSelect,
   SelectInput,
@@ -12,7 +11,6 @@ import {
   SelectOptionNext,
   SelectOptionPrevious,
   SelectPopup,
-  SelectSeparator,
 } from "@dependable/components/Select/v0";
 
 const id = "NestedSelect";
@@ -117,7 +115,7 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="300px" justifyItems="start" gap="0.5em">
+        <${FieldLayout} width="300px">
           <label for="default-select">Select a celestial body</label>
           <${CustomSelect}
             model=${this.model}

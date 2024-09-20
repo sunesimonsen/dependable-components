@@ -50,3 +50,9 @@ export const textAlign = (direction) => css`
     text-align: ${direction};
   }
 `;
+
+export const width = (value) => css`
+  & {
+    width: ${value};
+  }
+`;

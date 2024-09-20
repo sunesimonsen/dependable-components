@@ -1,8 +1,8 @@
 import { html } from "@dependable/htm";
 import { observable, computed } from "@dependable/state";
-import { Button } from "@dependable/components/Button/v0";
 import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
+import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import { FilterInput } from "@dependable/components/FilterInput/v0";
 
 const planets = [
@@ -46,15 +46,17 @@ export default class Example {
   render() {
     return html`
       <${Center}>
-        <${ColumnLayout} columns="300px" justifyItems="start">
-          <label for="filter-planets">Filter planets</label>
-          <${FilterInput}
-            id="filter-planets"
-            placeholder="Filter planet"
-            .value=${value()}
-            onInput=${onChange}
-            onClear=${onClear}
-          />
+        <${ColumnLayout} justifyItems="start">
+          <${FieldLayout} width="300px">
+            <label for="filter-planets">Filter planets</label>
+            <${FilterInput}
+              id="filter-planets"
+              placeholder="Filter planet"
+              .value=${value()}
+              onInput=${onChange}
+              onClear=${onClear}
+            />
+          <//>
           ${this.renderItems()}
         <//>
       <//>
