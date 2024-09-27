@@ -36,8 +36,8 @@ export class CustomMenu {
     };
 
     this.onSelectItem = (e) => {
-      const onSelect = this.props.onSelect;
-      if (onSelect) onSelect(e);
+      const onSelectItem = this.props.onSelectItem;
+      if (onSelectItem) onSelectItem(e);
       if (!e.defaultPrevented) this.model.hideMenu();
     };
 

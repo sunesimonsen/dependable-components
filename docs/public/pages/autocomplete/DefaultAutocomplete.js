@@ -32,7 +32,7 @@ const onInput = (e) => {
   searchText(e.target.value);
 };
 
-const onSelect = (e) => {
+const onSelectItem = (e) => {
   if (e.detail) {
     const { value } = e.detail;
     searchText(value);
@@ -59,7 +59,7 @@ export default class Example {
       <${Center}>
         <${FieldLayout} width="300px">
           <label for="default-autocomplete">Planet</label>
-          <${Autocomplete} id="default-autocomplete" onSelect=${onSelect}>
+          <${Autocomplete} id="default-autocomplete" onSelectItem=${onSelectItem}>
             <${AutocompleteInput} .value=${searchText()} onInput=${onInput} />
             <${AutocompletePopup}>${this.renderItems()}<//>
           <//>

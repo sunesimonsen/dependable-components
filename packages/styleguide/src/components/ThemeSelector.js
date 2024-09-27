@@ -24,7 +24,7 @@ const selected = computed(() =>
   themes.find((theme) => theme.key === selectedKey()),
 );
 
-const onSelect = (e) => {
+const onSelectItem = (e) => {
   selectedKey(e.detail.key);
 };
 
@@ -52,7 +52,7 @@ export class ThemeSelector {
       h("label", { for: "styleguide-theme" }, "Theme"),
       h(
         Select,
-        { id: "styleguide-theme", onSelect: onSelect },
+        { id: "styleguide-theme", onSelectItem: onSelectItem },
         h(SelectInput, {}, selected().label),
         h(SelectPopup, {}, this.renderItems()),
       ),

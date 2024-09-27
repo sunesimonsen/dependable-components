@@ -26,7 +26,7 @@ const selected = observable(options[0]);
 
 export default class Example {
   constructor() {
-    this.onSelect = (e) => {
+    this.onSelectItem = (e) => {
       const { value } = e.detail;
       selected(value);
     };
@@ -51,7 +51,7 @@ export default class Example {
       <${Center}>
         <${FieldLayout} width="300px">
           <label for="disabled-select">Select a planet</label>
-          <${Select} id="disabled-select" onSelect=${this.onSelect}>
+          <${Select} id="disabled-select" onSelectItem=${this.onSelectItem}>
             <${SelectInput} disabled .value=${selected().value}>
               ${selected().label}
             <//>

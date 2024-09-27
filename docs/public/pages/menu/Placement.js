@@ -10,7 +10,7 @@ import {
 
 export default class Example {
   constructor() {
-    this.onSelect = (e) => {
+    this.onSelectItem = (e) => {
       const { key, value } = e.detail;
       alert(`${key}:${value}`);
     };
@@ -19,7 +19,7 @@ export default class Example {
   render() {
     return html`
       <${Center} style="margin-top: 140px">
-        <${Menu} onSelect=${this.onSelect} placement="top-start">
+        <${Menu} onSelectItem=${this.onSelectItem} placement="top-start">
           <${MenuButton}>Go to planet<//>
           <${MenuPopup}>
             <${MenuItem} key="mercury" value=${0}>Mercury<//>

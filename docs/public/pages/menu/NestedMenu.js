@@ -70,7 +70,7 @@ export default class Example {
   constructor() {
     this.model = new MenuModel({ id: "nested-menu" });
 
-    this.onSelect = (e) => {
+    this.onSelectItem = (e) => {
       const { key, value } = e.detail;
       const menu = menus[key];
 
@@ -107,7 +107,7 @@ export default class Example {
       <${Center}>
         <${CustomMenu}
           model=${this.model}
-          onSelect=${this.onSelect}
+          onSelectItem=${this.onSelectItem}
           onClose=${this.onClose}
         >
           <${MenuButton}>Go to space<//>
