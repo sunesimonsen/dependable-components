@@ -103,10 +103,23 @@ export class CustomMenu {
         e.preventDefault();
         this.onClose();
       },
+      j: (e) => {
+        if (e.ctrlKey || e.metaKey) {
+          e.preventDefault();
+          this.model.focusNext(this.getSelectables());
+        }
+      },
+      k: (e) => {
+        if (e.ctrlKey || e.metaKey) {
+          e.preventDefault();
+          this.model.focusPrevious(this.getSelectables());
+        }
+      },
     };
 
     this.onKeyDown = (e) => {
       const handler = handlers[e.key];
+
       if (handler) {
         handler(e);
       }
