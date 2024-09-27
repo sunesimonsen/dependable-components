@@ -84,7 +84,7 @@ export default class Example {
       selected: selected(),
     });
 
-    this.onSelect = (e) => {
+    this.onSelectItem = (e) => {
       const { key, value } = e.detail;
       const menuItems = options[key];
 
@@ -119,7 +119,7 @@ export default class Example {
           <label for="default-select">Select a celestial body</label>
           <${CustomSelect}
             model=${this.model}
-            onSelect=${this.onSelect}
+            onSelectItem=${this.onSelectItem}
             placement="top-stretch"
           >
             <${SelectInput} .value=${selected().value}>${selected().label}<//>

@@ -22,7 +22,7 @@ const selected = computed(() =>
   options.find((option) => option.key === colorScheme()),
 );
 
-const onSelect = (e) => {
+const onSelectItem = (e) => {
   colorScheme(e.detail.key);
 };
 
@@ -48,7 +48,7 @@ export class ColorSchemeSelector {
       h("label", { for: "styleguide-color-scheme" }, "Color scheme"),
       h(
         Select,
-        { id: "styleguide-color-scheme", onSelect: onSelect },
+        { id: "styleguide-color-scheme", onSelectItem: onSelectItem },
         h(SelectInput, {}, selected().label),
         h(SelectPopup, {}, this.renderItems()),
       ),
