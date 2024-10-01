@@ -27,6 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@dependable/view": "^0.19.2"
+    "@dependable/view": "^0.20.0"
   }
 }

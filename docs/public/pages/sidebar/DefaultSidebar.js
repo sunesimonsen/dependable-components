@@ -68,7 +68,7 @@ export default class Example {
           id="sidebar-example-main"
           data-layout="start"
           className=${padding(4)}
-          style="width: 150px"
+          width="150px"
         >
           Sidebar
         <//>
@@ -76,7 +76,7 @@ export default class Example {
           id="sidebar-example-main-setting"
           data-layout="end"
           className=${settingsSidebarStyles}
-          style="width: 150px"
+          width="150px"
         >
           Settings
         <//>

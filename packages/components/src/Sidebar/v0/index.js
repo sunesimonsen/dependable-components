@@ -42,6 +42,7 @@ const sidebarStyles = css`
       --dc-sidebar-display,
       var(--dc-sidebar-initial-display, initial)
     );
+    width: var(--dc-sidebar-width);
     inset: 0;
   }
 
@@ -122,7 +123,10 @@ class Backdrop {
 }
 
 export class Sidebar {
-  render({ children, id, className, ...other }, { visibleSidebar }) {
+  render(
+    { children, id, className, style, width, ...other },
+    { visibleSidebar },
+  ) {
     const visibility = visibleSidebar() === id ? "visible" : "auto";
 
     return [
@@ -135,6 +139,7 @@ export class Sidebar {
         {
           id,
           "data-sidebar-visibility": visibility,
+          style: { ...style, ...(width && { "--dc-sidebar-width": width }) },
           className: classes(sidebarStyles, className),
           ...other,
         },

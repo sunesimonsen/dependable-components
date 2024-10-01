@@ -16,6 +16,7 @@ const rootStyles = css`
     left: 0;
     bottom: 0;
     --dc-sidebar-initial-display: flex;
+    --dc-sidebar-width: 300px;
     --dc-logo-size: 48px;
   }
   @media screen and (max-width: 1200px) {

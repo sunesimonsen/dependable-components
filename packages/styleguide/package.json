@@ -25,7 +25,7 @@
   "dependencies": {
     "@dependable/cache": "^0.9.0",
     "@dependable/state": "^0.20.0",
-    "@dependable/view": "^0.19.2",
+    "@dependable/view": "^0.20.0",
     "stylewars": "^2.4.0"
   },
   "publishConfig": {
