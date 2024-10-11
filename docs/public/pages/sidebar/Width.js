@@ -15,6 +15,9 @@ import { padding } from "@dependable/components/theming/v0";
 const styles = css`
   & {
     height: 400px;
+    --dc-sidebar-width: 250px;
+    --dc-sidebar-min-width: 100px;
+    --dc-sidebar-max-width: 400px;
   }
 
   @media screen and (max-width: 1200px) {
@@ -28,6 +31,7 @@ const styles = css`
 const settingsSidebarStyles = css`
   & {
     --dc-sidebar-display: none;
+    --dc-sidebar-width: 150px;
   }
 `;
 
@@ -62,7 +66,7 @@ export default class Example {
             </div>
           <//>
         <//>
-        <${Sidebar} id="sidebar-example-main" data-layout="start">Sidebar<//>
+        <${Sidebar} id="sidebar-example-main" data-layout="start"> Sidebar <//>
         <${Sidebar}
           id="sidebar-example-main-setting"
           data-layout="end"

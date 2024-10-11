@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@dependable/state": "^0.20.0",
-    "@dependable/view": "^0.20.0",
+    "@dependable/view": "^0.22.0",
     "stylewars": "^2.4.0"
   },
   "publishConfig": {

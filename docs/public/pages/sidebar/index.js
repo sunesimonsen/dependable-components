@@ -8,6 +8,8 @@ import {
   Example,
 } from "@dependable/styleguide";
 import DefaultSidebar from "./DefaultSidebar.js";
+import Resizable from "./Resizable.js";
+import Width from "./Width.js";
 
 export default class Page {
   render() {
@@ -28,6 +30,20 @@ export default class Page {
         noPadding
       >
         <${DefaultSidebar} />
+      <//>
+      <${Heading} level="3">Sidebar width<//>
+      <p>
+        You can set the width and padding of the sidebar using CSS variables.
+      </p>
+      <${Example} src=${new URL("./Width.js", import.meta.url)} noPadding>
+        <${Width} />
+      <//>
+      <${Heading} level="3">Resizable<//>
+      <p>
+        You can make the sidebar resizable and give a minimum and maximum size.
+      </p>
+      <${Example} src=${new URL("./Resizable.js", import.meta.url)} noPadding>
+        <${Resizable} />
       <//>
     `;
   }
