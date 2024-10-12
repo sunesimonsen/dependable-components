@@ -4,9 +4,9 @@ import { TopBar } from "./TopBar.js";
 import { SidebarContent } from "./SidebarContent.js";
 import { FatalErrorBoundary } from "./FatalErrorBoundary.js";
 import { SidebarLayout, Sidebar } from "@dependable/components/Sidebar/v0";
-import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 import { activeTheme } from "./ThemeSelector.js";
 import { Settings } from "./Settings.js";
+import { ScrollArea } from "@dependable/components/ScrollArea/v0";
 
 const rootStyles = css`
   & {
@@ -60,18 +60,6 @@ const mainStyles = css`
   }
 `;
 
-const scrollAreaStyles = css`
-  & {
-    flex: 1;
-  }
-`;
-
-const mainSidebarStyles = css`
-  & {
-    overflow: hidden;
-  }
-`;
-
 const settingsSidebarStyles = css`
   & {
     --dc-sidebar-display: none;
@@ -89,19 +77,15 @@ export class DefaultLayout {
         h(TopBar),
         h(
           Sidebar,
-          {
-            "data-layout": "start",
-            id: "main-sidebar",
-            className: mainSidebarStyles,
-          },
-          h(ScrollArea, { className: scrollAreaStyles }, h(SidebarContent)),
+          { "data-layout": "start", id: "main-sidebar" },
+          h(SidebarContent),
         ),
         h(
           "main",
           { className: mainStyles },
           h(
             ScrollArea,
-            { className: scrollAreaStyles },
+            {},
             h(FatalErrorBoundary, { name: "DefaultLayout" }, children),
           ),
         ),

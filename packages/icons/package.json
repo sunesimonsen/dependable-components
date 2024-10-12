@@ -7,9 +7,7 @@
   "exports": {
     "./*": "./src/*.js"
   },
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "format": "cd ../.. && npm run format",
     "import-icons": "node ./scripts/import-icons.js && npm run format"
@@ -27,6 +25,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@dependable/view": "^0.20.0"
+    "@dependable/view": "^0.22.0"
   }
 }

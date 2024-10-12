@@ -1,7 +1,7 @@
 import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
 import { Pulse } from "../../Pulse/v0/index.js";
-import { transparentColor } from "@dependable/components/theming/v0";
+import { transparentColor } from "../../theming/v0";
 
 const styles = css`
   & {
