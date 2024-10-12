@@ -1,12 +1,18 @@
 {
   "type": "module",
   "name": "@dependable/styleguide",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Styleguide for @dependable/view",
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "module": "src/index.js",
-  "keywords": ["styleguide", "dependable", "view", "UI", "components"],
+  "keywords": [
+    "styleguide",
+    "dependable",
+    "view",
+    "UI",
+    "components"
+  ],
   "bugs": "https://github.com/sunesimonsen/dependable-components/issues",
   "repository": {
     "url": "git@github.com:sunesimonsen/dependable-components.git",
