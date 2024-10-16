@@ -1,6 +1,6 @@
 import { html } from "@dependable/htm";
 import { css } from "stylewars";
-import { color, colorMix } from "@dependable/components/theming/v0";
+import { colorMix } from "@dependable/components/theming/v0";
 
 const colorPreviewStyles = (name, procentage) => css`
   & {

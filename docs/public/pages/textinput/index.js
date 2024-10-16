@@ -64,7 +64,7 @@ export default class Page {
 
       <${Heading} level="3">Validation<//>
       <p>
-        Show success, warning, and danger validation messages with the
+        Show success, warning, and danger validation messages with the${" "}
         <${Anchor} href="./validation">Validation<//> component.
       </p>
       <${Example} src=${new URL("./Validations.js", import.meta.url)}>

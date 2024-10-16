@@ -1,9 +1,6 @@
 import { html } from "@dependable/htm";
 import { css, classes } from "stylewars";
-import { Center } from "@dependable/components/Center/v0";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { ColorPreview } from "./ColorPreview.js";
-import { colorMix } from "@dependable/components/theming/v0";
 
 const tableStyles = css`
   & {
@@ -73,9 +70,9 @@ export class Colors {
     );
   }
 
-  render({ className }) {
+  render({ theme }) {
     return html`
-      <table className=${classes(className, tableStyles)}>
+      <table className=${classes(theme.styles, tableStyles)}>
         <thead>
           ${this.renderColorHeader()}
         </thead>

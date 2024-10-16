@@ -70,7 +70,7 @@ export class DefaultLayout {
   render({ children }) {
     return h(
       "div",
-      { className: classes(activeTheme(), rootStyles) },
+      { className: classes(activeTheme().styles, rootStyles) },
       h(
         SidebarLayout,
         {},

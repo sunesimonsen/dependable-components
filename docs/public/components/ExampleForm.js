@@ -1,4 +1,5 @@
 import { html } from "@dependable/htm";
+import { css, classes } from "stylewars";
 import { Button } from "@dependable/components/Button/v0";
 import { TextInput } from "@dependable/components/TextInput/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
@@ -14,12 +15,20 @@ import {
   SelectPopup,
 } from "@dependable/components/Select/v0";
 import { padding } from "@dependable/components/theming/v0";
-import { theme } from "@dependable/components/purple-theme/v0";
 
-export default class Example {
-  render() {
+const frameStyles = css`
+  & {
+    border: thin solid var(--dc-color-neutral-90);
+  }
+`;
+
+export class ExampleForm {
+  render({ theme }) {
     return html`
-      <${BorderLayout} stretched className=${theme}>
+      <${BorderLayout}
+        stretched
+        className=${classes(theme.styles, frameStyles)}
+      >
         <${ColumnLayout} columns="1" justifyItems="start">
           <${ColumnLayout} justifyItems="start" className=${padding(5)}>
             <${FieldLayout} width="300px">

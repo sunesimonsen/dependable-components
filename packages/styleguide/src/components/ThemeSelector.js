@@ -3,6 +3,7 @@ import { computed } from "@dependable/state";
 import { observable } from "@dependable/state";
 import { theme as defaultTheme } from "@dependable/components/default-theme/v0";
 import { theme as purpleTheme } from "@dependable/components/purple-theme/v0";
+import { theme as brownTheme } from "@dependable/components/brown-theme/v0";
 import { FieldLayout } from "@dependable/components/FieldLayout/v0";
 import {
   Select,
@@ -14,6 +15,7 @@ import {
 const themes = [
   { key: "default", label: "Default", value: defaultTheme },
   { key: "purple", label: "Purple", value: purpleTheme },
+  { key: "brown", label: "Brown", value: brownTheme },
 ];
 
 const selectedKey = observable(themes[0].key, {
