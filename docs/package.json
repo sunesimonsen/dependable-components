@@ -4,7 +4,7 @@
   "scripts": {
     "start": "vite --port 5042 public",
     "update-importmap": "create-styleguide-importmap > public/importmap.js",
-    "build": "rm -rf dist && npm run update-importmap && rollup -c node:@dependable/rollup-config",
+    "build": "rm -rf dist && npm run update-importmap && vite build -c ./vite.config.js --outDir ../dist public && cp dist/index.html dist/200.html",
     "publish-docs": "npm run build && surge dist dependable-components.surge.sh"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "stylewars": "^2.4.0"
   },
   "devDependencies": {
-    "@dependable/rollup-config": "^0.5.0",
+    "@rollup/plugin-babel": "^5.3.0",
     "rollup": "^2.79.1",
     "vite": "^5.0.10"
   }

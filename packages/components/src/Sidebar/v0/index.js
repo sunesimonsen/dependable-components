@@ -38,7 +38,7 @@ export class SidebarLayout {
 
 const sidebarStyles = css`
   & {
-    background: var(--dc-sidebar-background, var(--dc-color-neutral-97));
+    background: var(--dc-sidebar-background, var(--dc-color-panel));
     position: relative;
     box-sizing: border-box;
 
@@ -50,6 +50,16 @@ const sidebarStyles = css`
     min-width: var(--dc-sidebar-min-width, 0);
     max-width: var(--dc-sidebar-max-width, auto);
     inset: 0;
+  }
+
+  body[data-prefers-color-scheme="dark"] & {
+    background: var(--dc-sidebar-background, var(--dc-color-neutral-95));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not([data-prefers-color-scheme="light"]) & {
+      background: var(--dc-sidebar-background, var(--dc-color-neutral-95));
+    }
   }
 
   &[data-layout="start"] {
@@ -106,6 +116,16 @@ const backdropStyles = css`
 
   &[data-sidebar-visibility="visible"] {
     display: block;
+  }
+
+  body[data-prefers-color-scheme="dark"] & {
+    background-color: ${transparentColor("background", 60)};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not([data-prefers-color-scheme="light"]) & {
+      background-color: ${transparentColor("background", 60)};
+    }
   }
 `;
 

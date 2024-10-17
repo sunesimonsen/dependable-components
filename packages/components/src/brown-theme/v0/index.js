@@ -3,26 +3,25 @@ import { css, classes } from "stylewars";
 import { baseTheme } from "../../base-theme/v0";
 
 export const theme = {
-  name: "Purple",
+  name: "Brown",
   styles: classes(
     css`
       & {
         --dc-color-foreground: #111;
         --dc-color-background: white;
 
-        --dc-color-saturation: 71;
+        --dc-color-saturation: 30;
 
-        --dc-color-primary-hue: 271;
+        --dc-color-primary-hue: 33;
 
         --dc-color-error-hue: 0;
+        --dc-color-error-saturation: 55;
 
         --dc-color-warning-hue: 33;
         --dc-color-warning-saturation: 85;
 
         --dc-color-success-hue: 158;
         --dc-color-success-saturation: 55;
-
-        --dc-color-dark-saturation: 60;
 
         --dc-color-dark-background-hue: calc(var(--dc-color-primary-hue) - 15);
         --dc-color-dark-background: hsl(
@@ -38,8 +37,8 @@ export const theme = {
 
         --dc-color-dark-saturation: 91;
 
-        --dc-color-dark-primary-hue: 271;
-        --dc-color-dark-primary-saturation: var(--dc-color-dark-saturation);
+        --dc-color-dark-primary-hue: 43;
+        --dc-color-dark-primary-saturation: 60;
 
         --dc-color-dark-error-hue: 0;
         --dc-color-dark-error-saturation: 50;

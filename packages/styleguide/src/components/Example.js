@@ -20,7 +20,7 @@ const styles = css`
 
 const buttonsStyles = css`
   & {
-    background: var(--dc-color-neutral-97);
+    background: var(--dc-color-panel);
     border-top: 1px solid var(--dc-color-neutral-85);
     --dc-toolbar-padding: var(--dc-spacing-1);
     --dc-toolbar-gap: var(--dc-spacing-1);

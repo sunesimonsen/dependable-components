@@ -9,6 +9,7 @@ const pages = [
   "autocomplete",
   "bar",
   "borderlayout",
+  "brown-theme",
   "button",
   "center",
   "checkbox",
@@ -102,6 +103,7 @@ styleguide({
     <ul>
       <li><${PageReference} id="default-theme">Default theme<//></li>
       <li><${PageReference} id="purple-theme">Purple theme<//></li>
+      <li><${PageReference} id="brown-theme">Brown theme<//></li>
     </ul>
   `,
   pageLoaders: { ...pageLoaders, ...iconPageMap },

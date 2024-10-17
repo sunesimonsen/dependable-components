@@ -50,23 +50,26 @@ const createSuccessColors = (offset = 0) => `
 `;
 
 const createNeutralColors = (offset = 0) => `
-  --dc-color-neutral-10: ${colorMix("background", "foreground", 10 + offset)};
-  --dc-color-neutral-20: ${colorMix("background", "foreground", 20 + offset)};
-  --dc-color-neutral-30: ${colorMix("background", "foreground", 30 + offset)};
-  --dc-color-neutral-40: ${colorMix("background", "foreground", 40 + offset)};
-  --dc-color-neutral-50: ${colorMix("background", "foreground", 50 + offset)};
-  --dc-color-neutral-60: ${colorMix("background", "foreground", 60 + offset)};
-  --dc-color-neutral-70: ${colorMix("background", "foreground", 70 + offset)};
-  --dc-color-neutral-80: ${colorMix("background", "foreground", 80 + offset)};
-  --dc-color-neutral-85: ${colorMix("background", "foreground", 85 + offset)};
-  --dc-color-neutral-90: ${colorMix("background", "foreground", 90 + offset)};
-  --dc-color-neutral-95: ${colorMix("background", "foreground", 95 + offset)};
-  --dc-color-neutral-97: ${colorMix("background", "foreground", 97 + offset)};
+  --dc-color-neutral-10: ${colorMix("neutral-start", "neutral-end", 10 + offset)};
+  --dc-color-neutral-20: ${colorMix("neutral-start", "neutral-end", 20 + offset)};
+  --dc-color-neutral-30: ${colorMix("neutral-start", "neutral-end", 30 + offset)};
+  --dc-color-neutral-40: ${colorMix("neutral-start", "neutral-end", 40 + offset)};
+  --dc-color-neutral-50: ${colorMix("neutral-start", "neutral-end", 50 + offset)};
+  --dc-color-neutral-60: ${colorMix("neutral-start", "neutral-end", 60 + offset)};
+  --dc-color-neutral-70: ${colorMix("neutral-start", "neutral-end", 70 + offset)};
+  --dc-color-neutral-80: ${colorMix("neutral-start", "neutral-end", 80 + offset)};
+  --dc-color-neutral-85: ${colorMix("neutral-start", "neutral-end", 85 + offset)};
+  --dc-color-neutral-90: ${colorMix("neutral-start", "neutral-end", 90 + offset)};
+  --dc-color-neutral-95: ${colorMix("neutral-start", "neutral-end", 95 + offset)};
+  --dc-color-neutral-97: ${colorMix("neutral-start", "neutral-end", 97 + offset)};
 `;
 
 const darkMode = `
   --dc-color-foreground: var(--dc-color-dark-foreground);
   --dc-color-background: var(--dc-color-dark-background);
+
+  --dc-color-neutral-start: ${colorMix("foreground", "background", 10)};
+  --dc-color-neutral-end: ${colorMix("foreground", "background", 90)};
 
   --dc-color-saturation: var(--dc-color-dark-saturation);
 
@@ -88,8 +91,18 @@ const darkMode = `
   ${createSuccessColors()}
   ${createNeutralColors()}
 
+  --dc-color-panel: var(--dc-color-neutral-90);
+
   color: var(--dc-color-foreground);
   background: var(--dc-color-background);
+
+  color-scheme: dark;
+
+  --scrollbar-color-thumb: var(--dc-color-neutral-50);
+  --scrollbar-color-track: var(--dc-color-neutral-80);
+  @supports (scrollbar-width: auto) {
+    scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+  }
 `;
 
 const createSpacingVar = (n, base) => {
@@ -114,11 +127,16 @@ export const baseTheme = css`
 
     ${createSpacing()}
 
+    --dc-color-neutral-start: var(--dc-color-background);
+    --dc-color-neutral-end: var(--dc-color-foreground);
+
     ${createPrimaryColors()}
     ${createErrorColors()}
     ${createWarningColors()}
     ${createSuccessColors()}
     ${createNeutralColors()}
+
+    --dc-color-panel: var(--dc-color-neutral-97);
 
     --dc-focus-ring-color: ${transparentColor("primary-50", 35)};
     --dc-focus-ring-style: solid;

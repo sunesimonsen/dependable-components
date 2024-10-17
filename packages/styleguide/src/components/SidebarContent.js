@@ -4,7 +4,6 @@ import { css } from "stylewars";
 const styles = css`
   & {
     padding: 16px 32px;
-    background: var(--dc-color-neutral-97);
   }
 
   & h1 {
