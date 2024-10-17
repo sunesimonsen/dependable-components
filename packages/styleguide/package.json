@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@dependable/styleguide",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "Styleguide for @dependable/view",
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
