@@ -13,6 +13,7 @@
     "format": "prettier --write '**/*.{js,mjs,md,json}'",
     "test": "lerna run test",
     "publish": "lerna publish --no-private",
+    "build": "lerna run build",
     "publish-docs": "lerna run publish-docs",
     "import-icons": "lerna run import-icons"
   },
@@ -21,9 +22,6 @@
     "prettier": "^3.2.5"
   },
   "workspaces": {
-    "packages": [
-      "packages/*",
-      "docs"
-    ]
+    "packages": ["packages/*", "docs"]
   }
 }

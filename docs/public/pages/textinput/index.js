@@ -1,5 +1,5 @@
 import { html } from "@dependable/htm";
-import { Anchor } from "@dependable/components/anchor/v0";
+import { Anchor } from "@dependable/components/Anchor/v0";
 import {
   Title,
   SubTitle,
