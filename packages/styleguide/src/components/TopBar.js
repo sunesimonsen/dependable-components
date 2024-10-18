@@ -1,10 +1,6 @@
 import { h } from "@dependable/view";
 import { css } from "stylewars";
 import { Link } from "@dependable/nano-router";
-import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
-import { ThemeSelector } from "./ThemeSelector.js";
-import { RTLSwitch } from "./RTLSwitch.js";
-import { ColorSchemeSelector } from "./ColorSchemeSelector.js";
 import { RepositoryButton } from "./RepositoryButton.js";
 import { Bar } from "@dependable/components/Bar/v0";
 import { ToolbarLayout } from "@dependable/components/ToolbarLayout/v0";
