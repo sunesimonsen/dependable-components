@@ -17,6 +17,7 @@ const pages = [
   "default-theme",
   "dialog",
   "errorboundary",
+  "htmlfileinput",
   "iconbutton",
   "icons",
   "index",
@@ -59,6 +60,7 @@ styleguide({
       <li><${PageReference} id="switch">Switch<//></li>
       <li><${PageReference} id="select">Select<//></li>
       <li><${PageReference} id="textinput">Text input<//></li>
+      <li><${PageReference} id="htmlfileinput">Html file input<//></li>
     </ul>
     <h1>Popups</h1>
     <ul>
