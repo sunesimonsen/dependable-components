@@ -19,7 +19,7 @@ import Validations from "./Validations.js";
 export default class Page {
   render() {
     return html`
-      <${Title}>TextInput<//>
+      <${Title}>Text input<//>
       <${SubTitle}>An Input lets users enter text into a field.<//>
       <${Line} />
       <${Heading} level="2">How to use it<//>
@@ -61,7 +61,6 @@ export default class Page {
       <${Example} src=${new URL("./ReadonlyInput.js", import.meta.url)}>
         <${ReadonlyInput} />
       <//>
-
       <${Heading} level="3">Validation<//>
       <p>
         Show success, warning, and danger validation messages with the${" "}
