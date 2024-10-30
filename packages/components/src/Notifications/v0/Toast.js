@@ -10,7 +10,7 @@ const styles = css`
     gap: 10px;
     position: fixed;
     inset: 20px;
-    width: 400px;
+    width: var(--dc-notifications-width, 400px);
     z-index: 1000;
   }
 
@@ -71,30 +71,37 @@ class NotificationManager {
     ]);
   }
 }
-export class Toast {
-  constructor() {
-    this.toast = new NotificationManager();
-  }
 
-  render({ placement = "top-end", limit = 5, className, children, ...other }) {
-    let notifications = this.toast.notifications().slice(-limit);
+class Notifications {
+  render({ placement = "top-end", limit = 5, className, ...other }) {
+    let notifications = this.context.toast.notifications().slice(-limit);
 
     if (placement.startsWith("bottom")) {
       notifications = notifications.reverse();
     }
 
     return h(
+      "div",
+      {
+        className: classes(styles, className),
+        "data-placement": placement,
+        ...other,
+      },
+      notifications,
+    );
+  }
+}
+
+export class Toast {
+  constructor() {
+    this.toast = new NotificationManager();
+  }
+
+  render({ children, ...other }) {
+    return h(
       "Context",
       { toast: this.toast },
-      h(
-        "div",
-        {
-          className: classes(styles, className),
-          "data-placement": placement,
-          ...other,
-        },
-        notifications,
-      ),
+      h(Notifications, other),
       children,
     );
   }
