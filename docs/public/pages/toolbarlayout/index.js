@@ -34,8 +34,8 @@ export default class Page {
         the${"\n"}
         <code>sections</code> property. The <code>sections</code> can contain
         the following configurations: <code>start</code>,${"\n"}
-        <code>end</code>,${"\n"}<code>start end</code>,${"\n"}
-        <code>start center</code>
+        <code>center</code>,${"\n"}<code>end</code>,${"\n"}<code>start end</code
+        >,${"\n"}<code>start center</code>,${"\n"}<code>start center end</code>
       </p>
       <${Example} src=${new URL("./Layouts.js", import.meta.url)}>
         <${Layouts} />
