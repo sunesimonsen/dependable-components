@@ -1,6 +1,5 @@
 import { h } from "@dependable/view";
 import { css, classes } from "stylewars";
-import { ColumnLayout } from "../../ColumnLayout/v0";
 
 const styles = css`
   & {
@@ -9,10 +8,16 @@ const styles = css`
   }
 
   &[data-toolbar-layout="start"],
+  &[data-toolbar-layout="center"],
   &[data-toolbar-layout="end"] {
     display: flex;
     gap: var(--dc-toolbar-gap, var(--dc-spacing-3));
     padding: var(--dc-toolbar-padding, var(--dc-spacing-3) var(--dc-spacing-4));
+    align-items: center;
+  }
+
+  &[data-toolbar-layout="center"] {
+    justify-content: center;
   }
 
   &[data-toolbar-layout="end"] {
