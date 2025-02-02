@@ -26,6 +26,7 @@ const pages = [
   "popup",
   "pulse",
   "purple-theme",
+  "radio",
   "select",
   "sidebar",
   "skeleton",
@@ -57,6 +58,7 @@ styleguide({
     <ul>
       <li><${PageReference} id="autocomplete">Autocomplete<//></li>
       <li><${PageReference} id="checkbox">Checkbox<//></li>
+      <li><${PageReference} id="radio">Radio<//></li>
       <li><${PageReference} id="switch">Switch<//></li>
       <li><${PageReference} id="select">Select<//></li>
       <li><${PageReference} id="textinput">Text input<//></li>

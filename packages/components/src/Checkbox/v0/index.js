@@ -25,12 +25,17 @@ const styles = css`
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+
+    transition:
+      border-color 0.25s ease-in-out 0s,
+      background-color 0.25s ease-in-out 0s,
+      color 0.25s ease-in-out 0s;
   }
 
   &:checked:not(:disabled) + label,
   &:indeterminate:not(:disabled) + label {
-    border-color: var(--dc-color-primary-50);
-    background-color: var(--dc-color-primary-50);
+    border-color: var(--dc-color-primary-40);
+    background-color: var(--dc-color-primary-40);
   }
 
   &:not(:checked):not(:indeterminate):not(:disabled):not(:focus-visible)
@@ -56,11 +61,14 @@ const styles = css`
     display: initial;
   }
 
+  &:not(:checked):not(:indeterminate):not(:disabled):hover + label,
   &:not(:checked):not(:indeterminate):not(:disabled) + label:hover {
-    border-color: var(--dc-color-primary-50);
+    border-color: var(--dc-color-primary-40);
     background-color: ${transparentColor("primary-80", 35)};
   }
 
+  &:checked:not(:disabled):hover + label,
+  &:indeterminate:not(:disabled):hover + label,
   &:checked:not(:disabled) + label:hover,
   &:indeterminate:not(:disabled) + label:hover {
     border-color: var(--dc-color-primary-30);

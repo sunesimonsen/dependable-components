@@ -13,7 +13,7 @@ const styles = css`
     width: 100%;
     padding: 8px 36px;
     text-decoration: none;
-    line-height: 20px;
+    line-height: 1.3em;
     overflow-wrap: break-word;
     user-select: none;
     color: var(--dc-color-foreground);

@@ -34,7 +34,6 @@ const mainStyles = css`
     display: flex;
     flex-direction: column;
     background: var(--dc-color-background);
-    line-height: 1.5em;
   }
   & > h2 {
     margin-top: 20px;

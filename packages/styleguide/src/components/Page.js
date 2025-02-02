@@ -98,7 +98,7 @@ const titleStyles = css`
   & {
     margin-bottom: 12px;
     color: var(--dc-color-foreground);
-    line-height: 1.08333;
+    line-height: 1.1em;
     font-size: 48px;
     font-weight: 700;
   }

@@ -148,6 +148,7 @@ export const baseTheme = css`
     --dc-font-family: Verdana, Geneva, sans-serif;
 
     font-family: var(--dc-font-family);
+    line-height: 1.5em;
 
     box-sizing: border-box;
 

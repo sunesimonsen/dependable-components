@@ -13,7 +13,7 @@ const containerStyles = css`
     border-radius: 4px;
     box-shadow: rgba(23, 73, 77, 0.15) 0px 20px 28px 0px;
     padding: 20px 40px;
-    line-height: 1.42857;
+    line-height: 1.4em;
     font-size: 14px;
     background-color: var(--dc-color-background);
     color: var(--dc-text-color-0);
