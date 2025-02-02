@@ -110,7 +110,8 @@ const backdropStyles = css`
     display: none;
     position: absolute;
     inset: 0;
-    background-color: rgba(47, 57, 65, 0.35);
+    background-color: ${transparentColor("neutral-97", 35)};
+    backdrop-filter: blur(3px);
     z-index: 1;
   }
 
@@ -119,12 +120,12 @@ const backdropStyles = css`
   }
 
   body[data-prefers-color-scheme="dark"] & {
-    background-color: ${transparentColor("background", 60)};
+    background-color: ${transparentColor("background", 35)};
   }
 
   @media (prefers-color-scheme: dark) {
     body:not([data-prefers-color-scheme="light"]) & {
-      background-color: ${transparentColor("background", 60)};
+      background-color: ${transparentColor("background", 35)};
     }
   }
 `;
