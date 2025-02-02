@@ -10,7 +10,7 @@ const styles = css`
     appearance: none;
     position: relative;
     border-radius: 50%;
-    border: thin solid var(--dc-color-neutral-80);
+    border: thin solid var(--dc-color-neutral-60);
     background-color: var(--dc-color-background);
     outline-offset: 0;
     transition:
@@ -34,7 +34,7 @@ const styles = css`
   }
 
   &:checked:disabled {
-    border-color: var(--dc-color-neutral-80);
+    border-color: var(--dc-color-neutral-60);
     background: var(--dc-color-neutral-80);
   }
 

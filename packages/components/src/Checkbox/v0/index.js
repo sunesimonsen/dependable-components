@@ -40,7 +40,7 @@ const styles = css`
 
   &:not(:checked):not(:indeterminate):not(:disabled):not(:focus-visible)
     + label {
-    border-color: var(--dc-color-neutral-80);
+    border-color: var(--dc-color-neutral-60);
     background-color: var(--dc-color-background);
   }
 
