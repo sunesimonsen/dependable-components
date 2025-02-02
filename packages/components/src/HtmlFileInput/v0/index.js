@@ -12,7 +12,7 @@ const styles = css`
     vertical-align: middle;
     font-family: inherit;
     min-height: 40px;
-    line-height: 1.28571;
+    line-height: 1.3em;
     font-size: 14px;
     padding: 0.3em;
     background-color: var(--dc-color-background);

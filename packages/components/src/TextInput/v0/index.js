@@ -13,7 +13,7 @@ export const textInputStyles = css`
     font-family: inherit;
     padding: 0.714286em 0.857143em;
     min-height: 40px;
-    line-height: 1.28571;
+    line-height: 1.3em;
     font-size: 14px;
     background-color: var(--dc-color-background);
     color: var(--dc-color-foreground);

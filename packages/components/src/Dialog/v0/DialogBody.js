@@ -8,7 +8,6 @@ const styles = css`
     padding: 20px 40px;
     max-height: 80vh;
     overflow: auto;
-    line-height: 1.42857;
     font-size: 14px;
   }
 

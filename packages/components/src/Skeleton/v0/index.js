@@ -10,7 +10,7 @@ const styles = css`
     border-radius: 4px;
     width: var(--dc-skeleton-width, 100%);
     overflow: hidden;
-    line-height: 0.6;
+    line-height: 0.6em;
     background-color: ${transparentColor("neutral-70", 35)};
   }
 
