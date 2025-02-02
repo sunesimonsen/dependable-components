@@ -1,5 +1,4 @@
 import { html } from "@dependable/htm";
-import { Center } from "@dependable/components/Center/v0";
 import { ColumnLayout } from "@dependable/components/ColumnLayout/v0";
 import { Checkbox } from "@dependable/components/Checkbox/v0";
 
