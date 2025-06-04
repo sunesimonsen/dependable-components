@@ -15,9 +15,11 @@ const styles = css`
 export default class Example {
   render() {
     return html`
-      <${ToolbarLayout} className=${styles}>
-        <${IconButton}><${MenuStroke12Icon} /><//>
-        <${IconButton}><${GearStroke12Icon} /><//>
+      <${Bar} className=${styles}>
+        <${ToolbarLayout}>
+          <${IconButton}><${MenuStroke12Icon} /><//>
+          <${IconButton}><${GearStroke12Icon} /><//>
+        <//>
       <//>
     `;
   }

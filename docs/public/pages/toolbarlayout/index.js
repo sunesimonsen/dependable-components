@@ -9,6 +9,7 @@ import {
 } from "@dependable/styleguide";
 import DefaultToolbarLayout from "./DefaultToolbarLayout.js";
 import Layouts from "./Layouts.js";
+import Vertical from "./Vertical.js";
 
 export default class Page {
   render() {
@@ -39,6 +40,14 @@ export default class Page {
       </p>
       <${Example} src=${new URL("./Layouts.js", import.meta.url)}>
         <${Layouts} />
+      <//>
+      <${Heading} level="3">Vertical toolbars<//>
+      <p>
+        When the toolbar layout is placed within a vertical layout like${" "}
+        <${Anchor} href="/bar">a vertical bar<//>, it will adapt its layout.
+      </p>
+      <${Example} src=${new URL("./Vertical.js", import.meta.url)}>
+        <${Vertical} />
       <//>
     `;
   }
