@@ -2,7 +2,6 @@ import { h } from "@dependable/view";
 import { clone } from "@dependable/view";
 import { Popup } from "../../Popup/v0/index.js";
 import { MenuModel } from "./MenuModel.js";
-import { MenuItem } from "./MenuItem.js";
 import { SelectItemEvent } from "./events.js";
 import { findSelectables } from "./children.js";
 
@@ -170,9 +169,7 @@ export class CustomMenu {
 
     return h(
       "Context",
-      {
-        model: model,
-      },
+      { model: model },
       clone(trigger, {
         props: {
           id: model.id,
